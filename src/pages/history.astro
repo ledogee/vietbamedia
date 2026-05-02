@@ -307,17 +307,34 @@ const t = vi;
 
 /* Responsive */
 @media (max-width: 768px) {
+  .timeline-section { padding: 40px 0 80px; }
   .timeline-wrapper { padding: 0 44px; }
-  .timeline-nav { width: 36px; height: 36px; top: 60px; }
-  .tl-node { min-width: 70px; }
+  .timeline-nav { width: 36px; height: 36px; top: 55px; }
+  .timeline-nav svg { width: 16px; height: 16px; }
+  .timeline-track { padding: 48px 0; }
+  .tl-node { min-width: 65px; gap: 8px; }
   .tl-year-label { font-size: 0.72rem; }
-  .tl-detail-card { padding: 28px 24px; }
+  .tl-dot { width: 20px; height: 20px; }
+  .tl-dot-inner { width: 12px; height: 12px; }
+  .tl-detail { margin-top: 28px; }
+  .tl-detail-card { padding: 24px 20px; }
   .tl-detail-year { font-size: 1.8rem; }
-  .tl-detail-card h3 { font-size: 1.1rem; }
-  .tl-detail-card p { font-size: 0.88rem; }
+  .tl-detail-card h3 { font-size: 1.05rem; }
+  .tl-detail-card p { font-size: 0.85rem; line-height: 1.6; }
 }
+
 @media (max-width: 480px) {
-  .timeline-wrapper { padding: 0 36px; }
-  .tl-node { min-width: 60px; }
+  .timeline-section { padding: 32px 0 60px; }
+  .timeline-wrapper { padding: 0 32px; }
+  .timeline-nav { width: 30px; height: 30px; top: 50px; }
+  .timeline-nav svg { width: 14px; height: 14px; }
+  .timeline-track { padding: 40px 0; }
+  .tl-node { min-width: 50px; gap: 6px; }
+  .tl-year-label { font-size: 0.65rem; }
+  .tl-dot-inner { width: 10px; height: 10px; }
+  .tl-detail-card { padding: 20px 16px; }
+  .tl-detail-year { font-size: 1.5rem; }
+  .tl-detail-card h3 { font-size: 0.95rem; }
+  .tl-detail-card p { font-size: 0.82rem; }
 }
 </style>

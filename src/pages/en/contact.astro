@@ -72,5 +72,26 @@ const t = en;
 .office-label { font-size: 0.75rem; color: var(--color-accent-blue); }
 .office-address { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 4px; }
 .office-phone { font-size: 0.88rem; color: var(--color-accent-blue); font-weight: 500; }
-@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+  .contact-form { padding: 28px 22px; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form input, .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+  .office-card { padding: 20px; }
+  .office-header h4 { font-size: 0.95rem; }
+  .office-address { font-size: 0.82rem; }
+  .office-phone { font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+  .contact-form { padding: 22px 16px; }
+  .contact-form input, .contact-form textarea {
+    padding: 11px 12px;
+    font-size: 0.85rem;
+  }
+  .office-card { padding: 16px; }
+}
 </style>

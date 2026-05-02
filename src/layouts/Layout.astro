@@ -112,15 +112,36 @@ function isActive(path: string): boolean {
     // Mobile menu toggle
     const navToggle = document.getElementById('navToggle')!;
     const navMenu = document.getElementById('navMenu')!;
+    const body = document.body;
+
+    function openMenu() {
+      navMenu.classList.add('open');
+      navToggle.classList.add('open');
+      body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      navMenu.classList.remove('open');
+      navToggle.classList.remove('open');
+      body.style.overflow = '';
+    }
+
     navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      navToggle.classList.toggle('open');
+      navMenu.classList.contains('open') ? closeMenu() : openMenu();
     });
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-      });
+
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('.nav-link, .nav-lang').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on backdrop click (tap outside menu)
+    navMenu.addEventListener('click', (e) => {
+      if (e.target === navMenu) closeMenu();
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) closeMenu();
     });
   </script>
 </body>
@@ -214,15 +235,56 @@ function isActive(path: string): boolean {
 .footer-social a:hover { color: var(--color-accent-blue); }
 
 @media (max-width: 768px) {
-  .navbar-toggle { display: flex; }
+  .navbar { padding: 12px 0; }
+  .navbar.scrolled { padding: 8px 0; }
+  .navbar-logo { font-size: 1.2rem; }
+  .navbar-toggle { display: flex; z-index: 1002; }
   .navbar-menu {
-    position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
-    flex-direction: column; align-items: flex-start; gap: 4px;
-    background: rgba(7, 13, 42, 0.97); backdrop-filter: blur(20px);
-    padding: 80px 24px 24px; transition: right var(--transition);
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100vh; height: 100dvh;
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px;
+    background: rgba(7, 13, 42, 0.97);
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    padding: 24px;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 1001;
   }
-  .navbar-menu.open { right: 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .navbar-menu.open {
+    opacity: 1; visibility: visible;
+  }
+  .navbar-menu .nav-link {
+    font-size: 1.15rem;
+    padding: 14px 24px;
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+  }
+  .navbar-menu .nav-link:hover,
+  .navbar-menu .nav-link.active {
+    background: rgba(238, 224, 203, 0.08);
+  }
+  .navbar-menu .nav-lang {
+    margin-top: 12px;
+    padding: 10px 28px;
+    font-size: 0.9rem;
+  }
+  .footer { padding: 40px 0 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-brand p { font-size: 0.85rem; }
+  .footer-links h4 { font-size: 0.9rem; margin-bottom: 12px; }
+  .footer-links li { font-size: 0.82rem; }
+  .footer-bottom {
+    flex-direction: column; gap: 16px; text-align: center;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo { font-size: 1.1rem; }
+  .navbar-menu .nav-link { font-size: 1.05rem; padding: 12px 20px; }
+  .footer { padding: 32px 0 20px; }
+  .footer-grid { gap: 24px; }
 }
 </style>

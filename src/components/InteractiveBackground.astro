@@ -33,14 +33,16 @@
     { r: 160, g: 145, b: 130 },  // warm-grey
   ];
 
-  /* ── Config ────────────────────────────────────────────── */
-  const SPACING = 32;           // px between dashes
-  const DASH_LEN = 10;          // dash half-length
-  const DASH_WIDTH = 1.8;
-  const INFLUENCE_RADIUS = 180; // px — mouse influence zone
-  const BASE_OPACITY = 0.12;    // resting opacity
-  const ACTIVE_OPACITY = 0.55;  // opacity near cursor
-  const LERP_SPEED = 0.08;      // rotation smoothing
+  /* ── Config (responsive) ─────────────────────────────── */
+  const isMobile = window.innerWidth <= 768;
+  const isSmall = window.innerWidth <= 480;
+  const SPACING = isSmall ? 52 : isMobile ? 44 : 32;
+  const DASH_LEN = isSmall ? 7 : isMobile ? 8 : 10;
+  const DASH_WIDTH = isMobile ? 1.4 : 1.8;
+  const INFLUENCE_RADIUS = isSmall ? 100 : isMobile ? 130 : 180;
+  const BASE_OPACITY = 0.12;
+  const ACTIVE_OPACITY = isMobile ? 0.45 : 0.55;
+  const LERP_SPEED = 0.08;
 
   /* ── State ─────────────────────────────────────────────── */
   interface Dash {
@@ -138,6 +140,19 @@
   });
 
   window.addEventListener('mouseleave', () => {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  // Touch support for mobile
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      mouse.x = e.touches[0].clientX;
+      mouse.y = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
     mouse.x = -9999;
     mouse.y = -9999;
   });

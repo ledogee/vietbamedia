@@ -259,8 +259,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .container { padding: 0 20px; }
+}
+
 @media (max-width: 768px) {
   .section { padding: 60px 0; }
   .section-header { margin-bottom: 40px; }
-  .page-hero { padding: 120px 0 60px; }
+  .page-hero { padding: 110px 0 50px; }
+  .page-hero .section-title { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+  .page-hero p { font-size: 0.95rem; }
+
+  .btn-glow {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+  .btn-outline {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 15px; }
+  .container { padding: 0 16px; }
+  .section { padding: 48px 0; }
+  .section-header { margin-bottom: 32px; }
+  .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .page-hero { padding: 100px 0 40px; }
+  .page-hero p { font-size: 0.88rem; }
 }
