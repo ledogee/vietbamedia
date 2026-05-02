@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# scraping/download scripts (dev-only)
+scripts/
+
+# reference docs
+vietbagroup_website.md

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import vi from '../i18n/vi.json';
 const t = vi;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const catColors: Record<string, string> = {
   gameshow: '#d4a574', sitcom: '#eee0cb', digital: '#baa898',
@@ -31,7 +32,9 @@ const catColors: Record<string, string> = {
       <div class="projects-grid">
         {t.projects.items.map((p) => (
           <div class="project-card glass-card fade-in" data-cat={p.cat} style={`--cat-color:${catColors[p.cat] || '#d4a574'}`}>
-            <div class="project-thumb"></div>
+            <div class="project-thumb">
+              {p.img && <img src={`${base}${p.img}`} alt={p.name} loading="lazy" />}
+            </div>
             <div class="project-info">
               <span class="project-badge" style={`background:${catColors[p.cat] || '#d4a574'}22;color:${catColors[p.cat] || '#d4a574'}`}>
                 {t.projects.filters[p.cat as keyof typeof t.projects.filters] || p.cat}
@@ -87,6 +90,11 @@ const catColors: Record<string, string> = {
   height: 160px;
   background: linear-gradient(135deg, var(--cat-color), rgba(10,17,56,0.8));
   opacity: 0.6;
+  position: relative; overflow: hidden;
+}
+.project-thumb img {
+  width: 100%; height: 100%; object-fit: cover;
+  position: absolute; inset: 0;
 }
 .project-info { padding: 16px 20px; }
 .project-badge {
