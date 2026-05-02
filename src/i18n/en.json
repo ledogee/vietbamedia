@@ -1,0 +1,194 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "history": "History",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "EMPOWER YOUR",
+    "titleHighlight": "BUSINESS POTENTIAL",
+    "subtitle": "Partnering with businesses in every media campaign — from concept to success.",
+    "cta": "Get Consultation",
+    "scrollDown": "Explore more"
+  },
+  "home": {
+    "servicesTeaser": "Featured Services",
+    "projectsTeaser": "Featured Projects",
+    "timelineTeaser": "Our Journey",
+    "viewAll": "View All",
+    "exploreHistory": "Explore History",
+    "contactCta": "Ready to collaborate?",
+    "contactCtaSub": "Connect with us to build an effective media strategy for your business.",
+    "contactCtaBtn": "Contact Us"
+  },
+  "pageHero": {
+    "about": {
+      "tag": "ABOUT US",
+      "title": "Shared Passion — Harvesting Success",
+      "subtitle": "Over 25 years partnering with Vietnamese businesses in every media campaign."
+    },
+    "services": {
+      "tag": "SERVICES",
+      "title": "Comprehensive Media Solutions",
+      "subtitle": "Diverse media services tailored to every business sector."
+    },
+    "projects": {
+      "tag": "PROJECTS",
+      "title": "Featured Projects",
+      "subtitle": "Explore our portfolio from gameshows and TV production to digital marketing."
+    },
+    "history": {
+      "tag": "HISTORY",
+      "title": "Our Journey",
+      "subtitle": "Over two decades pioneering Vietnam's media industry."
+    },
+    "contact": {
+      "tag": "CONTACT",
+      "title": "Connect With Us",
+      "subtitle": "Leave your contact information and we'll get back to you shortly!"
+    }
+  },
+  "about": {
+    "sectionTag": "ABOUT US",
+    "title": "Shared Passion — Harvesting Success",
+    "description": "Founded in 1999, Vietba Group is one of Vietnam's leading professional media consulting companies. We are proud to be the first company to bring internationally licensed gameshows to Vietnam, while pioneering in television production, digital marketing, and comprehensive media strategy consulting.",
+    "description2": "For the growth of our valued clients, we are dedicated to providing practical media solutions at reasonable costs, focusing on effectiveness in brand promotion and optimizing the benefits of each brand in every campaign.",
+    "stats": {
+      "years": "26",
+      "yearsLabel1": "YEARS OF",
+      "yearsLabel2": "EXPERIENCE",
+      "fields": "8",
+      "fieldsLabel1": "FIELDS OF",
+      "fieldsLabel2": "EXPERTISE",
+      "partners": "+2K",
+      "partnersLabel1": "CLIENTS &",
+      "partnersLabel2": "PARTNERS",
+      "projects": "+5K",
+      "projectsLabel1": "COMPLETED",
+      "projectsLabel2": "PROJECTS"
+    },
+    "valuesTitle": "Core Values",
+    "values": {
+      "passion": { "title": "PASSION", "desc": "Passion is the key factor leading to success" },
+      "teamwork": { "title": "TEAMWORK", "desc": "Success stems from individual dedication and collective effort" },
+      "creativity": { "title": "CREATIVITY", "desc": "Creativity is nothing but the spirit of daring to break through" },
+      "respect": { "title": "RESPECT", "desc": "Respect is the origin that leads to a great collective" }
+    },
+    "partnersTitle": "Broadcasting Partners",
+    "partners": ["Vinh Long TV", "Hanoi TV", "VTV", "HCMC TV", "VTVcab", "SCTV"]
+  },
+  "services": {
+    "sectionTag": "SERVICES",
+    "title": "Diverse Media Services For Your Business",
+    "items": [
+      { "title": "TV Production", "desc": "Professional television production including internationally licensed gameshows, sitcoms, and high-rating entertainment programs." },
+      { "title": "Digital Marketing", "desc": "Comprehensive digital marketing strategies, social media management, SEO, SEM, and effective content marketing." },
+      { "title": "Technology & Digital Transformation", "desc": "Comprehensive digital transformation solutions, building modern technology platforms, AI systems, and e-commerce solutions." },
+      { "title": "Media Booking", "desc": "Booking services for television, radio, press, PR articles, posters/banners, OOH, and KOLs." },
+      { "title": "Outdoor Advertising", "desc": "Strategic OOH advertising solutions at prime locations nationwide." },
+      { "title": "Event Organization", "desc": "Professional event organization from conferences, launches to large-scale teambuilding programs." },
+      { "title": "Weather & Technology", "desc": "Specialized weather forecasting services for power, aviation, agriculture, petroleum, and maritime industries." },
+      { "title": "Media Strategy", "desc": "Comprehensive media strategy consulting: positioning, building, developing, and defending brands." }
+    ]
+  },
+  "projects": {
+    "sectionTag": "PROJECTS",
+    "title": "Featured Projects",
+    "filterAll": "All",
+    "filters": {
+      "gameshow": "Gameshow",
+      "sitcom": "Sitcom",
+      "digital": "Digital Marketing",
+      "tv": "TV Channels",
+      "event": "Events",
+      "weather": "Weather",
+      "comms": "Communications"
+    },
+    "items": [
+      { "name": "Wheel of Fortune VN", "cat": "gameshow" },
+      { "name": "Brain Wall VN", "cat": "gameshow" },
+      { "name": "Fun Squad", "cat": "gameshow" },
+      { "name": "Golden Goal", "cat": "gameshow" },
+      { "name": "Light or Dark", "cat": "gameshow" },
+      { "name": "Colorful Corners", "cat": "sitcom" },
+      { "name": "Good Night Baby", "cat": "sitcom" },
+      { "name": "Dam Phu My Sitcom", "cat": "sitcom" },
+      { "name": "Colors of Beauty", "cat": "sitcom" },
+      { "name": "MChannel – VTVCab 15", "cat": "tv" },
+      { "name": "Invest TV", "cat": "tv" },
+      { "name": "VBox Kids Channel", "cat": "tv" },
+      { "name": "Bamboo Airways", "cat": "digital" },
+      { "name": "VTD Smarthome", "cat": "digital" },
+      { "name": "EVN HCMC", "cat": "digital" },
+      { "name": "CEDELAR", "cat": "digital" },
+      { "name": "Weather & Technology", "cat": "weather" },
+      { "name": "School Weather", "cat": "weather" },
+      { "name": "International Weather", "cat": "weather" },
+      { "name": "Aviation Weather", "cat": "weather" },
+      { "name": "Client Conference", "cat": "event" },
+      { "name": "Vietcombank Laos 2019", "cat": "event" },
+      { "name": "Sales Day 2019", "cat": "event" },
+      { "name": "ABA 2016", "cat": "event" },
+      { "name": "Vietnam Airline Festa", "cat": "event" },
+      { "name": "USAID", "cat": "comms" }
+    ]
+  },
+  "timeline": {
+    "sectionTag": "HISTORY",
+    "title": "Our Journey",
+    "navPrev": "Prev",
+    "navNext": "Next",
+    "items": [
+      { "year": "1999", "title": "Company Founded", "desc": "On March 10, 1999, Vietba Media Development JSC was established — one of Vietnam's first professional media consulting companies." },
+      { "year": "2001", "title": "Wheel of Fortune VN", "desc": "Vietba Media became the first company to bring licensed gameshows to Vietnam. The show aired continuously for 15 years with 811 episodes on VTV3." },
+      { "year": "2007", "title": "Good Night Baby", "desc": "A beloved children's program airing daily at 9PM on VTV3 for 6 years, winning the hearts of parents and children alike." },
+      { "year": "2009", "title": "InvestTV Launched", "desc": "Launched on June 16, 2009, the first and only TV channel dedicated to investment economics — a collaboration between Vietba Group and VTVCab." },
+      { "year": "2012", "title": "Weather & Technology Center", "desc": "Launched the Weather & Technology Center, providing specialized forecasting services for power, aviation, agriculture, and petroleum industries." },
+      { "year": "2014", "title": "Brain Wall Vietnam", "desc": "Sports-themed gameshow licensed from Japan's Brain Wall (Nookabe), aired from 2014–2020. A children's version launched in 2017." },
+      { "year": "2015", "title": "MChannel Launch", "desc": "On December 18, 2015, Invest TV transformed into MChannel — a TV channel dedicated to men's content on VTVCab 15." },
+      { "year": "2022", "title": "Became Vietba Group", "desc": "On April 21, 2022, officially transformed into Vietba Group JSC with 1 headquarters, 2 representative offices, and 2 subsidiaries." }
+    ]
+  },
+  "contact": {
+    "sectionTag": "CONTACT",
+    "title": "Connect With Us",
+    "subtitle": "Please leave your contact information and we will get back to you shortly!",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "submit": "Send Message"
+    },
+    "offices": [
+      {
+        "city": "Hanoi",
+        "label": "Headquarters",
+        "address": "3rd Floor, Hanoi Toserco Building, 273 Kim Ma, Ba Dinh, Hanoi",
+        "phone": "(+84) 86 9312 488",
+        "email": "contact@vietbagroup.com.vn"
+      },
+      {
+        "city": "Ho Chi Minh City",
+        "label": "Branch Office",
+        "address": "6th Floor, TMS Building, 172 Hai Ba Trung, Dakao Ward, District 1, HCMC",
+        "phone": "(84-28) 3 910 1766",
+        "email": "contact@vietbagroup.com.vn"
+      },
+      {
+        "city": "Nha Trang",
+        "label": "Branch Office",
+        "address": "2 Hung Vuong, Loc Tho Ward, Nha Trang City, Khanh Hoa Province",
+        "phone": "(84-258) 3 527 789",
+        "email": "contact@vietbagroup.com.vn"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Vietba Group. All Rights Reserved.",
+    "description": "Vietba Group JSC — Vietnam's leading professional media consulting company."
+  }
+}

@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import vi from '../i18n/vi.json';
+const t = vi;
+
+const catColors: Record<string, string> = {
+  gameshow: '#d4a574', sitcom: '#eee0cb', digital: '#baa898',
+  tv: '#ff6b6b', event: '#ffd93d', weather: '#4ecdc4', comms: '#ff8a5c'
+};
+---
+
+<Layout lang="vi">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag-blue fade-in">{t.pageHero.projects.tag}</p>
+      <h1 class="section-title fade-in">{t.pageHero.projects.title}</h1>
+      <p class="fade-in">{t.pageHero.projects.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" style="background:var(--color-bg-dark)">
+    <div class="container">
+      <div class="filter-bar fade-in">
+        <button class="filter-btn active" data-cat="all">{t.projects.filterAll}</button>
+        {Object.entries(t.projects.filters).map(([key, label]) => (
+          <button class="filter-btn" data-cat={key}>{label}</button>
+        ))}
+      </div>
+      <div class="projects-grid">
+        {t.projects.items.map((p) => (
+          <div class="project-card glass-card fade-in" data-cat={p.cat} style={`--cat-color:${catColors[p.cat] || '#d4a574'}`}>
+            <div class="project-thumb"></div>
+            <div class="project-info">
+              <span class="project-badge" style={`background:${catColors[p.cat] || '#d4a574'}22;color:${catColors[p.cat] || '#d4a574'}`}>
+                {t.projects.filters[p.cat as keyof typeof t.projects.filters] || p.cat}
+              </span>
+              <h4>{p.name}</h4>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Project filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = (btn as HTMLElement).dataset.cat;
+      document.querySelectorAll('.project-card').forEach(card => {
+        const el = card as HTMLElement;
+        if (cat === 'all' || el.dataset.cat === cat) {
+          el.style.display = '';
+          setTimeout(() => el.style.opacity = '1', 10);
+        } else {
+          el.style.opacity = '0';
+          setTimeout(() => el.style.display = 'none', 300);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+.filter-bar {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px;
+}
+.filter-btn {
+  padding: 8px 20px; border: 1px solid var(--color-border-glass); background: transparent;
+  color: var(--color-text-secondary); border-radius: 50px; cursor: pointer;
+  font-size: 0.82rem; font-weight: 500; transition: all var(--transition);
+  font-family: var(--font-family);
+}
+.filter-btn:hover { background: rgba(238, 224, 203, 0.12); color: #fff; border-color: var(--color-accent-blue); }
+.filter-btn.active {
+  background: var(--color-accent-blue); color: #0a1138; border-color: var(--color-accent-blue);
+  box-shadow: 0 0 16px var(--color-glow-blue);
+}
+.projects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.project-card { overflow: hidden; transition: all 0.3s ease; }
+.project-thumb {
+  height: 160px;
+  background: linear-gradient(135deg, var(--cat-color), rgba(10,17,56,0.8));
+  opacity: 0.6;
+}
+.project-info { padding: 16px 20px; }
+.project-badge {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 50px; margin-bottom: 8px;
+}
+.project-info h4 { font-size: 0.95rem; }
+
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+</style>

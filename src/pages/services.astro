@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import vi from '../i18n/vi.json';
+const t = vi;
+
+const serviceIcons = [
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15h4l3-9 4 18 3-9h4"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`
+];
+---
+
+<Layout lang="vi">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag fade-in">{t.pageHero.services.tag}</p>
+      <h1 class="section-title fade-in">{t.pageHero.services.title}</h1>
+      <p class="fade-in">{t.pageHero.services.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section" style="background:var(--color-bg-dark)">
+    <div class="container">
+      <div class="services-grid">
+        {t.services.items.map((s, i) => (
+          <div class="service-card glass-card fade-in">
+            <div class={`service-icon ${i % 2 !== 0 ? 'blue' : ''}`} set:html={serviceIcons[i]} />
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.service-card { padding: 36px 28px; position: relative; overflow: hidden; }
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.service-card:nth-child(odd)::before { background: var(--color-gradient); }
+.service-card:nth-child(even)::before { background: var(--color-gradient-blue); }
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 48px; height: 48px; margin-bottom: 20px;
+  color: var(--color-accent-purple);
+}
+.service-icon.blue { color: var(--color-accent-blue); }
+.service-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+.service-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; }
+
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+</style>

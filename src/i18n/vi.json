@@ -1,0 +1,194 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "about": "Giới Thiệu",
+    "services": "Dịch Vụ",
+    "projects": "Dự Án",
+    "history": "Lịch Sử",
+    "contact": "Liên Hệ"
+  },
+  "hero": {
+    "title": "THÚC ĐẨY TIỀM NĂNG",
+    "titleHighlight": "DOANH NGHIỆP",
+    "subtitle": "Đồng hành cùng doanh nghiệp trong mọi chiến dịch truyền thông — từ ý tưởng đến thành công.",
+    "cta": "Liên Hệ Tư Vấn",
+    "scrollDown": "Khám phá thêm"
+  },
+  "home": {
+    "servicesTeaser": "Dịch Vụ Nổi Bật",
+    "projectsTeaser": "Dự Án Tiêu Biểu",
+    "timelineTeaser": "Hành Trình Phát Triển",
+    "viewAll": "Xem Tất Cả",
+    "exploreHistory": "Khám Phá Lịch Sử",
+    "contactCta": "Sẵn sàng hợp tác?",
+    "contactCtaSub": "Hãy kết nối với chúng tôi để cùng xây dựng chiến dịch truyền thông hiệu quả cho doanh nghiệp của bạn.",
+    "contactCtaBtn": "Liên Hệ Ngay"
+  },
+  "pageHero": {
+    "about": {
+      "tag": "VỀ CHÚNG TÔI",
+      "title": "Chung Nhiệt Huyết — Gặt Thành Công",
+      "subtitle": "Hơn 25 năm đồng hành cùng doanh nghiệp Việt trong mọi chiến dịch truyền thông."
+    },
+    "services": {
+      "tag": "DỊCH VỤ",
+      "title": "Giải Pháp Truyền Thông Toàn Diện",
+      "subtitle": "Cung cấp đa dạng dịch vụ truyền thông, phù hợp với từng lĩnh vực của doanh nghiệp."
+    },
+    "projects": {
+      "tag": "DỰ ÁN",
+      "title": "Dự Án Tiêu Biểu",
+      "subtitle": "Khám phá danh mục các dự án nổi bật từ gameshow, truyền hình đến digital marketing."
+    },
+    "history": {
+      "tag": "LỊCH SỬ",
+      "title": "Hành Trình Phát Triển",
+      "subtitle": "Hơn hai thập kỷ tiên phong trong ngành truyền thông Việt Nam."
+    },
+    "contact": {
+      "tag": "LIÊN HỆ",
+      "title": "Kết Nối Với Chúng Tôi",
+      "subtitle": "Vui lòng để lại thông tin liên hệ, chúng tôi sẽ liên lạc lại ngay với bạn!"
+    }
+  },
+  "about": {
+    "sectionTag": "VỀ CHÚNG TÔI",
+    "title": "Chung Nhiệt Huyết — Gặt Thành Công",
+    "description": "Thành lập từ năm 1999, Vietba Group là một trong những công ty tư vấn truyền thông chuyên nghiệp hàng đầu tại Việt Nam. Chúng tôi tự hào là đơn vị đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam, đồng thời tiên phong trong lĩnh vực sản xuất truyền hình, digital marketing và tư vấn chiến lược truyền thông tổng thể.",
+    "description2": "Vì sự phát triển của Quý khách hàng, chúng tôi tận tâm tư vấn các giải pháp truyền thông thiết thực, chi phí hợp lý, chú trọng tính hiệu quả trong quảng bá hình ảnh và hướng đến tối ưu hoá lợi ích của mỗi thương hiệu trong từng chiến dịch.",
+    "stats": {
+      "years": "26",
+      "yearsLabel1": "NĂM KINH",
+      "yearsLabel2": "NGHIỆM",
+      "fields": "8",
+      "fieldsLabel1": "LĨNH VỰC",
+      "fieldsLabel2": "CHUYÊN MÔN",
+      "partners": "+2K",
+      "partnersLabel1": "ĐỐI TÁC",
+      "partnersLabel2": "KHÁCH HÀNG",
+      "projects": "+5K",
+      "projectsLabel1": "DỰ",
+      "projectsLabel2": "ÁN"
+    },
+    "valuesTitle": "Giá Trị Cốt Lõi",
+    "values": {
+      "passion": { "title": "PASSION", "desc": "Sự đam mê là yếu tố quan trọng dẫn đến thành công" },
+      "teamwork": { "title": "TEAMWORK", "desc": "Sự thành công bắt nguồn từ sự tận tụy của các cá nhân và sự nỗ lực từ tập thể" },
+      "creativity": { "title": "CREATIVITY", "desc": "Sự sáng tạo không gì ngoài một tinh thần dám bứt phá" },
+      "respect": { "title": "RESPECT", "desc": "Sự tôn trọng là khởi nguồn dẫn đến một tập thể tốt" }
+    },
+    "partnersTitle": "Đối Tác Truyền Hình",
+    "partners": ["Đài Vĩnh Long", "Đài Hà Nội", "Đài VTV", "Đài TP.HCM", "Đài VTVcab", "SCTV"]
+  },
+  "services": {
+    "sectionTag": "DỊCH VỤ",
+    "title": "Cung Cấp Đa Dạng Dịch Vụ Truyền Thông",
+    "items": [
+      { "title": "Sản Xuất Truyền Hình", "desc": "Sản xuất chương trình truyền hình chuyên nghiệp, gameshow bản quyền quốc tế, sitcom và các chương trình giải trí rating cao." },
+      { "title": "Digital Marketing", "desc": "Chiến lược marketing số toàn diện, quản lý mạng xã hội, SEO, SEM và content marketing hiệu quả." },
+      { "title": "Công Nghệ & Chuyển Đổi Số", "desc": "Giải pháp chuyển đổi số toàn diện, xây dựng nền tảng công nghệ hiện đại, AI hệ thống và thương mại điện tử." },
+      { "title": "Booking Media", "desc": "Dịch vụ booking truyền hình, phát thanh, báo chí, bài viết PR, poster/banner, OOH và KOLs." },
+      { "title": "Quảng Cáo Ngoài Trời", "desc": "Giải pháp quảng cáo OOH chiến lược tại các vị trí đắc địa trên toàn quốc." },
+      { "title": "Tổ Chức Sự Kiện", "desc": "Tổ chức sự kiện chuyên nghiệp từ hội nghị, lễ ra mắt đến các chương trình teambuilding quy mô lớn." },
+      { "title": "Thời Tiết & Công Nghệ", "desc": "Dịch vụ dự báo thời tiết chuyên ngành cho điện lực, hàng không, nông nghiệp, dầu khí và hàng hải." },
+      { "title": "Chiến Lược Truyền Thông", "desc": "Tư vấn chiến lược truyền thông tổng thể: định vị, xây dựng, phát triển và phòng thủ thương hiệu." }
+    ]
+  },
+  "projects": {
+    "sectionTag": "DỰ ÁN",
+    "title": "Dự Án Tiêu Biểu",
+    "filterAll": "Tất cả",
+    "filters": {
+      "gameshow": "Gameshow",
+      "sitcom": "Sitcom",
+      "digital": "Digital Marketing",
+      "tv": "Kênh Truyền Hình",
+      "event": "Sự Kiện",
+      "weather": "Thời Tiết",
+      "comms": "Truyền Thông"
+    },
+    "items": [
+      { "name": "Chiếc Nón Kì Diệu", "cat": "gameshow" },
+      { "name": "Người Đi Xuyên Tường", "cat": "gameshow" },
+      { "name": "Biệt Đội Vui Nhộn", "cat": "gameshow" },
+      { "name": "Bàn Thắng Vàng", "cat": "gameshow" },
+      { "name": "Ánh Sáng Bóng Tối", "cat": "gameshow" },
+      { "name": "Góc Phố Muôn Màu", "cat": "sitcom" },
+      { "name": "Chúc Bé Ngủ Ngon", "cat": "sitcom" },
+      { "name": "Sitcom Đạm Phú Mỹ", "cat": "sitcom" },
+      { "name": "Sắc Màu Phái Đẹp", "cat": "sitcom" },
+      { "name": "MChannel – VTVCab 15", "cat": "tv" },
+      { "name": "Invest TV", "cat": "tv" },
+      { "name": "Kênh VBox Kids", "cat": "tv" },
+      { "name": "Bamboo Airways", "cat": "digital" },
+      { "name": "VTD Smarthome", "cat": "digital" },
+      { "name": "EVN HCMC", "cat": "digital" },
+      { "name": "CEDELAR", "cat": "digital" },
+      { "name": "Thời Tiết và Công Nghệ", "cat": "weather" },
+      { "name": "Thời Tiết Học Đường", "cat": "weather" },
+      { "name": "Thời Tiết Quốc Tế", "cat": "weather" },
+      { "name": "Thời Tiết Hàng Không", "cat": "weather" },
+      { "name": "Hội Nghị Khách Hàng", "cat": "event" },
+      { "name": "Vietcombank Laos 2019", "cat": "event" },
+      { "name": "Sales Day 2019", "cat": "event" },
+      { "name": "ABA 2016", "cat": "event" },
+      { "name": "Vietnam Airline Festa", "cat": "event" },
+      { "name": "USAID", "cat": "comms" }
+    ]
+  },
+  "timeline": {
+    "sectionTag": "LỊCH SỬ",
+    "title": "Hành Trình Phát Triển",
+    "navPrev": "Trước",
+    "navNext": "Tiếp",
+    "items": [
+      { "year": "1999", "title": "Thành Lập Công Ty", "desc": "Ngày 10/03/1999, Công ty Cổ phần Phát triển Truyền thông Việt Ba được thành lập — một trong những công ty tư vấn truyền thông chuyên nghiệp đầu tiên tại Việt Nam." },
+      { "year": "2001", "title": "Chiếc Nón Kỳ Diệu", "desc": "Vietba Media là công ty đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam. Chương trình phát sóng liên tục 15 năm với 811 tập trên VTV3." },
+      { "year": "2007", "title": "Chúc Bé Ngủ Ngon", "desc": "Chương trình thiếu nhi được yêu thích phát sóng 21h hàng ngày trên VTV3 trong suốt 6 năm, nhận được sự ủng hộ của đông đảo phụ huynh và các bé." },
+      { "year": "2009", "title": "Ra Đời InvestTV", "desc": "Lên sóng ngày 16/06/2009, kênh truyền hình đầu tiên và duy nhất về kinh tế đầu tư — hợp tác giữa Việt Ba Group và VTVCab." },
+      { "year": "2012", "title": "Trung Tâm Thời Tiết & Công Nghệ", "desc": "Ra mắt Trung tâm Công nghệ và Thời tiết, cung cấp dịch vụ dự báo thời tiết chuyên ngành cho điện lực, hàng không, nông nghiệp, dầu khí." },
+      { "year": "2014", "title": "Người Đi Xuyên Tường", "desc": "Gameshow vận động thể thao bản quyền từ Nhật Bản (Brain Wall), phát sóng từ 2014–2020. Phiên bản nhí ra mắt năm 2017." },
+      { "year": "2015", "title": "Kênh MChannel", "desc": "Từ ngày 18/12/2015, kênh Invest TV chuyển đổi thành kênh truyền hình dành cho nam giới — M Channel trên VTVCab 15." },
+      { "year": "2022", "title": "Chuyển Đổi Thành Vietba Group", "desc": "Ngày 21/04/2022, chính thức chuyển đổi thành Công ty Cổ phần Tập đoàn Việt Ba với 01 trụ sở chính, 02 văn phòng đại diện và 02 công ty con." }
+    ]
+  },
+  "contact": {
+    "sectionTag": "LIÊN HỆ",
+    "title": "Kết Nối Với Chúng Tôi",
+    "subtitle": "Vui lòng để lại thông tin liên hệ, chúng tôi sẽ liên lạc lại ngay với bạn!",
+    "form": {
+      "name": "Họ và tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "message": "Nội dung tin nhắn",
+      "submit": "Gửi Tin Nhắn"
+    },
+    "offices": [
+      {
+        "city": "Hà Nội",
+        "label": "Trụ Sở Chính",
+        "address": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Ba Đình, Hà Nội",
+        "phone": "(+84) 86 9312 488",
+        "email": "contact@vietbagroup.com.vn"
+      },
+      {
+        "city": "Hồ Chí Minh",
+        "label": "Chi Nhánh",
+        "address": "Tầng 6, Tòa nhà TMS, 172 Hai Bà Trưng, Phường Đakao, Quận 1, TP. HCM",
+        "phone": "(84-28) 3 910 1766",
+        "email": "contact@vietbagroup.com.vn"
+      },
+      {
+        "city": "Nha Trang",
+        "label": "Chi Nhánh",
+        "address": "Số 2 Hùng Vương, Phường Lộc Thọ, TP. Nha Trang, Tỉnh Khánh Hòa",
+        "phone": "(84-258) 3 527 789",
+        "email": "contact@vietbagroup.com.vn"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Vietba Group. All Rights Reserved.",
+    "description": "Công ty Cổ phần Tập đoàn Việt Ba — Đơn vị tư vấn truyền thông chuyên nghiệp hàng đầu Việt Nam."
+  }
+}

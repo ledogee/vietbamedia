@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+import vi from '../i18n/vi.json';
+const t = vi;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const serviceIcons = [
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>`
+];
+
+const featuredProjects = t.projects.items.slice(0, 6);
+const catColors: Record<string, string> = {
+  gameshow: '#d4a574', sitcom: '#eee0cb', digital: '#baa898',
+  tv: '#ff6b6b', event: '#ffd93d', weather: '#4ecdc4', comms: '#ff8a5c'
+};
+---
+
+<Layout lang="vi">
+  <!-- Hero -->
+  <section class="section hero" id="hero">
+    <div class="hero-particles" aria-hidden="true">
+      {Array.from({length: 24}).map((_, i) => <div class={`particle ${i % 3 === 0 ? 'blue' : i % 3 === 1 ? 'lavender' : ''}`} style={`--i:${i};--x:${Math.random()*100}%;--y:${Math.random()*100}%;--d:${2+Math.random()*4}s;--s:${2+Math.random()*4}px`} />)}
+    </div>
+    <div class="container hero-content">
+      <p class="section-tag-blue fade-in">{t.about.sectionTag}</p>
+      <h1 class="hero-title fade-in">
+        {t.hero.title}<br/><span class="gradient-text">{t.hero.titleHighlight}</span>
+      </h1>
+      <p class="hero-subtitle fade-in">{t.hero.subtitle}</p>
+      <div class="hero-buttons fade-in">
+        <a href={`${base}/contact`} class="btn-glow">{t.hero.cta}</a>
+        <a href={`${base}/about`} class="btn-outline">{t.nav.about}</a>
+      </div>
+      <div class="scroll-indicator fade-in" aria-hidden="true">
+        <span class="scroll-dot"></span>
+        <span class="scroll-label">{t.hero.scrollDown}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Row -->
+  <section class="section stats-section" id="stats">
+    <div class="container">
+      <div class="stats-row fade-in">
+        <div class="stat-item">
+          <span class="stat-number" data-target="26">0</span>
+          <div class="stat-label-group">
+            <span>{t.about.stats.yearsLabel1}</span>
+            <span>{t.about.stats.yearsLabel2}</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8">0</span>
+          <div class="stat-label-group">
+            <span>{t.about.stats.fieldsLabel1}</span>
+            <span>{t.about.stats.fieldsLabel2}</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="+2K">0</span>
+          <div class="stat-label-group">
+            <span>{t.about.stats.partnersLabel1}</span>
+            <span>{t.about.stats.partnersLabel2}</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="+5K">0</span>
+          <div class="stat-label-group">
+            <span>{t.about.stats.projectsLabel1}</span>
+            <span>{t.about.stats.projectsLabel2}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Teaser -->
+  <section class="section" id="services-teaser" style="background:var(--color-bg-dark)">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{t.home.servicesTeaser}</p>
+        <h2 class="section-title">{t.services.title}</h2>
+      </div>
+      <div class="teaser-services-grid">
+        {t.services.items.slice(0, 3).map((s, i) => (
+          <div class="service-card glass-card fade-in">
+            <div class={`service-icon ${i % 2 === 0 ? 'blue' : ''}`} set:html={serviceIcons[i]} />
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="teaser-action fade-in">
+        <a href={`${base}/services`} class="view-all-link">
+          {t.home.viewAll}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Showcase -->
+  <section class="section" id="projects-showcase">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag-blue">{t.home.projectsTeaser}</p>
+        <h2 class="section-title">{t.projects.title}</h2>
+      </div>
+      <div class="showcase-projects-grid">
+        {featuredProjects.map((p) => (
+          <div class="project-card glass-card fade-in" style={`--cat-color:${catColors[p.cat] || '#d4a574'}`}>
+            <div class="project-thumb"></div>
+            <div class="project-info">
+              <span class="project-badge" style={`background:${catColors[p.cat] || '#d4a574'}22;color:${catColors[p.cat] || '#d4a574'}`}>
+                {t.projects.filters[p.cat as keyof typeof t.projects.filters] || p.cat}
+              </span>
+              <h4>{p.name}</h4>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="teaser-action fade-in">
+        <a href={`${base}/projects`} class="view-all-link">
+          {t.home.viewAll}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Teaser -->
+  <section class="section" id="timeline-teaser" style="background:var(--color-bg-dark)">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{t.home.timelineTeaser}</p>
+        <h2 class="section-title">{t.timeline.title}</h2>
+      </div>
+      <div class="timeline-mini fade-in">
+        <div class="timeline-mini-line"></div>
+        {t.timeline.items.map((item, i) => (
+          <div class={`timeline-mini-node ${i === 0 ? 'active' : ''}`} style={`--idx:${i};--total:${t.timeline.items.length}`}>
+            <span class="mini-year">{item.year}</span>
+            <div class="mini-dot"></div>
+            <span class="mini-title">{item.title}</span>
+          </div>
+        ))}
+      </div>
+      <div class="teaser-action fade-in">
+        <a href={`${base}/history`} class="btn-outline">
+          {t.home.exploreHistory}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section contact-cta" id="contact-cta">
+    <div class="container">
+      <div class="cta-card glass-card fade-in">
+        <h2>{t.home.contactCta}</h2>
+        <p>{t.home.contactCtaSub}</p>
+        <a href={`${base}/contact`} class="btn-glow">{t.home.contactCtaBtn}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Counter animation
+  const counters = document.querySelectorAll('.stat-number');
+  const cObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const target = el.dataset.target || '0';
+        // Parse prefix (+), number, and suffix (K, +, etc.)
+        const match = target.match(/^([+]?)(\d+)([K+]*)$/i);
+        if (!match) { el.textContent = target; return; }
+        const prefix = match[1];
+        const num = parseInt(match[2]);
+        const suffix = match[3];
+        let current = 0;
+        const step = Math.max(1, Math.ceil(num / 50));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= num) { current = num; clearInterval(timer); }
+          el.textContent = prefix + current + suffix;
+        }, 25);
+        cObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => cObserver.observe(c));
+</script>
+
+<style>
+/* Hero */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; padding-top: 80px;
+}
+.hero-particles { position: absolute; inset: 0; pointer-events: none; }
+.particle {
+  position: absolute; left: var(--x); top: var(--y);
+  width: var(--s); height: var(--s);
+  background: var(--color-accent-purple); border-radius: 50%;
+  opacity: 0.3; animation: float var(--d) ease-in-out infinite alternate;
+}
+.particle.blue { background: var(--color-accent-blue); opacity: 0.4; }
+.particle.lavender { background: var(--color-accent-lavender); opacity: 0.25; }
+@keyframes float {
+  to { transform: translateY(-40px) translateX(20px); opacity: 0.6; }
+}
+.hero-content { text-align: center; position: relative; z-index: 1; }
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 900;
+  line-height: 1.1; margin-bottom: 24px;
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem); max-width: 600px;
+  margin: 0 auto 40px; color: var(--color-text-secondary);
+}
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.scroll-indicator {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px; margin-top: 60px;
+}
+.scroll-dot {
+  width: 24px; height: 40px; border: 2px solid var(--color-border-glass);
+  border-radius: 12px; position: relative;
+}
+.scroll-dot::after {
+  content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 8px; background: var(--color-accent-blue);
+  border-radius: 2px; animation: scrollBounce 1.5s infinite;
+}
+@keyframes scrollBounce {
+  0%,100% { top: 6px; opacity: 1; }
+  50% { top: 20px; opacity: 0.3; }
+}
+.scroll-label { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--color-text-muted); }
+
+/* Stats Row */
+.stats-section { padding: 80px 0; background: var(--color-bg-dark); }
+.stats-row {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 960px; margin: 0 auto;
+}
+.stat-item {
+  display: flex; align-items: center; gap: 12px;
+}
+.stat-number {
+  font-size: clamp(3.5rem, 7vw, 5.5rem); font-weight: 300; line-height: 1;
+  color: var(--color-text-primary); letter-spacing: -2px;
+}
+.stat-label-group {
+  display: flex; flex-direction: column; gap: 0;
+}
+.stat-label-group span {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px;
+  color: var(--color-text-muted); line-height: 1.4; text-transform: uppercase;
+}
+
+/* Services Teaser */
+.teaser-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card { padding: 32px 24px; }
+.service-icon {
+  width: 48px; height: 48px; margin-bottom: 20px;
+  color: var(--color-accent-purple);
+}
+.service-icon.blue { color: var(--color-accent-blue); }
+.service-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+.service-card p { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; }
+
+/* Teaser Action */
+.teaser-action { text-align: center; margin-top: 40px; }
+
+/* Projects Showcase */
+.showcase-projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.project-card { overflow: hidden; transition: all 0.3s ease; }
+.project-thumb {
+  height: 160px;
+  background: linear-gradient(135deg, var(--cat-color), rgba(10,17,56,0.8));
+  opacity: 0.6;
+}
+.project-info { padding: 16px 20px; }
+.project-badge {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 50px; margin-bottom: 8px;
+}
+.project-info h4 { font-size: 0.95rem; }
+
+/* Timeline Mini */
+.timeline-mini {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 20px 40px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.timeline-mini::-webkit-scrollbar { display: none; }
+.timeline-mini-line {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--color-gradient);
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+.timeline-mini-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+  min-width: 80px;
+}
+.mini-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+  border: 2px solid var(--color-accent-blue);
+  transition: all var(--transition);
+}
+.timeline-mini-node.active .mini-dot {
+  background: var(--color-accent-blue);
+  box-shadow: 0 0 12px var(--color-glow-blue);
+}
+.mini-year {
+  font-size: 0.75rem; font-weight: 800;
+  color: var(--color-accent-blue);
+}
+.mini-title {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Contact CTA */
+.contact-cta { padding: 80px 0; }
+.cta-card {
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(212,165,116,0.08), rgba(238,224,203,0.08));
+  border: 1px solid rgba(238, 224, 203, 0.2);
+}
+.cta-card h2 { font-size: 1.8rem; margin-bottom: 16px; }
+.cta-card p { max-width: 500px; margin: 0 auto 32px; color: var(--color-text-muted); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .showcase-projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .teaser-services-grid { grid-template-columns: 1fr; }
+  .showcase-projects-grid { grid-template-columns: 1fr 1fr; }
+  .stats-row { flex-wrap: wrap; justify-content: center; gap: 32px; }
+  .stat-number { font-size: 3rem; }
+  .timeline-mini { padding: 40px 10px 30px; }
+}
+@media (max-width: 480px) {
+  .showcase-projects-grid { grid-template-columns: 1fr; }
+}
+</style>

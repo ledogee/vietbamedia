@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+import vi from '../i18n/vi.json';
+const t = vi;
+---
+
+<Layout lang="vi">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag fade-in">{t.pageHero.history.tag}</p>
+      <h1 class="section-title fade-in">{t.pageHero.history.title}</h1>
+      <p class="fade-in">{t.pageHero.history.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Horizontal Timeline -->
+  <section class="section timeline-section" style="background:var(--color-bg-dark)">
+    <div class="container">
+      <div class="timeline-wrapper">
+        <!-- Navigation Arrows -->
+        <button class="timeline-nav timeline-nav-prev" id="tlPrev" aria-label={t.timeline.navPrev}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="timeline-nav timeline-nav-next" id="tlNext" aria-label={t.timeline.navNext}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <!-- Timeline Track -->
+        <div class="timeline-track" id="timelineTrack">
+          <div class="timeline-line">
+            <div class="timeline-line-progress" id="tlProgress"></div>
+          </div>
+
+          {t.timeline.items.map((item, i) => (
+            <div class={`tl-node ${i === 0 ? 'active' : ''}`} data-index={i}>
+              <div class="tl-year-label">{item.year}</div>
+              <button class="tl-dot" aria-label={`${item.year} — ${item.title}`}>
+                <span class="tl-dot-inner"></span>
+                <span class="tl-dot-ring"></span>
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <!-- Detail Card -->
+        <div class="tl-detail" id="tlDetail">
+          <div class="tl-detail-card glass-card">
+            <div class="tl-detail-year gradient-text" id="tlDetailYear">{t.timeline.items[0].year}</div>
+            <h3 id="tlDetailTitle">{t.timeline.items[0].title}</h3>
+            <p id="tlDetailDesc">{t.timeline.items[0].desc}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script define:vars={{ items: t.timeline.items }}>
+  const track = document.getElementById('timelineTrack');
+  const detail = document.getElementById('tlDetail');
+  const detailYear = document.getElementById('tlDetailYear');
+  const detailTitle = document.getElementById('tlDetailTitle');
+  const detailDesc = document.getElementById('tlDetailDesc');
+  const progress = document.getElementById('tlProgress');
+  const prevBtn = document.getElementById('tlPrev');
+  const nextBtn = document.getElementById('tlNext');
+  const nodes = document.querySelectorAll('.tl-node');
+
+  let activeIndex = 0;
+
+  function setActive(index) {
+    if (index < 0 || index >= items.length) return;
+    activeIndex = index;
+
+    // Update nodes
+    nodes.forEach((n, i) => {
+      n.classList.toggle('active', i === index);
+    });
+
+    // Update detail card with animation
+    detail.classList.add('animating');
+    setTimeout(() => {
+      detailYear.textContent = items[index].year;
+      detailTitle.textContent = items[index].title;
+      detailDesc.textContent = items[index].desc;
+      detail.classList.remove('animating');
+    }, 200);
+
+    // Update progress line
+    const pct = items.length > 1 ? (index / (items.length - 1)) * 100 : 0;
+    progress.style.width = pct + '%';
+
+    // Scroll node into view
+    const activeNode = nodes[index];
+    if (activeNode && track) {
+      const nodeRect = activeNode.getBoundingClientRect();
+      const trackRect = track.getBoundingClientRect();
+      const nodeCenter = nodeRect.left + nodeRect.width / 2;
+      const trackCenter = trackRect.left + trackRect.width / 2;
+      const scrollOffset = nodeCenter - trackCenter;
+      track.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+    }
+
+    // Update nav button states
+    prevBtn.classList.toggle('disabled', index === 0);
+    nextBtn.classList.toggle('disabled', index === items.length - 1);
+  }
+
+  // Click handlers for dots
+  nodes.forEach((node, i) => {
+    node.querySelector('.tl-dot').addEventListener('click', () => setActive(i));
+  });
+
+  // Arrow navigation
+  prevBtn.addEventListener('click', () => setActive(activeIndex - 1));
+  nextBtn.addEventListener('click', () => setActive(activeIndex + 1));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') setActive(activeIndex - 1);
+    if (e.key === 'ArrowRight') setActive(activeIndex + 1);
+  });
+
+  // Initialize
+  setActive(0);
+</script>
+
+<style>
+.timeline-section { padding: 60px 0 120px; overflow: hidden; }
+
+.timeline-wrapper {
+  position: relative;
+  padding: 0 60px;
+}
+
+/* Navigation arrows */
+.timeline-nav {
+  position: absolute;
+  top: 50px;
+  z-index: 10;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-glass);
+  color: var(--color-accent-blue);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+.timeline-nav:hover {
+  background: rgba(238, 224, 203, 0.15);
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 16px var(--color-glow-blue);
+}
+.timeline-nav.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.timeline-nav-prev { left: 0; }
+.timeline-nav-next { right: 0; }
+
+/* Timeline track */
+.timeline-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 60px 0;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  gap: 0;
+}
+.timeline-track::-webkit-scrollbar { display: none; }
+
+/* The horizontal line */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(186, 168, 152, 0.1);
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+.timeline-line-progress {
+  height: 100%;
+  background: var(--color-gradient);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px var(--color-glow-purple), 0 0 4px var(--color-glow-blue);
+  width: 0%;
+}
+
+/* Timeline node */
+.tl-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.tl-year-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+  transition: all var(--transition);
+}
+.tl-node.active .tl-year-label {
+  color: var(--color-accent-blue);
+  text-shadow: 0 0 12px var(--color-glow-blue);
+}
+
+/* Dot button */
+.tl-dot {
+  width: 24px; height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.tl-dot-inner {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+  border: 2px solid var(--color-accent-lavender);
+  transition: all var(--transition);
+  position: relative;
+  z-index: 2;
+}
+.tl-dot-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+/* Active state */
+.tl-node.active .tl-dot-inner {
+  background: var(--color-accent-blue);
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 20px var(--color-glow-blue);
+  transform: scale(1.2);
+}
+.tl-node.active .tl-dot-ring {
+  border-color: rgba(238, 224, 203, 0.3);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Hover */
+.tl-node:not(.active):hover .tl-dot-inner {
+  border-color: var(--color-accent-blue);
+  background: rgba(238, 224, 203, 0.2);
+}
+.tl-node:not(.active):hover .tl-year-label {
+  color: var(--color-accent-blue);
+}
+
+/* Detail card */
+.tl-detail {
+  margin-top: 40px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.tl-detail.animating {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.tl-detail-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 36px 40px;
+  text-align: center;
+  border: 1px solid rgba(238, 224, 203, 0.2);
+  background: linear-gradient(135deg, rgba(212,165,116,0.05), rgba(238,224,203,0.05));
+}
+.tl-detail-year {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.tl-detail-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+.tl-detail-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-wrapper { padding: 0 44px; }
+  .timeline-nav { width: 36px; height: 36px; top: 60px; }
+  .tl-node { min-width: 70px; }
+  .tl-year-label { font-size: 0.72rem; }
+  .tl-detail-card { padding: 28px 24px; }
+  .tl-detail-year { font-size: 1.8rem; }
+  .tl-detail-card h3 { font-size: 1.1rem; }
+  .tl-detail-card p { font-size: 0.88rem; }
+}
+@media (max-width: 480px) {
+  .timeline-wrapper { padding: 0 36px; }
+  .tl-node { min-width: 60px; }
+}
+</style>

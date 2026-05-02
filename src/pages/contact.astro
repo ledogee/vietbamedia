@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import vi from '../i18n/vi.json';
+const t = vi;
+---
+
+<Layout lang="vi">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag-blue fade-in">{t.pageHero.contact.tag}</p>
+      <h1 class="section-title fade-in">{t.pageHero.contact.title}</h1>
+      <p class="fade-in">{t.pageHero.contact.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" style="background:var(--color-bg-dark)">
+    <div class="container">
+      <div class="contact-grid">
+        <form class="contact-form glass-card fade-in" onsubmit="event.preventDefault()">
+          <div class="form-group">
+            <input type="text" placeholder={t.contact.form.name} required id="contact-name" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="email" placeholder={t.contact.form.email} required id="contact-email" />
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder={t.contact.form.phone} id="contact-phone" />
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea placeholder={t.contact.form.message} rows="5" required id="contact-message"></textarea>
+          </div>
+          <button type="submit" class="btn-glow" style="width:100%;justify-content:center">{t.contact.form.submit}</button>
+        </form>
+        <div class="offices fade-in">
+          {t.contact.offices.map((o, i) => (
+            <div class="office-card glass-card">
+              <div class="office-header">
+                <div class={`office-icon-wrap ${i % 2 === 0 ? '' : 'blue'}`}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <h4>{o.city}</h4>
+                  <span class="office-label">{o.label}</span>
+                </div>
+              </div>
+              <p class="office-address">{o.address}</p>
+              <p class="office-phone">{o.phone}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.contact-form { padding: 36px; }
+.form-group { margin-bottom: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.05);
+  border: 1px solid var(--color-border-glass); border-radius: var(--radius-sm);
+  color: #fff; font-size: 0.92rem; font-family: var(--font-family);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none; border-color: var(--color-accent-blue);
+  box-shadow: 0 0 12px var(--color-glow-blue);
+}
+.contact-form textarea { resize: vertical; }
+.offices { display: flex; flex-direction: column; gap: 16px; }
+.office-card { padding: 24px; }
+.office-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.office-icon-wrap {
+  color: var(--color-accent-purple);
+}
+.office-icon-wrap.blue { color: var(--color-accent-blue); }
+.office-header h4 { font-size: 1rem; margin: 0; }
+.office-label { font-size: 0.75rem; color: var(--color-accent-blue); }
+.office-address { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 4px; }
+.office-phone { font-size: 0.88rem; color: var(--color-accent-blue); font-weight: 500; }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>

@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import vi from '../i18n/vi.json';
+const t = vi;
+---
+
+<Layout lang="vi">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag-blue fade-in">{t.pageHero.about.tag}</p>
+      <h1 class="section-title fade-in">{t.pageHero.about.title}</h1>
+      <p class="fade-in">{t.pageHero.about.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>{t.about.description}</p>
+          <p style="margin-top:16px">{t.about.description2}</p>
+        </div>
+        <div class="stats-row fade-in">
+          <div class="stat-item">
+            <span class="stat-number" data-target="26">0</span>
+            <div class="stat-label-group">
+              <span>{t.about.stats.yearsLabel1}</span>
+              <span>{t.about.stats.yearsLabel2}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="8">0</span>
+            <div class="stat-label-group">
+              <span>{t.about.stats.fieldsLabel1}</span>
+              <span>{t.about.stats.fieldsLabel2}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="+2K">0</span>
+            <div class="stat-label-group">
+              <span>{t.about.stats.partnersLabel1}</span>
+              <span>{t.about.stats.partnersLabel2}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="+5K">0</span>
+            <div class="stat-label-group">
+              <span>{t.about.stats.projectsLabel1}</span>
+              <span>{t.about.stats.projectsLabel2}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section" style="background:var(--color-bg-dark)">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{t.about.valuesTitle}</p>
+        <h2 class="section-title">{t.about.valuesTitle}</h2>
+      </div>
+      <div class="values-cards">
+        {Object.values(t.about.values).map((v, i) => (
+          <div class="value-card glass-card fade-in">
+            <div class={`value-accent ${i % 2 === 0 ? 'purple' : 'blue'}`}></div>
+            <h4 class={i % 2 === 0 ? 'gradient-text' : 'gradient-text-blue'}>{v.title}</h4>
+            <p>{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag-blue">{t.about.partnersTitle}</p>
+        <h2 class="section-title">{t.about.partnersTitle}</h2>
+      </div>
+      <div class="partners-grid fade-in">
+        {t.about.partners.map((p) => (
+          <div class="partner-card glass-card">
+            <span>{p}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Counter animation
+  const counters = document.querySelectorAll('.stat-number');
+  const cObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const target = el.dataset.target || '0';
+        const match = target.match(/^([+]?)(\d+)([K+]*)$/i);
+        if (!match) { el.textContent = target; return; }
+        const prefix = match[1];
+        const num = parseInt(match[2]);
+        const suffix = match[3];
+        let current = 0;
+        const step = Math.max(1, Math.ceil(num / 50));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= num) { current = num; clearInterval(timer); }
+          el.textContent = prefix + current + suffix;
+        }, 25);
+        cObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => cObserver.observe(c));
+</script>
+
+<style>
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.about-text p { font-size: 1.02rem; line-height: 1.8; }
+.stats-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.stat-item {
+  display: flex; align-items: center; gap: 12px;
+}
+.stat-number {
+  font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 300; line-height: 1;
+  color: var(--color-text-primary); letter-spacing: -1px;
+}
+.stat-label-group {
+  display: flex; flex-direction: column;
+}
+.stat-label-group span {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 1.5px;
+  color: var(--color-text-muted); line-height: 1.4; text-transform: uppercase;
+}
+
+.values-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.value-card { padding: 32px 24px; text-align: center; position: relative; overflow: hidden; }
+.value-accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.value-accent.purple { background: var(--color-gradient); }
+.value-accent.blue { background: var(--color-gradient-blue); }
+.value-card h4 { font-size: 1.1rem; margin-bottom: 12px; }
+.value-card p { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; }
+
+.partners-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px;
+}
+.partner-card {
+  padding: 24px; text-align: center; font-weight: 600; font-size: 0.92rem;
+  border: 1px solid rgba(238, 224, 203, 0.15);
+}
+.partner-card:hover {
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 20px var(--color-glow-blue);
+}
+
+@media (max-width: 1024px) {
+  .values-cards { grid-template-columns: repeat(2, 1fr); }
+  .partners-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .values-cards { grid-template-columns: 1fr 1fr; }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .values-cards { grid-template-columns: 1fr; }
+}
+</style>

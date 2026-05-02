@@ -1,0 +1,228 @@
+---
+import vi from '../i18n/vi.json';
+import en from '../i18n/en.json';
+import '../styles/global.css';
+import InteractiveBackground from '../components/InteractiveBackground.astro';
+
+interface Props { lang?: string; }
+const { lang = 'vi' } = Astro.props;
+const t = lang === 'en' ? en : vi;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const prefix = lang === 'en' ? `${base}/en` : base;
+const currentPath = Astro.url.pathname;
+
+function isActive(path: string): boolean {
+  const clean = currentPath.replace(/\/$/, '') || '/';
+  const target = path.replace(/\/$/, '') || '/';
+  return clean === target;
+}
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vietba Group - Công ty Cổ phần Tập đoàn Việt Ba. Tư vấn truyền thông chuyên nghiệp hàng đầu Việt Nam." />
+  <meta property="og:title" content="Vietba Group" />
+  <meta property="og:description" content="Thúc đẩy tiềm năng doanh nghiệp — Đồng hành cùng doanh nghiệp trong mọi chiến dịch truyền thông." />
+  <meta property="og:type" content="website" />
+  <title>Vietba Group — Thúc Đẩy Tiềm Năng Doanh Nghiệp</title>
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+</head>
+<body>
+  <InteractiveBackground />
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href={`${prefix}/`} class="navbar-logo">VIETBA<span class="gradient-text">GROUP</span></a>
+      <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-menu" id="navMenu">
+        <li><a href={`${prefix}/`} class:list={["nav-link", { active: isActive(`${prefix}/`) }]}>{t.nav.home}</a></li>
+        <li><a href={`${prefix}/about`} class:list={["nav-link", { active: isActive(`${prefix}/about`) }]}>{t.nav.about}</a></li>
+        <li><a href={`${prefix}/services`} class:list={["nav-link", { active: isActive(`${prefix}/services`) }]}>{t.nav.services}</a></li>
+        <li><a href={`${prefix}/projects`} class:list={["nav-link", { active: isActive(`${prefix}/projects`) }]}>{t.nav.projects}</a></li>
+        <li><a href={`${prefix}/history`} class:list={["nav-link", { active: isActive(`${prefix}/history`) }]}>{t.nav.history}</a></li>
+        <li><a href={`${prefix}/contact`} class:list={["nav-link", { active: isActive(`${prefix}/contact`) }]}>{t.nav.contact}</a></li>
+        <li>
+          <a href={lang === 'vi' ? `${base}/en${currentPath.replace(base, '')}` : currentPath.replace(`${base}/en`, base) || `${base}/`} class="nav-lang" title={lang === 'vi' ? 'English' : 'Tiếng Việt'}>
+            {lang === 'vi' ? 'EN' : 'VI'}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-enter" style="position:relative;z-index:1">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="position:relative;z-index:1">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href={`${prefix}/`} class="navbar-logo">VIETBA<span class="gradient-text">GROUP</span></a>
+          <p>{t.footer.description}</p>
+        </div>
+        <div class="footer-links">
+          <h4>{t.nav.services}</h4>
+          <ul>
+            {t.services.items.slice(0, 4).map((s: {title: string}) => <li><a href={`${prefix}/services`}>{s.title}</a></li>)}
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>{t.nav.contact}</h4>
+          <ul>
+            {t.contact.offices.map((o: {city: string; phone: string}) => <li>{o.city}: {o.phone}</li>)}
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>{t.footer.copyright}</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/vietbamedia/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCpmC4kqhyjdJdYdRWAFZmXQ" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar')!;
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    // Trigger on load if already scrolled
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle')!;
+    const navMenu = document.getElementById('navMenu')!;
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        navToggle.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
+
+<style>
+/* Navbar */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 16px 0;
+  transition: all var(--transition);
+}
+.navbar.scrolled {
+  background: rgba(10, 17, 56, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border-glass);
+  padding: 10px 0;
+}
+.navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+.navbar-logo {
+  font-size: 1.4rem; font-weight: 900; color: #fff; letter-spacing: 1px;
+}
+.navbar-logo:hover { color: #fff; }
+.navbar-menu {
+  display: flex; align-items: center; gap: 8px; list-style: none;
+}
+.nav-link {
+  color: var(--color-text-secondary); font-size: 0.88rem; font-weight: 500;
+  padding: 8px 16px; border-radius: 8px; transition: all var(--transition);
+  position: relative;
+}
+.nav-link:hover {
+  color: #fff; background: rgba(238, 224, 203, 0.1);
+}
+.nav-link.active {
+  color: var(--color-accent-blue);
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--color-accent-blue);
+  border-radius: 1px;
+  box-shadow: 0 0 8px var(--color-glow-blue);
+}
+.nav-lang {
+  padding: 6px 14px; border: 1px solid var(--color-border-glass);
+  border-radius: 6px; font-size: 0.8rem; font-weight: 700;
+  color: var(--color-accent-blue); letter-spacing: 1px;
+}
+.nav-lang:hover { border-color: var(--color-accent-blue); color: #fff; background: rgba(238, 224, 203, 0.12); }
+
+/* Mobile toggle */
+.navbar-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.navbar-toggle span {
+  width: 24px; height: 2px; background: #fff; transition: all var(--transition);
+}
+.navbar-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.navbar-toggle.open span:nth-child(2) { opacity: 0; }
+.navbar-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Footer */
+.footer {
+  background: var(--color-bg-dark); border-top: 1px solid var(--color-border-glass);
+  padding: 60px 0 30px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
+}
+.footer-brand p { margin-top: 12px; font-size: 0.9rem; color: var(--color-text-muted); }
+.footer-links h4 { font-size: 0.95rem; margin-bottom: 16px; }
+.footer-links ul { list-style: none; }
+.footer-links li { font-size: 0.85rem; margin-bottom: 8px; color: var(--color-text-muted); }
+.footer-links a { color: var(--color-text-muted); }
+.footer-links a:hover { color: var(--color-accent-blue); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 24px; border-top: 1px solid var(--color-border-glass);
+  font-size: 0.8rem; color: var(--color-text-muted);
+}
+.footer-social { display: flex; gap: 16px; }
+.footer-social a { color: var(--color-text-muted); transition: color var(--transition); }
+.footer-social a:hover { color: var(--color-accent-blue); }
+
+@media (max-width: 768px) {
+  .navbar-toggle { display: flex; }
+  .navbar-menu {
+    position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+    flex-direction: column; align-items: flex-start; gap: 4px;
+    background: rgba(7, 13, 42, 0.97); backdrop-filter: blur(20px);
+    padding: 80px 24px 24px; transition: right var(--transition);
+  }
+  .navbar-menu.open { right: 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+</style>
