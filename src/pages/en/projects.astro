@@ -4,20 +4,20 @@ import en from '../../i18n/en.json';
 const t = en;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const catColors: Record<string, string> = {
-  gameshow: '#d4a574', sitcom: '#eee0cb', digital: '#baa898',
-  tv: '#ff6b6b', event: '#ffd93d', weather: '#4ecdc4', comms: '#ff8a5c'
+  gameshow: '#FF6B35', sitcom: '#FF3864', digital: '#635BFF',
+  tv: '#00D4FF', event: '#FF9F43', weather: '#4ecdc4', comms: '#FF6B35'
 };
 ---
 
-<Layout lang="en" darkHero>
+<Layout lang="en">
   <section class="page-hero">
     <div class="container">
-      <p class="section-tag-blue fade-in">{t.pageHero.projects.tag}</p>
+      <p class="section-tag fade-in">{t.pageHero.projects.tag}</p>
       <h1 class="section-title fade-in">{t.pageHero.projects.title}</h1>
       <p class="fade-in">{t.pageHero.projects.subtitle}</p>
     </div>
   </section>
-  <section class="section section-dark" style="background:var(--color-bg-dark)">
+  <section class="section section-light">
     <div class="container">
       <div class="filter-bar fade-in">
         <button class="filter-btn active" data-cat="all">{t.projects.filterAll}</button>
@@ -27,12 +27,12 @@ const catColors: Record<string, string> = {
       </div>
       <div class="projects-grid">
         {t.projects.items.map((p) => (
-          <div class="project-card glass-card fade-in" data-cat={p.cat} style={`--cat-color:${catColors[p.cat] || '#d4a574'}`}>
+          <div class="project-card fade-in" data-cat={p.cat} style={`--cat-color:${catColors[p.cat] || '#FF6B35'}`}>
             <div class="project-thumb">
               {p.img && <img src={`${base}${p.img}`} alt={p.name} loading="lazy" />}
             </div>
             <div class="project-info">
-              <span class="project-badge" style={`background:${catColors[p.cat] || '#d4a574'}22;color:${catColors[p.cat] || '#d4a574'}`}>
+              <span class="project-badge" style={`background:${catColors[p.cat] || '#FF6B35'}14;color:${catColors[p.cat] || '#FF6B35'}`}>
                 {t.projects.filters[p.cat as keyof typeof t.projects.filters] || p.cat}
               </span>
               <h4>{p.name}</h4>
@@ -61,44 +61,35 @@ const catColors: Record<string, string> = {
 
 <style>
 .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px; }
-.filter-btn { padding: 8px 20px; border: 1px solid var(--color-border-glass); background: transparent; color: var(--color-text-secondary); border-radius: 50px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all var(--transition); font-family: var(--font-family); }
-.filter-btn:hover { background: rgba(238,224,203,0.12); color: #fff; border-color: var(--color-accent-blue); }
-.filter-btn.active { background: var(--color-accent-blue); color: #0a1138; border-color: var(--color-accent-blue); box-shadow: 0 0 16px var(--color-glow-blue); }
+.filter-btn {
+  padding: 8px 20px; border: 1px solid rgba(10,37,64,0.12); background: transparent;
+  color: var(--color-text-dark-secondary); border-radius: 50px; cursor: pointer;
+  font-size: 0.82rem; font-weight: 500; transition: all var(--transition); font-family: var(--font-family);
+}
+.filter-btn:hover { background: rgba(255,107,53,0.08); color: var(--color-text-dark); border-color: var(--color-accent-orange); }
+.filter-btn.active { background: var(--color-accent-orange); color: #FFFFFF; border-color: var(--color-accent-orange); box-shadow: 0 0 16px var(--color-glow-orange); }
 .projects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.project-card { overflow: hidden; transition: all 0.3s ease; }
-.project-thumb { height: 160px; background: linear-gradient(135deg, var(--cat-color), rgba(10,17,56,0.8)); opacity: 0.6; position: relative; overflow: hidden; }
+.project-card {
+  overflow: hidden; transition: all 0.3s ease;
+  background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06);
+  border-radius: var(--radius-md); box-shadow: 0 1px 3px rgba(10,37,64,0.06);
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(255,107,53,0.12); border-color: rgba(255,107,53,0.2); }
+.project-thumb { height: 160px; background: linear-gradient(135deg, var(--cat-color), rgba(10,37,64,0.1)); position: relative; overflow: hidden; }
 .project-thumb img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 .project-info { padding: 16px 20px; }
 .project-badge { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 50px; margin-bottom: 8px; }
-.project-info h4 { font-size: 0.95rem; }
+.project-info h4 { font-size: 0.95rem; color: var(--color-text-dark); }
 @media (max-width: 1024px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
-
 @media (max-width: 768px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .filter-bar {
-    justify-content: flex-start;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-    margin-bottom: 32px;
-  }
+  .filter-bar { justify-content: flex-start; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 8px; margin-bottom: 32px; }
   .filter-bar::-webkit-scrollbar { display: none; }
-  .filter-btn {
-    white-space: nowrap;
-    flex-shrink: 0;
-    padding: 7px 16px;
-    font-size: 0.78rem;
-  }
+  .filter-btn { white-space: nowrap; flex-shrink: 0; padding: 7px 16px; font-size: 0.78rem; }
   .project-thumb { height: 130px; }
   .project-info { padding: 12px 16px; }
   .project-info h4 { font-size: 0.88rem; }
   .project-badge { font-size: 0.65rem; padding: 2px 8px; }
 }
-
-@media (max-width: 480px) {
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-thumb { height: 160px; }
-  .project-info { padding: 14px 16px; }
-}
+@media (max-width: 480px) { .projects-grid { grid-template-columns: 1fr; } .project-thumb { height: 160px; } .project-info { padding: 14px 16px; } }
 </style>

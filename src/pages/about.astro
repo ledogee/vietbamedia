@@ -2,49 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 import vi from '../i18n/vi.json';
 const t = vi;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<Layout lang="vi" darkHero>
+<Layout lang="vi">
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <p class="section-tag-blue fade-in">{t.pageHero.about.tag}</p>
+      <p class="section-tag fade-in">{t.pageHero.about.tag}</p>
       <h1 class="section-title fade-in">{t.pageHero.about.title}</h1>
       <p class="fade-in">{t.pageHero.about.subtitle}</p>
     </div>
   </section>
 
   <!-- Intro -->
-  <section class="section">
+  <section class="section section-light">
     <div class="container">
       <div class="about-grid">
         <div class="about-text fade-in">
           <p>{t.about.description}</p>
           <p style="margin-top:16px">{t.about.description2}</p>
         </div>
-        <div class="stats-row fade-in">
-          <div class="stat-item">
+        <div class="stats-grid fade-in">
+          <div class="stat-card">
             <span class="stat-number" data-target="26">0</span>
             <div class="stat-label-group">
               <span>{t.about.stats.yearsLabel1}</span>
               <span>{t.about.stats.yearsLabel2}</span>
             </div>
           </div>
-          <div class="stat-item">
+          <div class="stat-card">
             <span class="stat-number" data-target="8">0</span>
             <div class="stat-label-group">
               <span>{t.about.stats.fieldsLabel1}</span>
               <span>{t.about.stats.fieldsLabel2}</span>
             </div>
           </div>
-          <div class="stat-item">
+          <div class="stat-card">
             <span class="stat-number" data-target="+2K">0</span>
             <div class="stat-label-group">
               <span>{t.about.stats.partnersLabel1}</span>
               <span>{t.about.stats.partnersLabel2}</span>
             </div>
           </div>
-          <div class="stat-item">
+          <div class="stat-card">
             <span class="stat-number" data-target="+5K">0</span>
             <div class="stat-label-group">
               <span>{t.about.stats.projectsLabel1}</span>
@@ -57,7 +58,7 @@ const t = vi;
   </section>
 
   <!-- Core Values -->
-  <section class="section section-dark" style="background:var(--color-bg-dark)">
+  <section class="section section-dark">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-tag">{t.about.valuesTitle}</p>
@@ -66,7 +67,7 @@ const t = vi;
       <div class="values-cards">
         {Object.values(t.about.values).map((v, i) => (
           <div class="value-card glass-card fade-in">
-            <div class={`value-accent ${i % 2 === 0 ? 'purple' : 'blue'}`}></div>
+            <div class={`value-accent ${i % 2 === 0 ? 'orange' : 'purple'}`}></div>
             <h4 class={i % 2 === 0 ? 'gradient-text' : 'gradient-text-blue'}>{v.title}</h4>
             <p>{v.desc}</p>
           </div>
@@ -75,17 +76,18 @@ const t = vi;
     </div>
   </section>
 
-  <!-- Partners -->
+  <!-- Broadcasting Partners -->
   <section class="section section-light">
     <div class="container">
       <div class="section-header fade-in">
-        <p class="section-tag-blue">{t.about.partnersTitle}</p>
+        <p class="section-tag">{t.about.partnersTitle}</p>
         <h2 class="section-title">{t.about.partnersTitle}</h2>
       </div>
       <div class="partners-grid fade-in">
         {t.about.partners.map((p) => (
           <div class="partner-card">
-            <span>{p}</span>
+            <img src={`${base}${p.img}`} alt={p.name} class="broadcaster-logo" loading="lazy" />
+            <span>{p.name}</span>
           </div>
         ))}
       </div>
@@ -121,53 +123,48 @@ const t = vi;
 </script>
 
 <style>
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-.about-text p { font-size: 1.02rem; line-height: 1.8; }
-.stats-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+.about-text p { font-size: 1.02rem; line-height: 1.8; color: var(--color-text-dark-secondary); }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.stat-card {
+  display: flex; align-items: center; gap: 14px; padding: 24px;
+  background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06);
+  border-radius: var(--radius-md); transition: all var(--transition);
+  box-shadow: 0 1px 3px rgba(10,37,64,0.06);
 }
-.stat-item {
-  display: flex; align-items: center; gap: 12px;
-}
+.stat-card:hover { box-shadow: 0 8px 24px rgba(255,107,53,0.1); transform: translateY(-2px); border-color: rgba(255,107,53,0.2); }
 .stat-number {
-  font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 300; line-height: 1;
-  color: var(--color-text-primary); letter-spacing: -1px;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 300; line-height: 1;
+  color: var(--color-text-dark); letter-spacing: -2px;
 }
-.stat-label-group {
-  display: flex; flex-direction: column;
-}
+.stat-label-group { display: flex; flex-direction: column; }
 .stat-label-group span {
   font-size: 0.68rem; font-weight: 600; letter-spacing: 1.5px;
-  color: var(--color-text-muted); line-height: 1.4; text-transform: uppercase;
+  color: var(--color-text-dark-secondary); line-height: 1.4; text-transform: uppercase;
 }
 
 .values-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .value-card { padding: 32px 24px; text-align: center; position: relative; overflow: hidden; }
-.value-accent {
-  position: absolute; top: 0; left: 0; right: 0; height: 3px;
-}
-.value-accent.purple { background: var(--color-gradient); }
-.value-accent.blue { background: var(--color-gradient-blue); }
+.value-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.value-accent.orange { background: linear-gradient(90deg, #FF6B35, #FF3864); }
+.value-accent.purple { background: linear-gradient(90deg, #635BFF, #00D4FF); }
 .value-card h4 { font-size: 1.1rem; margin-bottom: 12px; }
 .value-card p { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; }
 
-.partners-grid {
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px;
-}
+.partners-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .partner-card {
-  padding: 24px; text-align: center; font-weight: 600; font-size: 0.92rem;
-  background: #FFFFFF;
-  border: 1px solid rgba(10, 37, 64, 0.08);
-  border-radius: var(--radius-md);
-  transition: all var(--transition);
-  box-shadow: 0 1px 3px rgba(10, 37, 64, 0.06);
-  color: var(--color-text-dark);
+  padding: 20px; text-align: center; font-weight: 600; font-size: 0.82rem;
+  background: #FFFFFF; border: 1px solid rgba(10,37,64,0.08);
+  border-radius: var(--radius-md); transition: all var(--transition);
+  box-shadow: 0 1px 3px rgba(10,37,64,0.06); color: var(--color-text-dark-secondary);
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
 .partner-card:hover {
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.12);
+  border-color: rgba(255,107,53,0.3);
+  box-shadow: 0 4px 20px rgba(255,107,53,0.12);
   transform: translateY(-2px);
 }
+.broadcaster-logo { width: 80px; height: 50px; object-fit: contain; }
 
 @media (max-width: 1024px) {
   .values-cards { grid-template-columns: repeat(2, 1fr); }
@@ -177,9 +174,10 @@ const t = vi;
 @media (max-width: 768px) {
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .about-text p { font-size: 0.95rem; }
-  .stats-row { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .stat-number { font-size: clamp(2.2rem, 6vw, 3rem); }
-  .stat-label-group span { font-size: 0.62rem; }
+  .stats-grid { gap: 16px; }
+  .stat-card { padding: 18px; }
+  .stat-number { font-size: clamp(2rem, 6vw, 2.8rem); letter-spacing: -1px; }
+  .stat-label-group span { font-size: 0.6rem; }
   .values-cards { grid-template-columns: 1fr 1fr; gap: 16px; }
   .value-card { padding: 24px 20px; }
   .value-card h4 { font-size: 1rem; }
@@ -190,7 +188,7 @@ const t = vi;
 
 @media (max-width: 480px) {
   .values-cards { grid-template-columns: 1fr; }
-  .stats-row { grid-template-columns: 1fr; gap: 20px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 14px; }
   .partners-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .partner-card { padding: 14px 10px; font-size: 0.78rem; }
 }

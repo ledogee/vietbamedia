@@ -4,21 +4,19 @@ import vi from '../i18n/vi.json';
 const t = vi;
 ---
 
-<Layout lang="vi" darkHero>
-  <!-- Page Hero -->
+<Layout lang="vi">
   <section class="page-hero">
     <div class="container">
-      <p class="section-tag-blue fade-in">{t.pageHero.contact.tag}</p>
+      <p class="section-tag fade-in">{t.pageHero.contact.tag}</p>
       <h1 class="section-title fade-in">{t.pageHero.contact.title}</h1>
       <p class="fade-in">{t.pageHero.contact.subtitle}</p>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section section-dark" style="background:var(--color-bg-dark)">
+  <section class="section section-light">
     <div class="container">
       <div class="contact-grid">
-        <form class="contact-form glass-card fade-in" onsubmit="event.preventDefault()">
+        <form class="contact-form fade-in" onsubmit="event.preventDefault()">
           <div class="form-group">
             <input type="text" placeholder={t.contact.form.name} required id="contact-name" />
           </div>
@@ -37,9 +35,9 @@ const t = vi;
         </form>
         <div class="offices fade-in">
           {t.contact.offices.map((o, i) => (
-            <div class="office-card glass-card">
+            <div class="office-card">
               <div class="office-header">
-                <div class={`office-icon-wrap ${i % 2 === 0 ? '' : 'blue'}`}>
+                <div class={`office-icon-wrap ${i % 2 === 0 ? '' : 'purple'}`}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
                 <div>
@@ -59,52 +57,54 @@ const t = vi;
 
 <style>
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.contact-form { padding: 36px; }
+.contact-form {
+  padding: 36px; background: #FFFFFF;
+  border: 1px solid rgba(10,37,64,0.06); border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(10,37,64,0.06);
+}
 .form-group { margin-bottom: 16px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .contact-form input, .contact-form textarea {
-  width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.05);
-  border: 1px solid var(--color-border-glass); border-radius: var(--radius-sm);
-  color: #fff; font-size: 0.92rem; font-family: var(--font-family);
+  width: 100%; padding: 14px 18px;
+  background: var(--color-bg-light);
+  border: 1px solid rgba(10,37,64,0.1); border-radius: var(--radius-sm);
+  color: var(--color-text-dark); font-size: 0.92rem; font-family: var(--font-family);
   transition: border-color var(--transition), box-shadow var(--transition);
 }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(10,37,64,0.35); }
 .contact-form input:focus, .contact-form textarea:focus {
   outline: none; border-color: var(--color-accent-orange);
-  box-shadow: 0 0 12px var(--color-glow-orange);
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.1);
 }
 .contact-form textarea { resize: vertical; }
 .offices { display: flex; flex-direction: column; gap: 16px; }
-.office-card { padding: 24px; }
-.office-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.office-icon-wrap {
-  color: var(--color-accent-orange);
+.office-card {
+  padding: 24px; background: #FFFFFF;
+  border: 1px solid rgba(10,37,64,0.06); border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(10,37,64,0.06); transition: all var(--transition);
 }
-.office-icon-wrap.blue { color: var(--color-accent-purple); }
-.office-header h4 { font-size: 1rem; margin: 0; }
+.office-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,53,0.1); border-color: rgba(255,107,53,0.2); }
+.office-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.office-icon-wrap { color: var(--color-accent-orange); }
+.office-icon-wrap.purple { color: var(--color-accent-purple); }
+.office-header h4 { font-size: 1rem; margin: 0; color: var(--color-text-dark); }
 .office-label { font-size: 0.75rem; color: var(--color-accent-orange); }
-.office-address { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 4px; }
+.office-address { font-size: 0.85rem; color: var(--color-text-dark-secondary); margin-bottom: 4px; }
 .office-phone { font-size: 0.88rem; color: var(--color-accent-orange); font-weight: 500; }
 
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; gap: 24px; }
   .contact-form { padding: 28px 22px; }
   .form-row { grid-template-columns: 1fr; }
-  .contact-form input, .contact-form textarea {
-    padding: 12px 14px;
-    font-size: 0.88rem;
-  }
+  .contact-form input, .contact-form textarea { padding: 12px 14px; font-size: 0.88rem; }
   .office-card { padding: 20px; }
   .office-header h4 { font-size: 0.95rem; }
   .office-address { font-size: 0.82rem; }
   .office-phone { font-size: 0.85rem; }
 }
-
 @media (max-width: 480px) {
   .contact-form { padding: 22px 16px; }
-  .contact-form input, .contact-form textarea {
-    padding: 11px 12px;
-    font-size: 0.85rem;
-  }
+  .contact-form input, .contact-form textarea { padding: 11px 12px; font-size: 0.85rem; }
   .office-card { padding: 16px; }
 }
 </style>

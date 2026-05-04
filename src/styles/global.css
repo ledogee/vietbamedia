@@ -298,14 +298,14 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: var(--color-bg);
+  background: #FFFFFF;
 }
 .page-hero h1,
 .page-hero h2 {
-  color: var(--color-text-primary);
+  color: var(--color-text-dark);
 }
 .page-hero p {
-  color: var(--color-text-muted);
+  color: var(--color-text-dark-secondary);
 }
 .page-hero::before {
   content: '';
@@ -314,8 +314,8 @@ h1, h2, h3, h4, h5, h6 {
   left: -20%;
   width: 60%;
   height: 200%;
-  background: radial-gradient(ellipse, var(--color-glow-orange) 0%, transparent 70%);
-  opacity: 0.3;
+  background: radial-gradient(ellipse, rgba(255,107,53,0.12) 0%, transparent 70%);
+  opacity: 0.6;
   pointer-events: none;
 }
 .page-hero::after {
@@ -325,21 +325,21 @@ h1, h2, h3, h4, h5, h6 {
   right: -15%;
   width: 50%;
   height: 180%;
-  background: radial-gradient(ellipse, var(--color-glow-purple) 0%, transparent 70%);
-  opacity: 0.2;
+  background: radial-gradient(ellipse, rgba(99,91,255,0.08) 0%, transparent 70%);
+  opacity: 0.5;
   pointer-events: none;
 }
 .page-hero .container { position: relative; z-index: 1; }
 .page-hero .section-title {
   font-size: clamp(2rem, 5vw, 3.2rem);
   margin-bottom: 16px;
-  color: var(--color-text-primary);
+  color: var(--color-text-dark);
 }
 .page-hero p {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
-  color: var(--color-text-muted);
+  color: var(--color-text-dark-secondary);
 }
 
 /* ─── Fade-in animation ─── */

@@ -22,7 +22,8 @@
     "exploreHistory": "Khám Phá Lịch Sử",
     "contactCta": "Sẵn sàng hợp tác?",
     "contactCtaSub": "Hãy kết nối với chúng tôi để cùng xây dựng chiến dịch truyền thông hiệu quả cho doanh nghiệp của bạn.",
-    "contactCtaBtn": "Liên Hệ Ngay"
+    "contactCtaBtn": "Liên Hệ Ngay",
+    "partnersTeaser": "Đối Tác Tin Cậy"
   },
   "strengths": {
     "sectionTag": "THẾ MẠNH CỦA CHÚNG TÔI",
@@ -102,7 +103,14 @@
       "respect": { "title": "RESPECT", "desc": "Sự tôn trọng là khởi nguồn dẫn đến một tập thể tốt" }
     },
     "partnersTitle": "Đối Tác Truyền Hình",
-    "partners": ["Đài Vĩnh Long", "Đài Hà Nội", "Đài VTV", "Đài TP.HCM", "Đài VTVcab", "SCTV"]
+    "partners": [
+      { "name": "Đài Vĩnh Long", "img": "/images/broadcasters/thvl.png" },
+      { "name": "Đài Hà Nội", "img": "/images/broadcasters/hanoi-tv.png" },
+      { "name": "Đài VTV", "img": "/images/broadcasters/vtv.png" },
+      { "name": "Đài TP.HCM", "img": "/images/broadcasters/htv.png" },
+      { "name": "Đài VTVcab", "img": "/images/broadcasters/vtvcab.png" },
+      { "name": "SCTV", "img": "/images/broadcasters/sctv.png" }
+    ]
   },
   "services": {
     "sectionTag": "DỊCH VỤ",

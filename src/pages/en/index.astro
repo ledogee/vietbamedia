@@ -27,6 +27,27 @@ const mediaServices = [
   { key: 'event', title: 'Event Organization', desc: 'Professional events from conferences and launches to large-scale teambuilding.', icon: serviceIcons.event },
   { key: 'ooh', title: 'Outdoor Advertising (OOH)', desc: 'Strategic OOH advertising at prime locations nationwide.', icon: serviceIcons.ooh },
 ];
+
+const partners = [
+  { name: 'Samsung', mono: '/images/partners/mono/samsung.png', color: '/images/partners/color/samsung.png' },
+  { name: 'Pepsi', mono: '/images/partners/mono/pepsi.png', color: '/images/partners/color/pepsi.png' },
+  { name: 'Vietcombank', mono: '/images/partners/mono/vietcombank.png', color: '/images/partners/color/vietcombank.png' },
+  { name: 'USAID', mono: '/images/partners/mono/usaid.png', color: '/images/partners/color/usaid.png' },
+  { name: 'Bamboo Airways', mono: '/images/partners/mono/bamboo-airways.png', color: '/images/partners/color/bamboo-airways.png' },
+  { name: 'Viettel', mono: '/images/partners/mono/viettel.png', color: '/images/partners/color/viettel.png' },
+  { name: 'Vietinbank', mono: '/images/partners/mono/vietinbank.png', color: '/images/partners/color/vietinbank.png' },
+  { name: 'RMIT', mono: '/images/partners/mono/rmit.png', color: '/images/partners/color/rmit.png' },
+  { name: 'GroupM', mono: '/images/partners/mono/groupm.png', color: '/images/partners/color/groupm.png' },
+  { name: 'Habeco', mono: '/images/partners/mono/habeco.png', color: '/images/partners/color/habeco.png' },
+  { name: 'Pharmaton', mono: '/images/partners/mono/pharmaton.png', color: '/images/partners/color/pharmaton.png' },
+  { name: 'Petrovietnam', mono: '/images/partners/mono/petrovietnam.png', color: '/images/partners/color/petrovietnam.png' },
+  { name: 'Qatar Airways', mono: '/images/partners/mono/qatar-airways.png', color: '/images/partners/color/qatar-airways.png' },
+  { name: 'SABECO', mono: '/images/partners/mono/sabeco.png', color: '/images/partners/color/sabeco.png' },
+  { name: 'Sea Links', mono: '/images/partners/mono/sealinks.png', color: '/images/partners/color/sealinks.png' },
+  { name: 'Vietbank', mono: '/images/partners/mono/vietbank.png', color: '/images/partners/color/vietbank.png' },
+  { name: 'Vinacafe', mono: '/images/partners/mono/vinacafe.png', color: '/images/partners/color/vinacafe.png' },
+  { name: 'Vinaphone', mono: '/images/partners/mono/vinaphone.png', color: '/images/partners/color/vinaphone.png' },
+];
 ---
 
 <Layout lang="en">
@@ -97,6 +118,31 @@ const mediaServices = [
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Logo Marquee -->
+  <section class="section section-light partners-section" id="partners-marquee">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{t.home.partnersTeaser}</p>
+      </div>
+    </div>
+    <div class="marquee-viewport fade-in">
+      <div class="marquee-track" id="marqueeTrack">
+        {partners.map((p) => (
+          <button class="partner-logo-btn" type="button" aria-label={p.name}>
+            <img src={`${base}${p.mono}`} alt={p.name} class="partner-img partner-img--mono" loading="lazy" />
+            <img src={`${base}${p.color}`} alt="" class="partner-img partner-img--color" loading="lazy" />
+          </button>
+        ))}
+        {partners.map((p) => (
+          <button class="partner-logo-btn" type="button" aria-label={p.name}>
+            <img src={`${base}${p.mono}`} alt={p.name} class="partner-img partner-img--mono" loading="lazy" />
+            <img src={`${base}${p.color}`} alt="" class="partner-img partner-img--color" loading="lazy" />
+          </button>
+        ))}
       </div>
     </div>
   </section>
@@ -212,6 +258,16 @@ const mediaServices = [
     });
   }, { threshold: 0.5 });
   counters.forEach(c => cObserver.observe(c));
+
+  // Partner logo marquee interaction
+  document.querySelectorAll('.partner-logo-btn').forEach(btn => {
+    btn.addEventListener('click', () => btn.classList.toggle('active'));
+  });
+  const track = document.getElementById('marqueeTrack');
+  if (track) {
+    track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+    track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+  }
 </script>
 
 <style>
@@ -263,6 +319,54 @@ const mediaServices = [
 .service-icon { width: 28px; height: 28px; color: var(--color-accent-orange); }
 .service-card h3 { font-size: 0.95rem; margin-bottom: 10px; color: var(--color-text-dark); }
 .service-card p { font-size: 0.82rem; color: var(--color-text-dark-secondary); line-height: 1.6; }
+
+/* ─── Partner Marquee ─── */
+.partners-section { padding: 60px 0 40px; overflow: hidden; }
+.partners-section .section-header { margin-bottom: 32px; }
+.marquee-viewport {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: marqueeScroll 45s linear infinite;
+}
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.partner-logo-btn {
+  flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  height: 90px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+.partner-logo-btn:hover { transform: scale(1.12); }
+.partner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+}
+.partner-img--mono { opacity: 0.45; filter: grayscale(100%); }
+.partner-img--color { opacity: 0; }
+.partner-logo-btn:hover .partner-img--mono { opacity: 0.15; }
+.partner-logo-btn:hover .partner-img--color { opacity: 0.85; }
+.partner-logo-btn.active .partner-img--mono { opacity: 0; }
+.partner-logo-btn.active .partner-img--color { opacity: 1; }
+.partner-logo-btn.active:hover .partner-img--color { opacity: 1; }
 
 .teaser-action { text-align: center; margin-top: 40px; }
 .section-light .view-all-link { color: var(--color-accent-orange); }

@@ -22,7 +22,8 @@
     "exploreHistory": "Explore History",
     "contactCta": "Ready to collaborate?",
     "contactCtaSub": "Connect with us to build an effective media strategy for your business.",
-    "contactCtaBtn": "Contact Us"
+    "contactCtaBtn": "Contact Us",
+    "partnersTeaser": "Trusted Partners"
   },
   "strengths": {
     "sectionTag": "OUR STRENGTHS",
@@ -102,7 +103,14 @@
       "respect": { "title": "RESPECT", "desc": "Respect is the origin that leads to a great collective" }
     },
     "partnersTitle": "Broadcasting Partners",
-    "partners": ["Vinh Long TV", "Hanoi TV", "VTV", "HCMC TV", "VTVcab", "SCTV"]
+    "partners": [
+      { "name": "Vinh Long TV", "img": "/images/broadcasters/thvl.png" },
+      { "name": "Hanoi TV", "img": "/images/broadcasters/hanoi-tv.png" },
+      { "name": "VTV", "img": "/images/broadcasters/vtv.png" },
+      { "name": "HCMC TV", "img": "/images/broadcasters/htv.png" },
+      { "name": "VTVcab", "img": "/images/broadcasters/vtvcab.png" },
+      { "name": "SCTV", "img": "/images/broadcasters/sctv.png" }
+    ]
   },
   "services": {
     "sectionTag": "SERVICES",

@@ -14,7 +14,7 @@ const serviceIcons = [
 ];
 ---
 
-<Layout lang="en" darkHero>
+<Layout lang="en">
   <section class="page-hero">
     <div class="container">
       <p class="section-tag fade-in">{t.pageHero.services.tag}</p>
@@ -22,12 +22,14 @@ const serviceIcons = [
       <p class="fade-in">{t.pageHero.services.subtitle}</p>
     </div>
   </section>
-  <section class="section section-dark" style="background:var(--color-bg-dark)">
+  <section class="section section-light">
     <div class="container">
       <div class="services-grid">
         {t.services.items.map((s, i) => (
-          <div class="service-card glass-card fade-in">
-            <div class={`service-icon ${i % 2 !== 0 ? 'blue' : ''}`} set:html={serviceIcons[i]} />
+          <div class="service-card fade-in">
+            <div class="service-icon-wrap">
+              <div class="service-icon" set:html={serviceIcons[i]} />
+            </div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
           </div>
@@ -39,28 +41,18 @@ const serviceIcons = [
 
 <style>
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.service-card { padding: 36px 28px; position: relative; overflow: hidden; }
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; opacity: 0; transition: opacity var(--transition); }
-.service-card:nth-child(odd)::before { background: var(--color-gradient); }
-.service-card:nth-child(even)::before { background: var(--color-gradient-blue); }
-.service-card:hover::before { opacity: 1; }
-.service-icon { width: 48px; height: 48px; margin-bottom: 20px; color: var(--color-accent-purple); }
-.service-icon.blue { color: var(--color-accent-blue); }
-.service-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
-.service-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; }
+.service-card {
+  padding: 32px 20px; text-align: center;
+  background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06);
+  border-radius: var(--radius-md); transition: all var(--transition);
+  box-shadow: 0 1px 3px rgba(10,37,64,0.06);
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(255,107,53,0.12), 0 4px 16px rgba(0,0,0,0.05); border-color: rgba(255,107,53,0.2); }
+.service-icon-wrap { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(99,91,255,0.08)); border-radius: 14px; }
+.service-icon { width: 28px; height: 28px; color: var(--color-accent-orange); }
+.service-card h3 { font-size: 1.05rem; margin-bottom: 12px; color: var(--color-text-dark); }
+.service-card p { font-size: 0.88rem; color: var(--color-text-dark-secondary); line-height: 1.7; }
 @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-
-@media (max-width: 768px) {
-  .services-grid { grid-template-columns: 1fr; gap: 16px; }
-  .service-card { padding: 28px 22px; }
-  .service-card h3 { font-size: 1rem; }
-  .service-card p { font-size: 0.85rem; }
-  .service-icon { width: 40px; height: 40px; margin-bottom: 16px; }
-}
-
-@media (max-width: 480px) {
-  .service-card { padding: 22px 18px; }
-  .service-card h3 { font-size: 0.95rem; }
-  .service-card p { font-size: 0.82rem; }
-}
+@media (max-width: 768px) { .services-grid { grid-template-columns: 1fr 1fr; gap: 16px; } .service-card { padding: 24px 16px; } .service-card h3 { font-size: 0.95rem; } .service-card p { font-size: 0.82rem; } }
+@media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } .service-card { padding: 24px 18px; } }
 </style>
