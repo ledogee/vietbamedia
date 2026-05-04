@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import HeroSlideshow from '../../components/HeroSlideshow.astro';
 import en from '../../i18n/en.json';
 const t = en;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -31,8 +30,25 @@ const mediaServices = [
 ---
 
 <Layout lang="en">
-  <!-- 1. Hero Slideshow -->
-  <HeroSlideshow slides={t.heroSlides} base={base} interval={5000} />
+  <!-- 1. Hero — White with Interactive Background -->
+  <section class="hero-white" id="hero">
+    <div class="container hero-content">
+      <p class="hero-tag fade-in">{t.about.sectionTag}</p>
+      <h1 class="hero-title fade-in">
+        {t.hero.title}<br/><span class="hero-title-gradient">{t.hero.titleHighlight}</span>
+      </h1>
+      <p class="hero-subtitle fade-in">{t.hero.subtitle}</p>
+      <div class="hero-buttons fade-in">
+        <a href={`${base}/en/contact`} class="btn-glow">{t.hero.cta}</a>
+        <a href={`${base}/en/about`} class="btn-outline">{t.nav.about}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-accent hero-accent-1" aria-hidden="true"></div>
+    <div class="hero-accent hero-accent-2" aria-hidden="true"></div>
+    <div class="hero-accent hero-accent-3" aria-hidden="true"></div>
+  </section>
 
   <!-- 2. Company Introduction (Light background) -->
   <section class="section section-light" id="about-intro">
@@ -199,6 +215,20 @@ const mediaServices = [
 </script>
 
 <style>
+/* ─── Hero White ─── */
+.hero-white { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 100px 0 60px; }
+.hero-content { text-align: center; position: relative; z-index: 2; }
+.hero-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; background: var(--color-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; }
+.hero-title { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.08; color: var(--color-text-dark); margin-bottom: 28px; letter-spacing: -1px; }
+.hero-title-gradient { background: var(--color-gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 560px; margin: 0 auto 44px; color: var(--color-text-dark-secondary); line-height: 1.7; }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.hero-accent { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px); opacity: 0.35; animation: accentFloat 8s ease-in-out infinite alternate; }
+.hero-accent-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,107,53,0.4), transparent 70%); top: -10%; right: -5%; }
+.hero-accent-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(99,91,255,0.35), transparent 70%); bottom: -5%; left: -8%; animation-delay: -3s; }
+.hero-accent-3 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(0,212,255,0.3), transparent 70%); top: 30%; left: 50%; transform: translateX(-50%); animation-delay: -5s; animation-name: accentFloat3; }
+@keyframes accentFloat { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(20px,-15px) scale(1.1); } }
+@keyframes accentFloat3 { 0% { transform: translateX(-50%) translate(0,0) scale(1); } 100% { transform: translateX(-50%) translate(-15px,20px) scale(1.15); } }
 /* Styles are identical to Vietnamese index — they share the same global.css */
 .intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
 .intro-text .section-tag { margin-bottom: 16px; }

@@ -4,8 +4,8 @@ import en from '../i18n/en.json';
 import '../styles/global.css';
 import InteractiveBackground from '../components/InteractiveBackground.astro';
 
-interface Props { lang?: string; }
-const { lang = 'vi' } = Astro.props;
+interface Props { lang?: string; darkHero?: boolean; }
+const { lang = 'vi', darkHero = false } = Astro.props;
 const t = lang === 'en' ? en : vi;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const prefix = lang === 'en' ? `${base}/en` : base;
@@ -33,7 +33,7 @@ function isActive(path: string): boolean {
   <InteractiveBackground />
 
   <!-- Navbar -->
-  <nav class="navbar" id="navbar">
+  <nav class:list={["navbar", { "navbar-on-dark": darkHero }]} id="navbar">
     <div class="container navbar-inner">
       <a href={`${prefix}/`} class="navbar-logo">
         VIETBA<span class="logo-highlight">GROUP</span>
@@ -173,9 +173,9 @@ function isActive(path: string): boolean {
 .navbar.scrolled .navbar-toggle span { background: var(--color-text-dark); }
 .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
 .navbar-logo {
-  font-size: 1.4rem; font-weight: 900; color: #fff; letter-spacing: 1px;
+  font-size: 1.4rem; font-weight: 900; color: var(--color-text-dark); letter-spacing: 1px;
 }
-.navbar-logo:hover { color: #fff; }
+.navbar-logo:hover { color: var(--color-text-dark); }
 .logo-highlight {
   background: var(--color-gradient);
   -webkit-background-clip: text;
@@ -186,12 +186,12 @@ function isActive(path: string): boolean {
   display: flex; align-items: center; gap: 8px; list-style: none;
 }
 .nav-link {
-  color: var(--color-text-secondary); font-size: 0.88rem; font-weight: 500;
+  color: var(--color-text-dark-secondary); font-size: 0.88rem; font-weight: 500;
   padding: 8px 16px; border-radius: 8px; transition: all var(--transition);
   position: relative;
 }
 .nav-link:hover {
-  color: #fff; background: rgba(255, 107, 53, 0.08);
+  color: var(--color-text-dark); background: rgba(255, 107, 53, 0.08);
 }
 .nav-link.active {
   color: var(--color-accent-orange);
@@ -209,11 +209,25 @@ function isActive(path: string): boolean {
   box-shadow: 0 0 8px var(--color-glow-orange);
 }
 .nav-lang {
-  padding: 6px 14px; border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 14px; border: 1px solid rgba(10, 37, 64, 0.15);
   border-radius: 6px; font-size: 0.8rem; font-weight: 700;
-  color: var(--color-text-secondary); letter-spacing: 1px;
+  color: var(--color-text-dark-secondary); letter-spacing: 1px;
 }
 .nav-lang:hover { border-color: var(--color-accent-orange); color: var(--color-accent-orange); background: rgba(255, 107, 53, 0.08); }
+
+/* Dark navbar override — for pages with dark hero (inner pages) */
+.navbar-on-dark .navbar-logo { color: #fff; }
+.navbar-on-dark .navbar-logo:hover { color: #fff; }
+.navbar-on-dark .nav-link { color: var(--color-text-secondary); }
+.navbar-on-dark .nav-link:hover { color: #fff; }
+.navbar-on-dark .nav-lang { color: var(--color-text-secondary); border-color: rgba(255,255,255,0.15); }
+.navbar-on-dark .navbar-toggle span { background: #fff; }
+/* Scrolled always overrides dark navbar */
+.navbar-on-dark.scrolled .navbar-logo { color: var(--color-text-dark); }
+.navbar-on-dark.scrolled .nav-link { color: var(--color-text-dark-secondary); }
+.navbar-on-dark.scrolled .nav-link:hover { color: var(--color-text-dark); }
+.navbar-on-dark.scrolled .nav-lang { color: var(--color-text-dark-secondary); border-color: rgba(10,37,64,0.15); }
+.navbar-on-dark.scrolled .navbar-toggle span { background: var(--color-text-dark); }
 
 /* Mobile toggle */
 .navbar-toggle {
@@ -221,7 +235,7 @@ function isActive(path: string): boolean {
   background: none; border: none; cursor: pointer; padding: 4px;
 }
 .navbar-toggle span {
-  width: 24px; height: 2px; background: #fff; transition: all var(--transition);
+  width: 24px; height: 2px; background: var(--color-text-dark); transition: all var(--transition);
 }
 .navbar-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .navbar-toggle.open span:nth-child(2) { opacity: 0; }
