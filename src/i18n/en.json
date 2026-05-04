@@ -24,6 +24,30 @@
     "contactCtaSub": "Connect with us to build an effective media strategy for your business.",
     "contactCtaBtn": "Contact Us"
   },
+  "strengths": {
+    "sectionTag": "OUR STRENGTHS",
+    "title": "Key Strengths",
+    "items": [
+      {
+        "title": "Comprehensive Media Consulting",
+        "desc": "Over 25 years of experience in strategic media consulting, helping hundreds of clients optimize their media resources to position, build, develop, and defend their brands. We accompany our clients through every circumstance.",
+        "icon": "media"
+      },
+      {
+        "title": "Technology & Digital Transformation",
+        "desc": "Providing comprehensive transformation solutions, helping businesses build modern technology platforms and enhance operational performance. An experienced technology team with bespoke solutions for each business.",
+        "icon": "tech"
+      }
+    ]
+  },
+  "heroSlides": [
+    { "img": "/images/projects/project-chiec-non-ky-dieu.png", "title": "Wheel of Fortune VN", "subtitle": "The first internationally licensed gameshow in Vietnam" },
+    { "img": "/images/projects/project-nguoi-di-xuyen-tuong.png", "title": "Brain Wall VN", "subtitle": "Licensed gameshow from Japan" },
+    { "img": "/images/projects/project-vietnam-airline-festa.png", "title": "Vietnam Airline Festa", "subtitle": "Premier large-scale events" },
+    { "img": "/images/projects/project-sales-day-2019.png", "title": "Sales Day 2019", "subtitle": "Professional event organization" },
+    { "img": "/images/projects/project-hoi-nghi-khach-hang.png", "title": "Client Conference", "subtitle": "Connecting businesses — Expanding opportunities" },
+    { "img": "/images/projects/project-usaid.png", "title": "USAID", "subtitle": "International development communications" }
+  ],
   "pageHero": {
     "about": {
       "tag": "ABOUT US",

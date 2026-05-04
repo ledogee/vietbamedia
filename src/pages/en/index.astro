@@ -1,92 +1,125 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import HeroSlideshow from '../../components/HeroSlideshow.astro';
 import en from '../../i18n/en.json';
 const t = en;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const serviceIcons = [
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>`
-];
-
-const featuredProjects = t.projects.items.slice(0, 6);
-const catColors: Record<string, string> = {
-  gameshow: '#d4a574', sitcom: '#eee0cb', digital: '#baa898',
-  tv: '#ff6b6b', event: '#ffd93d', weather: '#4ecdc4', comms: '#ff8a5c'
+// Icons for services
+const serviceIcons: Record<string, string> = {
+  content: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  digital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
+  booking: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>`,
+  event: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`,
+  ooh: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 7h10M7 12h10M7 17h5"/></svg>`,
 };
+
+// Strength icons
+const strengthIcons: Record<string, string> = {
+  media: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="20"/><polygon points="20,16 20,32 34,24" fill="currentColor" stroke="none"/></svg>`,
+  tech: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="8" width="32" height="32" rx="4"/><path d="M16 20l4 4-4 4M24 28h8"/></svg>`,
+};
+
+// Service items for media services section
+const mediaServices = [
+  { key: 'content', title: 'Multi-Platform Content', desc: 'Professional content production for television, digital and social media.', icon: serviceIcons.content },
+  { key: 'digital', title: 'Digital Marketing', desc: 'Comprehensive digital marketing strategies, SEO, SEM and content marketing.', icon: serviceIcons.digital },
+  { key: 'booking', title: 'Media Booking', desc: 'TV, radio, press, PR, KOLs and media channel booking services.', icon: serviceIcons.booking },
+  { key: 'event', title: 'Event Organization', desc: 'Professional events from conferences and launches to large-scale teambuilding.', icon: serviceIcons.event },
+  { key: 'ooh', title: 'Outdoor Advertising (OOH)', desc: 'Strategic OOH advertising at prime locations nationwide.', icon: serviceIcons.ooh },
+];
 ---
 
 <Layout lang="en">
-  <!-- Hero -->
-  <section class="section hero" id="hero">
-    <div class="hero-particles" aria-hidden="true">
-      {Array.from({length: 24}).map((_, i) => <div class={`particle ${i % 3 === 0 ? 'blue' : i % 3 === 1 ? 'lavender' : ''}`} style={`--i:${i};--x:${Math.random()*100}%;--y:${Math.random()*100}%;--d:${2+Math.random()*4}s;--s:${2+Math.random()*4}px`} />)}
-    </div>
-    <div class="container hero-content">
-      <p class="section-tag-blue fade-in">{t.about.sectionTag}</p>
-      <h1 class="hero-title fade-in">
-        {t.hero.title}<br/><span class="gradient-text">{t.hero.titleHighlight}</span>
-      </h1>
-      <p class="hero-subtitle fade-in">{t.hero.subtitle}</p>
-      <div class="hero-buttons fade-in">
-        <a href={`${base}/en/contact`} class="btn-glow">{t.hero.cta}</a>
-        <a href={`${base}/en/about`} class="btn-outline">{t.nav.about}</a>
-      </div>
-      <div class="scroll-indicator fade-in" aria-hidden="true">
-        <span class="scroll-dot"></span>
-        <span class="scroll-label">{t.hero.scrollDown}</span>
-      </div>
-    </div>
-  </section>
+  <!-- 1. Hero Slideshow -->
+  <HeroSlideshow slides={t.heroSlides} base={base} interval={5000} />
 
-  <!-- Stats Row -->
-  <section class="section stats-section">
+  <!-- 2. Company Introduction (Light background) -->
+  <section class="section section-light" id="about-intro">
     <div class="container">
-      <div class="stats-row fade-in">
-        <div class="stat-item">
-          <span class="stat-number" data-target="26">0</span>
-          <div class="stat-label-group">
-            <span>{t.about.stats.yearsLabel1}</span>
-            <span>{t.about.stats.yearsLabel2}</span>
+      <div class="intro-grid fade-in">
+        <div class="intro-text">
+          <p class="section-tag">{t.about.sectionTag}</p>
+          <h2 class="section-title">{t.about.title}</h2>
+          <p class="intro-desc">{t.about.description}</p>
+          <p class="intro-desc" style="margin-top:12px">{t.about.description2}</p>
+          <div class="intro-buttons">
+            <a href={`${base}/en/about`} class="btn-outline">{t.nav.about}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="8">0</span>
-          <div class="stat-label-group">
-            <span>{t.about.stats.fieldsLabel1}</span>
-            <span>{t.about.stats.fieldsLabel2}</span>
-          </div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="+2K">0</span>
-          <div class="stat-label-group">
-            <span>{t.about.stats.partnersLabel1}</span>
-            <span>{t.about.stats.partnersLabel2}</span>
-          </div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="+5K">0</span>
-          <div class="stat-label-group">
-            <span>{t.about.stats.projectsLabel1}</span>
-            <span>{t.about.stats.projectsLabel2}</span>
+        <div class="intro-stats">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number" data-target="26">0</span>
+              <div class="stat-label-group">
+                <span>{t.about.stats.yearsLabel1}</span>
+                <span>{t.about.stats.yearsLabel2}</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="8">0</span>
+              <div class="stat-label-group">
+                <span>{t.about.stats.fieldsLabel1}</span>
+                <span>{t.about.stats.fieldsLabel2}</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="+2K">0</span>
+              <div class="stat-label-group">
+                <span>{t.about.stats.partnersLabel1}</span>
+                <span>{t.about.stats.partnersLabel2}</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="+5K">0</span>
+              <div class="stat-label-group">
+                <span>{t.about.stats.projectsLabel1}</span>
+                <span>{t.about.stats.projectsLabel2}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Teaser -->
-  <section class="section" style="background:var(--color-bg-dark)">
+  <!-- 3. Strengths (Dark navy) -->
+  <section class="section section-dark" id="strengths">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{t.strengths.sectionTag}</p>
+        <h2 class="section-title">{t.strengths.title}</h2>
+      </div>
+      <div class="strengths-grid">
+        {t.strengths.items.map((item, i) => (
+          <div class="strength-card fade-in">
+            <div class="strength-icon-wrapper">
+              <div class={`strength-icon ${i === 0 ? 'orange' : 'purple'}`} set:html={strengthIcons[item.icon]} />
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <div class={`strength-accent ${i === 0 ? 'orange' : 'purple'}`}></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Media Services (Light background) -->
+  <section class="section section-light" id="services-teaser">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-tag">{t.home.servicesTeaser}</p>
         <h2 class="section-title">{t.services.title}</h2>
       </div>
-      <div class="teaser-services-grid">
-        {t.services.items.slice(0, 3).map((s, i) => (
-          <div class="service-card glass-card fade-in">
-            <div class={`service-icon ${i % 2 === 0 ? 'blue' : ''}`} set:html={serviceIcons[i]} />
+      <div class="services-grid">
+        {mediaServices.map((s) => (
+          <div class="service-card fade-in">
+            <div class="service-icon-wrap">
+              <div class="service-icon" set:html={s.icon} />
+            </div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
           </div>
@@ -101,39 +134,8 @@ const catColors: Record<string, string> = {
     </div>
   </section>
 
-  <!-- Projects Showcase -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-tag-blue">{t.home.projectsTeaser}</p>
-        <h2 class="section-title">{t.projects.title}</h2>
-      </div>
-      <div class="showcase-projects-grid">
-        {featuredProjects.map((p) => (
-          <div class="project-card glass-card fade-in" style={`--cat-color:${catColors[p.cat] || '#d4a574'}`}>
-            <div class="project-thumb">
-              {p.img && <img src={`${base}${p.img}`} alt={p.name} loading="lazy" />}
-            </div>
-            <div class="project-info">
-              <span class="project-badge" style={`background:${catColors[p.cat] || '#d4a574'}22;color:${catColors[p.cat] || '#d4a574'}`}>
-                {t.projects.filters[p.cat as keyof typeof t.projects.filters] || p.cat}
-              </span>
-              <h4>{p.name}</h4>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div class="teaser-action fade-in">
-        <a href={`${base}/en/projects`} class="view-all-link">
-          {t.home.viewAll}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline Teaser -->
-  <section class="section" style="background:var(--color-bg-dark)">
+  <!-- 5. Timeline (Dark navy) -->
+  <section class="section section-dark" id="timeline-teaser" style="background:var(--color-bg-dark)">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-tag">{t.home.timelineTeaser}</p>
@@ -158,10 +160,10 @@ const catColors: Record<string, string> = {
     </div>
   </section>
 
-  <!-- Contact CTA -->
-  <section class="section contact-cta">
+  <!-- 6. Contact CTA -->
+  <section class="section section-light contact-cta" id="contact-cta">
     <div class="container">
-      <div class="cta-card glass-card fade-in">
+      <div class="cta-card fade-in">
         <h2>{t.home.contactCta}</h2>
         <p>{t.home.contactCtaSub}</p>
         <a href={`${base}/en/contact`} class="btn-glow">{t.home.contactCtaBtn}</a>
@@ -197,111 +199,82 @@ const catColors: Record<string, string> = {
 </script>
 
 <style>
-.hero {
-  min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden; padding-top: 80px;
-}
-.hero-particles { position: absolute; inset: 0; pointer-events: none; }
-.particle {
-  position: absolute; left: var(--x); top: var(--y);
-  width: var(--s); height: var(--s);
-  background: var(--color-accent-purple); border-radius: 50%;
-  opacity: 0.3; animation: float var(--d) ease-in-out infinite alternate;
-}
-.particle.blue { background: var(--color-accent-blue); opacity: 0.4; }
-.particle.lavender { background: var(--color-accent-lavender); opacity: 0.25; }
-@keyframes float { to { transform: translateY(-40px) translateX(20px); opacity: 0.6; } }
-.hero-content { text-align: center; position: relative; z-index: 1; }
-.hero-title { font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; }
-.hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 600px; margin: 0 auto 40px; color: var(--color-text-secondary); }
-.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.scroll-indicator { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 60px; }
-.scroll-dot { width: 24px; height: 40px; border: 2px solid var(--color-border-glass); border-radius: 12px; position: relative; }
-.scroll-dot::after { content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); width: 4px; height: 8px; background: var(--color-accent-blue); border-radius: 2px; animation: scrollBounce 1.5s infinite; }
-@keyframes scrollBounce { 0%,100% { top: 6px; opacity: 1; } 50% { top: 20px; opacity: 0.3; } }
-.scroll-label { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--color-text-muted); }
-.stats-section { padding: 80px 0; background: var(--color-bg-dark); }
-.stats-row { display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; }
-.stat-item { display: flex; align-items: center; gap: 12px; }
-.stat-number { font-size: clamp(3.5rem, 7vw, 5.5rem); font-weight: 300; line-height: 1; color: var(--color-text-primary); letter-spacing: -2px; }
+/* Styles are identical to Vietnamese index — they share the same global.css */
+.intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+.intro-text .section-tag { margin-bottom: 16px; }
+.intro-text .section-title { color: var(--color-text-dark); margin-bottom: 24px; }
+.intro-desc { font-size: 1.02rem; line-height: 1.8; color: var(--color-text-dark-secondary); }
+.intro-buttons { margin-top: 32px; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.stat-card { display: flex; align-items: center; gap: 14px; padding: 24px; background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06); border-radius: var(--radius-md); transition: all var(--transition); box-shadow: 0 1px 3px rgba(10,37,64,0.06); }
+.stat-card:hover { box-shadow: 0 8px 24px rgba(255,107,53,0.1); transform: translateY(-2px); border-color: rgba(255,107,53,0.2); }
+.stat-number { font-size: clamp(2.5rem,5vw,3.5rem); font-weight: 300; line-height: 1; color: var(--color-text-dark); letter-spacing: -2px; }
 .stat-label-group { display: flex; flex-direction: column; }
-.stat-label-group span { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; color: var(--color-text-muted); line-height: 1.4; text-transform: uppercase; }
-.teaser-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.service-card { padding: 32px 24px; }
-.service-icon { width: 48px; height: 48px; margin-bottom: 20px; color: var(--color-accent-purple); }
-.service-icon.blue { color: var(--color-accent-blue); }
-.service-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
-.service-card p { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; }
+.stat-label-group span { font-size: 0.68rem; font-weight: 600; letter-spacing: 1.5px; color: var(--color-text-dark-secondary); line-height: 1.4; text-transform: uppercase; }
+
+.strengths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.strength-card { position: relative; padding: 48px 36px; background: var(--color-bg-glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--color-border-glass); border-radius: var(--radius-lg); transition: all var(--transition); overflow: hidden; }
+.strength-card:hover { transform: translateY(-6px); border-color: rgba(255,107,53,0.3); box-shadow: 0 0 40px var(--color-glow-orange), 0 12px 40px rgba(0,0,0,0.3); }
+.strength-card:nth-child(2):hover { border-color: rgba(99,91,255,0.3); box-shadow: 0 0 40px var(--color-glow-purple), 0 12px 40px rgba(0,0,0,0.3); }
+.strength-icon-wrapper { margin-bottom: 24px; }
+.strength-icon { width: 56px; height: 56px; }
+.strength-icon.orange { color: var(--color-accent-orange); }
+.strength-icon.purple { color: var(--color-accent-purple); }
+.strength-card h3 { font-size: 1.3rem; margin-bottom: 16px; color: var(--color-text-primary); }
+.strength-card p { font-size: 0.95rem; line-height: 1.8; color: var(--color-text-secondary); }
+.strength-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.strength-accent.orange { background: linear-gradient(90deg, #FF6B35, #FF3864); }
+.strength-accent.purple { background: linear-gradient(90deg, #635BFF, #00D4FF); }
+
+.services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.service-card { padding: 32px 20px; background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06); border-radius: var(--radius-md); transition: all var(--transition); box-shadow: 0 1px 3px rgba(10,37,64,0.06); text-align: center; }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(255,107,53,0.12), 0 4px 16px rgba(0,0,0,0.05); border-color: rgba(255,107,53,0.2); }
+.service-icon-wrap { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(99,91,255,0.08)); border-radius: 14px; }
+.service-icon { width: 28px; height: 28px; color: var(--color-accent-orange); }
+.service-card h3 { font-size: 0.95rem; margin-bottom: 10px; color: var(--color-text-dark); }
+.service-card p { font-size: 0.82rem; color: var(--color-text-dark-secondary); line-height: 1.6; }
+
 .teaser-action { text-align: center; margin-top: 40px; }
-.showcase-projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.project-card { overflow: hidden; transition: all 0.3s ease; }
-.project-thumb { height: 160px; background: linear-gradient(135deg, var(--cat-color), rgba(10,17,56,0.8)); opacity: 0.6; position: relative; overflow: hidden; }
-.project-thumb img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-.project-info { padding: 16px 20px; }
-.project-badge { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 50px; margin-bottom: 8px; }
-.project-info h4 { font-size: 0.95rem; }
+.section-light .view-all-link { color: var(--color-accent-orange); }
+.section-light .view-all-link:hover { color: var(--color-accent-pink); }
+
 .timeline-mini { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 60px 20px 40px; overflow-x: auto; scrollbar-width: none; }
 .timeline-mini::-webkit-scrollbar { display: none; }
 .timeline-mini-line { position: absolute; top: 50%; left: 20px; right: 20px; height: 2px; background: var(--color-gradient); transform: translateY(-50%); opacity: 0.5; }
 .timeline-mini-node { display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; z-index: 1; min-width: 80px; }
-.mini-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--color-bg-elevated); border: 2px solid var(--color-accent-blue); transition: all var(--transition); }
-.timeline-mini-node.active .mini-dot { background: var(--color-accent-blue); box-shadow: 0 0 12px var(--color-glow-blue); }
-.mini-year { font-size: 0.75rem; font-weight: 800; color: var(--color-accent-blue); }
+.mini-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--color-bg-elevated); border: 2px solid var(--color-accent-orange); transition: all var(--transition); }
+.timeline-mini-node.active .mini-dot { background: var(--color-accent-orange); box-shadow: 0 0 12px var(--color-glow-orange); }
+.mini-year { font-size: 0.75rem; font-weight: 800; color: var(--color-accent-orange); }
 .mini-title { font-size: 0.68rem; color: var(--color-text-muted); text-align: center; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.contact-cta { padding: 80px 0; }
-.cta-card { text-align: center; padding: 60px 40px; background: linear-gradient(135deg, rgba(212,165,116,0.08), rgba(238,224,203,0.08)); border: 1px solid rgba(238, 224, 203, 0.2); }
-.cta-card h2 { font-size: 1.8rem; margin-bottom: 16px; }
-.cta-card p { max-width: 500px; margin: 0 auto 32px; color: var(--color-text-muted); }
-@media (max-width: 1024px) {
-  .showcase-projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .stats-row { gap: 24px; }
-}
 
+.contact-cta { padding: 80px 0; }
+.cta-card { text-align: center; padding: 60px 40px; background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(99,91,255,0.04)); border: 1px solid rgba(255,107,53,0.15); border-radius: var(--radius-lg); }
+.cta-card h2 { font-size: 1.8rem; margin-bottom: 16px; color: var(--color-text-dark); }
+.cta-card p { max-width: 500px; margin: 0 auto 32px; color: var(--color-text-dark-secondary); }
+
+@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } .strengths-grid { gap: 24px; } }
 @media (max-width: 768px) {
-  .hero { min-height: 90vh; padding-top: 70px; }
-  .hero-title { font-size: clamp(1.8rem, 7vw, 2.8rem); margin-bottom: 16px; }
-  .hero-subtitle { font-size: 0.95rem; margin-bottom: 28px; }
-  .hero-buttons { gap: 12px; }
-  .scroll-indicator { margin-top: 36px; }
-  .teaser-services-grid { grid-template-columns: 1fr; gap: 16px; }
-  .service-card { padding: 24px 20px; }
-  .showcase-projects-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .project-thumb { height: 130px; }
-  .project-info { padding: 12px 16px; }
-  .project-info h4 { font-size: 0.88rem; }
-  .stats-section { padding: 48px 0; }
-  .stats-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px 20px;
-    max-width: 600px;
-  }
-  .stat-item { justify-content: center; }
-  .stat-number { font-size: clamp(2.5rem, 8vw, 3.5rem); letter-spacing: -1px; }
-  .stat-label-group span { font-size: 0.65rem; letter-spacing: 1px; }
+  .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+  .strengths-grid { grid-template-columns: 1fr; gap: 20px; }
+  .strength-card { padding: 36px 28px; }
+  .services-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .service-card { padding: 24px 16px; }
+  .stats-grid { gap: 16px; }
+  .stat-card { padding: 18px; }
+  .stat-number { font-size: clamp(2rem,6vw,2.8rem); letter-spacing: -1px; }
+  .stat-label-group span { font-size: 0.6rem; }
   .timeline-mini { padding: 40px 10px 30px; gap: 4px; }
   .timeline-mini-node { min-width: 60px; }
   .mini-year { font-size: 0.68rem; }
   .mini-title { font-size: 0.6rem; max-width: 70px; }
   .contact-cta { padding: 48px 0; }
   .cta-card { padding: 36px 24px; }
-  .cta-card h2 { font-size: 1.4rem; margin-bottom: 12px; }
-  .cta-card p { font-size: 0.9rem; margin-bottom: 24px; }
+  .cta-card h2 { font-size: 1.4rem; }
 }
-
 @media (max-width: 480px) {
-  .hero { min-height: 85vh; padding-top: 60px; }
-  .hero-title { font-size: clamp(1.6rem, 8vw, 2.2rem); }
-  .hero-subtitle { font-size: 0.88rem; }
-  .hero-buttons { flex-direction: column; align-items: center; width: 100%; }
-  .hero-buttons .btn-glow,
-  .hero-buttons .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
-  .scroll-indicator { margin-top: 28px; }
-  .showcase-projects-grid { grid-template-columns: 1fr; gap: 16px; }
-  .project-thumb { height: 140px; }
-  .stats-row { grid-template-columns: 1fr; gap: 24px; }
-  .stat-item { justify-content: flex-start; }
-  .stat-number { font-size: clamp(2.8rem, 12vw, 3.5rem); }
+  .services-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-number { font-size: clamp(2.5rem,10vw,3rem); }
   .cta-card { padding: 28px 20px; }
   .cta-card h2 { font-size: 1.25rem; }
 }

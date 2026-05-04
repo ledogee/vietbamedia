@@ -15,7 +15,7 @@ const t = vi;
   </section>
 
   <!-- Contact -->
-  <section class="section" style="background:var(--color-bg-dark)">
+  <section class="section section-dark" style="background:var(--color-bg-dark)">
     <div class="container">
       <div class="contact-grid">
         <form class="contact-form glass-card fade-in" onsubmit="event.preventDefault()">
@@ -69,21 +69,21 @@ const t = vi;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 .contact-form input:focus, .contact-form textarea:focus {
-  outline: none; border-color: var(--color-accent-blue);
-  box-shadow: 0 0 12px var(--color-glow-blue);
+  outline: none; border-color: var(--color-accent-orange);
+  box-shadow: 0 0 12px var(--color-glow-orange);
 }
 .contact-form textarea { resize: vertical; }
 .offices { display: flex; flex-direction: column; gap: 16px; }
 .office-card { padding: 24px; }
 .office-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .office-icon-wrap {
-  color: var(--color-accent-purple);
+  color: var(--color-accent-orange);
 }
-.office-icon-wrap.blue { color: var(--color-accent-blue); }
+.office-icon-wrap.blue { color: var(--color-accent-purple); }
 .office-header h4 { font-size: 1rem; margin: 0; }
-.office-label { font-size: 0.75rem; color: var(--color-accent-blue); }
+.office-label { font-size: 0.75rem; color: var(--color-accent-orange); }
 .office-address { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 4px; }
-.office-phone { font-size: 0.88rem; color: var(--color-accent-blue); font-weight: 500; }
+.office-phone { font-size: 0.88rem; color: var(--color-accent-orange); font-weight: 500; }
 
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; gap: 24px; }

@@ -3,7 +3,7 @@
  * InteractiveBackground.astro
  * A full-page interactive canvas background with small dashes/particles
  * that rotate to follow the mouse cursor — inspired by the Antigravity homepage.
- * Uses the site's navy + cream + gold palette.
+ * Uses Stripe-inspired navy + orange/pink/purple palette.
  */
 ---
 
@@ -24,33 +24,33 @@
   const canvas = document.getElementById('interactive-bg') as HTMLCanvasElement;
   const ctx = canvas.getContext('2d')!;
 
-  /* ── Palette ───────────────────────────────────────────── */
+  /* ── Palette — Stripe-inspired with media orange ── */
   const COLORS = [
-    { r: 212, g: 165, b: 116 },  // gold  #d4a574
-    { r: 238, g: 224, b: 203 },  // cream #eee0cb
-    { r: 186, g: 168, b: 152 },  // taupe #baa898
-    { r: 100, g: 120, b: 180 },  // muted-blue accent
-    { r: 160, g: 145, b: 130 },  // warm-grey
+    { r: 255, g: 107, b: 53  },  // orange  #FF6B35
+    { r: 99,  g: 91,  b: 255 },  // blurple #635BFF
+    { r: 0,   g: 212, b: 255 },  // cyan    #00D4FF
+    { r: 255, g: 56,  b: 100 },  // pink    #FF3864
+    { r: 173, g: 189, b: 204 },  // muted-silver
   ];
 
-  /* ── Config (responsive) ─────────────────────────────── */
+  /* ── Config (responsive) ── */
   const isMobile = window.innerWidth <= 768;
   const isSmall = window.innerWidth <= 480;
   const SPACING = isSmall ? 52 : isMobile ? 44 : 32;
   const DASH_LEN = isSmall ? 7 : isMobile ? 8 : 10;
   const DASH_WIDTH = isMobile ? 1.4 : 1.8;
   const INFLUENCE_RADIUS = isSmall ? 100 : isMobile ? 130 : 180;
-  const BASE_OPACITY = 0.12;
-  const ACTIVE_OPACITY = isMobile ? 0.45 : 0.55;
+  const BASE_OPACITY = 0.08;
+  const ACTIVE_OPACITY = isMobile ? 0.40 : 0.50;
   const LERP_SPEED = 0.08;
 
-  /* ── State ─────────────────────────────────────────────── */
+  /* ── State ── */
   interface Dash {
     x: number;
     y: number;
-    angle: number;          // current visual angle
-    targetAngle: number;    // angle toward mouse
-    baseAngle: number;      // rest angle
+    angle: number;
+    targetAngle: number;
+    baseAngle: number;
     color: { r: number; g: number; b: number };
     opacity: number;
   }
@@ -61,7 +61,7 @@
   let cols = 0;
   let rows = 0;
 
-  /* ── Build grid ────────────────────────────────────────── */
+  /* ── Build grid ── */
   function buildGrid() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -86,7 +86,7 @@
     }
   }
 
-  /* ── Lerp angle (shortest arc) ─────────────────────────── */
+  /* ── Lerp angle (shortest arc) ── */
   function lerpAngle(a: number, b: number, t: number): number {
     let diff = b - a;
     while (diff > Math.PI) diff -= Math.PI * 2;
@@ -94,7 +94,7 @@
     return a + diff * t;
   }
 
-  /* ── Render loop ───────────────────────────────────────── */
+  /* ── Render loop ── */
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -104,7 +104,7 @@
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (dist < INFLUENCE_RADIUS) {
-        const t = 1 - dist / INFLUENCE_RADIUS;        // 0 → 1  (nearer = stronger)
+        const t = 1 - dist / INFLUENCE_RADIUS;
         d.targetAngle = Math.atan2(dy, dx);
         d.opacity = BASE_OPACITY + (ACTIVE_OPACITY - BASE_OPACITY) * t;
       } else {
@@ -133,7 +133,7 @@
     animId = requestAnimationFrame(draw);
   }
 
-  /* ── Events ────────────────────────────────────────────── */
+  /* ── Events ── */
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
@@ -167,7 +167,7 @@
     }, 150);
   });
 
-  /* ── Kick off ──────────────────────────────────────────── */
+  /* ── Kick off ── */
   buildGrid();
   draw();
 </script>

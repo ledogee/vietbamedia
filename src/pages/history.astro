@@ -15,7 +15,7 @@ const t = vi;
   </section>
 
   <!-- Horizontal Timeline -->
-  <section class="section timeline-section" style="background:var(--color-bg-dark)">
+  <section class="section section-dark timeline-section" style="background:var(--color-bg-dark)">
     <div class="container">
       <div class="timeline-wrapper">
         <!-- Navigation Arrows -->
@@ -144,15 +144,15 @@ const t = vi;
   background: var(--color-bg-glass);
   backdrop-filter: blur(12px);
   border: 1px solid var(--color-border-glass);
-  color: var(--color-accent-blue);
+  color: var(--color-accent-orange);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: all var(--transition);
 }
 .timeline-nav:hover {
-  background: rgba(238, 224, 203, 0.15);
-  border-color: var(--color-accent-blue);
-  box-shadow: 0 0 16px var(--color-glow-blue);
+  background: rgba(255, 107, 53, 0.12);
+  border-color: var(--color-accent-orange);
+  box-shadow: 0 0 16px var(--color-glow-orange);
 }
 .timeline-nav.disabled {
   opacity: 0.3;
@@ -182,7 +182,7 @@ const t = vi;
   left: 0;
   right: 0;
   height: 3px;
-  background: rgba(186, 168, 152, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 2px;
   transform: translateY(-50%);
 }
@@ -191,7 +191,7 @@ const t = vi;
   background: var(--color-gradient);
   border-radius: 2px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 12px var(--color-glow-purple), 0 0 4px var(--color-glow-blue);
+  box-shadow: 0 0 12px var(--color-glow-orange), 0 0 4px var(--color-glow-purple);
   width: 0%;
 }
 
@@ -217,8 +217,8 @@ const t = vi;
   transition: all var(--transition);
 }
 .tl-node.active .tl-year-label {
-  color: var(--color-accent-blue);
-  text-shadow: 0 0 12px var(--color-glow-blue);
+  color: var(--color-accent-orange);
+  text-shadow: 0 0 12px var(--color-glow-orange);
 }
 
 /* Dot button */
@@ -235,7 +235,7 @@ const t = vi;
   width: 14px; height: 14px;
   border-radius: 50%;
   background: var(--color-bg-elevated);
-  border: 2px solid var(--color-accent-lavender);
+  border: 2px solid var(--color-text-muted);
   transition: all var(--transition);
   position: relative;
   z-index: 2;
@@ -250,13 +250,13 @@ const t = vi;
 
 /* Active state */
 .tl-node.active .tl-dot-inner {
-  background: var(--color-accent-blue);
-  border-color: var(--color-accent-blue);
-  box-shadow: 0 0 20px var(--color-glow-blue);
+  background: var(--color-accent-orange);
+  border-color: var(--color-accent-orange);
+  box-shadow: 0 0 20px var(--color-glow-orange);
   transform: scale(1.2);
 }
 .tl-node.active .tl-dot-ring {
-  border-color: rgba(238, 224, 203, 0.3);
+  border-color: rgba(255, 107, 53, 0.3);
   animation: dotPulse 2s ease-in-out infinite;
 }
 @keyframes dotPulse {
@@ -266,11 +266,11 @@ const t = vi;
 
 /* Hover */
 .tl-node:not(.active):hover .tl-dot-inner {
-  border-color: var(--color-accent-blue);
-  background: rgba(238, 224, 203, 0.2);
+  border-color: var(--color-accent-orange);
+  background: rgba(255, 107, 53, 0.2);
 }
 .tl-node:not(.active):hover .tl-year-label {
-  color: var(--color-accent-blue);
+  color: var(--color-accent-orange);
 }
 
 /* Detail card */
@@ -287,8 +287,8 @@ const t = vi;
   margin: 0 auto;
   padding: 36px 40px;
   text-align: center;
-  border: 1px solid rgba(238, 224, 203, 0.2);
-  background: linear-gradient(135deg, rgba(212,165,116,0.05), rgba(238,224,203,0.05));
+  border: 1px solid rgba(255, 107, 53, 0.15);
+  background: linear-gradient(135deg, rgba(255,107,53,0.05), rgba(99,91,255,0.05));
 }
 .tl-detail-year {
   font-size: 2.4rem;

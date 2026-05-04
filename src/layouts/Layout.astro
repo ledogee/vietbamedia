@@ -35,7 +35,9 @@ function isActive(path: string): boolean {
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="container navbar-inner">
-      <a href={`${prefix}/`} class="navbar-logo">VIETBA<span class="gradient-text">GROUP</span></a>
+      <a href={`${prefix}/`} class="navbar-logo">
+        VIETBA<span class="logo-highlight">GROUP</span>
+      </a>
       <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -64,7 +66,7 @@ function isActive(path: string): boolean {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href={`${prefix}/`} class="navbar-logo">VIETBA<span class="gradient-text">GROUP</span></a>
+          <a href={`${prefix}/`} class="navbar-logo">VIETBA<span class="logo-highlight">GROUP</span></a>
           <p>{t.footer.description}</p>
         </div>
         <div class="footer-links">
@@ -155,17 +157,31 @@ function isActive(path: string): boolean {
   transition: all var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(10, 17, 56, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--color-border-glass);
+  border-bottom: 1px solid rgba(10, 37, 64, 0.08);
   padding: 10px 0;
+  box-shadow: 0 1px 8px rgba(10, 37, 64, 0.06);
 }
+.navbar.scrolled .navbar-logo { color: var(--color-text-dark); }
+.navbar.scrolled .nav-link { color: var(--color-text-dark-secondary); }
+.navbar.scrolled .nav-link:hover { color: var(--color-text-dark); background: rgba(255, 107, 53, 0.08); }
+.navbar.scrolled .nav-link.active { color: var(--color-accent-orange); }
+.navbar.scrolled .nav-lang { color: var(--color-text-dark-secondary); border-color: rgba(10, 37, 64, 0.15); }
+.navbar.scrolled .nav-lang:hover { color: var(--color-accent-orange); border-color: var(--color-accent-orange); }
+.navbar.scrolled .navbar-toggle span { background: var(--color-text-dark); }
 .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
 .navbar-logo {
   font-size: 1.4rem; font-weight: 900; color: #fff; letter-spacing: 1px;
 }
 .navbar-logo:hover { color: #fff; }
+.logo-highlight {
+  background: var(--color-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .navbar-menu {
   display: flex; align-items: center; gap: 8px; list-style: none;
 }
@@ -175,10 +191,10 @@ function isActive(path: string): boolean {
   position: relative;
 }
 .nav-link:hover {
-  color: #fff; background: rgba(238, 224, 203, 0.1);
+  color: #fff; background: rgba(255, 107, 53, 0.08);
 }
 .nav-link.active {
-  color: var(--color-accent-blue);
+  color: var(--color-accent-orange);
 }
 .nav-link.active::after {
   content: '';
@@ -188,16 +204,16 @@ function isActive(path: string): boolean {
   transform: translateX(-50%);
   width: 20px;
   height: 2px;
-  background: var(--color-accent-blue);
+  background: var(--color-accent-orange);
   border-radius: 1px;
-  box-shadow: 0 0 8px var(--color-glow-blue);
+  box-shadow: 0 0 8px var(--color-glow-orange);
 }
 .nav-lang {
-  padding: 6px 14px; border: 1px solid var(--color-border-glass);
+  padding: 6px 14px; border: 1px solid rgba(255,255,255,0.15);
   border-radius: 6px; font-size: 0.8rem; font-weight: 700;
-  color: var(--color-accent-blue); letter-spacing: 1px;
+  color: var(--color-text-secondary); letter-spacing: 1px;
 }
-.nav-lang:hover { border-color: var(--color-accent-blue); color: #fff; background: rgba(238, 224, 203, 0.12); }
+.nav-lang:hover { border-color: var(--color-accent-orange); color: var(--color-accent-orange); background: rgba(255, 107, 53, 0.08); }
 
 /* Mobile toggle */
 .navbar-toggle {
@@ -213,26 +229,26 @@ function isActive(path: string): boolean {
 
 /* Footer */
 .footer {
-  background: var(--color-bg-dark); border-top: 1px solid var(--color-border-glass);
+  background: var(--color-bg-dark); border-top: 1px solid rgba(255,255,255,0.06);
   padding: 60px 0 30px;
 }
 .footer-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
 }
 .footer-brand p { margin-top: 12px; font-size: 0.9rem; color: var(--color-text-muted); }
-.footer-links h4 { font-size: 0.95rem; margin-bottom: 16px; }
+.footer-links h4 { font-size: 0.95rem; margin-bottom: 16px; color: var(--color-text-primary); }
 .footer-links ul { list-style: none; }
 .footer-links li { font-size: 0.85rem; margin-bottom: 8px; color: var(--color-text-muted); }
 .footer-links a { color: var(--color-text-muted); }
-.footer-links a:hover { color: var(--color-accent-blue); }
+.footer-links a:hover { color: var(--color-accent-orange); }
 .footer-bottom {
   display: flex; justify-content: space-between; align-items: center;
-  padding-top: 24px; border-top: 1px solid var(--color-border-glass);
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);
   font-size: 0.8rem; color: var(--color-text-muted);
 }
 .footer-social { display: flex; gap: 16px; }
 .footer-social a { color: var(--color-text-muted); transition: color var(--transition); }
-.footer-social a:hover { color: var(--color-accent-blue); }
+.footer-social a:hover { color: var(--color-accent-orange); }
 
 @media (max-width: 768px) {
   .navbar { padding: 12px 0; }
@@ -244,7 +260,7 @@ function isActive(path: string): boolean {
     width: 100%; height: 100vh; height: 100dvh;
     flex-direction: column; align-items: center; justify-content: center;
     gap: 8px;
-    background: rgba(7, 13, 42, 0.97);
+    background: rgba(6, 27, 46, 0.97);
     backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
     padding: 24px;
     opacity: 0; visibility: hidden;
@@ -263,7 +279,7 @@ function isActive(path: string): boolean {
   }
   .navbar-menu .nav-link:hover,
   .navbar-menu .nav-link.active {
-    background: rgba(238, 224, 203, 0.08);
+    background: rgba(255, 107, 53, 0.08);
   }
   .navbar-menu .nav-lang {
     margin-top: 12px;

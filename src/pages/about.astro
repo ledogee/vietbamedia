@@ -57,7 +57,7 @@ const t = vi;
   </section>
 
   <!-- Core Values -->
-  <section class="section" style="background:var(--color-bg-dark)">
+  <section class="section section-dark" style="background:var(--color-bg-dark)">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-tag">{t.about.valuesTitle}</p>
@@ -76,7 +76,7 @@ const t = vi;
   </section>
 
   <!-- Partners -->
-  <section class="section">
+  <section class="section section-light">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-tag-blue">{t.about.partnersTitle}</p>
@@ -84,7 +84,7 @@ const t = vi;
       </div>
       <div class="partners-grid fade-in">
         {t.about.partners.map((p) => (
-          <div class="partner-card glass-card">
+          <div class="partner-card">
             <span>{p}</span>
           </div>
         ))}
@@ -156,11 +156,17 @@ const t = vi;
 }
 .partner-card {
   padding: 24px; text-align: center; font-weight: 600; font-size: 0.92rem;
-  border: 1px solid rgba(238, 224, 203, 0.15);
+  background: #FFFFFF;
+  border: 1px solid rgba(10, 37, 64, 0.08);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  box-shadow: 0 1px 3px rgba(10, 37, 64, 0.06);
+  color: var(--color-text-dark);
 }
 .partner-card:hover {
-  border-color: var(--color-accent-blue);
-  box-shadow: 0 0 20px var(--color-glow-blue);
+  border-color: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.12);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {

@@ -24,6 +24,30 @@
     "contactCtaSub": "Hãy kết nối với chúng tôi để cùng xây dựng chiến dịch truyền thông hiệu quả cho doanh nghiệp của bạn.",
     "contactCtaBtn": "Liên Hệ Ngay"
   },
+  "strengths": {
+    "sectionTag": "THẾ MẠNH CỦA CHÚNG TÔI",
+    "title": "Thế Mạnh Nổi Bật",
+    "items": [
+      {
+        "title": "Tư Vấn Truyền Thông Tổng Thể",
+        "desc": "Hơn 25 năm kinh nghiệm tư vấn chiến lược truyền thông, giúp hàng trăm khách hàng tối ưu hóa các nguồn lực truyền thông nhằm định vị, xây dựng, phát triển và phòng thủ thương hiệu. Chúng tôi đồng hành cùng khách hàng trong mọi hoàn cảnh.",
+        "icon": "media"
+      },
+      {
+        "title": "Công Nghệ & Chuyển Đổi Số",
+        "desc": "Cung cấp giải pháp chuyển đổi toàn diện, giúp doanh nghiệp xây dựng nền tảng công nghệ hiện đại, nâng cao hiệu suất hoạt động. Đội ngũ chuyên gia công nghệ giàu kinh nghiệm với giải pháp \"may đo\" cho từng doanh nghiệp.",
+        "icon": "tech"
+      }
+    ]
+  },
+  "heroSlides": [
+    { "img": "/images/projects/project-chiec-non-ky-dieu.png", "title": "Chiếc Nón Kỳ Diệu", "subtitle": "Gameshow đầu tiên mang bản quyền quốc tế về Việt Nam" },
+    { "img": "/images/projects/project-nguoi-di-xuyen-tuong.png", "title": "Người Đi Xuyên Tường", "subtitle": "Trò chơi truyền hình bản quyền từ Nhật Bản" },
+    { "img": "/images/projects/project-vietnam-airline-festa.png", "title": "Vietnam Airline Festa", "subtitle": "Sự kiện quy mô lớn hàng đầu" },
+    { "img": "/images/projects/project-sales-day-2019.png", "title": "Sales Day 2019", "subtitle": "Tổ chức sự kiện chuyên nghiệp" },
+    { "img": "/images/projects/project-hoi-nghi-khach-hang.png", "title": "Hội Nghị Khách Hàng", "subtitle": "Kết nối doanh nghiệp — Mở rộng cơ hội" },
+    { "img": "/images/projects/project-usaid.png", "title": "USAID", "subtitle": "Truyền thông phát triển quốc tế" }
+  ],
   "pageHero": {
     "about": {
       "tag": "VỀ CHÚNG TÔI",

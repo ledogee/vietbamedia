@@ -26,7 +26,7 @@ const serviceIcons = [
   </section>
 
   <!-- Services Grid -->
-  <section class="section" style="background:var(--color-bg-dark)">
+  <section class="section section-dark" style="background:var(--color-bg-dark)">
     <div class="container">
       <div class="services-grid">
         {t.services.items.map((s, i) => (
@@ -57,9 +57,9 @@ const serviceIcons = [
 .service-card:hover::before { opacity: 1; }
 .service-icon {
   width: 48px; height: 48px; margin-bottom: 20px;
-  color: var(--color-accent-purple);
+  color: var(--color-accent-orange);
 }
-.service-icon.blue { color: var(--color-accent-blue); }
+.service-icon.blue { color: var(--color-accent-purple); }
 .service-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
 .service-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; }
 
