@@ -145,10 +145,15 @@
     }
 
     for (const p of ps) {
-      // Wave-like speed variation per particle
-      const waveSpeed = 0.5 + Math.sin(t * 0.5 + p.pp * 3) * 0.4;
+      // Asymmetric breathing: slow drift out, fast snap in
+      const rawPhase = (t * 2.1 + p.pp * 3) % 6.283;
+      // Skewed wave: positive (out) is longer, negative (in) is shorter
+      const skew = Math.sin(rawPhase) > 0
+        ? Math.pow(Math.sin(rawPhase), 0.5)   // slow ease out
+        : -Math.pow(-Math.sin(rawPhase), 2.0); // fast snap in
+      const waveSpeed = 0.4 + skew * 0.3;
       const wiggle = Math.sin(t * 2.5 * waveSpeed + p.pp) * 0.03;
-      const radialBreath = Math.sin(t * 2.5 * waveSpeed + p.pp * 2) * 30;
+      const radialBreath = skew * 40; // asymmetric: drifts out slowly, rushes in
       const angle = p.oa + wiggle;
       const r = p.or * breathe + radialBreath;
       const baseX = sx + Math.cos(angle) * r;
