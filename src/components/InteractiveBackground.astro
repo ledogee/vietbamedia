@@ -32,7 +32,7 @@
   const R_OUT = mob ? 280 : 500;
   const RX = mob ? 1 : 1.5;
   const RY = mob ? 5 : 8;
-  const FOLLOW = 0.14;
+  const FOLLOW = 0.17;
   const BREATHE = 0.25;
 
   interface P {
@@ -96,8 +96,8 @@
         sx = mx;
         sy = my;
       } else {
-        sx += (mx - sx) * 0.22;
-        sy += (my - sy) * 0.22;
+        sx += (mx - sx) * 0.26;
+        sy += (my - sy) * 0.26;
       }
       active = true;
     } else active = false;
@@ -146,14 +146,14 @@
 
     for (const p of ps) {
       // Asymmetric breathing: slow drift out, fast snap in
-      const rawPhase = (t * 2.1 + p.pp * 3) % 6.283;
+      const rawPhase = (t * 1.47 + p.pp * 3) % 6.283;
       // Skewed wave: positive (out) is longer, negative (in) is shorter
       const skew = Math.sin(rawPhase) > 0
-        ? Math.pow(Math.sin(rawPhase), 0.5)   // slow ease out
-        : -Math.pow(-Math.sin(rawPhase), 2.0); // fast snap in
+        ? Math.pow(Math.sin(rawPhase), 0.5)
+        : -Math.pow(-Math.sin(rawPhase), 2.0);
       const waveSpeed = 0.4 + skew * 0.3;
-      const wiggle = Math.sin(t * 2.5 * waveSpeed + p.pp) * 0.03;
-      const radialBreath = skew * 40; // asymmetric: drifts out slowly, rushes in
+      const wiggle = Math.sin(t * 1.25 * waveSpeed + p.pp) * 0.03;
+      const radialBreath = skew * 40;
       const angle = p.oa + wiggle;
       const r = p.or * breathe + radialBreath;
       const baseX = sx + Math.cos(angle) * r;
@@ -197,9 +197,10 @@
       }
       if (p.op < 0.004) continue;
 
-      // Size: big in middle, small at edges + shrink near mouse
+      // Bell curve size: Gaussian peak at donut midpoint, tapers at edges
       const d = Math.sqrt((p.x - sx) ** 2 + (p.y - sy) ** 2);
-      const s = Math.max(0.6, 1 - (Math.abs(d - mid) / hw) * 0.25);
+      const norm = (d - mid) / (hw * 0.6); // normalize distance from mid
+      const s = 0.3 + 0.7 * Math.exp(-norm * norm * 0.5); // Gaussian: 1.0 at center, 0.3 at edges
       // Proximity shrink: within 100px of mouse → tiny dot
       const proxScale = Math.min(1, Math.max(0.3, d / 100));
       const pulse = 1 - Math.abs(Math.sin(t * 1.2 + p.pp)) * 0.6;

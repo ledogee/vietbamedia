@@ -36,7 +36,7 @@ function isActive(path: string): boolean {
   <nav class:list={["navbar", { "navbar-on-dark": darkHero }]} id="navbar">
     <div class="container navbar-inner">
       <a href={`${prefix}/`} class="navbar-logo">
-        VIETBA<span class="logo-highlight">GROUP</span>
+        <img src={`${base}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="navbar-logo-img" />
       </a>
       <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -174,8 +174,10 @@ function isActive(path: string): boolean {
 .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
 .navbar-logo {
   font-size: 1.4rem; font-weight: 900; color: var(--color-text-dark); letter-spacing: 1px;
+  display: flex; align-items: center;
 }
 .navbar-logo:hover { color: var(--color-text-dark); }
+.navbar-logo-img { height: 56px; width: auto; }
 .logo-highlight {
   background: var(--color-gradient);
   -webkit-background-clip: text;
