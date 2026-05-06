@@ -114,12 +114,18 @@
     prevMy = my;
     const speed = Math.sqrt(vx * vx + vy * vy);
 
-    // Idle drift: center wanders when mouse is still
-    const driftAmount = Math.max(0, 1 - speed / 2) * 120;
-    const driftX = Math.sin(t * 0.4) * driftAmount + Math.sin(t * 0.7 + 2) * driftAmount * 0.5;
-    const driftY = Math.cos(t * 0.3 + 1) * driftAmount + Math.cos(t * 0.6 + 4) * driftAmount * 0.4;
-    sx += driftX * 0.04;
-    sy += driftY * 0.04;
+    // Idle drift: center wanders when mouse is still (robust Lissajous path)
+    const driftAmount = Math.max(0, 1 - speed / 3) * 200;
+    const driftX =
+      Math.sin(t * 0.25) * driftAmount +
+      Math.sin(t * 0.47 + 2) * driftAmount * 0.6 +
+      Math.cos(t * 0.13 + 5) * driftAmount * 0.3;
+    const driftY =
+      Math.cos(t * 0.2 + 1) * driftAmount +
+      Math.cos(t * 0.38 + 4) * driftAmount * 0.5 +
+      Math.sin(t * 0.11 + 3) * driftAmount * 0.35;
+    sx += driftX * 0.06;
+    sy += driftY * 0.06;
 
     const breathe = 1 + Math.sin(t * 1.2) * BREATHE;
     const mid = (R_IN + R_OUT) * 0.5 * breathe;
@@ -145,17 +151,13 @@
     }
 
     for (const p of ps) {
-      // Asymmetric breathing: slow drift out, fast snap in
-      const rawPhase = (t * 1.47 + p.pp * 3) % 6.283;
-      // Skewed wave: positive (out) is longer, negative (in) is shorter
-      const skew = Math.sin(rawPhase) > 0
-        ? Math.pow(Math.sin(rawPhase), 0.5)
-        : -Math.pow(-Math.sin(rawPhase), 2.0);
-      const waveSpeed = 0.4 + skew * 0.3;
-      const wiggle = Math.sin(t * 1.25 * waveSpeed + p.pp) * 0.03;
-      const radialBreath = skew * 40;
-      const angle = p.oa + wiggle;
-      const r = p.or * breathe + radialBreath;
+      // Slow uniform breathing + per-particle orbit distortion
+      const radialBreath = Math.sin(t * 0.4) * 20;
+      // Organic distortion: each particle's radius wobbles based on its angle
+      const distort =
+        Math.sin(p.oa * 3 + t * 0.3) * 35 + Math.sin(p.oa * 5 - t * 0.2) * 15;
+      const angle = p.oa;
+      const r = p.or * breathe + radialBreath + distort;
       const baseX = sx + Math.cos(angle) * r;
       const baseY = sy + Math.sin(angle) * r;
 

@@ -1,8 +1,8 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import en from '../../i18n/en.json';
+import Layout from "../../layouts/Layout.astro";
+import en from "../../i18n/en.json";
 const t = en;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 // Icons for services
 const serviceIcons: Record<string, string> = {
@@ -21,32 +21,129 @@ const strengthIcons: Record<string, string> = {
 
 // Service items for media services section
 const mediaServices = [
-  { key: 'content', title: 'Multi-Platform Content', desc: 'Professional content production for television, digital and social media.', icon: serviceIcons.content },
-  { key: 'digital', title: 'Digital Marketing', desc: 'Comprehensive digital marketing strategies, SEO, SEM and content marketing.', icon: serviceIcons.digital },
-  { key: 'booking', title: 'Media Booking', desc: 'TV, radio, press, PR, KOLs and media channel booking services.', icon: serviceIcons.booking },
-  { key: 'event', title: 'Event Organization', desc: 'Professional events from conferences and launches to large-scale teambuilding.', icon: serviceIcons.event },
-  { key: 'ooh', title: 'Outdoor Advertising (OOH)', desc: 'Strategic OOH advertising at prime locations nationwide.', icon: serviceIcons.ooh },
+  {
+    key: "content",
+    title: "Multi-Platform Content",
+    desc: "Professional content production for television, digital and social media.",
+    icon: serviceIcons.content,
+  },
+  {
+    key: "digital",
+    title: "Digital Marketing",
+    desc: "Comprehensive digital marketing strategies, SEO, SEM and content marketing.",
+    icon: serviceIcons.digital,
+  },
+  {
+    key: "booking",
+    title: "Media Booking",
+    desc: "TV, radio, press, PR, KOLs and media channel booking services.",
+    icon: serviceIcons.booking,
+  },
+  {
+    key: "event",
+    title: "Event Organization",
+    desc: "Professional events from conferences and launches to large-scale teambuilding.",
+    icon: serviceIcons.event,
+  },
+  {
+    key: "ooh",
+    title: "Outdoor Advertising (OOH)",
+    desc: "Strategic OOH advertising at prime locations nationwide.",
+    icon: serviceIcons.ooh,
+  },
 ];
 
 const partners = [
-  { name: 'Samsung', mono: '/images/partners/mono/samsung.png', color: '/images/partners/color/samsung.png' },
-  { name: 'Pepsi', mono: '/images/partners/mono/pepsi.png', color: '/images/partners/color/pepsi.png' },
-  { name: 'Vietcombank', mono: '/images/partners/mono/vietcombank.png', color: '/images/partners/color/vietcombank.png' },
-  { name: 'USAID', mono: '/images/partners/mono/usaid.png', color: '/images/partners/color/usaid.png' },
-  { name: 'Bamboo Airways', mono: '/images/partners/mono/bamboo-airways.png', color: '/images/partners/color/bamboo-airways.png' },
-  { name: 'Viettel', mono: '/images/partners/mono/viettel.png', color: '/images/partners/color/viettel.png' },
-  { name: 'Vietinbank', mono: '/images/partners/mono/vietinbank.png', color: '/images/partners/color/vietinbank.png' },
-  { name: 'RMIT', mono: '/images/partners/mono/rmit.png', color: '/images/partners/color/rmit.png' },
-  { name: 'GroupM', mono: '/images/partners/mono/groupm.png', color: '/images/partners/color/groupm.png' },
-  { name: 'Habeco', mono: '/images/partners/mono/habeco.png', color: '/images/partners/color/habeco.png' },
-  { name: 'Pharmaton', mono: '/images/partners/mono/pharmaton.png', color: '/images/partners/color/pharmaton.png' },
-  { name: 'Petrovietnam', mono: '/images/partners/mono/petrovietnam.png', color: '/images/partners/color/petrovietnam.png' },
-  { name: 'Qatar Airways', mono: '/images/partners/mono/qatar-airways.png', color: '/images/partners/color/qatar-airways.png' },
-  { name: 'SABECO', mono: '/images/partners/mono/sabeco.png', color: '/images/partners/color/sabeco.png' },
-  { name: 'Sea Links', mono: '/images/partners/mono/sealinks.png', color: '/images/partners/color/sealinks.png' },
-  { name: 'Vietbank', mono: '/images/partners/mono/vietbank.png', color: '/images/partners/color/vietbank.png' },
-  { name: 'Vinacafe', mono: '/images/partners/mono/vinacafe.png', color: '/images/partners/color/vinacafe.png' },
-  { name: 'Vinaphone', mono: '/images/partners/mono/vinaphone.png', color: '/images/partners/color/vinaphone.png' },
+  {
+    name: "Samsung",
+    mono: "/images/partners/mono/samsung.png",
+    color: "/images/partners/color/samsung.png",
+  },
+  {
+    name: "Pepsi",
+    mono: "/images/partners/mono/pepsi.png",
+    color: "/images/partners/color/pepsi.png",
+  },
+  {
+    name: "Vietcombank",
+    mono: "/images/partners/mono/vietcombank.png",
+    color: "/images/partners/color/vietcombank.png",
+  },
+  {
+    name: "USAID",
+    mono: "/images/partners/mono/usaid.png",
+    color: "/images/partners/color/usaid.png",
+  },
+  {
+    name: "Bamboo Airways",
+    mono: "/images/partners/mono/bamboo-airways.png",
+    color: "/images/partners/color/bamboo-airways.png",
+  },
+  {
+    name: "Viettel",
+    mono: "/images/partners/mono/viettel.png",
+    color: "/images/partners/color/viettel.png",
+  },
+  {
+    name: "Vietinbank",
+    mono: "/images/partners/mono/vietinbank.png",
+    color: "/images/partners/color/vietinbank.png",
+  },
+  {
+    name: "RMIT",
+    mono: "/images/partners/mono/rmit.png",
+    color: "/images/partners/color/rmit.png",
+  },
+  {
+    name: "GroupM",
+    mono: "/images/partners/mono/groupm.png",
+    color: "/images/partners/color/groupm.png",
+  },
+  {
+    name: "Habeco",
+    mono: "/images/partners/mono/habeco.png",
+    color: "/images/partners/color/habeco.png",
+  },
+  {
+    name: "Pharmaton",
+    mono: "/images/partners/mono/pharmaton.png",
+    color: "/images/partners/color/pharmaton.png",
+  },
+  {
+    name: "Petrovietnam",
+    mono: "/images/partners/mono/petrovietnam.png",
+    color: "/images/partners/color/petrovietnam.png",
+  },
+  {
+    name: "Qatar Airways",
+    mono: "/images/partners/mono/qatar-airways.png",
+    color: "/images/partners/color/qatar-airways.png",
+  },
+  {
+    name: "SABECO",
+    mono: "/images/partners/mono/sabeco.png",
+    color: "/images/partners/color/sabeco.png",
+  },
+  {
+    name: "Sea Links",
+    mono: "/images/partners/mono/sealinks.png",
+    color: "/images/partners/color/sealinks.png",
+  },
+  {
+    name: "Vietbank",
+    mono: "/images/partners/mono/vietbank.png",
+    color: "/images/partners/color/vietbank.png",
+  },
+  {
+    name: "Vinacafe",
+    mono: "/images/partners/mono/vinacafe.png",
+    color: "/images/partners/color/vinacafe.png",
+  },
+  {
+    name: "Vinaphone",
+    mono: "/images/partners/mono/vinaphone.png",
+    color: "/images/partners/color/vinaphone.png",
+  },
 ];
 ---
 
@@ -55,17 +152,32 @@ const partners = [
   <section class="hero-white" id="hero">
     <div class="container hero-content">
       <div class="hero-logo-centered" id="heroLogo">
-        <img src={`${base}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="hero-logo-img" />
+        <img
+          src={`${base}/images/logo/Vietba-logo-01.png`}
+          alt="Vietba Group"
+          class="hero-logo-img"
+        />
       </div>
       <p class="hero-tag fade-in">{t.about.sectionTag}</p>
       <h1 class="hero-title fade-in">
-        {t.hero.title}<br/><span class="hero-title-gradient">{t.hero.titleHighlight}</span>
+        {t.hero.title}<br /><span class="hero-title-gradient"
+          >{t.hero.titleHighlight}
+        </span>
       </h1>
       <p class="hero-subtitle fade-in">{t.hero.subtitle}</p>
       <div class="hero-buttons fade-in">
         <a href={`${base}/en/contact`} class="btn-glow">{t.hero.cta}</a>
-        <a href={`${base}/en/about`} class="btn-outline">{t.nav.about}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href={`${base}/en/about`} class="btn-outline"
+          >{t.nav.about}
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            ><path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
         </a>
       </div>
     </div>
@@ -82,17 +194,28 @@ const partners = [
           <p class="section-tag">{t.about.sectionTag}</p>
           <h2 class="section-title">{t.about.title}</h2>
           <p class="intro-desc">{t.about.description}</p>
-          <p class="intro-desc" style="margin-top:12px">{t.about.description2}</p>
+          <p class="intro-desc" style="margin-top:12px">
+            {t.about.description2}
+          </p>
           <div class="intro-buttons">
-            <a href={`${base}/en/about`} class="btn-outline">{t.nav.about}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <a href={`${base}/en/about`} class="btn-outline"
+              >{t.nav.about}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                ><path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
             </a>
           </div>
         </div>
         <div class="intro-stats">
           <div class="stats-grid">
             <div class="stat-card">
-              <span class="stat-number" data-target="26">0</span>
+              <span class="stat-number" data-target="27">0</span>
               <div class="stat-label-group">
                 <span>{t.about.stats.yearsLabel1}</span>
                 <span>{t.about.stats.yearsLabel2}</span>
@@ -123,103 +246,240 @@ const partners = [
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Partner Logo Marquee -->
-  <section class="section section-light partners-section" id="partners-marquee">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-tag">{t.home.partnersTeaser}</p>
+    <!-- Partner Marquee (same section, no snap) -->
+    <div class="partners-inline" id="partners-marquee">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom:24px">
+          <p class="section-tag">{t.home.partnersTeaser}</p>
+        </div>
+      </div>
+      <div class="marquee-viewport fade-in">
+        <div class="marquee-track" id="marqueeTrack">
+          {
+            partners.map((p) => (
+              <button
+                class="partner-logo-btn"
+                type="button"
+                aria-label={p.name}
+                data-partner={p.name.toLowerCase().replace(/\s+/g, "-")}
+              >
+                <img
+                  src={`${base}${p.mono}`}
+                  alt={p.name}
+                  class="partner-img partner-img--mono"
+                  loading="lazy"
+                />
+                <img
+                  src={`${base}${p.color}`}
+                  alt=""
+                  class="partner-img partner-img--color"
+                  loading="lazy"
+                />
+              </button>
+            ))
+          }
+          {
+            partners.map((p) => (
+              <button
+                class="partner-logo-btn"
+                type="button"
+                aria-label={p.name}
+                data-partner={p.name.toLowerCase().replace(/\s+/g, "-")}
+              >
+                <img
+                  src={`${base}${p.mono}`}
+                  alt={p.name}
+                  class="partner-img partner-img--mono"
+                  loading="lazy"
+                />
+                <img
+                  src={`${base}${p.color}`}
+                  alt=""
+                  class="partner-img partner-img--color"
+                  loading="lazy"
+                />
+              </button>
+            ))
+          }
+        </div>
       </div>
     </div>
-    <div class="marquee-viewport fade-in">
-      <div class="marquee-track" id="marqueeTrack">
-        {partners.map((p) => (
-          <button class="partner-logo-btn" type="button" aria-label={p.name} data-partner={p.name.toLowerCase().replace(/\s+/g, '-')}>
-            <img src={`${base}${p.mono}`} alt={p.name} class="partner-img partner-img--mono" loading="lazy" />
-            <img src={`${base}${p.color}`} alt="" class="partner-img partner-img--color" loading="lazy" />
-          </button>
-        ))}
-        {partners.map((p) => (
-          <button class="partner-logo-btn" type="button" aria-label={p.name} data-partner={p.name.toLowerCase().replace(/\s+/g, '-')}>
-            <img src={`${base}${p.mono}`} alt={p.name} class="partner-img partner-img--mono" loading="lazy" />
-            <img src={`${base}${p.color}`} alt="" class="partner-img partner-img--color" loading="lazy" />
-          </button>
-        ))}
-      </div>
-    </div>
   </section>
 
-  <!-- 3. Strengths (Dark navy) -->
-  <section class="section section-dark" id="strengths">
+  <!-- 3. Strengths (Dark navy — full screen) -->
+  <section class="section section-dark section-fullscreen" id="strengths">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-tag">{t.strengths.sectionTag}</p>
         <h2 class="section-title">{t.strengths.title}</h2>
       </div>
       <div class="strengths-grid">
-        {t.strengths.items.map((item, i) => (
-          <div class="strength-card fade-in">
-            <div class="strength-icon-wrapper">
-              <div class={`strength-icon ${i === 0 ? 'orange' : 'purple'}`} set:html={strengthIcons[item.icon]} />
+        {
+          t.strengths.items.map((item, i) => (
+            <div class="strength-card fade-in">
+              <div class="strength-icon-wrapper">
+                <div
+                  class={`strength-icon ${i === 0 ? "orange" : "purple"}`}
+                  set:html={strengthIcons[item.icon]}
+                />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+              <div class={`strength-accent ${i === 0 ? "orange" : "purple"}`} />
             </div>
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
-            <div class={`strength-accent ${i === 0 ? 'orange' : 'purple'}`}></div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <!-- 4. Media Services (Light background) -->
-  <section class="section section-light" id="services-teaser">
+  <!-- 4. Media Services (Light — full screen) -->
+  <section
+    class="section section-light section-fullscreen"
+    id="services-teaser"
+  >
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-tag">{t.home.servicesTeaser}</p>
         <h2 class="section-title">{t.services.title}</h2>
       </div>
       <div class="services-grid">
-        {mediaServices.map((s) => (
-          <div class="service-card fade-in">
-            <div class="service-icon-wrap">
-              <div class="service-icon" set:html={s.icon} />
+        {
+          mediaServices.map((s) => (
+            <div class="service-card fade-in">
+              <div class="service-icon-wrap">
+                <div class="service-icon" set:html={s.icon} />
+              </div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
             </div>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
       <div class="teaser-action fade-in">
         <a href={`${base}/en/services`} class="view-all-link">
           {t.home.viewAll}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            ><path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 5. Timeline (Dark navy) -->
-  <section class="section section-dark" id="timeline-teaser" style="background:var(--color-bg-dark)">
+  <!-- 5. Timeline Carousel Spotlight (Dark navy) -->
+  <section
+    class="section section-dark tl-section"
+    id="timeline-teaser"
+    style="background:var(--color-bg-dark)"
+  >
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header fade-in" style="margin-bottom:8px">
         <p class="section-tag">{t.home.timelineTeaser}</p>
         <h2 class="section-title">{t.timeline.title}</h2>
       </div>
-      <div class="timeline-mini fade-in">
-        <div class="timeline-mini-line"></div>
-        {t.timeline.items.map((item, i) => (
-          <div class={`timeline-mini-node ${i === 0 ? 'active' : ''}`}>
-            <span class="mini-year">{item.year}</span>
-            <div class="mini-dot"></div>
-            <span class="mini-title">{item.title}</span>
-          </div>
-        ))}
+    </div>
+
+    <!-- Full-width carousel (outside container) -->
+    <div class="tl-carousel fade-in" id="tlCarousel">
+      <!-- Prev / Next arrows -->
+      <button
+        class="tl-arrow tl-arrow-prev"
+        id="tlPrev"
+        aria-label="Previous milestone"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          ><path d="M15 18l-6-6 6-6"></path>
+        </svg>
+      </button>
+      <button
+        class="tl-arrow tl-arrow-next"
+        id="tlNext"
+        aria-label="Next milestone"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          ><path d="M9 18l6-6-6-6"></path>
+        </svg>
+      </button>
+
+      <!-- Slides -->
+      <div class="tl-stage">
+        {
+          t.timeline.items.map((item, i) => (
+            <div
+              class={`tl-slide ${i === 0 ? "active" : ""} ${
+                i % 2 === 0 ? "year-top" : "year-bottom"
+              }`}
+              data-index={i}
+            >
+              <div class="tl-year-display gradient-text">{item.year}</div>
+              <div class="tl-card">
+                <h3 class="tl-card-title">{item.title}</h3>
+                <p class="tl-card-desc">{item.desc}</p>
+                <div class="tl-card-footer">
+                  <span class="tl-card-step">{`${i + 1} / ${
+                    t.timeline.items.length
+                  }`}</span>
+                  <span class="tl-card-year-badge">{item.year}</span>
+                </div>
+              </div>
+            </div>
+          ))
+        }
       </div>
+
+      <!-- Progress bar -->
+      <div class="tl-progress-track">
+        <div class="tl-progress-fill" id="tlProgressFill"></div>
+      </div>
+
+      <!-- Dot navigation -->
+      <div class="tl-dots">
+        {
+          t.timeline.items.map((item, i) => (
+            <button
+              class={`tl-dot ${i === 0 ? "active" : ""}`}
+              data-goto={i}
+              aria-label={`Go to ${item.year}`}
+            >
+              <span class="tl-dot-year">{item.year}</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="container">
       <div class="teaser-action fade-in">
         <a href={`${base}/en/history`} class="btn-outline">
           {t.home.exploreHistory}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            ><path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
         </a>
       </div>
     </div>
@@ -231,209 +491,1084 @@ const partners = [
       <div class="cta-card fade-in">
         <h2>{t.home.contactCta}</h2>
         <p>{t.home.contactCtaSub}</p>
-        <a href={`${base}/en/contact`} class="btn-glow">{t.home.contactCtaBtn}</a>
+        <a href={`${base}/en/contact`} class="btn-glow"
+          >{t.home.contactCtaBtn}
+        </a>
       </div>
     </div>
   </section>
 </Layout>
 
 <script>
-  const counters = document.querySelectorAll('.stat-number');
-  const cObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target as HTMLElement;
-        const target = el.dataset.target || '0';
-        const match = target.match(/^([+]?)(\d+)([K+]*)$/i);
-        if (!match) { el.textContent = target; return; }
-        const prefix = match[1];
-        const num = parseInt(match[2]);
-        const suffix = match[3];
-        let current = 0;
-        const step = Math.max(1, Math.ceil(num / 50));
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= num) { current = num; clearInterval(timer); }
-          el.textContent = prefix + current + suffix;
-        }, 25);
-        cObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(c => cObserver.observe(c));
+  const counters = document.querySelectorAll(".stat-number");
+  const cObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = el.dataset.target || "0";
+          const match = target.match(/^([+]?)(\d+)([K+]*)$/i);
+          if (!match) {
+            el.textContent = target;
+            return;
+          }
+          const prefix = match[1];
+          const num = parseInt(match[2]);
+          const suffix = match[3];
+          let current = 0;
+          const step = Math.max(1, Math.ceil(num / 50));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= num) {
+              current = num;
+              clearInterval(timer);
+            }
+            el.textContent = prefix + current + suffix;
+          }, 25);
+          cObserver.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  counters.forEach((c) => cObserver.observe(c));
 
   // Partner logo marquee interaction
-  document.querySelectorAll('.partner-logo-btn').forEach(btn => {
-    btn.addEventListener('click', () => btn.classList.toggle('active'));
+  document.querySelectorAll(".partner-logo-btn").forEach((btn) => {
+    btn.addEventListener("click", () => btn.classList.toggle("active"));
   });
-  const track = document.getElementById('marqueeTrack');
+  const track = document.getElementById("marqueeTrack");
   if (track) {
-    track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
-    track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+    track.addEventListener(
+      "mouseenter",
+      () => (track.style.animationPlayState = "paused")
+    );
+    track.addEventListener(
+      "mouseleave",
+      () => (track.style.animationPlayState = "running")
+    );
   }
+
+  // ─── Timeline Carousel ───
+  (() => {
+    const carousel = document.getElementById("tlCarousel");
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll<HTMLElement>(".tl-slide");
+    const dots = carousel.querySelectorAll<HTMLElement>(".tl-dot");
+    const prevBtn = document.getElementById("tlPrev");
+    const nextBtn = document.getElementById("tlNext");
+    const progressFill = document.getElementById(
+      "tlProgressFill"
+    ) as HTMLElement;
+    const total = slides.length;
+    let current = 0;
+    let autoTimer: ReturnType<typeof setInterval> | null = null;
+    let progressTimer: ReturnType<typeof setInterval> | null = null;
+    const AUTO_INTERVAL = 5000;
+    const PROGRESS_TICK = 30;
+    let progressValue = 0;
+    let isPaused = false;
+
+    function goTo(idx: number) {
+      if (idx < 0) idx = total - 1;
+      if (idx >= total) idx = 0;
+
+      // Clear all states
+      slides.forEach((s) => s.classList.remove("active", "prev", "next"));
+      dots[current].classList.remove("active");
+
+      current = idx;
+
+      // Set active + adjacent peek slides
+      slides[current].classList.add("active");
+      dots[current].classList.add("active");
+
+      const prevIdx = (current - 1 + total) % total;
+      const nextIdx = (current + 1) % total;
+      slides[prevIdx].classList.add("prev");
+      slides[nextIdx].classList.add("next");
+
+      // Reset progress
+      progressValue = 0;
+      if (progressFill) progressFill.style.width = "0%";
+    }
+
+    function startProgress() {
+      stopProgress();
+      progressValue = 0;
+      progressTimer = setInterval(() => {
+        if (isPaused) return;
+        progressValue += (PROGRESS_TICK / AUTO_INTERVAL) * 100;
+        if (progressFill)
+          progressFill.style.width = `${Math.min(progressValue, 100)}%`;
+      }, PROGRESS_TICK);
+    }
+
+    function stopProgress() {
+      if (progressTimer) {
+        clearInterval(progressTimer);
+        progressTimer = null;
+      }
+    }
+
+    function startAuto() {
+      stopAuto();
+      startProgress();
+      autoTimer = setInterval(() => {
+        if (isPaused) return;
+        goTo(current + 1);
+        startProgress();
+      }, AUTO_INTERVAL);
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+      stopProgress();
+    }
+
+    // Dot click
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = parseInt(dot.dataset.goto || "0");
+        goTo(idx);
+        startAuto();
+      });
+    });
+
+    // Arrow click
+    prevBtn?.addEventListener("click", () => {
+      goTo(current - 1);
+      startAuto();
+    });
+    nextBtn?.addEventListener("click", () => {
+      goTo(current + 1);
+      startAuto();
+    });
+
+    // Pause on hover
+    carousel.addEventListener("mouseenter", () => {
+      isPaused = true;
+    });
+    carousel.addEventListener("mouseleave", () => {
+      isPaused = false;
+    });
+
+    // Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    carousel.addEventListener(
+      "touchstart",
+      (e: TouchEvent) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+    carousel.addEventListener(
+      "touchend",
+      (e: TouchEvent) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          goTo(diff > 0 ? current + 1 : current - 1);
+          startAuto();
+        }
+      },
+      { passive: true }
+    );
+
+    // Keyboard
+    carousel.setAttribute("tabindex", "0");
+    carousel.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        goTo(current - 1);
+        startAuto();
+      }
+      if (e.key === "ArrowRight") {
+        goTo(current + 1);
+        startAuto();
+      }
+    });
+
+    // Start when visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startAuto();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(carousel);
+
+    // Set initial prev/next peek
+    slides[(total - 1) % total].classList.add("prev");
+    if (total > 1) slides[1].classList.add("next");
+  })();
 </script>
 
 <style>
-/* ─── Hero White ─── */
-.hero-white { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 100px 0 60px; }
-.hero-content { text-align: center; position: relative; z-index: 2; }
-.hero-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; background: var(--color-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; }
-.hero-title { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.08; color: var(--color-text-dark); margin-bottom: 28px; letter-spacing: -1px; }
-.hero-title-gradient { background: var(--color-gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 560px; margin: 0 auto 44px; color: var(--color-text-dark-secondary); line-height: 1.7; }
-.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-/* ─── Hero Centered Logo ─── */
-.hero-logo-centered { margin-bottom: 32px; will-change: opacity, transform; }
-.hero-logo-img { height: 120px; width: auto; margin: 0 auto; filter: drop-shadow(0 4px 24px rgba(255, 107, 53, 0.15)); }
-.hero-accent { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px); opacity: 0.35; animation: accentFloat 8s ease-in-out infinite alternate; }
-.hero-accent-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,107,53,0.4), transparent 70%); top: -10%; right: -5%; }
-.hero-accent-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(99,91,255,0.35), transparent 70%); bottom: -5%; left: -8%; animation-delay: -3s; }
-.hero-accent-3 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(0,212,255,0.3), transparent 70%); top: 30%; left: 50%; transform: translateX(-50%); animation-delay: -5s; animation-name: accentFloat3; }
-@keyframes accentFloat { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(20px,-15px) scale(1.1); } }
-@keyframes accentFloat3 { 0% { transform: translateX(-50%) translate(0,0) scale(1); } 100% { transform: translateX(-50%) translate(-15px,20px) scale(1.15); } }
-/* Styles are identical to Vietnamese index — they share the same global.css */
-.intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
-.intro-text .section-tag { margin-bottom: 16px; }
-.intro-text .section-title { color: var(--color-text-dark); margin-bottom: 24px; }
-.intro-desc { font-size: 1.02rem; line-height: 1.8; color: var(--color-text-dark-secondary); }
-.intro-buttons { margin-top: 32px; }
-.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.stat-card { display: flex; align-items: center; gap: 14px; padding: 24px; background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06); border-radius: var(--radius-md); transition: all var(--transition); box-shadow: 0 1px 3px rgba(10,37,64,0.06); }
-.stat-card:hover { box-shadow: 0 8px 24px rgba(255,107,53,0.1); transform: translateY(-2px); border-color: rgba(255,107,53,0.2); }
-.stat-number { font-size: clamp(2.5rem,5vw,3.5rem); font-weight: 300; line-height: 1; color: var(--color-text-dark); letter-spacing: -2px; }
-.stat-label-group { display: flex; flex-direction: column; }
-.stat-label-group span { font-size: 0.68rem; font-weight: 600; letter-spacing: 1.5px; color: var(--color-text-dark-secondary); line-height: 1.4; text-transform: uppercase; }
+  /* ─── Homepage scroll snap ─── */
+  html {
+    scroll-snap-type: y mandatory;
+  }
+  .section,
+  .hero-white {
+    scroll-snap-align: start;
+  }
 
-.strengths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.strength-card { position: relative; padding: 48px 36px; background: var(--color-bg-glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--color-border-glass); border-radius: var(--radius-lg); transition: all var(--transition); overflow: hidden; }
-.strength-card:hover { transform: translateY(-6px); border-color: rgba(255,107,53,0.3); box-shadow: 0 0 40px var(--color-glow-orange), 0 12px 40px rgba(0,0,0,0.3); }
-.strength-card:nth-child(2):hover { border-color: rgba(99,91,255,0.3); box-shadow: 0 0 40px var(--color-glow-purple), 0 12px 40px rgba(0,0,0,0.3); }
-.strength-icon-wrapper { margin-bottom: 24px; }
-.strength-icon { width: 56px; height: 56px; }
-.strength-icon.orange { color: var(--color-accent-orange); }
-.strength-icon.purple { color: var(--color-accent-purple); }
-.strength-card h3 { font-size: 1.3rem; margin-bottom: 16px; color: var(--color-text-primary); }
-.strength-card p { font-size: 0.95rem; line-height: 1.8; color: var(--color-text-secondary); }
-.strength-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-.strength-accent.orange { background: linear-gradient(90deg, #FF6B35, #FF3864); }
-.strength-accent.purple { background: linear-gradient(90deg, #635BFF, #00D4FF); }
+  /* ─── Hero White ─── */
+  .hero-white {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 60px;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: var(--color-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    color: var(--color-text-dark);
+    margin-bottom: 28px;
+    letter-spacing: -1px;
+  }
+  .hero-title-gradient {
+    background: var(--color-gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 560px;
+    margin: 0 auto 44px;
+    color: var(--color-text-dark-secondary);
+    line-height: 1.7;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  /* ─── Hero Centered Logo ─── */
+  .hero-logo-centered {
+    margin-bottom: 32px;
+    will-change: opacity, transform;
+  }
+  .hero-logo-img {
+    height: 120px;
+    width: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 4px 24px rgba(255, 107, 53, 0.15));
+  }
+  .hero-accent {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: accentFloat 8s ease-in-out infinite alternate;
+  }
+  .hero-accent-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 107, 53, 0.4),
+      transparent 70%
+    );
+    top: -10%;
+    right: -5%;
+  }
+  .hero-accent-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(
+      circle,
+      rgba(99, 91, 255, 0.35),
+      transparent 70%
+    );
+    bottom: -5%;
+    left: -8%;
+    animation-delay: -3s;
+  }
+  .hero-accent-3 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 212, 255, 0.3),
+      transparent 70%
+    );
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: -5s;
+    animation-name: accentFloat3;
+  }
+  @keyframes accentFloat {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(20px, -15px) scale(1.1);
+    }
+  }
+  @keyframes accentFloat3 {
+    0% {
+      transform: translateX(-50%) translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translateX(-50%) translate(-15px, 20px) scale(1.15);
+    }
+  }
+  /* Styles are identical to Vietnamese index — they share the same global.css */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .intro-text .section-tag {
+    margin-bottom: 16px;
+  }
+  .intro-text .section-title {
+    color: var(--color-text-dark);
+    margin-bottom: 24px;
+  }
+  .intro-desc {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--color-text-dark-secondary);
+  }
+  .intro-buttons {
+    margin-top: 32px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    user-select: none; -webkit-user-select: none;
+  }
+  .stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(10, 37, 64, 0.06);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    box-shadow: 0 1px 3px rgba(10, 37, 64, 0.06);
+  }
+  .stat-card:hover {
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+  .stat-number {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--color-text-dark);
+    letter-spacing: -2px;
+  }
+  .stat-label-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-label-group span {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--color-text-dark-secondary);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
 
-.services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-.service-card { padding: 32px 20px; background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06); border-radius: var(--radius-md); transition: all var(--transition); box-shadow: 0 1px 3px rgba(10,37,64,0.06); text-align: center; }
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(255,107,53,0.12), 0 4px 16px rgba(0,0,0,0.05); border-color: rgba(255,107,53,0.2); }
-.service-icon-wrap { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(99,91,255,0.08)); border-radius: 14px; }
-.service-icon { width: 28px; height: 28px; color: var(--color-accent-orange); }
-.service-card h3 { font-size: 0.95rem; margin-bottom: 10px; color: var(--color-text-dark); }
-.service-card p { font-size: 0.82rem; color: var(--color-text-dark-secondary); line-height: 1.6; }
+  /* ─── Full-screen sections ─── */
+  .section-fullscreen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .section-fullscreen > .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-/* ─── Partner Marquee ─── */
-.partners-section { padding: 60px 0 40px; overflow: hidden; }
-.partners-section .section-header { margin-bottom: 32px; }
-.marquee-viewport {
-  width: 100%;
-  overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-}
-.marquee-track {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  width: max-content;
-  animation: marqueeScroll 45s linear infinite;
-}
-@keyframes marqueeScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.partner-logo-btn {
-  flex-shrink: 0;
-  position: relative;
-  width: 200px;
-  height: 90px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  transition: transform 0.3s ease;
-}
-.partner-logo-btn:hover { transform: scale(1.12); }
-.partner-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: opacity 0.4s ease;
-}
-.partner-img--mono { opacity: 0.45; filter: grayscale(100%); }
-.partner-img--color { opacity: 0; }
-.partner-logo-btn:hover .partner-img--mono { opacity: 0.15; }
-.partner-logo-btn:hover .partner-img--color { opacity: 0.85; }
-.partner-logo-btn.active .partner-img--mono { opacity: 0; }
-.partner-logo-btn.active .partner-img--color { opacity: 1; }
-.partner-logo-btn.active:hover .partner-img--color { opacity: 1; }
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .strength-card {
+    position: relative;
+    padding: 56px 44px;
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border-glass);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+    overflow: hidden;
+  }
+  .strength-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 107, 53, 0.3);
+    box-shadow: 0 0 40px var(--color-glow-orange),
+      0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+  .strength-card:nth-child(2):hover {
+    border-color: rgba(99, 91, 255, 0.3);
+    box-shadow: 0 0 40px var(--color-glow-purple),
+      0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+  .strength-icon-wrapper {
+    margin-bottom: 28px;
+  }
+  .strength-icon {
+    width: 64px;
+    height: 64px;
+  }
+  .strength-icon.orange {
+    color: var(--color-accent-orange);
+  }
+  .strength-icon.purple {
+    color: var(--color-accent-purple);
+  }
+  .strength-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+  }
+  .strength-card p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-text-secondary);
+  }
+  .strength-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+  .strength-accent.orange {
+    background: linear-gradient(90deg, #ff6b35, #ff3864);
+  }
+  .strength-accent.purple {
+    background: linear-gradient(90deg, #635bff, #00d4ff);
+  }
 
-/* Per-partner size adjustments for logos with excessive canvas padding */
-.partner-logo-btn[data-partner="samsung"] .partner-img {
-  transform: scale(1.5);
-}
-.partner-logo-btn[data-partner="qatar-airways"] .partner-img {
-  transform: scale(2);
-}
-.partner-logo-btn[data-partner="vietinbank"] .partner-img {
-  transform: scale(1.45);
-}
-/* White mono logos need brightness(0) to become visible on light backgrounds */
-.partner-logo-btn[data-partner="samsung"] .partner-img--mono,
-.partner-logo-btn[data-partner="qatar-airways"] .partner-img--mono,
-.partner-logo-btn[data-partner="vietinbank"] .partner-img--mono {
-  filter: grayscale(100%) brightness(0);
-}
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    padding: 40px 24px;
+    background: #ffffff;
+    border: 1px solid rgba(10, 37, 64, 0.06);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    box-shadow: 0 1px 3px rgba(10, 37, 64, 0.06);
+    text-align: center;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.12),
+      0 4px 16px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+  .service-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 107, 53, 0.1),
+      rgba(99, 91, 255, 0.08)
+    );
+    border-radius: 16px;
+  }
+  .service-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-accent-orange);
+  }
+  .service-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: var(--color-text-dark);
+  }
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--color-text-dark-secondary);
+    line-height: 1.7;
+  }
 
-.teaser-action { text-align: center; margin-top: 40px; }
-.section-light .view-all-link { color: var(--color-accent-orange); }
-.section-light .view-all-link:hover { color: var(--color-accent-pink); }
+  /* ─── Partner Marquee (inline in about section) ─── */
+  .partners-inline {
+    padding: 48px 0 0;
+    overflow: hidden;
+    scroll-snap-align: none;
+    user-select: none; -webkit-user-select: none;
+  }
+  .partners-section .section-header {
+    margin-bottom: 32px;
+  }
+  .marquee-viewport {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: max-content;
+    animation: marqueeScroll 45s linear infinite;
+  }
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .partner-logo-btn {
+    flex-shrink: 0;
+    position: relative;
+    width: 200px;
+    height: 90px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.3s ease;
+  }
+  .partner-logo-btn:hover {
+    transform: scale(1.12);
+  }
+  .partner-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.4s ease;
+  }
+  .partner-img--mono {
+    opacity: 0.45;
+    filter: grayscale(100%);
+  }
+  .partner-img--color {
+    opacity: 0;
+  }
+  .partner-logo-btn:hover .partner-img--mono {
+    opacity: 0.15;
+  }
+  .partner-logo-btn:hover .partner-img--color {
+    opacity: 0.85;
+  }
+  .partner-logo-btn.active .partner-img--mono {
+    opacity: 0;
+  }
+  .partner-logo-btn.active .partner-img--color {
+    opacity: 1;
+  }
+  .partner-logo-btn.active:hover .partner-img--color {
+    opacity: 1;
+  }
 
-.timeline-mini { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 60px 20px 40px; overflow-x: auto; scrollbar-width: none; }
-.timeline-mini::-webkit-scrollbar { display: none; }
-.timeline-mini-line { position: absolute; top: 50%; left: 20px; right: 20px; height: 2px; background: var(--color-gradient); transform: translateY(-50%); opacity: 0.5; }
-.timeline-mini-node { display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; z-index: 1; min-width: 80px; }
-.mini-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--color-bg-elevated); border: 2px solid var(--color-accent-orange); transition: all var(--transition); }
-.timeline-mini-node.active .mini-dot { background: var(--color-accent-orange); box-shadow: 0 0 12px var(--color-glow-orange); }
-.mini-year { font-size: 0.75rem; font-weight: 800; color: var(--color-accent-orange); }
-.mini-title { font-size: 0.68rem; color: var(--color-text-muted); text-align: center; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Per-partner size adjustments for logos with excessive canvas padding */
+  .partner-logo-btn[data-partner="samsung"] .partner-img {
+    transform: scale(1.5);
+  }
+  .partner-logo-btn[data-partner="qatar-airways"] .partner-img {
+    transform: scale(2);
+  }
+  .partner-logo-btn[data-partner="vietinbank"] .partner-img {
+    transform: scale(1.45);
+  }
+  /* White mono logos need brightness(0) to become visible on light backgrounds */
+  .partner-logo-btn[data-partner="samsung"] .partner-img--mono,
+  .partner-logo-btn[data-partner="qatar-airways"] .partner-img--mono,
+  .partner-logo-btn[data-partner="vietinbank"] .partner-img--mono {
+    filter: grayscale(100%) brightness(0);
+  }
 
-.contact-cta { padding: 80px 0; }
-.cta-card { text-align: center; padding: 60px 40px; background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(99,91,255,0.04)); border: 1px solid rgba(255,107,53,0.15); border-radius: var(--radius-lg); }
-.cta-card h2 { font-size: 1.8rem; margin-bottom: 16px; color: var(--color-text-dark); }
-.cta-card p { max-width: 500px; margin: 0 auto 32px; color: var(--color-text-dark-secondary); }
+  .teaser-action {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .section-light .view-all-link {
+    color: var(--color-accent-orange);
+  }
+  .section-light .view-all-link:hover {
+    color: var(--color-accent-pink);
+  }
 
-@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } .strengths-grid { gap: 24px; } }
-@media (max-width: 768px) {
-  .hero-logo-img { height: 90px; }
-  .intro-grid { grid-template-columns: 1fr; gap: 36px; }
-  .strengths-grid { grid-template-columns: 1fr; gap: 20px; }
-  .strength-card { padding: 36px 28px; }
-  .services-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .service-card { padding: 24px 16px; }
-  .stats-grid { gap: 16px; }
-  .stat-card { padding: 18px; }
-  .stat-number { font-size: clamp(2rem,6vw,2.8rem); letter-spacing: -1px; }
-  .stat-label-group span { font-size: 0.6rem; }
-  .timeline-mini { padding: 40px 10px 30px; gap: 4px; }
-  .timeline-mini-node { min-width: 60px; }
-  .mini-year { font-size: 0.68rem; }
-  .mini-title { font-size: 0.6rem; max-width: 70px; }
-  .contact-cta { padding: 48px 0; }
-  .cta-card { padding: 36px 24px; }
-  .cta-card h2 { font-size: 1.4rem; }
-}
-@media (max-width: 480px) {
-  .services-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: 1fr; }
-  .stat-number { font-size: clamp(2.5rem,10vw,3rem); }
-  .cta-card { padding: 28px 20px; }
-  .cta-card h2 { font-size: 1.25rem; }
-}
+  /* ─── Timeline Carousel Spotlight ─── */
+  .tl-section {
+    overflow: visible;
+  }
+  .tl-carousel {
+    position: relative;
+    padding: 10px 0 0;
+    outline: none;
+    overflow: visible;
+    width: 100%;
+  }
+  .tl-stage {
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Slides ── */
+  .tl-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    opacity: 0;
+    transform: scale(0.85) translateX(0);
+    pointer-events: none;
+    transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.65s cubic-bezier(0.4, 0, 0.2, 1), filter 0.65s ease;
+    will-change: transform, opacity;
+  }
+  .tl-slide.active {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    pointer-events: auto;
+    z-index: 3;
+    filter: blur(0);
+  }
+  /* ── Adjacent peek slides ── */
+  .tl-slide.prev {
+    opacity: 0.4;
+    transform: scale(0.75) translateX(-35%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(2px);
+  }
+  .tl-slide.next {
+    opacity: 0.4;
+    transform: scale(0.75) translateX(35%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(2px);
+  }
+
+  /* ── Alternating year position ── */
+  .tl-slide.year-top {
+    flex-direction: column;
+  }
+  .tl-slide.year-bottom {
+    flex-direction: column-reverse;
+  }
+
+  /* ── Year Display ── */
+  .tl-year-display {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+    user-select: none;
+    opacity: 0.9;
+    transition: opacity 0.4s ease;
+  }
+  .tl-slide.year-top .tl-year-display {
+    margin-bottom: 12px;
+  }
+  .tl-slide.year-bottom .tl-year-display {
+    margin-top: 12px;
+  }
+
+  /* ── Card ── */
+  .tl-card {
+    position: relative;
+    max-width: 560px;
+    width: 100%;
+    padding: 36px 40px 28px;
+    border-radius: var(--radius-lg);
+    background: rgba(12, 32, 54, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    text-align: center;
+    overflow: hidden;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .tl-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 107, 53, 0.2),
+      transparent 40%,
+      transparent 60%,
+      rgba(99, 91, 255, 0.15)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    filter: blur(0.5px);
+  }
+  .tl-slide.year-bottom .tl-card::before {
+    background: linear-gradient(
+      135deg,
+      rgba(99, 91, 255, 0.2),
+      transparent 40%,
+      transparent 60%,
+      rgba(0, 212, 255, 0.15)
+    );
+  }
+  .tl-card:hover {
+    border-color: rgba(255, 107, 53, 0.15);
+    box-shadow: 0 8px 48px rgba(255, 107, 53, 0.08),
+      0 4px 30px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  .tl-slide.year-bottom .tl-card:hover {
+    border-color: rgba(99, 91, 255, 0.15);
+    box-shadow: 0 8px 48px rgba(99, 91, 255, 0.08),
+      0 4px 30px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  .tl-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--color-text-primary);
+    letter-spacing: -0.3px;
+  }
+  .tl-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+  }
+  .tl-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .tl-card-step {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .tl-card-year-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--color-accent-orange);
+    border: 1px solid rgba(255, 107, 53, 0.12);
+  }
+  .tl-slide.year-bottom .tl-card-year-badge {
+    background: rgba(99, 91, 255, 0.1);
+    color: var(--color-accent-cyan);
+    border-color: rgba(99, 91, 255, 0.12);
+  }
+
+  /* ── Arrows ── */
+  .tl-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-glass);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+  }
+  .tl-arrow:hover {
+    background: rgba(255, 107, 53, 0.15);
+    border-color: var(--color-accent-orange);
+    color: var(--color-accent-orange);
+    box-shadow: 0 0 20px var(--color-glow-orange);
+  }
+  .tl-arrow.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .tl-arrow-prev {
+    left: 24px;
+  }
+  .tl-arrow-next {
+    right: 24px;
+  }
+
+  /* ── Progress bar ── */
+  .tl-progress-track {
+    width: 100%;
+    max-width: 520px;
+    height: 2px;
+    background: rgba(173, 189, 204, 0.12);
+    border-radius: 2px;
+    margin: 28px auto 0;
+    overflow: hidden;
+  }
+  .tl-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--color-gradient);
+    border-radius: 2px;
+    transition: width 0.05s linear;
+  }
+
+  /* ── Dot navigation ── */
+  .tl-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .tl-dot {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(173, 189, 204, 0.3);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all var(--transition);
+  }
+  .tl-dot:hover {
+    border-color: var(--color-accent-orange);
+    transform: scale(1.3);
+  }
+  .tl-dot.active {
+    background: var(--color-accent-orange);
+    border-color: var(--color-accent-orange);
+    box-shadow: 0 0 10px var(--color-glow-orange);
+    transform: scale(1.3);
+  }
+  .tl-dot-year {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-accent-orange);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+  .tl-dot:hover .tl-dot-year,
+  .tl-dot.active .tl-dot-year {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  .contact-cta {
+    padding: 80px 0;
+  }
+  .cta-card {
+    text-align: center;
+    padding: 60px 40px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 107, 53, 0.06),
+      rgba(99, 91, 255, 0.04)
+    );
+    border: 1px solid rgba(255, 107, 53, 0.15);
+    border-radius: var(--radius-lg);
+  }
+  .cta-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: var(--color-text-dark);
+  }
+  .cta-card p {
+    max-width: 500px;
+    margin: 0 auto 32px;
+    color: var(--color-text-dark-secondary);
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .strengths-grid {
+      gap: 32px;
+    }
+    .section-fullscreen {
+      min-height: auto;
+    }
+  }
+  @media (max-width: 768px) {
+    .hero-logo-img {
+      height: 90px;
+    }
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .strengths-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .strength-card {
+      padding: 36px 28px;
+    }
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .service-card {
+      padding: 24px 16px;
+    }
+    .stats-grid {
+      gap: 16px;
+    }
+    .stat-card {
+      padding: 18px;
+    }
+    .stat-number {
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      letter-spacing: -1px;
+    }
+    .stat-label-group span {
+      font-size: 0.6rem;
+    }
+    .tl-stage {
+      min-height: 400px;
+    }
+    .tl-year-display {
+      font-size: clamp(2.5rem, 10vw, 4.5rem);
+      letter-spacing: -2px;
+    }
+    .tl-card {
+      padding: 24px 20px 20px;
+      max-width: 90%;
+    }
+    .tl-arrow-prev {
+      left: 8px;
+    }
+    .tl-arrow-next {
+      right: 8px;
+    }
+    .tl-arrow svg {
+      width: 16px;
+      height: 16px;
+    }
+    .tl-slide.prev,
+    .tl-slide.next {
+      opacity: 0;
+    } /* hide side slides on mobile */
+    .tl-dots {
+      gap: 14px;
+    }
+    .contact-cta {
+      padding: 48px 0;
+    }
+    .cta-card {
+      padding: 36px 24px;
+    }
+    .cta-card h2 {
+      font-size: 1.4rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .stat-number {
+      font-size: clamp(2.5rem, 10vw, 3rem);
+    }
+    .cta-card {
+      padding: 28px 20px;
+    }
+    .cta-card h2 {
+      font-size: 1.25rem;
+    }
+  }
 </style>
