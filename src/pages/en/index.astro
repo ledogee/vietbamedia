@@ -375,7 +375,9 @@ const partners = [
 .partner-logo-btn.active:hover .partner-img--color { opacity: 1; }
 
 /* Per-partner size adjustments for logos with excessive canvas padding */
-.partner-logo-btn[data-partner="samsung"] .partner-img,
+.partner-logo-btn[data-partner="samsung"] .partner-img {
+  transform: scale(1.5);
+}
 .partner-logo-btn[data-partner="qatar-airways"] .partner-img {
   transform: scale(2);
 }
