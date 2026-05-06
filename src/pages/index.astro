@@ -50,10 +50,13 @@ const partners = [
 ];
 ---
 
-<Layout lang="vi">
+<Layout lang="vi" heroLogo>
   <!-- 1. Hero — White with Interactive Background -->
   <section class="hero-white" id="hero">
     <div class="container hero-content">
+      <div class="hero-logo-centered" id="heroLogo">
+        <img src={`${base}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="hero-logo-img" />
+      </div>
       <p class="hero-tag fade-in">{t.about.sectionTag}</p>
       <h1 class="hero-title fade-in">
         {t.hero.title}<br/><span class="hero-title-gradient">{t.hero.titleHighlight}</span>
@@ -326,6 +329,18 @@ const partners = [
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* ─── Hero Centered Logo ─── */
+.hero-logo-centered {
+  margin-bottom: 32px;
+  will-change: opacity, transform;
+}
+.hero-logo-img {
+  height: 120px;
+  width: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 24px rgba(255, 107, 53, 0.15));
 }
 
 /* Floating decorative accents */
@@ -689,6 +704,7 @@ const partners = [
   .hero-accent-1 { width: 250px; height: 250px; }
   .hero-accent-2 { width: 200px; height: 200px; }
   .hero-accent-3 { width: 150px; height: 150px; }
+  .hero-logo-img { height: 90px; }
 
   .intro-grid { grid-template-columns: 1fr; gap: 36px; }
   .intro-text .section-title { font-size: clamp(1.5rem, 5vw, 2.2rem); }

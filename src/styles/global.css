@@ -99,9 +99,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .section-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   background: var(--color-gradient);
   -webkit-background-clip: text;
@@ -111,9 +111,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .section-tag-blue {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   background: var(--color-gradient-blue);
   -webkit-background-clip: text;

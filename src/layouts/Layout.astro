@@ -4,8 +4,8 @@ import en from '../i18n/en.json';
 import '../styles/global.css';
 import InteractiveBackground from '../components/InteractiveBackground.astro';
 
-interface Props { lang?: string; darkHero?: boolean; }
-const { lang = 'vi', darkHero = false } = Astro.props;
+interface Props { lang?: string; darkHero?: boolean; heroLogo?: boolean; }
+const { lang = 'vi', darkHero = false, heroLogo = false } = Astro.props;
 const t = lang === 'en' ? en : vi;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const prefix = lang === 'en' ? `${base}/en` : base;
@@ -33,7 +33,7 @@ function isActive(path: string): boolean {
   <InteractiveBackground />
 
   <!-- Navbar -->
-  <nav class:list={["navbar", { "navbar-on-dark": darkHero }]} id="navbar">
+  <nav class:list={["navbar", { "navbar-on-dark": darkHero, "navbar-hero-logo": heroLogo }]} id="navbar">
     <div class="container navbar-inner">
       <a href={`${prefix}/`} class="navbar-logo">
         <img src={`${base}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="navbar-logo-img" />
@@ -103,13 +103,44 @@ function isActive(path: string): boolean {
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Navbar scroll effect
+    // Navbar scroll effect + hero logo transition
     const navbar = document.getElementById('navbar')!;
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    const heroLogoEl = document.getElementById('heroLogo');
+    const navMenuEl = document.getElementById('navMenu')!;
+    const navLogoEl = navbar.querySelector('.navbar-logo') as HTMLElement;
+    const isHeroLogo = navbar.classList.contains('navbar-hero-logo');
+    const SCROLL_THRESHOLD = 50;
+    const HERO_LOGO_FADE_DISTANCE = 350; // px over which hero logo fades out (slower)
+
+    // Calculate how far the menu needs to slide to go from centered to right-aligned
+    let menuOffset = 0;
+    if (isHeroLogo && navLogoEl) {
+      // Measure the actual shift: in space-between, menu is at the right edge;
+      // when centered, it's in the middle. The difference is (containerWidth - menuWidth) / 2
+      const navInner = navbar.querySelector('.navbar-inner') as HTMLElement;
+      const containerWidth = navInner.clientWidth;
+      const menuWidth = navMenuEl.offsetWidth;
+      menuOffset = (containerWidth - menuWidth) / 2;
+    }
+
+    function updateNavbar() {
+      const scrollY = window.scrollY;
+      navbar.classList.toggle('scrolled', scrollY > SCROLL_THRESHOLD);
+
+      if (isHeroLogo && heroLogoEl) {
+        // Progress: 0 (top) → 1 (fully scrolled past hero logo zone)
+        const progress = Math.min(1, Math.max(0, scrollY / HERO_LOGO_FADE_DISTANCE));
+        // Hero logo: fade out + scale down
+        heroLogoEl.style.opacity = String(1 - progress);
+        heroLogoEl.style.transform = `scale(${1 - progress * 0.3}) translateY(${-progress * 20}px)`;
+        // Menu: slide from center (translateX=0) to right (translateX = menuOffset)
+        navMenuEl.style.transform = `translateX(${progress * menuOffset}px)`;
+      }
+    }
+
+    window.addEventListener('scroll', updateNavbar, { passive: true });
     // Trigger on load if already scrolled
-    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    updateNavbar();
 
     // Mobile menu toggle
     const navToggle = document.getElementById('navToggle')!;
@@ -165,6 +196,25 @@ function isActive(path: string): boolean {
   box-shadow: 0 1px 8px rgba(10, 37, 64, 0.06);
 }
 .navbar.scrolled .navbar-logo { color: var(--color-text-dark); }
+/* Hero logo mode: navbar logo hidden initially, center the menu */
+.navbar-hero-logo .navbar-inner { justify-content: center; }
+.navbar-hero-logo .navbar-logo {
+  position: absolute;
+  left: 48px;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navbar-hero-logo .navbar-logo-img {
+  height: 38px;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.85);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navbar-hero-logo .navbar-menu {
+  will-change: transform;
+}
+.navbar-hero-logo.scrolled .navbar-logo { opacity: 1; }
+.navbar-hero-logo.scrolled .navbar-logo-img { opacity: 1; transform: translateY(0) scale(1); }
 .navbar.scrolled .nav-link { color: var(--color-text-dark-secondary); }
 .navbar.scrolled .nav-link:hover { color: var(--color-text-dark); background: rgba(255, 107, 53, 0.08); }
 .navbar.scrolled .nav-link.active { color: var(--color-accent-orange); }
