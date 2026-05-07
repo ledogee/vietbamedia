@@ -2,57 +2,297 @@
 import Layout from '../../layouts/Layout.astro';
 import en from '../../i18n/en.json';
 const t = en;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const serviceIcons = [
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 7h10M7 12h10M7 17h5"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15h4l3-9 4 18 3-9h4"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`
 ];
+
+const serviceBullets: string[][] = [
+  ["Internationally licensed gameshows", "Sitcoms & TV dramas", "High-rating entertainment", "Multi-platform content"],
+  ["Social media management", "Advanced SEO & SEM", "Strategic content marketing", "Performance analytics"],
+  ["AI & smart systems", "E-commerce solutions", "Enterprise software", "IT infrastructure & security"],
+  ["TV & radio booking", "PR articles & press", "KOLs & Influencer marketing", "Banners, posters & OOH"],
+  ["Nationwide billboards & LED", "Airport advertising", "Vehicle wraps & transit media", "Prime strategic locations"],
+  ["Conferences & seminars", "Product launches", "Large-scale teambuilding", "Roadshows & activations"],
+  ["Power industry forecasts", "Aviation weather", "Agricultural forecasting", "Petroleum & maritime"],
+  ["Brand positioning", "Brand building & growth", "Crisis management", "Comprehensive media strategy"],
+];
+
+const accents = ["#FF6B35","#635BFF","#00D4FF","#FF3864","#FF6B35","#635BFF","#00D4FF","#FF3864"];
+function hexRgba(hex: string, a: number) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+const items = t.services.items;
 ---
 
 <Layout lang="en">
-  <section class="page-hero">
+  <section class="page-hero svc-hero">
     <div class="container">
       <p class="section-tag fade-in">{t.pageHero.services.tag}</p>
       <h1 class="section-title fade-in">{t.pageHero.services.title}</h1>
-      <p class="fade-in">{t.pageHero.services.subtitle}</p>
+      <p class="fade-in svc-hero-sub">{t.pageHero.services.subtitle}</p>
+      <div class="svc-marquee fade-in">
+        <div class="svc-marquee-track">
+          {[...items, ...items].map((s, i) => (
+            <span class="svc-marquee-item">
+              <span class="svc-marquee-dot"></span>
+              {s.title}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
-  <section class="section section-light">
+
+  <!-- 0: Feature Banner -->
+  <section class="svc-feature" id="svc-0" style={`--accent:${accents[0]}`}>
+    <img src={`${base}${items[0].img}`} alt={items[0].title} class="svc-feature-bg" loading="eager" />
+    <div class="svc-feature-overlay"></div>
+    <div class="container svc-feature-content fade-in">
+      <div class="svc-number-light">01</div>
+      <div class="svc-icon-badge-light"><div class="svc-icon-inner" set:html={serviceIcons[0]} /></div>
+      <h2>{items[0].title}</h2>
+      <p>{items[0].desc}</p>
+      <ul class="svc-bullets-light">
+        {serviceBullets[0].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[0]}`}></span>{b}</li>)}
+      </ul>
+      <a href={`${base}/en/contact`} class="svc-cta-light">Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+    </div>
+  </section>
+
+  <!-- 1+2: Card Pair -->
+  <section class="svc-pair svc-section-light" id="svc-1">
     <div class="container">
-      <div class="services-grid">
-        {t.services.items.map((s, i) => (
-          <div class="service-card fade-in">
-            <div class="service-icon-wrap">
-              <div class="service-icon" set:html={serviceIcons[i]} />
+      <div class="svc-pair-grid">
+        {[1, 2].map(i => (
+          <div class="svc-card fade-in" style={`--accent:${accents[i]}`}>
+            <div class="svc-card-img-wrap">
+              <img src={`${base}${items[i].img}`} alt={items[i].title} loading="lazy" class="svc-card-img" />
+              <div class="svc-card-number">{String(i+1).padStart(2,'0')}</div>
             </div>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
+            <div class="svc-card-body">
+              <div class="svc-icon-badge" style={`background:${hexRgba(accents[i],0.1)};color:${accents[i]}`}>
+                <div class="svc-icon-inner" set:html={serviceIcons[i]} />
+              </div>
+              <h3>{items[i].title}</h3>
+              <p>{items[i].desc}</p>
+              <ul class="svc-bullets-compact">
+                {serviceBullets[i].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[i]}`}></span>{b}</li>)}
+              </ul>
+              <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[i]}`}>Get Started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+            </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3: Split -->
+  <section class="svc-split svc-section-alt" id="svc-3">
+    <div class="container">
+      <div class="svc-split-row fade-in">
+        <div class="svc-split-img"><img src={`${base}${items[3].img}`} alt={items[3].title} loading="lazy" /></div>
+        <div class="svc-split-text">
+          <div class="svc-number" style={`color:${accents[3]}`}>04</div>
+          <div class="svc-icon-badge" style={`background:${hexRgba(accents[3],0.1)};color:${accents[3]}`}><div class="svc-icon-inner" set:html={serviceIcons[3]} /></div>
+          <h2>{items[3].title}</h2>
+          <p class="svc-desc">{items[3].desc}</p>
+          <ul class="svc-bullets">{serviceBullets[3].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[3]}`}></span>{b}</li>)}</ul>
+          <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[3]}`}>Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4: Split reversed -->
+  <section class="svc-split svc-section-light" id="svc-4">
+    <div class="container">
+      <div class="svc-split-row svc-split-reverse fade-in">
+        <div class="svc-split-img"><img src={`${base}${items[4].img}`} alt={items[4].title} loading="lazy" /></div>
+        <div class="svc-split-text">
+          <div class="svc-number" style={`color:${accents[4]}`}>05</div>
+          <div class="svc-icon-badge" style={`background:${hexRgba(accents[4],0.1)};color:${accents[4]}`}><div class="svc-icon-inner" set:html={serviceIcons[4]} /></div>
+          <h2>{items[4].title}</h2>
+          <p class="svc-desc">{items[4].desc}</p>
+          <ul class="svc-bullets">{serviceBullets[4].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[4]}`}></span>{b}</li>)}</ul>
+          <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[4]}`}>Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5+6: Card Pair -->
+  <section class="svc-pair svc-section-alt" id="svc-5">
+    <div class="container">
+      <div class="svc-pair-grid">
+        {[5, 6].map(i => (
+          <div class="svc-card fade-in" style={`--accent:${accents[i]}`}>
+            <div class="svc-card-img-wrap">
+              <img src={`${base}${items[i].img}`} alt={items[i].title} loading="lazy" class="svc-card-img" />
+              <div class="svc-card-number">{String(i+1).padStart(2,'0')}</div>
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-icon-badge" style={`background:${hexRgba(accents[i],0.1)};color:${accents[i]}`}>
+                <div class="svc-icon-inner" set:html={serviceIcons[i]} />
+              </div>
+              <h3>{items[i].title}</h3>
+              <p>{items[i].desc}</p>
+              <ul class="svc-bullets-compact">
+                {serviceBullets[i].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[i]}`}></span>{b}</li>)}
+              </ul>
+              <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[i]}`}>Get Started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7: Feature Banner closing -->
+  <section class="svc-feature" id="svc-7" style={`--accent:${accents[7]}`}>
+    <img src={`${base}${items[7].img}`} alt={items[7].title} class="svc-feature-bg" loading="lazy" />
+    <div class="svc-feature-overlay"></div>
+    <div class="container svc-feature-content fade-in">
+      <div class="svc-number-light">08</div>
+      <div class="svc-icon-badge-light"><div class="svc-icon-inner" set:html={serviceIcons[7]} /></div>
+      <h2>{items[7].title}</h2>
+      <p>{items[7].desc}</p>
+      <ul class="svc-bullets-light">
+        {serviceBullets[7].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[7]}`}></span>{b}</li>)}
+      </ul>
+      <a href={`${base}/en/contact`} class="svc-cta-light">Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+    </div>
+  </section>
+
+  <section class="section section-light contact-cta" id="services-cta">
+    <div class="container">
+      <div class="cta-card fade-in">
+        <h2>{t.home.contactCta}</h2>
+        <p>{t.home.contactCtaSub}</p>
+        <a href={`${base}/en/contact`} class="btn-glow">{t.home.contactCtaBtn}</a>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.service-card {
-  padding: 32px 20px; text-align: center;
-  background: #FFFFFF; border: 1px solid rgba(10,37,64,0.06);
-  border-radius: var(--radius-md); transition: all var(--transition);
-  box-shadow: 0 1px 3px rgba(10,37,64,0.06);
+.svc-hero { padding-bottom: 60px; }
+.svc-hero-sub { font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px; color: var(--color-text-dark-secondary); }
+.svc-marquee {
+  width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; position: relative; margin-top: 24px;
+  background: var(--color-gradient-subtle);
+  border: 1px solid rgba(255, 107, 53, 0.04);
+  border-radius: 16px;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 4px 24px rgba(255, 107, 53, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  padding: 16px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  transform: skewX(-2deg);
 }
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(255,107,53,0.12), 0 4px 16px rgba(0,0,0,0.05); border-color: rgba(255,107,53,0.2); }
-.service-icon-wrap { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(99,91,255,0.08)); border-radius: 14px; }
-.service-icon { width: 28px; height: 28px; color: var(--color-accent-orange); }
-.service-card h3 { font-size: 1.05rem; margin-bottom: 12px; color: var(--color-text-dark); }
-.service-card p { font-size: 0.88rem; color: var(--color-text-dark-secondary); line-height: 1.7; }
-@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 768px) { .services-grid { grid-template-columns: 1fr 1fr; gap: 16px; } .service-card { padding: 24px 16px; } .service-card h3 { font-size: 0.95rem; } .service-card p { font-size: 0.82rem; } }
-@media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } .service-card { padding: 24px 18px; } }
+.svc-marquee-track {
+  display: flex; gap: 0; width: max-content;
+  animation: svc-scroll 28s linear infinite;
+  transform: skewX(2deg);
+}
+.svc-marquee-item {
+  display: inline-flex; align-items: center; gap: 20px;
+  white-space: nowrap; font-size: 1.3rem; font-weight: 700;
+  background: var(--color-gradient);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 8px 0; user-select: none; pointer-events: none;
+}
+.svc-marquee-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+  background: var(--color-gradient);
+  opacity: 0.5; margin-right: 20px;
+}
+.svc-marquee-item:first-child .svc-marquee-dot { display: none; }
+@keyframes svc-scroll {
+  0% { transform: translateX(0) skewX(2deg); }
+  100% { transform: translateX(-50%) skewX(2deg); }
+}
+.svc-section-light { background: #fff; }
+.svc-section-alt { background: var(--color-bg-light); }
+.svc-number { font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; opacity: 0.5; margin-bottom: 8px; }
+.svc-icon-badge { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; margin-bottom: 20px; }
+.svc-icon-inner { width: 26px; height: 26px; }
+.svc-desc { font-size: 1rem; color: var(--color-text-dark-secondary); line-height: 1.8; margin-bottom: 24px; }
+.svc-bullets { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+.svc-bullets li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--color-text-dark); }
+.svc-bullet-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.svc-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 700; color: var(--cta-color); transition: all var(--transition); }
+.svc-cta:hover { gap: 12px; }
+.svc-cta svg { transition: transform var(--transition); }
+.svc-cta:hover svg { transform: translateX(4px); }
+.svc-feature { position: relative; min-height: 520px; display: flex; align-items: center; overflow: hidden; }
+.svc-feature-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.svc-feature-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(6,27,46,0.88) 0%, rgba(10,37,64,0.7) 50%, rgba(6,27,46,0.5) 100%); }
+.svc-feature-content { position: relative; z-index: 2; max-width: 640px; }
+.svc-feature-content h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.svc-feature-content p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
+.svc-number-light { font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; color: var(--accent); margin-bottom: 8px; }
+.svc-icon-badge-light { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: rgba(255,255,255,0.1); color: var(--accent); margin-bottom: 20px; backdrop-filter: blur(8px); }
+.svc-bullets-light { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+.svc-bullets-light li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+.svc-cta-light { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 700; color: var(--accent); transition: all var(--transition); }
+.svc-cta-light:hover { gap: 12px; color: var(--accent); }
+.svc-pair { padding: 80px 0; }
+.svc-pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.svc-card { background: #fff; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(10,37,64,0.06); box-shadow: 0 2px 12px rgba(10,37,64,0.06); transition: all 0.4s ease; }
+.svc-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(10,37,64,0.12); }
+.svc-section-alt .svc-card { background: #fff; }
+.svc-card-img-wrap { position: relative; height: 220px; overflow: hidden; }
+.svc-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.svc-card:hover .svc-card-img { transform: scale(1.05); }
+.svc-card-number { position: absolute; top: 16px; left: 16px; font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: #fff; background: rgba(0,0,0,0.35); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 20px; }
+.svc-card-body { padding: 28px 24px; }
+.svc-card-body h3 { font-size: 1.2rem; font-weight: 800; color: var(--color-text-dark); margin-bottom: 12px; }
+.svc-card-body p { font-size: 0.9rem; color: var(--color-text-dark-secondary); line-height: 1.7; margin-bottom: 20px; }
+.svc-bullets-compact { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
+.svc-bullets-compact li { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 500; color: var(--color-text-dark); }
+.svc-split { padding: 100px 0; }
+.svc-split-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.svc-split-reverse { direction: rtl; }
+.svc-split-reverse > * { direction: ltr; }
+.svc-split-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 20px 60px rgba(10,37,64,0.12); }
+.svc-split-img img { width: 100%; height: 360px; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.svc-split-img:hover img { transform: scale(1.04); }
+.svc-split-text h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--color-text-dark); margin-bottom: 16px; }
+.cta-card { text-align: center; padding: 80px 40px; background: var(--color-gradient); border-radius: var(--radius-lg); position: relative; overflow: hidden; }
+.cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.12) 0%, transparent 60%); pointer-events: none; }
+.cta-card h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 16px; position: relative; }
+.cta-card p { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 550px; margin: 0 auto 32px; position: relative; }
+.cta-card .btn-glow { position: relative; background: #fff; color: var(--color-accent-orange); }
+@media (max-width: 768px) {
+  .svc-feature { min-height: 420px; }
+  .svc-feature-content h2 { font-size: 1.6rem; }
+  .svc-pair { padding: 48px 0; }
+  .svc-pair-grid { grid-template-columns: 1fr; gap: 24px; }
+  .svc-split { padding: 60px 0; }
+  .svc-split-row { grid-template-columns: 1fr; gap: 32px; }
+  .svc-split-reverse { direction: ltr; }
+  .svc-split-img img { height: 240px; }
+  .svc-bullets, .svc-bullets-light, .svc-bullets-compact { grid-template-columns: 1fr; }
+  .svc-marquee-item { font-size: 0.92rem; }
+  .cta-card { padding: 50px 24px; }
+}
+@media (max-width: 480px) {
+  .svc-feature { min-height: 380px; }
+  .svc-card-img-wrap { height: 180px; }
+  .svc-hero { padding-bottom: 40px; }
+}
 </style>

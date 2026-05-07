@@ -706,8 +706,8 @@ const partners = [
 </script>
 
 <style>
-  /* ─── Homepage scroll snap ─── */
-  html {
+  /* ─── Homepage scroll snap (scoped via :global) ─── */
+  :global(html:has(.hero-white)) {
     scroll-snap-type: y mandatory;
   }
   .section,
