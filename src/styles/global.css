@@ -242,11 +242,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 8px;
   padding: 12px 28px;
-  background: transparent;
+  background: rgb(240, 242, 245);
   color: var(--color-text-dark);
   font-weight: 600;
   font-size: 0.9rem;
-  border: 2px solid rgba(10, 37, 64, 0.25);
+  border: 0.2px solid rgba(10, 37, 64, 0.25);
   border-radius: 50px;
   cursor: pointer;
   transition: all var(--transition);

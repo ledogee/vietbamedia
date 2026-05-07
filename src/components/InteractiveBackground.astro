@@ -7,7 +7,7 @@
   #interactive-bg {
     position: fixed;
     inset: 0;
-    z-index: 1;
+    z-index: 0;
     pointer-events: none;
     width: 100%;
     height: 100%;
@@ -15,242 +15,323 @@
 </style>
 
 <script>
+  import * as THREE from "three";
+
   const canvas = document.getElementById("interactive-bg") as HTMLCanvasElement;
-  const ctx = canvas.getContext("2d")!;
+  if (canvas) {
+    // ── Config ──
+    const countX = 100;
+    const countY = 55;
+    const count = countX * countY;
 
-  const COLORS = [
-    [255, 107, 53],
-    [99, 91, 255],
-    [0, 212, 255],
-    [255, 56, 100],
-    [255, 159, 67],
-  ];
+    // ── Renderer ──
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      alpha: true,
+      antialias: false,
+      powerPreference: "high-performance",
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x000000, 0);
 
-  const mob = window.innerWidth <= 768;
-  const N = mob ? 120 : 250;
-  const R_IN = 0;
-  const R_OUT = mob ? 280 : 500;
-  const RX = mob ? 1 : 1.5;
-  const RY = mob ? 5 : 8;
-  const FOLLOW = 0.17;
-  const BREATHE = 0.25;
+    // ── Scene + Camera ──
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      100
+    );
+    camera.position.z = 5;
 
-  interface P {
-    x: number;
-    y: number;
-    oa: number;
-    or: number;
-    os: number;
-    c: number[];
-    op: number;
-    ly: number;
-    pp: number;
-    dx: number;
-    dy: number; // displacement (water push)
-  }
+    // ── Uniforms ──
+    const uniforms = {
+      uTime: { value: 0 },
+      uMouse: { value: new THREE.Vector2(0, 0) },
+      uResolution: {
+        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+      },
+    };
 
-  let ps: P[] = [];
-  let mx = -9999,
-    my = -9999,
-    sx = -9999,
-    sy = -9999;
-  let active = false,
-    t = 0;
-  // Mouse velocity tracking
-  let prevMx = -9999,
-    prevMy = -9999;
-  let vx = 0,
-    vy = 0;
+    // ── Shader Material ──
+    const vertexShader = `
+      uniform float uTime;
+      uniform vec2 uMouse;
+      varying vec2 vUv;
+      varying float vSize;
+      varying vec2 vPos;
 
-  function init() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ps = [];
-    for (let i = 0; i < N; i++) {
-      const ly = Math.random();
-      const r = Math.random();
-      // sqrt distribution: uniform area fill across the disc (no banding)
-      const orbitR = R_IN + (R_OUT - R_IN) * Math.sqrt(r) + 30;
-      ps.push({
-        x: -9999,
-        y: -9999,
-        oa: i * 2.399 + ly * 0.3, // golden angle
-        or: orbitR,
-        os: (0.12 + r * 0.06) * (r < 0.5 ? 1 : -1) * (0.5 + ly * 0.5),
-        c: COLORS[i % 5],
-        op: 0,
-        ly,
-        pp: Math.random() * 6.283,
-        dx: 0,
-        dy: 0,
-      });
-    }
-  }
+      attribute vec3 aOffset;
+      attribute float aRandom;
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    t += 0.016;
+      #define PI 3.14159265359
 
-    if (mx > -999) {
-      if (sx < -999) {
-        sx = mx;
-        sy = my;
-      } else {
-        sx += (mx - sx) * 0.26;
-        sy += (my - sy) * 0.26;
+      float hash(vec2 p) {
+        return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
       }
-      active = true;
-    } else active = false;
+      float noise(vec2 p) {
+        vec2 i = floor(p);
+        vec2 f = fract(p);
+        f = f * f * (3.0 - 2.0 * f);
+        float a = hash(i);
+        float b = hash(i + vec2(1.0, 0.0));
+        float c = hash(i + vec2(0.0, 1.0));
+        float d = hash(i + vec2(1.0, 1.0));
+        return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+      }
 
-    // Track mouse velocity
-    if (mx > -999 && prevMx > -999) {
-      vx += (mx - prevMx - vx) * 0.3;
-      vy += (my - prevMy - vy) * 0.3;
-    } else {
-      vx *= 0.9;
-      vy *= 0.9;
+      mat2 rotate2d(float _angle) {
+        return mat2(cos(_angle), sin(_angle),
+                    -sin(_angle), cos(_angle));
+      }
+
+      void main() {
+        vUv = uv;
+
+        // 1. ALIVE FLOW — curl-like continuous drift
+        vec3 pos = aOffset;
+        float driftSpeed = uTime * 0.15;
+        float dx = sin(driftSpeed + pos.y * 0.5) + sin(driftSpeed * 0.5 + pos.y * 2.0);
+        float dy = cos(driftSpeed + pos.x * 0.5) + cos(driftSpeed * 0.5 + pos.x * 2.0);
+        pos.x += dx * 0.25;
+        pos.y += dy * 0.25;
+
+        // 2. JELLYFISH HALO — breathing ring around mouse
+        vec2 relToMouse = pos.xy - uMouse;
+        float distFromMouse = length(relToMouse);
+        float angleToMouse = atan(relToMouse.y, relToMouse.x);
+
+        float shapeFactor = noise(vec2(angleToMouse * 2.0, uTime * 0.1));
+        float breathCycle = sin(uTime * 0.8);
+        float currentRadius = 2.2 + breathCycle * 0.3 + (shapeFactor * 0.5);
+
+        float dist = distFromMouse;
+        float rimWidth = 1.8;
+        float rimInfluence = smoothstep(rimWidth, 0.0, abs(dist - currentRadius));
+
+        // 3. WAVE PUSH — gentle ripple
+        vec2 pushDir = normalize(relToMouse + vec2(0.0001, 0.0));
+        float pushAmt = (breathCycle * 0.5 + 0.5) * 0.5;
+        pos.xy += pushDir * pushAmt * rimInfluence;
+        pos.z += rimInfluence * 0.3 * sin(uTime);
+
+        // 4. SIZE & SCALE
+        float baseSize = 0.012 + (sin(uTime + pos.x) * 0.003);
+        float activeSize = 0.028;
+        float currentScale = baseSize + (rimInfluence * activeSize);
+        float stretch = rimInfluence * 0.02;
+
+        vec3 transformed = position;
+        transformed.x *= (currentScale + stretch);
+        transformed.y *= currentScale * 0.85;
+
+        vSize = rimInfluence;
+        vPos = pos.xy;
+
+        // 5. ROTATION — radial alignment toward mouse
+        float finalAngle = angleToMouse;
+        transformed.xy = rotate2d(finalAngle) * transformed.xy;
+
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos + transformed, 1.0);
+      }
+    `;
+
+    const fragmentShader = `
+      uniform float uTime;
+      varying vec2 vUv;
+      varying float vSize;
+      varying vec2 vPos;
+
+      void main() {
+        // Pill shape with rounded corners
+        vec2 center = vec2(0.5);
+        vec2 pos = abs(vUv - center) * 2.0;
+        float d = pow(pow(pos.x, 2.6) + pow(pos.y, 2.6), 1.0 / 2.6);
+        float alpha = 1.0 - smoothstep(0.8, 1.0, d);
+        if (alpha < 0.01) discard;
+
+        // Vietba brand colors
+        vec3 navy   = vec3(0.04, 0.15, 0.25);   // #0A2540 — idle base
+        vec3 cOrange = vec3(1.0, 0.42, 0.21);    // #FF6B35 — primary
+        vec3 cPurple = vec3(0.39, 0.36, 1.0);    // #635BFF — blurple
+        vec3 cCyan   = vec3(0.0, 0.83, 1.0);     // #00D4FF — accent
+        vec3 cPink   = vec3(1.0, 0.22, 0.39);    // #FF3864 — accent
+
+        // Dynamic color shifting across the field
+        float t = uTime * 1.2;
+        float p1 = sin(vPos.x * 0.8 + t);
+        float p2 = sin(vPos.y * 0.8 + t * 0.8 + p1);
+        float p3 = cos(vPos.x * 0.5 - t * 0.6 + p2 * 0.5);
+
+        // Four-way color blend for rich variation
+        vec3 activeColor = mix(cOrange, cPurple, p1 * 0.5 + 0.5);
+        activeColor = mix(activeColor, cCyan, p2 * 0.5 + 0.5);
+        activeColor = mix(activeColor, cPink, p3 * 0.3 + 0.35);
+
+        // Idle → active transition
+        vec3 finalColor = mix(navy, activeColor, smoothstep(0.1, 0.8, vSize));
+        float finalAlpha = alpha * mix(0.4, 0.95, vSize);
+
+        gl_FragColor = vec4(finalColor, finalAlpha);
+      }
+    `;
+
+    const material = new THREE.ShaderMaterial({
+      uniforms,
+      vertexShader,
+      fragmentShader,
+      transparent: true,
+      depthWrite: false,
+    });
+
+    // ── Geometry + Instanced Mesh ──
+    const geometry = new THREE.PlaneGeometry(1, 1);
+
+    const offsets = new Float32Array(count * 3);
+    const randoms = new Float32Array(count);
+    const angles = new Float32Array(count);
+
+    const gridWidth = 34;
+    const gridHeight = 22;
+    const jitter = 0.25;
+
+    let idx = 0;
+    for (let y = 0; y < countY; y++) {
+      for (let x = 0; x < countX; x++) {
+        const u = x / (countX - 1);
+        const v = y / (countY - 1);
+        let px = (u - 0.5) * gridWidth;
+        let py = (v - 0.5) * gridHeight;
+        px += (Math.random() - 0.5) * jitter;
+        py += (Math.random() - 0.5) * jitter;
+
+        offsets[idx * 3] = px;
+        offsets[idx * 3 + 1] = py;
+        offsets[idx * 3 + 2] = 0;
+        randoms[idx] = Math.random();
+        angles[idx] = Math.random() * Math.PI * 2;
+        idx++;
+      }
     }
-    prevMx = mx;
-    prevMy = my;
-    const speed = Math.sqrt(vx * vx + vy * vy);
 
-    // Idle drift: center wanders when mouse is still (robust Lissajous path)
-    const driftAmount = Math.max(0, 1 - speed / 3) * 200;
-    const driftX =
-      Math.sin(t * 0.25) * driftAmount +
-      Math.sin(t * 0.47 + 2) * driftAmount * 0.6 +
-      Math.cos(t * 0.13 + 5) * driftAmount * 0.3;
-    const driftY =
-      Math.cos(t * 0.2 + 1) * driftAmount +
-      Math.cos(t * 0.38 + 4) * driftAmount * 0.5 +
-      Math.sin(t * 0.11 + 3) * driftAmount * 0.35;
-    sx += driftX * 0.06;
-    sy += driftY * 0.06;
+    geometry.setAttribute(
+      "aOffset",
+      new THREE.InstancedBufferAttribute(offsets, 3)
+    );
+    geometry.setAttribute(
+      "aRandom",
+      new THREE.InstancedBufferAttribute(randoms, 1)
+    );
+    geometry.setAttribute(
+      "aAngleOffset",
+      new THREE.InstancedBufferAttribute(angles, 1)
+    );
 
-    const breathe = 1 + Math.sin(t * 1.2) * BREATHE;
-    const mid = (R_IN + R_OUT) * 0.5 * breathe;
-    const hw = (R_OUT - R_IN) * 0.5 * breathe;
-    // Runtime angular repulsion: prevent overlap
-    const REP_ARC = 12; // min pixel gap
-    for (let i = 0; i < ps.length; i++) {
-      const p = ps[i];
-      const minA = REP_ARC / Math.max(p.or * breathe, 1);
-      for (let j = i + 1; j < ps.length; j++) {
-        const q = ps[j];
-        if (Math.abs(q.or - p.or) > 25) continue; // different band
-        let diff = q.oa - p.oa;
-        while (diff > Math.PI) diff -= 6.283;
-        while (diff < -Math.PI) diff += 6.283;
-        if (Math.abs(diff) < minA) {
-          const push = (minA - Math.abs(diff)) * 0.3;
-          const sign = diff >= 0 ? 1 : -1;
-          q.oa += sign * push;
-          p.oa -= sign * push;
+    const mesh = new THREE.InstancedMesh(geometry, material, count);
+    scene.add(mesh);
+
+    // ── Mouse tracking ──
+    let hovering = true;
+    const targetMouse = new THREE.Vector2(0, 0);
+    const currentMouse = new THREE.Vector2(0, 0);
+    const dragFactor = 0.055;
+
+    function getViewportCoords(clientX: number, clientY: number) {
+      // Convert screen coords to Three.js world space (at z=0 plane)
+      const ndcX = (clientX / window.innerWidth) * 2 - 1;
+      const ndcY = -(clientY / window.innerHeight) * 2 + 1;
+
+      // Approximate viewport dimensions at z=5
+      const vFov = (camera.fov * Math.PI) / 180;
+      const height = 2 * Math.tan(vFov / 2) * camera.position.z;
+      const width = height * camera.aspect;
+
+      return new THREE.Vector2(
+        (ndcX * width) / 2,
+        (ndcY * height) / 2
+      );
+    }
+
+    document.addEventListener("mousemove", (e) => {
+      const coords = getViewportCoords(e.clientX, e.clientY);
+      targetMouse.set(coords.x, coords.y);
+      hovering = true;
+    });
+    document.body.addEventListener("mouseleave", () => {
+      hovering = false;
+    });
+    document.body.addEventListener("mouseenter", () => {
+      hovering = true;
+    });
+
+    // Touch support
+    document.addEventListener(
+      "touchmove",
+      (e) => {
+        if (e.touches.length) {
+          const coords = getViewportCoords(
+            e.touches[0].clientX,
+            e.touches[0].clientY
+          );
+          targetMouse.set(coords.x, coords.y);
+          hovering = true;
         }
+      },
+      { passive: true }
+    );
+    document.addEventListener("touchend", () => {
+      hovering = false;
+    });
+
+    // ── Animation loop ──
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const elapsed = clock.getElapsedTime();
+      uniforms.uTime.value = elapsed;
+
+      // Idle drift: Lissajous wander so the halo roams on its own
+      const driftAmp = 3.0;
+      const idleDriftX =
+        Math.sin(elapsed * 0.22) * driftAmp +
+        Math.sin(elapsed * 0.47 + 2) * driftAmp * 0.6 +
+        Math.cos(elapsed * 0.13 + 5) * driftAmp * 0.3;
+      const idleDriftY =
+        Math.cos(elapsed * 0.18 + 1) * driftAmp +
+        Math.cos(elapsed * 0.38 + 4) * driftAmp * 0.5 +
+        Math.sin(elapsed * 0.11 + 3) * driftAmp * 0.35;
+
+      // Smooth mouse follow with heavy drag + idle drift
+      let tx = idleDriftX,
+        ty = idleDriftY;
+      if (hovering) {
+        tx = targetMouse.x + idleDriftX * 0.3;
+        ty = targetMouse.y + idleDriftY * 0.3;
       }
+      currentMouse.x += (tx - currentMouse.x) * dragFactor;
+      currentMouse.y += (ty - currentMouse.y) * dragFactor;
+      uniforms.uMouse.value.set(currentMouse.x, currentMouse.y);
+
+      renderer.render(scene, camera);
     }
 
-    for (const p of ps) {
-      // Slow uniform breathing + per-particle orbit distortion
-      const radialBreath = Math.sin(t * 0.4) * 20;
-      // Organic distortion: each particle's radius wobbles based on its angle
-      const distort =
-        Math.sin(p.oa * 3 + t * 0.3) * 35 + Math.sin(p.oa * 5 - t * 0.2) * 15;
-      const angle = p.oa;
-      const r = p.or * breathe + radialBreath + distort;
-      const baseX = sx + Math.cos(angle) * r;
-      const baseY = sy + Math.sin(angle) * r;
+    animate();
 
-      // Water wake: push particles based on mouse velocity & proximity
-      if (active && speed > 1) {
-        const pdx = baseX - sx,
-          pdy = baseY - sy;
-        const pDist = Math.sqrt(pdx * pdx + pdy * pdy);
-        // Particles closer to center get pushed more
-        const influence =
-          Math.max(0, 1 - pDist / (R_OUT * breathe)) * Math.min(speed / 8, 1);
-        // Push opposite to velocity (wake trails behind)
-        p.dx += -vx * influence * 0.15;
-        p.dy += -vy * influence * 0.15;
-      }
-      // Spring back + damping
-      p.dx *= 0.92;
-      p.dy *= 0.92;
-
-      const tx = baseX + p.dx;
-      const ty = baseY + p.dy;
-
-      if (active) {
-        const f = FOLLOW * (0.5 + p.ly * 0.8);
-        if (p.x < -999) {
-          p.x = tx;
-          p.y = ty;
-        } else {
-          p.x += (tx - p.x) * f;
-          p.y += (ty - p.y) * f;
-        }
-        p.op += (0.55 * (0.4 + p.ly * 0.6) - p.op) * 0.05;
-      } else {
-        p.op *= 0.97;
-        if (p.op < 0.004) {
-          p.x = -9999;
-          continue;
-        }
-      }
-      if (p.op < 0.004) continue;
-
-      // Bell curve size: Gaussian peak at donut midpoint, tapers at edges
-      const d = Math.sqrt((p.x - sx) ** 2 + (p.y - sy) ** 2);
-      const norm = (d - mid) / (hw * 0.6); // normalize distance from mid
-      const s = 0.3 + 0.7 * Math.exp(-norm * norm * 0.5); // Gaussian: 1.0 at center, 0.3 at edges
-      // Proximity shrink: within 100px of mouse → tiny dot
-      const proxScale = Math.min(1, Math.max(0.3, d / 100));
-      const pulse = 1 - Math.abs(Math.sin(t * 1.2 + p.pp)) * 0.6;
-      const sr = RX * proxScale * s;
-      const lr = Math.max(RY * (0.7 + p.ly * 0.5) * s * pulse * proxScale, sr);
-      const a = Math.atan2(sy - p.y, sx - p.x);
-
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(a);
-      ctx.beginPath();
-      ctx.ellipse(0, 0, lr, sr, 0, 0, 6.283);
-      ctx.fillStyle = `rgba(${p.c[0]},${p.c[1]},${p.c[2]},${p.op})`;
-      ctx.fill();
-      ctx.restore();
-    }
-    requestAnimationFrame(draw);
+    // ── Resize ──
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+        uniforms.uResolution.value.set(w, h);
+      }, 150);
+    });
   }
-
-  window.addEventListener("mousemove", (e) => {
-    mx = e.clientX;
-    my = e.clientY;
-  });
-  window.addEventListener("mouseleave", () => {
-    mx = my = sx = sy = -9999;
-  });
-  window.addEventListener(
-    "touchmove",
-    (e) => {
-      if (e.touches.length) {
-        mx = e.touches[0].clientX;
-        my = e.touches[0].clientY;
-      }
-    },
-    { passive: true }
-  );
-  window.addEventListener("touchend", () => {
-    mx = my = sx = sy = -9999;
-  });
-
-  let rt: ReturnType<typeof setTimeout>;
-  window.addEventListener("resize", () => {
-    clearTimeout(rt);
-    rt = setTimeout(() => {
-      init();
-    }, 150);
-  });
-
-  init();
-  draw();
 </script>
