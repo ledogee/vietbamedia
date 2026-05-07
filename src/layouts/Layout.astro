@@ -36,7 +36,9 @@ function isActive(path: string): boolean {
   <nav class:list={["navbar", { "navbar-on-dark": darkHero, "navbar-hero-logo": heroLogo }]} id="navbar">
     <div class="container navbar-inner">
       <a href={`${prefix}/`} class="navbar-logo">
-        <img src={`${base}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="navbar-logo-img" />
+        <div class="navbar-logo-crop">
+          <img src={`${base}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="navbar-logo-img" />
+        </div>
       </a>
       <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -205,8 +207,7 @@ function isActive(path: string): boolean {
   opacity: 0;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.navbar-hero-logo .navbar-logo-img {
-  height: 38px;
+.navbar-hero-logo .navbar-logo-crop {
   opacity: 0;
   transform: translateY(-8px) scale(0.85);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -215,7 +216,7 @@ function isActive(path: string): boolean {
   will-change: transform;
 }
 .navbar-hero-logo.scrolled .navbar-logo { opacity: 1; }
-.navbar-hero-logo.scrolled .navbar-logo-img { opacity: 1; transform: translateY(0) scale(1); }
+.navbar-hero-logo.scrolled .navbar-logo-crop { opacity: 1; transform: translateY(0) scale(1); }
 .navbar.scrolled .nav-link { color: var(--color-text-dark-secondary); }
 .navbar.scrolled .nav-link:hover { color: var(--color-text-dark); background: rgba(255, 107, 53, 0.08); }
 .navbar.scrolled .nav-link.active { color: var(--color-accent-orange); }
@@ -228,7 +229,16 @@ function isActive(path: string): boolean {
   display: flex; align-items: center;
 }
 .navbar-logo:hover { color: var(--color-text-dark); }
-.navbar-logo-img { height: 56px; width: auto; }
+.navbar-logo-crop {
+  width: 90px;
+  height: 38px;
+  overflow: hidden;
+}
+.navbar-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .logo-highlight {
   background: var(--color-gradient);
   -webkit-background-clip: text;

@@ -19,6 +19,13 @@
 
   const canvas = document.getElementById("interactive-bg") as HTMLCanvasElement;
   if (canvas) {
+   try {
+    // ── WebGL availability check ──
+    const testGl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    if (!testGl) throw new Error("WebGL not available");
+    const loseExt = (testGl as WebGLRenderingContext).getExtension("WEBGL_lose_context");
+    if (loseExt) loseExt.loseContext();
+
     // ── Config ──
     const countX = 100;
     const countY = 55;
@@ -333,5 +340,9 @@
         uniforms.uResolution.value.set(w, h);
       }, 150);
     });
+   } catch (e) {
+    console.warn("Interactive background disabled:", (e as Error).message);
+    canvas.style.display = "none";
+   }
   }
 </script>
