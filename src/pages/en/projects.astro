@@ -114,45 +114,64 @@ const rest = items.slice(3);
       btn.classList.add('active');
       const cat = (btn as HTMLElement).dataset.cat;
 
-      // Filter featured cards
-      document.querySelectorAll('.prj-hero-card, .prj-side-card').forEach(card => {
+      // ── Phase 1: Fade out non-matching cards ──
+      const allCards = document.querySelectorAll('.prj-hero-card, .prj-side-card, .prj-bento-card');
+      allCards.forEach(card => {
         const el = card as HTMLElement;
-        if (cat === 'all' || el.dataset.cat === cat) {
-          el.style.display = '';
-          setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'scale(1)'; }, 10);
-        } else {
-          el.style.opacity = '0';
-          el.style.transform = 'scale(0.95)';
-          setTimeout(() => el.style.display = 'none', 400);
+        const matches = cat === 'all' || el.dataset.cat === cat;
+        if (!matches) {
+          el.classList.add('prj-hiding');
+          el.classList.remove('prj-visible');
         }
       });
 
-      // Filter bento cards
-      document.querySelectorAll('.prj-bento-card').forEach(card => {
-        const el = card as HTMLElement;
-        if (cat === 'all' || el.dataset.cat === cat) {
-          el.style.display = '';
-          setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'scale(1)'; }, 10);
-        } else {
-          el.style.opacity = '0';
-          el.style.transform = 'scale(0.95)';
-          setTimeout(() => el.style.display = 'none', 400);
-        }
-      });
-
-      // Show/hide featured section
-      const featuredSection = document.querySelector('.prj-featured') as HTMLElement;
-      if (featuredSection) {
-        const hasVisible = featuredSection.querySelectorAll('.prj-hero-card:not([style*="display: none"]), .prj-side-card:not([style*="display: none"])');
-        setTimeout(() => {
-          if (hasVisible.length === 0) {
-            featuredSection.style.display = 'none';
+      // ── Phase 2: After fade-out completes, collapse hidden cards & reveal matching ones ──
+      setTimeout(() => {
+        let staggerIndex = 0;
+        allCards.forEach(card => {
+          const el = card as HTMLElement;
+          const matches = cat === 'all' || el.dataset.cat === cat;
+          if (!matches) {
+            el.classList.add('prj-hidden');
+            el.classList.remove('prj-hiding');
           } else {
-            featuredSection.style.display = '';
+            el.classList.remove('prj-hidden', 'prj-hiding');
+            // Stagger the reveal for a cascading effect
+            el.style.transitionDelay = `${staggerIndex * 60}ms`;
+            staggerIndex++;
+            // Trigger reflow then reveal
+            requestAnimationFrame(() => {
+              el.classList.add('prj-visible');
+            });
           }
-        }, 420);
-      }
+        });
+
+        // Clear stagger delays after animation
+        setTimeout(() => {
+          allCards.forEach(card => {
+            (card as HTMLElement).style.transitionDelay = '0ms';
+          });
+        }, staggerIndex * 60 + 450);
+
+        // ── Featured section collapse ──
+        const featuredSection = document.querySelector('.prj-featured') as HTMLElement;
+        if (featuredSection) {
+          const anyFeaturedVisible = Array.from(
+            featuredSection.querySelectorAll('.prj-hero-card, .prj-side-card')
+          ).some(c => !c.classList.contains('prj-hidden'));
+          if (anyFeaturedVisible) {
+            featuredSection.classList.remove('prj-section-collapsed');
+          } else {
+            featuredSection.classList.add('prj-section-collapsed');
+          }
+        }
+      }, 350);
     });
+  });
+
+  // Mark all cards visible on load
+  document.querySelectorAll('.prj-hero-card, .prj-side-card, .prj-bento-card').forEach(card => {
+    card.classList.add('prj-visible');
   });
 </script>
 
@@ -200,10 +219,6 @@ const rest = items.slice(3);
 }
 
 /* ── Featured Hero Row (Apple-style) ── */
-.prj-featured {
-  display: grid; grid-template-columns: 2fr 1fr; gap: 16px;
-  margin-bottom: 16px;
-}
 .prj-hero-card {
   position: relative; border-radius: var(--radius-lg); overflow: hidden;
   height: 480px; cursor: pointer;
@@ -272,6 +287,46 @@ const rest = items.slice(3);
   color: #fff; backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,0.12);
   transition: all 0.35s ease;
+}
+
+/* ── Filter Transition States ── */
+.prj-hero-card, .prj-side-card, .prj-bento-card {
+  transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1),
+              transform 0.4s cubic-bezier(0.4,0,0.2,1),
+              max-height 0.5s cubic-bezier(0.4,0,0.2,1),
+              margin 0.5s cubic-bezier(0.4,0,0.2,1),
+              padding 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.prj-visible {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+}
+.prj-hiding {
+  opacity: 0 !important;
+  transform: scale(0.92) translateY(8px) !important;
+  pointer-events: none;
+}
+.prj-hidden {
+  opacity: 0 !important;
+  transform: scale(0.92) !important;
+  position: absolute !important;
+  width: 0 !important; height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important; padding: 0 !important;
+  pointer-events: none;
+}
+.prj-featured {
+  display: grid; grid-template-columns: 2fr 1fr; gap: 16px;
+  margin-bottom: 16px;
+  transition: max-height 0.6s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.4s cubic-bezier(0.4,0,0.2,1),
+              margin 0.5s cubic-bezier(0.4,0,0.2,1);
+  max-height: 600px; overflow: hidden;
+}
+.prj-section-collapsed {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /* ── Bento Grid (Dribbble/Behance) ── */
