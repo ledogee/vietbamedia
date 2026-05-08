@@ -161,6 +161,12 @@ const pinPositions = [
   }, { threshold: 0.5 });
   counters.forEach((c) => cObserver.observe(c));
 
+  const scrollHint = document.querySelector('.hero-scroll-hint');
+  scrollHint?.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('roadmap')?.scrollIntoView({ behavior: 'instant' });
+  });
+
   const milestones = document.querySelectorAll('.rm-milestone');
   const mObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -208,7 +214,7 @@ const pinPositions = [
 </script>
 
 <style is:global>
-html { scroll-snap-type: y proximity; }
+html, body { scroll-snap-type: y proximity; }
 </style>
 <style>
 .history-hero {
