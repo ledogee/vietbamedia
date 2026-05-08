@@ -165,6 +165,7 @@ const pinPositions = [
   scrollHint?.addEventListener('click', (e) => {
     e.preventDefault();
     document.getElementById('roadmap')?.scrollIntoView({ behavior: 'smooth' });
+    history.replaceState(null, '', window.location.pathname);
   });
 
   const milestones = document.querySelectorAll('.rm-milestone');
