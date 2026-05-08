@@ -179,7 +179,7 @@ const pinPositions = [
   const scrollHint = document.querySelector('.hero-scroll-hint');
   scrollHint?.addEventListener('click', (e) => {
     e.preventDefault();
-    document.getElementById('roadmap')?.scrollIntoView({ behavior: 'instant' });
+    document.getElementById('roadmap')?.scrollIntoView({ behavior: 'smooth' });
   });
 
   // Scroll-reveal milestones with staggered pop-up
