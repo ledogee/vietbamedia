@@ -14,10 +14,22 @@ const milestoneIcons: Record<string, string> = {
   '2015': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4M7 21h10"/><path d="M9 10l2 2 4-4"/></svg>`,
   '2022': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
 };
+
+const roadPath = "M500,50 C500,150 580,180 580,250 C580,400 420,400 420,550 C420,700 640,700 640,850 C640,1000 360,1000 360,1150 C360,1300 680,1300 680,1450 C680,1600 320,1600 320,1750 C320,1900 700,1900 700,2050 C700,2200 300,2200 300,2350 Q300,2500 500,2550";
+
+const pinPositions = [
+  { x: 58, y: 250 },
+  { x: 42, y: 550 },
+  { x: 64, y: 850 },
+  { x: 36, y: 1150 },
+  { x: 68, y: 1450 },
+  { x: 32, y: 1750 },
+  { x: 70, y: 2050 },
+  { x: 30, y: 2350 },
+];
 ---
 
 <Layout lang="en">
-  <!-- Immersive Hero -->
   <section class="history-hero">
     <div class="history-hero-bg" aria-hidden="true">
       <div class="hero-orb hero-orb-1"></div>
@@ -45,55 +57,79 @@ const milestoneIcons: Record<string, string> = {
         </div>
       </div>
     </div>
-    <div class="hero-scroll-hint fade-in" aria-hidden="true">
+    <a href="#roadmap" class="hero-scroll-hint fade-in" aria-label="Scroll to roadmap">
       <span>Explore our journey</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </div>
+    </a>
   </section>
 
-  <!-- Vertical Timeline -->
-  <section class="section section-dark vtl-section" style="background:var(--color-bg-dark)">
+  <section id="roadmap" class="section roadmap-section" style="background:#fff">
     <div class="container">
       <div class="vtl-header fade-in">
         <p class="section-tag">{t.timeline.sectionTag}</p>
         <h2 class="section-title">{t.timeline.title}</h2>
       </div>
+    </div>
 
-      <div class="vtl-timeline">
-        <div class="vtl-line" aria-hidden="true">
-          <div class="vtl-line-progress" id="vtlProgress"></div>
-        </div>
+    <div class="roadmap-wrap">
+      <div class="roadmap-container">
+        <svg class="roadmap-svg" viewBox="0 0 1000 2600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <linearGradient id="roadGlow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.4"/>
+              <stop offset="50%" stop-color="#635BFF" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#00D4FF" stop-opacity="0.4"/>
+            </linearGradient>
+            <filter id="roadShadow">
+              <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#FF6B35" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <path d={roadPath} stroke="url(#roadGlow)" stroke-width="100" fill="none" stroke-linecap="round" opacity="0.3"/>
+          <path d={roadPath} stroke="#e8ecf1" stroke-width="72" fill="none" stroke-linecap="round"/>
+          <path d={roadPath} stroke="rgba(0,0,0,0.06)" stroke-width="74" fill="none" stroke-linecap="round"/>
+          <path d={roadPath} stroke="#e8ecf1" stroke-width="70" fill="none" stroke-linecap="round"/>
+          <path d={roadPath} stroke="rgba(0,0,0,0.1)" stroke-width="2" fill="none" stroke-dasharray="16 12" stroke-linecap="round"/>
+          <path id="roadProgress" d={roadPath} stroke="url(#roadGlow)" stroke-width="68" fill="none" stroke-linecap="round" opacity="0.6" stroke-dasharray="0 99999"/>
+        </svg>
 
-        {t.timeline.items.map((item, i) => (
-          <div class={`vtl-item ${i % 2 === 0 ? 'vtl-left' : 'vtl-right'}`} data-index={i}>
-            <div class="vtl-connector">
-              <div class={`vtl-dot ${i === 0 ? 'active' : ''}`}>
-                <div class="vtl-dot-icon" set:html={milestoneIcons[item.year] || milestoneIcons['1999']} />
-                <div class="vtl-dot-ring"></div>
+        {t.timeline.items.map((item, i) => {
+          const pos = pinPositions[i];
+          const isRight = pos.x > 50;
+          const svgH = 2600;
+          const topPct = (pos.y / svgH) * 100;
+          return (
+            <div class={`rm-milestone ${isRight ? 'rm-right' : 'rm-left'}`}
+                 style={`top:${topPct}%`} data-index={i}>
+              <div class="rm-pin-wrap" style={`left:${pos.x}%`}>
+                <div class={`rm-pin ${i % 2 === 0 ? 'rm-pin-orange' : 'rm-pin-purple'}`}>
+                  <svg class="rm-pin-shape" viewBox="0 0 40 52" fill="none">
+                    <path d="M20 0C9 0 0 8.5 0 19c0 14 20 33 20 33s20-19 20-33C40 8.5 31 0 20 0z" fill="currentColor"/>
+                    <circle cx="20" cy="19" r="11" fill="#0c2036"/>
+                  </svg>
+                  <div class="rm-pin-icon" set:html={milestoneIcons[item.year] || milestoneIcons['1999']} />
+                </div>
               </div>
-              <span class="vtl-year-badge">{item.year}</span>
+              <div class="rm-card glass-card">
+                <div class="rm-card-accent" aria-hidden="true"></div>
+                <div class="rm-card-header">
+                  <span class="rm-card-step">{`${String(i + 1).padStart(2, '0')} / ${String(t.timeline.items.length).padStart(2, '0')}`}</span>
+                  <span class="rm-card-year gradient-text">{item.year}</span>
+                </div>
+                <h3 class="rm-card-title">{item.title}</h3>
+                <p class="rm-card-desc">{item.desc}</p>
+                <div class="rm-card-deco" aria-hidden="true">
+                  <span class="rm-deco-line"></span>
+                  <span class="rm-deco-diamond"></span>
+                  <span class="rm-deco-line"></span>
+                </div>
+              </div>
             </div>
-            <div class="vtl-card glass-card">
-              <div class="vtl-card-accent" aria-hidden="true"></div>
-              <div class="vtl-card-header">
-                <span class="vtl-card-step">{`${String(i + 1).padStart(2, '0')} / ${String(t.timeline.items.length).padStart(2, '0')}`}</span>
-                <span class="vtl-card-year gradient-text">{item.year}</span>
-              </div>
-              <h3 class="vtl-card-title">{item.title}</h3>
-              <p class="vtl-card-desc">{item.desc}</p>
-              <div class="vtl-card-deco" aria-hidden="true">
-                <span class="vtl-deco-line"></span>
-                <span class="vtl-deco-diamond"></span>
-                <span class="vtl-deco-line"></span>
-              </div>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section section-light history-cta">
     <div class="container">
       <div class="cta-card fade-in">
@@ -125,144 +161,136 @@ const milestoneIcons: Record<string, string> = {
   }, { threshold: 0.5 });
   counters.forEach((c) => cObserver.observe(c));
 
-  const items = document.querySelectorAll('.vtl-item');
-  const progressBar = document.getElementById('vtlProgress');
-  const timeline = document.querySelector('.vtl-timeline') as HTMLElement;
-
-  const itemObserver = new IntersectionObserver((entries) => {
+  const milestones = document.querySelectorAll('.rm-milestone');
+  const mObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        (entry.target.querySelector('.vtl-dot') as HTMLElement)?.classList.add('active');
+        mObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3, rootMargin: '0px 0px -80px 0px' });
-  items.forEach((item) => itemObserver.observe(item));
+  }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
+  milestones.forEach((m) => mObserver.observe(m));
 
-  function updateProgress() {
-    if (!timeline || !progressBar) return;
-    const rect = timeline.getBoundingClientRect();
-    const viewH = window.innerHeight;
-    const start = rect.top + window.scrollY;
-    const end = start + rect.height;
-    const scroll = window.scrollY + viewH * 0.5;
-    const pct = Math.min(1, Math.max(0, (scroll - start) / (end - start)));
-    progressBar.style.height = `${pct * 100}%`;
+  const roadProgress = document.getElementById('roadProgress') as SVGPathElement | null;
+  const roadmapContainer = document.querySelector('.roadmap-container') as HTMLElement;
+  if (roadProgress && roadmapContainer) {
+    const totalLen = roadProgress.getTotalLength();
+    roadProgress.style.strokeDasharray = `${totalLen}`;
+    roadProgress.style.strokeDashoffset = `${totalLen}`;
+    let currentOffset = totalLen;
+    let targetOffset = totalLen;
+    let rafId = 0;
+    function getTargetOffset() {
+      const rect = roadmapContainer.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      const start = rect.top + window.scrollY;
+      const end = start + rect.height;
+      const scroll = window.scrollY + viewH * 0.5;
+      const pct = Math.min(1, Math.max(0, (scroll - start) / (end - start)));
+      return totalLen * (1 - pct);
+    }
+    function animateProgress() {
+      currentOffset += (targetOffset - currentOffset) * 0.35;
+      if (Math.abs(currentOffset - targetOffset) < 0.5) currentOffset = targetOffset;
+      roadProgress!.style.strokeDashoffset = String(currentOffset);
+      if (currentOffset !== targetOffset) rafId = requestAnimationFrame(animateProgress);
+    }
+    window.addEventListener('scroll', () => {
+      targetOffset = getTargetOffset();
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(animateProgress);
+    }, { passive: true });
+    targetOffset = getTargetOffset();
+    currentOffset = targetOffset;
+    roadProgress.style.strokeDashoffset = String(currentOffset);
   }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
 </script>
 
+<style is:global>
+html { scroll-snap-type: y proximity; }
+</style>
 <style>
 .history-hero {
-  position: relative; min-height: 70vh;
+  position: relative; min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden; padding: 140px 0 80px; background: var(--color-bg-dark);
+  overflow: hidden; padding: 140px 0 80px; background: #f8f9fb;
+  scroll-snap-align: start;
 }
 .history-hero-bg { position: absolute; inset: 0; pointer-events: none; }
-.hero-orb {
-  position: absolute; border-radius: 50%;
-  filter: blur(100px); opacity: 0.4;
-  animation: orbFloat 10s ease-in-out infinite alternate;
-}
+.hero-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.25; animation: orbFloat 10s ease-in-out infinite alternate; }
 .hero-orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,107,53,0.5), transparent 70%); top: -15%; right: -10%; }
 .hero-orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(99,91,255,0.4), transparent 70%); bottom: -10%; left: -5%; animation-delay: -4s; }
 .hero-orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,212,255,0.35), transparent 70%); top: 40%; left: 45%; animation-delay: -7s; }
 @keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(25px,-20px) scale(1.12); } }
-
 .history-hero-content { position: relative; z-index: 2; text-align: center; }
-.history-hero h1 { color: var(--color-text-primary); font-size: clamp(2.2rem, 5vw, 3.5rem); }
-.history-hero-sub { font-size: 1.1rem; max-width: 560px; margin: 0 auto 48px; color: var(--color-text-secondary); line-height: 1.7; }
-
-.history-stats {
-  display: flex; align-items: center; justify-content: center; gap: 40px;
-  padding: 32px 48px; background: rgba(10,37,64,0.6); backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg);
-  max-width: 680px; margin: 0 auto;
-}
+.history-hero h1 { color: #1a1a2e; font-size: clamp(2.2rem, 5vw, 3.5rem); }
+.history-hero-sub { font-size: 1.1rem; max-width: 560px; margin: 0 auto 48px; color: #555; line-height: 1.7; }
+.history-stats { display: flex; align-items: center; justify-content: center; gap: 40px; padding: 32px 48px; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius-lg); max-width: 680px; margin: 0 auto; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
 .history-stat { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .history-stat-num { font-size: 2.8rem; font-weight: 900; background: var(--color-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
-.history-stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--color-text-muted); }
-.history-stat-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.1); }
-
-.hero-scroll-hint {
-  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: var(--color-text-muted); font-size: 0.72rem; letter-spacing: 2px;
-  text-transform: uppercase; animation: scrollBounce 2s ease-in-out infinite;
-}
+.history-stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #888; }
+.history-stat-divider { width: 1px; height: 48px; background: rgba(0,0,0,0.1); }
+.hero-scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; color: #666; font-size: 0.82rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; animation: scrollBounce 2s ease-in-out infinite; cursor: pointer; }
 @keyframes scrollBounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
-.vtl-section { padding: 100px 0 120px; overflow: hidden; }
-.vtl-header { text-align: center; margin-bottom: 80px; }
-.vtl-timeline { position: relative; max-width: 1000px; margin: 0 auto; }
+.roadmap-section { padding: 100px 0 120px; overflow: hidden; background: #fff; scroll-snap-align: start; }
+.vtl-header { text-align: center; margin-bottom: 60px; }
+.roadmap-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.roadmap-container { position: relative; padding-bottom: 260%; }
+.roadmap-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-.vtl-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: rgba(255,255,255,0.06); transform: translateX(-50%); border-radius: 3px; z-index: 1; }
-.vtl-line-progress { width: 100%; height: 0%; background: var(--color-gradient); border-radius: 3px; box-shadow: 0 0 14px var(--color-glow-orange), 0 0 6px var(--color-glow-purple); transition: height 0.1s linear; }
+.rm-milestone { position: absolute; width: 100%; transform: translateY(-50%); z-index: 2; }
 
-.vtl-item {
-  position: relative; display: flex; align-items: flex-start;
-  margin-bottom: 60px; opacity: 0; transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  z-index: 2;
-}
-.vtl-item.visible { opacity: 1; transform: translateY(0); }
-.vtl-item:last-child { margin-bottom: 0; }
-.vtl-left { justify-content: flex-start; padding-right: calc(50% + 40px); }
-.vtl-right { justify-content: flex-end; padding-left: calc(50% + 40px); }
-.vtl-left .vtl-card { text-align: right; }
-.vtl-right .vtl-card { text-align: left; }
+.rm-pin-wrap { position: absolute; top: 50%; transform: translate(-50%, -50%); z-index: 5; }
+.rm-pin { position: relative; width: 48px; height: 62px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); opacity: 0; transform: translateY(-40px) scale(0.6); }
+.rm-milestone.visible .rm-pin { animation: pinDrop 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards, pinFloat 3s ease-in-out 1.5s infinite; }
+@keyframes pinDrop { 0% { opacity: 0; transform: translateY(-40px) scale(0.6); } 50% { opacity: 1; transform: translateY(4px) scale(1.05); } 70% { transform: translateY(-2px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes pinFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4px) scale(1); } }
+.rm-pin::after { content: ''; position: absolute; bottom: -4px; left: 50%; width: 20px; height: 8px; border-radius: 50%; background: currentColor; opacity: 0; transform: translateX(-50%) scale(0); }
+.rm-milestone.visible .rm-pin::after { animation: pinRipple 0.8s ease-out 0.4s forwards; }
+@keyframes pinRipple { 0% { opacity: 0.5; transform: translateX(-50%) scale(0.5); } 100% { opacity: 0; transform: translateX(-50%) scale(3); } }
+.rm-pin-shape { width: 100%; height: 100%; }
+.rm-pin-orange { color: var(--color-accent-orange); }
+.rm-pin-purple { color: var(--color-accent-purple); }
+.rm-pin-icon { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; color: #1a1a2e; }
 
-.vtl-connector { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 5; }
-
-.vtl-dot { width: 48px; height: 48px; border-radius: 50%; background: #0c2036; border: 2px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
-.vtl-dot-icon { width: 22px; height: 22px; color: var(--color-text-muted); transition: color 0.5s ease; }
-.vtl-dot-ring { position: absolute; inset: -8px; border-radius: 50%; border: 2px solid transparent; transition: all 0.5s ease; }
-.vtl-dot.active { border-color: var(--color-accent-orange); box-shadow: 0 0 24px var(--color-glow-orange); background: linear-gradient(135deg, #2a1a10, #151028); }
-.vtl-dot.active .vtl-dot-icon { color: var(--color-accent-orange); }
-.vtl-dot.active .vtl-dot-ring { border-color: rgba(255,107,53,0.25); animation: dotPulse 2.5s ease-in-out infinite; }
-.vtl-item:nth-child(even) .vtl-dot.active { border-color: var(--color-accent-purple); box-shadow: 0 0 24px var(--color-glow-purple); background: linear-gradient(135deg, #151028, #0a1e2e); }
-.vtl-item:nth-child(even) .vtl-dot.active .vtl-dot-icon { color: var(--color-accent-purple); }
-.vtl-item:nth-child(even) .vtl-dot.active .vtl-dot-ring { border-color: rgba(99,91,255,0.25); }
-@keyframes dotPulse { 0%,100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.5); opacity: 0; } }
-
-.vtl-year-badge { font-size: 0.68rem; font-weight: 800; letter-spacing: 1.5px; padding: 3px 12px; border-radius: 20px; background: #1a1209; color: var(--color-accent-orange); border: 1px solid rgba(255,107,53,0.15); white-space: nowrap; }
-.vtl-item:nth-child(even) .vtl-year-badge { background: #0e0f1e; color: var(--color-accent-cyan); border-color: rgba(99,91,255,0.15); }
-
-.vtl-card { position: relative; padding: 32px 36px; overflow: hidden; width: 100%; border: 1px solid rgba(255,255,255,0.08) !important; background: rgba(12,32,54,0.6) !important; backdrop-filter: blur(24px) !important; }
-.vtl-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #FF6B35, #FF3864); opacity: 0; transition: opacity 0.5s ease; }
-.vtl-item:nth-child(even) .vtl-card-accent { background: linear-gradient(90deg, #635BFF, #00D4FF); }
-.vtl-item.visible .vtl-card-accent { opacity: 1; }
-
-.vtl-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
-.vtl-left .vtl-card-header { flex-direction: row-reverse; }
-.vtl-card-step { font-size: 0.68rem; font-weight: 600; letter-spacing: 2px; color: var(--color-text-muted); text-transform: uppercase; }
-.vtl-card-year { font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.vtl-card-title { font-size: 1.25rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 12px; }
-.vtl-card-desc { font-size: 0.92rem; line-height: 1.8; color: var(--color-text-secondary); margin-bottom: 20px; }
-
-/* Card bottom decoration */
-.vtl-card-deco { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
-.vtl-deco-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(255,107,53,0.3), transparent); }
-.vtl-deco-line:last-child { background: linear-gradient(90deg, transparent, rgba(255,107,53,0.3)); }
-.vtl-deco-diamond { width: 6px; height: 6px; background: var(--color-accent-orange); transform: rotate(45deg); opacity: 0.5; flex-shrink: 0; }
-.vtl-item:nth-child(even) .vtl-deco-line { background: linear-gradient(90deg, rgba(99,91,255,0.3), transparent); }
-.vtl-item:nth-child(even) .vtl-deco-line:last-child { background: linear-gradient(90deg, transparent, rgba(99,91,255,0.3)); }
-.vtl-item:nth-child(even) .vtl-deco-diamond { background: var(--color-accent-purple); }
-
-.vtl-card:hover { border-color: rgba(255,107,53,0.2) !important; box-shadow: 0 0 40px var(--color-glow-orange), 0 12px 40px rgba(0,0,0,0.3) !important; transform: translateY(-4px); }
-.vtl-item:nth-child(even) .vtl-card:hover { border-color: rgba(99,91,255,0.2) !important; box-shadow: 0 0 40px var(--color-glow-purple), 0 12px 40px rgba(0,0,0,0.3) !important; }
-
-.vtl-left { transform: translateY(40px) translateX(-30px); }
-.vtl-left.visible { transform: translateY(0) translateX(0); }
-.vtl-right { transform: translateY(40px) translateX(30px); }
-.vtl-right.visible { transform: translateY(0) translateX(0); }
+.rm-card { position: absolute; top: 50%; width: 340px; padding: 28px 32px; border: 1px solid rgba(0,0,0,0.08) !important; background: #fff !important; backdrop-filter: none !important; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); opacity: 0; transform: translateY(-50%); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.rm-right .rm-card { left: calc(70% + 48px); }
+.rm-milestone.visible.rm-right .rm-card { animation: cardSlideRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards; }
+.rm-left .rm-card { right: calc(70% + 48px); }
+.rm-milestone.visible.rm-left .rm-card { animation: cardSlideLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards; }
+@keyframes cardSlideRight { 0% { opacity: 0; transform: translateY(-50%) translateX(50px); } 100% { opacity: 1; transform: translateY(-50%) translateX(0); } }
+@keyframes cardSlideLeft { 0% { opacity: 0; transform: translateY(-50%) translateX(-50px); } 100% { opacity: 1; transform: translateY(-50%) translateX(0); } }
+.rm-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; opacity: 0; transition: opacity 0.5s ease; }
+.rm-milestone:nth-child(odd) .rm-card-accent { background: linear-gradient(90deg, #FF6B35, #FF3864); }
+.rm-milestone:nth-child(even) .rm-card-accent { background: linear-gradient(90deg, #635BFF, #00D4FF); }
+.rm-milestone.visible .rm-card-accent { opacity: 1; }
+.rm-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.rm-card-step { font-size: 0.68rem; font-weight: 600; letter-spacing: 2px; color: #999; text-transform: uppercase; }
+.rm-card-year { font-size: 1.5rem; font-weight: 900; line-height: 1; }
+.rm-card-title { font-size: 1.15rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.rm-card-desc { font-size: 0.88rem; line-height: 1.7; color: #666; margin-bottom: 16px; }
+.rm-card-deco { display: flex; align-items: center; gap: 10px; }
+.rm-deco-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(255,107,53,0.3), transparent); }
+.rm-deco-line:last-child { background: linear-gradient(90deg, transparent, rgba(255,107,53,0.3)); }
+.rm-deco-diamond { width: 6px; height: 6px; background: var(--color-accent-orange); transform: rotate(45deg); opacity: 0.5; flex-shrink: 0; }
+.rm-milestone:nth-child(even) .rm-deco-line { background: linear-gradient(90deg, rgba(99,91,255,0.3), transparent); }
+.rm-milestone:nth-child(even) .rm-deco-line:last-child { background: linear-gradient(90deg, transparent, rgba(99,91,255,0.3)); }
+.rm-milestone:nth-child(even) .rm-deco-diamond { background: var(--color-accent-purple); }
+.rm-milestone.visible .rm-card:hover { border-color: rgba(255,107,53,0.25) !important; box-shadow: 0 0 30px rgba(255,107,53,0.1), 0 12px 40px rgba(0,0,0,0.08) !important; transform: translateY(calc(-50% - 4px)); }
+.rm-milestone:nth-child(even).visible .rm-card:hover { border-color: rgba(99,91,255,0.25) !important; box-shadow: 0 0 30px rgba(99,91,255,0.1), 0 12px 40px rgba(0,0,0,0.08) !important; }
 
 .history-cta { padding: 80px 0; }
 .history-cta .cta-card { text-align: center; padding: 60px 40px; background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(99,91,255,0.04)); border: 1px solid rgba(255,107,53,0.15); border-radius: var(--radius-lg); }
 .history-cta .cta-card h2 { font-size: 1.8rem; margin-bottom: 16px; color: var(--color-text-dark); }
 .history-cta .cta-card p { max-width: 500px; margin: 0 auto 32px; color: var(--color-text-dark-secondary); }
 
+@media (max-width: 1024px) {
+  .rm-card { width: 280px; padding: 22px 24px; }
+  .rm-right .rm-card { left: calc(70% + 36px); }
+  .rm-left .rm-card { right: calc(70% + 36px); }
+}
 @media (max-width: 768px) {
   .history-hero { min-height: 60vh; padding: 120px 0 60px; }
   .history-hero h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
@@ -271,43 +299,33 @@ const milestoneIcons: Record<string, string> = {
   .history-stat-divider { width: 60px; height: 1px; }
   .history-stat-num { font-size: 2.2rem; }
   .hero-scroll-hint { display: none; }
-  .vtl-section { padding: 60px 0 80px; }
-  .vtl-header { margin-bottom: 48px; }
-  .vtl-line { left: 24px; }
-  .vtl-connector { left: 24px; }
-  .vtl-left, .vtl-right { padding-left: 72px; padding-right: 0; justify-content: flex-start; }
-  .vtl-left .vtl-card, .vtl-right .vtl-card { text-align: left; }
-  .vtl-left .vtl-card-header { flex-direction: row; }
-  .vtl-left .vtl-card-tag-row { justify-content: flex-start; }
-  .vtl-left, .vtl-right { transform: translateY(40px) translateX(0); }
-  .vtl-left.visible, .vtl-right.visible { transform: translateY(0) translateX(0); }
-  .vtl-dot { width: 40px; height: 40px; }
-  .vtl-dot-icon { width: 18px; height: 18px; }
-  .vtl-card { padding: 24px 20px; }
-  .vtl-card-year { font-size: 1.3rem; }
-  .vtl-card-title { font-size: 1.1rem; }
-  .vtl-card-desc { font-size: 0.85rem; }
-  .vtl-item { margin-bottom: 40px; }
+  .roadmap-section { padding: 60px 0 80px; }
+  .vtl-header { margin-bottom: 40px; }
+  .roadmap-container { position: relative; padding-bottom: 0; display: flex; flex-direction: column; gap: 32px; }
+  .roadmap-svg { display: none; }
+  .rm-milestone { position: relative !important; top: auto !important; width: 100% !important; transform: none !important; display: flex; align-items: flex-start; gap: 16px; padding-left: 60px; }
+  .rm-milestone.rm-right, .rm-milestone.rm-left { transform: translateY(20px) !important; }
+  .rm-milestone.visible { transform: translateY(0) !important; }
+  .rm-pin-wrap { position: absolute !important; left: 0 !important; top: 0 !important; transform: none !important; }
+  .rm-pin { width: 40px; height: 52px; }
+  .rm-pin-icon { top: 8px; width: 18px; height: 18px; }
+  .rm-card { position: relative !important; top: auto !important; left: auto !important; right: auto !important; transform: none !important; width: 100% !important; }
+  .rm-card:hover { transform: translateY(-4px) !important; }
   .history-cta { padding: 48px 0; }
   .history-cta .cta-card { padding: 36px 24px; }
   .history-cta .cta-card h2 { font-size: 1.4rem; }
 }
-
 @media (max-width: 480px) {
   .history-hero { padding: 100px 0 48px; min-height: 55vh; }
   .history-stats { padding: 20px 24px; gap: 16px; }
   .history-stat-num { font-size: 1.8rem; }
   .history-stat-label { font-size: 0.62rem; }
-  .vtl-line { left: 18px; }
-  .vtl-connector { left: 18px; }
-  .vtl-left, .vtl-right { padding-left: 56px; }
-  .vtl-dot { width: 34px; height: 34px; }
-  .vtl-dot-icon { width: 15px; height: 15px; }
-  .vtl-dot-ring { inset: -6px; }
-  .vtl-card { padding: 20px 16px; }
-  .vtl-card-year { font-size: 1.1rem; }
-  .vtl-card-title { font-size: 1rem; }
-  .vtl-card-desc { font-size: 0.82rem; line-height: 1.7; }
-  .vtl-item { margin-bottom: 32px; }
+  .rm-milestone { padding-left: 52px; }
+  .rm-pin { width: 34px; height: 44px; }
+  .rm-pin-icon { top: 7px; width: 15px; height: 15px; }
+  .rm-card { padding: 20px 16px !important; }
+  .rm-card-year { font-size: 1.2rem; }
+  .rm-card-title { font-size: 1rem; }
+  .rm-card-desc { font-size: 0.82rem; }
 }
 </style>

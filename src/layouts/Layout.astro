@@ -4,8 +4,8 @@ import en from '../i18n/en.json';
 import '../styles/global.css';
 import InteractiveBackground from '../components/InteractiveBackground.astro';
 
-interface Props { lang?: string; darkHero?: boolean; heroLogo?: boolean; }
-const { lang = 'vi', darkHero = false, heroLogo = false } = Astro.props;
+interface Props { lang?: string; darkHero?: boolean; heroLogo?: boolean; showBackground?: boolean; }
+const { lang = 'vi', darkHero = false, heroLogo = false, showBackground = false } = Astro.props;
 const t = lang === 'en' ? en : vi;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const prefix = lang === 'en' ? `${base}/en` : base;
@@ -30,7 +30,7 @@ function isActive(path: string): boolean {
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 </head>
 <body>
-  <InteractiveBackground />
+  {showBackground && <InteractiveBackground />}
 
   <!-- Navbar -->
   <nav class:list={["navbar", { "navbar-on-dark": darkHero, "navbar-hero-logo": heroLogo }]} id="navbar">
