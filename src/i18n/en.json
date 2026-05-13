@@ -5,7 +5,8 @@
     "services": "Services",
     "projects": "Projects",
     "history": "History",
-    "contact": "Contact"
+    "contact": "Contact",
+    "careers": "Careers"
   },
   "hero": {
     "title": "EMPOWER YOUR",
@@ -31,7 +32,7 @@
     "items": [
       {
         "title": "Comprehensive Media Consulting",
-        "desc": "Over 25 years of experience in strategic media consulting, helping hundreds of clients optimize their media resources to position, build, develop, and defend their brands. We accompany our clients through every circumstance.",
+        "desc": "Nearly 30 years of experience in strategic media consulting, helping hundreds of clients optimize their media resources to position, build, develop, and defend their brands. We accompany our clients through every circumstance.",
         "icon": "media"
       },
       {
@@ -53,7 +54,7 @@
     "about": {
       "tag": "ABOUT US",
       "title": "Shared Passion — Harvesting Success",
-      "subtitle": "Over 25 years partnering with Vietnamese businesses in every media campaign."
+      "subtitle": "Nearly 30 years partnering with Vietnamese businesses in every media campaign."
     },
     "services": {
       "tag": "SERVICES",
@@ -74,6 +75,11 @@
       "tag": "CONTACT",
       "title": "Connect With Us",
       "subtitle": "Leave your contact information and we'll get back to you shortly!"
+    },
+    "careers": {
+      "tag": "CAREERS",
+      "title": "Career Opportunities",
+      "subtitle": "Join Vietba Group — where you grow your career with a passion for media."
     }
   },
   "about": {
@@ -82,7 +88,7 @@
     "description": "Founded in 1999, Vietba Group is one of Vietnam's leading professional media consulting companies. We are proud to be the first company to bring internationally licensed gameshows to Vietnam, while pioneering in television production, digital marketing, and comprehensive media strategy consulting.",
     "description2": "For the growth of our valued clients, we are dedicated to providing practical media solutions at reasonable costs, focusing on effectiveness in brand promotion and optimizing the benefits of each brand in every campaign.",
     "stats": {
-      "years": "26",
+      "years": "27",
       "yearsLabel1": "YEARS OF",
       "yearsLabel2": "EXPERIENCE",
       "fields": "8",
@@ -116,14 +122,71 @@
     "sectionTag": "SERVICES",
     "title": "Diverse Media Services For Your Business",
     "items": [
-      { "title": "TV Production", "desc": "Professional television production including internationally licensed gameshows, sitcoms, and high-rating entertainment programs.", "img": "/images/services/service-production.jpg" },
-      { "title": "Digital Marketing", "desc": "Comprehensive digital marketing strategies, social media management, SEO, SEM, and effective content marketing.", "img": "/images/services/service-digital-marketing.jpg" },
-      { "title": "Technology & Digital Transformation", "desc": "Comprehensive digital transformation solutions, building modern technology platforms, AI systems, and e-commerce solutions.", "img": "/images/services/service-tech.jpg" },
-      { "title": "Media Booking", "desc": "Booking services for television, radio, press, PR articles, posters/banners, OOH, and KOLs.", "img": "/images/services/service-booking-media.jpg" },
-      { "title": "Outdoor Advertising", "desc": "Strategic OOH advertising solutions at prime locations nationwide.", "img": "/images/services/service-overview.png" },
-      { "title": "Event Organization", "desc": "Professional event organization from conferences, launches to large-scale teambuilding programs.", "img": "/images/services/service-events.jpg" },
-      { "title": "Weather & Technology", "desc": "Specialized weather forecasting services for power, aviation, agriculture, petroleum, and maritime industries.", "img": "/images/services/service-weather-tech.jpg" },
-      { "title": "Media Strategy", "desc": "Comprehensive media strategy consulting: positioning, building, developing, and defending brands.", "img": "/images/services/service-communications.jpg" }
+      {
+        "title": "TV Production",
+        "desc": "Professional television production including internationally licensed gameshows, sitcoms, and high-rating entertainment programs.",
+        "img": "/images/services/service-production.jpg",
+        "detailDesc": "With nearly 30 years of experience in television production, Vietba Group has produced thousands of episodes of entertainment programs, internationally licensed gameshows, and high-quality sitcoms. We are proud to be the first company to bring licensed gameshows to Vietnam.",
+        "highlights": ["811 episodes of Wheel of Fortune on VTV3", "Licensed gameshows from Japan, Korea", "Partnerships with major TV networks", "Highest-rated prime-time shows"],
+        "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
+      },
+      {
+        "title": "Digital Marketing",
+        "desc": "Comprehensive digital marketing strategies, social media management, SEO, SEM, and effective content marketing.",
+        "img": "/images/services/service-digital-marketing.jpg",
+        "detailDesc": "Vietba Group's digital marketing team provides comprehensive digital solutions, from overall strategy to campaign execution. We have supported major brands like Bamboo Airways and EVN HCMC in building and growing their digital channels.",
+        "highlights": ["Managing 50+ corporate pages", "Average ROI increase of 200%", "Google & Facebook Partner", "Specialized content strategy"],
+        "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
+      },
+      {
+        "title": "Technology & Digital Transformation",
+        "desc": "Comprehensive digital transformation solutions, building modern technology platforms, AI systems, and e-commerce solutions.",
+        "img": "/images/services/service-tech.jpg",
+        "detailDesc": "Vietba Group provides comprehensive digital transformation solutions, from enterprise software and e-commerce platforms to AI applications. Our experienced engineering team delivers bespoke solutions tailored to each business.",
+        "highlights": ["AI & automation solutions", "E-commerce platforms", "IT infrastructure & security", "Enterprise management software"],
+        "relatedProjects": ["/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png", "/images/projects/project-invest-tv.png", "/images/projects/project-m-channel.png"]
+      },
+      {
+        "title": "Media Booking",
+        "desc": "Booking services for television, radio, press, PR articles, posters/banners, OOH, and KOLs.",
+        "img": "/images/services/service-booking-media.jpg",
+        "detailDesc": "With an extensive media partner network, Vietba Group provides comprehensive media booking services across all platforms: television, radio, press, digital, and influencer. We optimize cost and effectiveness for every campaign.",
+        "highlights": ["Partners: VTV, HTV, THVL", "Network of 500+ KOLs", "Nationwide PR & press", "OOH & outdoor advertising"],
+        "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png"]
+      },
+      {
+        "title": "Outdoor Advertising",
+        "desc": "Strategic OOH advertising solutions at prime locations nationwide.",
+        "img": "/images/services/service-overview.png",
+        "detailDesc": "Vietba Group owns a network of strategic outdoor advertising locations nationwide, including billboards, LED displays, airport advertising, vehicle wraps, and transit media. We provide optimal placement consulting to ensure maximum communication effectiveness.",
+        "highlights": ["Nationwide billboards & LED", "Airport advertising", "Vehicle wraps & transit media", "Prime strategic locations"],
+        "relatedProjects": ["/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png", "/images/projects/project-aba-2016.png", "/images/projects/project-hoi-nghi-khach-hang.png"]
+      },
+      {
+        "title": "Event Organization",
+        "desc": "Professional event organization from conferences, launches to large-scale teambuilding programs.",
+        "img": "/images/services/service-events.jpg",
+        "detailDesc": "Vietba Group organizes professional events ranging from dozens to thousands of attendees. From client conferences and product launches to roadshows and teambuilding, we ensure every event is a memorable experience.",
+        "highlights": ["International conferences & seminars", "Product launches", "Large-scale teambuilding", "Roadshows & activations"],
+        "relatedProjects": ["/images/events/VVW01290.JPG", "/images/events/IMG_5460.JPG", "/images/events/IMG_5727.JPG", "/images/events/IMG_0175.jpg"]
+      },
+      {
+        "title": "Weather & Technology",
+        "desc": "Specialized weather forecasting, hydro-meteorological services, and disaster warning for power, aviation, agriculture, petroleum, maritime, and shipping industries.",
+        "img": "/images/services/service-weather-tech.jpg",
+        "detailPage": "/weather",
+        "detailDesc": "Vietba Group's Weather & Technology Center provides specialized weather forecasting and hydro-meteorological data services for power, aviation, agriculture, petroleum, and maritime industries. Partnering with Japan's WNI and international agencies.",
+        "highlights": ["Partnership with Japan's WNI", "Forecasting for 6+ industries", "Dedicated weather TV channel", "Advanced meteorological data"],
+        "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
+      },
+      {
+        "title": "Media Strategy",
+        "desc": "Comprehensive media strategy consulting: positioning, building, developing, and defending brands.",
+        "img": "/images/services/service-communications.jpg",
+        "detailDesc": "With a team of top industry experts, Vietba Group provides comprehensive media strategy consulting for businesses. From brand positioning and communication planning to crisis management, we accompany our clients through every circumstance.",
+        "highlights": ["Consulting for 2000+ clients", "Media crisis management", "Multi-channel strategy", "Nearly 30 years of experience"],
+        "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
+      }
     ]
   },
   "projects": {
@@ -165,6 +228,10 @@
       { "name": "Sales Day 2019", "cat": "event", "img": "/images/projects/project-sales-day-2019.png" },
       { "name": "ABA 2016", "cat": "event", "img": "/images/projects/project-aba-2016.png" },
       { "name": "Vietnam Airline Festa", "cat": "event", "img": "/images/projects/project-vietnam-airline-festa.png" },
+      { "name": "Vietcombank KHTT 2020", "cat": "event", "img": "/images/events/IMG_0175.jpg" },
+      { "name": "VCB 55th Anniversary", "cat": "event", "img": "/images/events/IMG_5727.JPG" },
+      { "name": "VCB 55th Gala", "cat": "event", "img": "/images/events/IMG_5460.JPG" },
+      { "name": "VCB KHTT Gala", "cat": "event", "img": "/images/events/VVW01290.JPG" },
       { "name": "USAID", "cat": "comms", "img": "/images/projects/project-usaid.png" }
     ]
   },
@@ -206,16 +273,100 @@
       {
         "city": "Ho Chi Minh City",
         "label": "Branch Office",
-        "address": "6th Floor, TMS Building, 172 Hai Ba Trung, Dakao Ward, District 1, HCMC",
+        "address": "3rd Floor, Building A5, 236-238 Nguyen Cong Tru, Ben Thanh Ward, HCMC",
         "phone": "(84-28) 3 910 1766",
         "email": "contact@vietbagroup.com.vn"
       },
       {
         "city": "Nha Trang",
         "label": "Branch Office",
-        "address": "2 Hung Vuong, Loc Tho Ward, Nha Trang City, Khanh Hoa Province",
+        "address": "42 Le Thanh Phuong, Tay Nha Trang Ward, Khanh Hoa Province",
         "phone": "(84-258) 3 527 789",
         "email": "contact@vietbagroup.com.vn"
+      }
+    ]
+  },
+  "careers": {
+    "sectionTag": "CAREERS",
+    "title": "Job Openings",
+    "subtitle": "Join Vietba Group — where you grow your career with a passion for media.",
+    "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
+    "intro": "Vietba Group was established in 1999 with 100% Vietnamese capital. Over 20 years of building and development, we have established our name in Vietnam's media industry. To this day, Vietba Group is among the TOP advertising and media companies in Vietnam.",
+    "introSub": "Vietba Group has become a trusted and effective partner for corporations and enterprises, prestigious TV stations, and renowned publications in the following fields:",
+    "introServices": ["Brand identity consulting & design", "Media strategy consulting", "Media services", "Outdoor advertising services", "TVC – MV – Documentary – Sitcom production", "Weather & technology center"],
+    "introAchievements": "We have produced over 400 media advertising products, 50 outstanding TV programs, and are a trusted service provider for over 200 large and small partners. We are proud to be the first company to bring gameshows to Vietnam.",
+    "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
+    "listTitle": "Open Positions",
+    "viewDetail": "View details",
+    "applyNow": "APPLY NOW",
+    "applyEmail": "tuyendung@vietbagroup.com.vn",
+    "applyHotline": "086.9312.488",
+    "backToList": "← Back to listings",
+    "jobDescTitle": "Job Description",
+    "requirementsTitle": "Requirements",
+    "benefitsTitle": "Benefits",
+    "workInfoTitle": "Work Information",
+    "applyInfoTitle": "Application Information",
+    "jobs": [
+      {
+        "slug": "head-of-digital-marketing",
+        "title": "HEAD OF DIGITAL MARKETING",
+        "location": "Hanoi",
+        "type": "Full-time",
+        "summary": "Build and lead the overall Digital Marketing strategy, develop multi-platform content ecosystems, and optimize media resources.",
+        "description": ["Develop Digital Marketing growth strategy by phases.", "Deploy and operate a hybrid revenue model combining client services and digital platforms.", "Manage data systems and track media performance across Digital platforms.", "Manage revenue, profit, and be responsible for Digital business KPIs.", "Participate in pitching and strategic media consulting for major brands.", "Build, manage, and develop the Digital Marketing team."],
+        "requirements": ["Minimum 8–10 years of experience in Marketing or Media.", "Experience as Head of Digital Marketing, Marketing Director, or equivalent.", "Deep understanding of Digital Marketing, Social Media, Performance Marketing.", "Experience in team building and integrated media planning.", "Strategic thinking, proactive, ability to connect with major partners."],
+        "benefits": ["Income from 30,000,000 – 45,000,000 VND + sales commission + performance bonus.", "Directly build strategy and develop the Digital team.", "Work with leadership and participate in large-scale nationwide media projects."],
+        "workLocation": "3rd Floor, Hanoi Toserco Building, 273 Kim Ma, Hanoi",
+        "workHours": "08:30 – 17:30, Monday to Friday"
+      },
+      {
+        "slug": "content-manager",
+        "title": "CONTENT MANAGER",
+        "location": "Hanoi",
+        "type": "Full-time",
+        "summary": "Manage and develop multi-platform content strategy, ensuring quality and brand consistency.",
+        "description": ["Build overall content strategy for media channels.", "Manage content team and ensure content production timelines.", "Develop monthly/quarterly content calendar and editorial plan.", "Coordinate with Design and Video teams for high-quality content production.", "Analyze content performance and optimize strategy."],
+        "requirements": ["Minimum 5 years of experience in Content Marketing.", "Experience managing a content team of 5+ members.", "Excellent writing and editing skills.", "Knowledge of SEO, Social Media, and current content trends.", "Creative thinking, ability to work under high pressure."],
+        "benefits": ["Competitive salary + performance bonus.", "Dynamic and creative work environment.", "Opportunity to participate in major media projects."],
+        "workLocation": "3rd Floor, Hanoi Toserco Building, 273 Kim Ma, Hanoi",
+        "workHours": "08:30 – 17:30, Monday to Friday"
+      },
+      {
+        "slug": "growth-performance-lead",
+        "title": "GROWTH & PERFORMANCE LEAD",
+        "location": "Hanoi",
+        "type": "Full-time",
+        "summary": "Lead Growth Marketing strategy, optimize ad performance and sustainable growth.",
+        "description": ["Build and deploy multi-channel Growth Marketing strategy.", "Manage and optimize Performance Marketing campaigns (Google Ads, Facebook Ads, TikTok Ads).", "Analyze data, measure KPIs and report campaign effectiveness.", "Optimize conversion rate and customer acquisition cost.", "Coordinate with Content and Creative teams to optimize creative assets."],
+        "requirements": ["Minimum 5 years of experience in Performance/Growth Marketing.", "Proficient in Google Ads, Facebook Business Manager, Google Analytics.", "Experience managing advertising budgets of 500M+ VND/month.", "Strong data analysis skills and insight reading.", "Ability to work with major brands, pitch and consult strategy."],
+        "benefits": ["Competitive salary + attractive KPI bonus.", "Access to advanced marketing tools and platforms.", "Career development opportunities in a leading media group."],
+        "workLocation": "3rd Floor, Hanoi Toserco Building, 273 Kim Ma, Hanoi",
+        "workHours": "08:30 – 17:30, Monday to Friday"
+      },
+      {
+        "slug": "giam-doc-kinh-doanh-hcm",
+        "title": "Sales Director – HCMC Branch",
+        "location": "Ho Chi Minh City",
+        "type": "Full-time",
+        "summary": "Oversee business development and operations at the Ho Chi Minh City branch.",
+        "description": ["Build business strategy and develop the Southern market.", "Manage branch sales team and ensure revenue targets.", "Seek, develop, and maintain strategic client relationships.", "Coordinate with headquarters to deploy media projects.", "Represent the company at events and conferences in the South."],
+        "requirements": ["Minimum 7 years in business/sales, media industry preferred.", "Experience managing a branch or sales department.", "Extensive network with businesses and corporations in HCMC.", "Excellent negotiation, presentation, and pitching skills.", "Dynamic, proactive, willing to travel."],
+        "benefits": ["Attractive salary + unlimited sales commission.", "Autonomy in branch operations.", "Advancement opportunities within the group."],
+        "workLocation": "3rd Floor, Building A5, 236-238 Nguyen Cong Tru, District 1, HCMC",
+        "workHours": "08:30 – 17:30, Monday to Friday"
+      },
+      {
+        "slug": "nhan-vien-kinh-doanh",
+        "title": "Sales Executive",
+        "location": "HN, HCMC, Nha Trang",
+        "type": "Full-time",
+        "summary": "Find and develop clients, consult on suitable media solutions.",
+        "description": ["Find, approach, and develop potential clients.", "Consult on media and advertising solutions matching client needs.", "Build and maintain long-term client relationships.", "Meet and exceed assigned sales targets.", "Coordinate with departments to deploy client projects."],
+        "requirements": ["Minimum 1–2 years of sales experience, media/advertising preferred.", "Good communication and negotiation skills.", "Dynamic, able to work under pressure.", "Personal laptop and transportation.", "Priority for candidates with existing client relationships."],
+        "benefits": ["Base salary + attractive sales commission.", "In-depth training on media and sales skills.", "Young and dynamic work environment.", "Clear advancement opportunities."],
+        "workLocation": "Hanoi / HCMC / Nha Trang (depends on position)",
+        "workHours": "08:30 – 17:30, Monday to Friday"
       }
     ]
   },

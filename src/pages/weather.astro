@@ -1,0 +1,365 @@
+---
+import Layout from '../layouts/Layout.astro';
+import vi from '../i18n/vi.json';
+const t = vi;
+const w = vi.weather;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout lang="vi">
+  <!-- Hero -->
+  <section class="page-hero wx-hero">
+    <div class="container">
+      <p class="section-tag fade-in">{w.sectionTag}</p>
+      <h1 class="section-title fade-in">{w.title}</h1>
+      <p class="fade-in wx-hero-sub">{w.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Section I: Introduction -->
+  <section class="section section-light" id="wx-intro">
+    <div class="container">
+      <div class="wx-intro-grid fade-in">
+        <div class="wx-intro-text">
+          <h2 class="wx-section-title">{w.intro.title}</h2>
+          <p>{w.intro.p1}</p>
+          <p style="margin-top:16px">{w.intro.p2}</p>
+          <p style="margin-top:16px">{w.intro.p3}</p>
+        </div>
+        <div class="wx-intro-img">
+          <img src={`${base}/images/weather/weather-02-forecast-center.png`} alt="Forecast Center" loading="eager" />
+          <div class="wx-intro-img-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section II: Products -->
+  <section class="section wx-section-alt" id="wx-products">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{w.products.title}</p>
+        <h2 class="section-title">{w.products.title}</h2>
+      </div>
+      <div class="wx-products-grid">
+        {w.products.items.map((item, i) => (
+          <div class="wx-product-card fade-in" style={`--delay:${i * 100}ms`}>
+            <div class="wx-product-img-wrap">
+              <img src={`${base}${item.img}`} alt={item.title} loading="lazy" />
+              <div class="wx-product-number">{String(i + 1).padStart(2, '0')}</div>
+            </div>
+            <div class="wx-product-body">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <!-- Extra services -->
+      <div class="wx-extra fade-in">
+        <h3 class="wx-extra-title">Dịch vụ mở rộng</h3>
+        <ul class="wx-extra-list">
+          {w.products.extraServices.map(s => (
+            <li>
+              <span class="wx-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              {s}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section III: Data Sources -->
+  <section class="section section-light" id="wx-sources">
+    <div class="container">
+      <div class="wx-split fade-in">
+        <div class="wx-split-text">
+          <p class="section-tag">{w.dataSources.title}</p>
+          <h2 class="wx-section-title">{w.dataSources.title}</h2>
+          <p class="wx-desc">{w.dataSources.desc}</p>
+          <div class="wx-models-table">
+            {w.dataSources.models.map(m => (
+              <div class="wx-model-row">
+                <span class="wx-model-name">{m.name}</span>
+                <span class="wx-model-source">{m.source}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="wx-split-images">
+          <div class="wx-img-grid-2x2">
+            {w.dataSources.images.map((img, i) => (
+              <div class="wx-img-cell">
+                <img src={`${base}${img}`} alt={`Data source ${i + 1}`} loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section IV: Partners -->
+  <section class="section wx-section-alt" id="wx-partners">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{w.partners.title}</p>
+        <h2 class="section-title">{w.partners.title}</h2>
+        <p class="wx-desc" style="max-width:700px;margin:0 auto">{w.partners.desc}</p>
+      </div>
+      <div class="wx-partners-content fade-in">
+        <div class="wx-partners-list">
+          {w.partners.list.map((p, i) => (
+            <div class="wx-partner-item">
+              <span class="wx-partner-dot" style={`--hue:${i * 40 + 200}`}></span>
+              <span>{p}</span>
+            </div>
+          ))}
+        </div>
+        <div class="wx-wni-highlight">
+          <div class="wx-wni-badge">WNI</div>
+          <p>{w.partners.wniHighlight}</p>
+        </div>
+      </div>
+      <div class="wx-partner-images fade-in">
+        {w.partners.images.map((img, i) => (
+          <div class="wx-partner-img-cell">
+            <img src={`${base}${img}`} alt={`Partner ${i + 1}`} loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section V: Expert Team -->
+  <section class="section section-light" id="wx-experts">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{w.experts.title}</p>
+        <h2 class="section-title">{w.experts.title}</h2>
+      </div>
+      <div class="wx-expert-grid fade-in">
+        <div class="wx-expert-lead">
+          <div class="wx-expert-avatar">
+            <span class="wx-expert-initials">LXL</span>
+          </div>
+          <div class="wx-expert-info">
+            <h3>{w.experts.lead.name}</h3>
+            <span class="wx-expert-role">{w.experts.lead.title}</span>
+            <p>{w.experts.lead.bio}</p>
+          </div>
+        </div>
+        <div class="wx-expert-team">
+          <div class="wx-team-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="24" cy="16" r="8"/>
+              <circle cx="10" cy="20" r="6"/>
+              <circle cx="38" cy="20" r="6"/>
+              <path d="M4 42c0-8 5-12 12-12h16c7 0 12 4 12 12"/>
+            </svg>
+          </div>
+          <p>{w.experts.teamDesc}</p>
+          <div class="wx-team-tags">
+            <span>Vật lý Hải dương</span>
+            <span>Khí tượng</span>
+            <span>Thủy văn</span>
+            <span>Động lực học biển</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-light contact-cta" id="wx-cta">
+    <div class="container">
+      <div class="cta-card fade-in">
+        <h2>{t.home.contactCta}</h2>
+        <p>{t.home.contactCtaSub}</p>
+        <a href={`${base}/contact`} class="btn-glow">{t.home.contactCtaBtn}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+/* ─── Hero ─── */
+.wx-hero { padding-bottom: 60px; }
+.wx-hero-sub { font-size: 1.1rem; max-width: 640px; margin: 0 auto 12px; color: var(--color-text-dark-secondary); }
+
+/* ─── Section alt ─── */
+.wx-section-alt { background: var(--color-bg-light); }
+.wx-section-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: var(--color-text-dark); margin-bottom: 16px; }
+.wx-desc { font-size: 1rem; color: var(--color-text-dark-secondary); line-height: 1.8; margin-bottom: 24px; }
+
+/* ─── Intro Grid ─── */
+.wx-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.wx-intro-text p { font-size: 0.95rem; color: var(--color-text-dark-secondary); line-height: 1.85; }
+.wx-intro-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 20px 60px rgba(10,37,64,0.12); }
+.wx-intro-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+.wx-intro-img-accent {
+  position: absolute; top: -20px; right: -20px; width: 120px; height: 120px;
+  background: var(--color-gradient); border-radius: 50%; opacity: 0.15; filter: blur(30px);
+}
+
+/* ─── Products Grid ─── */
+.wx-products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+.wx-product-card {
+  background: #fff; border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid rgba(10,37,64,0.06); box-shadow: 0 2px 12px rgba(10,37,64,0.06);
+  transition: all 0.4s ease; animation-delay: var(--delay);
+}
+.wx-product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(10,37,64,0.12); }
+.wx-product-img-wrap { position: relative; height: 200px; overflow: hidden; }
+.wx-product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.wx-product-card:hover .wx-product-img-wrap img { transform: scale(1.05); }
+.wx-product-number {
+  position: absolute; top: 16px; left: 16px;
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 2px;
+  color: #fff; background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
+  padding: 4px 12px; border-radius: 20px;
+}
+.wx-product-body { padding: 24px; }
+.wx-product-body h3 { font-size: 1.15rem; font-weight: 800; color: var(--color-text-dark); margin-bottom: 10px; }
+.wx-product-body p { font-size: 0.88rem; color: var(--color-text-dark-secondary); line-height: 1.7; }
+
+/* ─── Extra Services ─── */
+.wx-extra {
+  background: #fff; border-radius: var(--radius-lg); padding: 32px;
+  border: 1px solid rgba(10,37,64,0.06); box-shadow: 0 2px 12px rgba(10,37,64,0.06);
+}
+.wx-extra-title { font-size: 1.1rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 20px; }
+.wx-extra-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wx-extra-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.88rem; color: var(--color-text-dark-secondary); line-height: 1.6;
+}
+.wx-check { color: var(--color-accent-orange); flex-shrink: 0; margin-top: 2px; }
+
+/* ─── Split Layout ─── */
+.wx-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.wx-split-text { position: sticky; top: 100px; }
+
+/* ─── Models Table ─── */
+.wx-models-table { margin-top: 24px; }
+.wx-model-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; border-radius: var(--radius-sm);
+  transition: background 0.2s ease; font-size: 0.88rem;
+}
+.wx-model-row:nth-child(odd) { background: var(--color-bg-light); }
+.wx-model-row:hover { background: rgba(255,107,53,0.06); }
+.wx-model-name { font-weight: 600; color: var(--color-text-dark); flex: 1; }
+.wx-model-source { color: var(--color-accent-orange); font-weight: 500; font-size: 0.82rem; text-align: right; white-space: nowrap; margin-left: 16px; }
+
+/* ─── 2x2 Image Grid ─── */
+.wx-img-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.wx-img-cell { border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 16px rgba(10,37,64,0.08); }
+.wx-img-cell img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.wx-img-cell:hover img { transform: scale(1.05); }
+
+/* ─── Partners ─── */
+.wx-partners-content { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px; }
+.wx-partners-list { display: flex; flex-direction: column; gap: 14px; }
+.wx-partner-item {
+  display: flex; align-items: center; gap: 12px; padding: 14px 20px;
+  background: #fff; border-radius: var(--radius-sm); font-size: 0.92rem; font-weight: 500;
+  color: var(--color-text-dark); border: 1px solid rgba(10,37,64,0.06);
+  transition: all 0.3s ease;
+}
+.wx-partner-item:hover { transform: translateX(6px); border-color: rgba(255,107,53,0.2); box-shadow: 0 4px 16px rgba(255,107,53,0.08); }
+.wx-partner-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  background: hsl(var(--hue), 70%, 55%);
+}
+.wx-wni-highlight {
+  background: linear-gradient(135deg, #061B2E 0%, #0A2540 100%);
+  border-radius: var(--radius-lg); padding: 32px; color: #fff;
+  display: flex; flex-direction: column; gap: 16px; justify-content: center;
+}
+.wx-wni-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px; border-radius: 16px;
+  background: var(--color-gradient); color: #fff;
+  font-size: 1.1rem; font-weight: 900; letter-spacing: 1px;
+}
+.wx-wni-highlight p { font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.8; }
+
+/* ─── Partner Images ─── */
+.wx-partner-images { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.wx-partner-img-cell { border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 16px rgba(10,37,64,0.08); }
+.wx-partner-img-cell img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.wx-partner-img-cell:hover img { transform: scale(1.05); }
+
+/* ─── Expert Grid ─── */
+.wx-expert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.wx-expert-lead {
+  display: flex; flex-direction: column; gap: 24px;
+  background: #fff; border-radius: var(--radius-lg); padding: 36px;
+  border: 1px solid rgba(10,37,64,0.06); box-shadow: 0 4px 16px rgba(10,37,64,0.06);
+}
+.wx-expert-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: var(--color-gradient); display: flex; align-items: center; justify-content: center;
+}
+.wx-expert-initials { color: #fff; font-size: 1.3rem; font-weight: 800; }
+.wx-expert-info h3 { font-size: 1.2rem; font-weight: 800; color: var(--color-text-dark); margin-bottom: 4px; }
+.wx-expert-role {
+  display: inline-block; font-size: 0.78rem; font-weight: 600;
+  color: var(--color-accent-orange); letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.wx-expert-info p { font-size: 0.88rem; color: var(--color-text-dark-secondary); line-height: 1.8; }
+.wx-expert-team {
+  background: linear-gradient(135deg, #061B2E 0%, #0A2540 100%);
+  border-radius: var(--radius-lg); padding: 36px; color: #fff;
+  display: flex; flex-direction: column; gap: 20px; justify-content: center;
+}
+.wx-team-icon { width: 56px; height: 56px; color: var(--color-accent-orange); }
+.wx-expert-team p { font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.8; }
+.wx-team-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.wx-team-tags span {
+  padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 600;
+  background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ─── CTA ─── */
+.cta-card {
+  text-align: center; padding: 80px 40px;
+  background: var(--color-gradient); border-radius: var(--radius-lg);
+  position: relative; overflow: hidden;
+}
+.cta-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-card h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 16px; position: relative; }
+.cta-card p { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 550px; margin: 0 auto 32px; position: relative; }
+.cta-card .btn-glow { position: relative; background: #fff; color: var(--color-accent-orange); }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .wx-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+  .wx-intro-img img { height: 260px; }
+  .wx-products-grid { grid-template-columns: 1fr; }
+  .wx-extra-list { grid-template-columns: 1fr; }
+  .wx-split { grid-template-columns: 1fr; gap: 32px; }
+  .wx-split-text { position: static; }
+  .wx-img-grid-2x2 { grid-template-columns: 1fr 1fr; }
+  .wx-partners-content { grid-template-columns: 1fr; }
+  .wx-partner-images { grid-template-columns: 1fr 1fr; }
+  .wx-expert-grid { grid-template-columns: 1fr; }
+  .cta-card { padding: 50px 24px; }
+}
+@media (max-width: 480px) {
+  .wx-product-img-wrap { height: 160px; }
+  .wx-img-cell img { height: 150px; }
+  .wx-partner-images { grid-template-columns: 1fr; }
+  .wx-partner-img-cell img { height: 180px; }
+}
+</style>

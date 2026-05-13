@@ -50,6 +50,7 @@ function isActive(path: string): boolean {
         <li><a href={`${prefix}/projects`} class:list={["nav-link", { active: isActive(`${prefix}/projects`) }]}>{t.nav.projects}</a></li>
         <li><a href={`${prefix}/history`} class:list={["nav-link", { active: isActive(`${prefix}/history`) }]}>{t.nav.history}</a></li>
         <li><a href={`${prefix}/contact`} class:list={["nav-link", { active: isActive(`${prefix}/contact`) }]}>{t.nav.contact}</a></li>
+        <li><a href={lang === 'vi' ? `${base}/tuyen-dung` : `${prefix}/careers`} class:list={["nav-link", { active: isActive(lang === 'vi' ? `${base}/tuyen-dung` : `${prefix}/careers`) }]}>{t.nav.careers}</a></li>
         <li>
           <a href={lang === 'vi' ? `${base}/en${currentPath.replace(base, '')}` : currentPath.replace(`${base}/en`, base) || `${base}/`} class="nav-lang" title={lang === 'vi' ? 'English' : 'Tiếng Việt'}>
             {lang === 'vi' ? 'EN' : 'VI'}
@@ -68,20 +69,37 @@ function isActive(path: string): boolean {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href={`${prefix}/`} class="navbar-logo">VIETBA<span class="logo-highlight">GROUP</span></a>
+          <a href={`${prefix}/`} class="footer-logo-link">
+            <div class="footer-logo-crop">
+              <img src={`${prefix}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="footer-logo-img" />
+            </div>
+            <span class="footer-logo-text">VIETBA<span class="logo-highlight">GROUP</span></span>
+          </a>
           <p>{t.footer.description}</p>
+          <div class="footer-hotline">
+            <span class="footer-hotline-label">Hotline:</span>
+            <a href="tel:+84869312488">(+84) 86 9312 488</a>
+          </div>
         </div>
         <div class="footer-links">
           <h4>{t.nav.services}</h4>
           <ul>
-            {t.services.items.slice(0, 4).map((s: {title: string}) => <li><a href={`${prefix}/services`}>{s.title}</a></li>)}
+            {t.services.items.map((s: {title: string}) => <li><a href={`${prefix}/services`}>{s.title}</a></li>)}
           </ul>
         </div>
         <div class="footer-links">
           <h4>{t.nav.contact}</h4>
           <ul>
-            {t.contact.offices.map((o: {city: string; phone: string}) => <li>{o.city}: {o.phone}</li>)}
+            {t.contact.offices.map((o: {city: string; phone: string; address: string}) => (
+              <li>
+                <strong>{o.city}:</strong> {o.phone}
+                <span class="footer-office-address">{o.address}</span>
+              </li>
+            ))}
           </ul>
+          <div class="footer-email">
+            <a href="mailto:contact@vietbagroup.com.vn">contact@vietbagroup.com.vn</a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -309,22 +327,69 @@ function isActive(path: string): boolean {
   background: var(--color-bg-dark); border-top: 1px solid rgba(255,255,255,0.06);
   padding: 60px 0 30px;
 }
+.footer-logo-link {
+  display: flex; align-items: center; gap: 12px; text-decoration: none;
+}
+.footer-logo-crop {
+  width: 48px; height: 48px; flex-shrink: 0;
+}
+.footer-logo-img {
+  width: 100%; height: 100%; object-fit: contain;
+}
+.footer-logo-text {
+  font-size: 1.4rem; font-weight: 900; color: #FFFFFF; letter-spacing: 1px;
+}
+.footer-logo-text .logo-highlight {
+  background: var(--color-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-hotline {
+  margin-top: 16px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;
+}
+.footer-hotline-label {
+  color: rgba(173, 189, 204, 0.7); font-weight: 600;
+}
+.footer-hotline a {
+  color: var(--color-accent-orange); font-weight: 700; font-size: 1rem;
+  transition: color var(--transition);
+}
+.footer-hotline a:hover { opacity: 0.85; }
+.footer-email {
+  margin-top: 12px;
+}
+.footer-email a {
+  font-size: 0.85rem; color: rgba(173, 189, 204, 0.8);
+  transition: color var(--transition);
+}
+.footer-email a:hover { color: var(--color-accent-orange); }
 .footer-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
 }
-.footer-brand p { margin-top: 12px; font-size: 0.9rem; color: var(--color-text-muted); }
-.footer-links h4 { font-size: 0.95rem; margin-bottom: 16px; color: var(--color-text-primary); }
+.footer-brand p { margin-top: 12px; font-size: 0.9rem; color: rgba(173, 189, 204, 0.75); line-height: 1.7; }
+.footer-links h4 { font-size: 0.95rem; margin-bottom: 16px; color: #FFFFFF; }
 .footer-links ul { list-style: none; }
-.footer-links li { font-size: 0.85rem; margin-bottom: 8px; color: var(--color-text-muted); }
-.footer-links a { color: var(--color-text-muted); }
+.footer-links li { font-size: 0.85rem; margin-bottom: 14px; color: rgba(173, 189, 204, 0.8); }
+.footer-links a { color: rgba(173, 189, 204, 0.8); }
 .footer-links a:hover { color: var(--color-accent-orange); }
+.footer-office-address {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(173, 189, 204, 0.55);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+.footer-links li strong {
+  color: rgba(173, 189, 204, 0.95);
+  font-weight: 600;
+}
 .footer-bottom {
   display: flex; justify-content: space-between; align-items: center;
-  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);
-  font-size: 0.8rem; color: var(--color-text-muted);
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.8rem; color: rgba(173, 189, 204, 0.65);
 }
 .footer-social { display: flex; gap: 16px; }
-.footer-social a { color: var(--color-text-muted); transition: color var(--transition); }
+.footer-social a { color: rgba(173, 189, 204, 0.7); transition: color var(--transition); }
 .footer-social a:hover { color: var(--color-accent-orange); }
 
 @media (max-width: 768px) {

@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import vi from '../../i18n/vi.json';
+const t = vi;
+const c = vi.careers;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+export function getStaticPaths() {
+  const careers = vi.careers;
+  return careers.jobs.map((job: any) => ({
+    params: { slug: job.slug },
+    props: { job },
+  }));
+}
+
+const { job } = Astro.props;
+---
+
+<Layout lang="vi">
+  <!-- Breadcrumb -->
+  <section class="jd-breadcrumb-wrap">
+    <div class="container">
+      <nav class="jd-breadcrumb fade-in">
+        <a href={`${base}/`}>Trang Chủ</a>
+        <span class="jd-bc-sep">/</span>
+        <a href={`${base}/tuyen-dung`}>{c.sectionTag}</a>
+        <span class="jd-bc-sep">/</span>
+        <span class="jd-bc-current">{job.title}</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Job Detail -->
+  <section class="section section-light jd-section">
+    <div class="container">
+      <div class="jd-layout fade-in">
+        <!-- Main Content -->
+        <div class="jd-main">
+          <div class="jd-header">
+            <div class="jd-meta">
+              <span class="jd-type">{job.type}</span>
+              <span class="jd-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                {job.location}
+              </span>
+            </div>
+            <h1 class="jd-title">{job.title}</h1>
+            <p class="jd-summary">{job.summary}</p>
+          </div>
+
+          <!-- Job Description -->
+          <div class="jd-block">
+            <h2 class="jd-block-title">
+              <span class="jd-block-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+              {c.jobDescTitle}
+            </h2>
+            <ul class="jd-list">
+              {job.description.map((d: string) => <li>{d}</li>)}
+            </ul>
+          </div>
+
+          <!-- Requirements -->
+          <div class="jd-block">
+            <h2 class="jd-block-title">
+              <span class="jd-block-icon jd-icon-purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+              {c.requirementsTitle}
+            </h2>
+            <ul class="jd-list jd-list-purple">
+              {job.requirements.map((r: string) => <li>{r}</li>)}
+            </ul>
+          </div>
+
+          <!-- Benefits -->
+          <div class="jd-block">
+            <h2 class="jd-block-title">
+              <span class="jd-block-icon jd-icon-cyan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+              {c.benefitsTitle}
+            </h2>
+            <ul class="jd-list jd-list-cyan">
+              {job.benefits.map((b: string) => <li>{b}</li>)}
+            </ul>
+          </div>
+
+          <!-- Work Info -->
+          <div class="jd-block jd-work-info">
+            <h2 class="jd-block-title">
+              <span class="jd-block-icon jd-icon-pink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              {c.workInfoTitle}
+            </h2>
+            <div class="jd-info-grid">
+              <div class="jd-info-item">
+                <span class="jd-info-label">Địa điểm</span>
+                <span class="jd-info-value">{job.workLocation}</span>
+              </div>
+              <div class="jd-info-item">
+                <span class="jd-info-label">Thời gian</span>
+                <span class="jd-info-value">{job.workHours}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="jd-sidebar">
+          <div class="jd-sidebar-card">
+            <h3>{c.applyInfoTitle}</h3>
+            <div class="jd-apply-info">
+              <div class="jd-apply-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href={`mailto:${c.applyEmail}`}>{c.applyEmail}</a>
+              </div>
+              <div class="jd-apply-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href={`tel:${c.applyHotline.replace(/\./g, '')}`}>{c.applyHotline}</a>
+              </div>
+              <div class="jd-apply-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <a href="https://vietbagroup.com.vn" target="_blank">vietbagroup.com.vn</a>
+              </div>
+            </div>
+            <a href={`mailto:${c.applyEmail}?subject=Ứng tuyển: ${job.title}`} class="btn-glow jd-apply-btn">{c.applyNow}</a>
+          </div>
+          <a href={`${base}/tuyen-dung`} class="jd-back-link">{c.backToList}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+/* ─── Breadcrumb ─── */
+.jd-breadcrumb-wrap {
+  padding: 120px 0 0; background: #fff;
+}
+.jd-breadcrumb {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: 0.82rem; color: var(--color-text-dark-secondary);
+}
+.jd-breadcrumb a { color: var(--color-text-dark-secondary); font-weight: 500; }
+.jd-breadcrumb a:hover { color: var(--color-accent-orange); }
+.jd-bc-sep { opacity: 0.4; }
+.jd-bc-current { color: var(--color-accent-orange); font-weight: 600; }
+
+/* ─── Layout ─── */
+.jd-section { padding-top: 40px; }
+.jd-layout { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start; }
+
+/* ─── Header ─── */
+.jd-header { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(10,37,64,0.08); }
+.jd-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.jd-type {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--color-accent-orange); background: rgba(255,107,53,0.08);
+  padding: 4px 14px; border-radius: 50px;
+}
+.jd-location {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.82rem; color: var(--color-text-dark-secondary); font-weight: 500;
+}
+.jd-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900; color: var(--color-text-dark);
+  margin-bottom: 16px; line-height: 1.2;
+}
+.jd-summary {
+  font-size: 1rem; color: var(--color-text-dark-secondary); line-height: 1.8;
+}
+
+/* ─── Content Blocks ─── */
+.jd-block { margin-bottom: 36px; }
+.jd-block-title {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 1.15rem; font-weight: 800; color: var(--color-text-dark); margin-bottom: 20px;
+}
+.jd-block-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  background: rgba(255,107,53,0.1); color: var(--color-accent-orange);
+}
+.jd-icon-purple { background: rgba(99,91,255,0.1); color: var(--color-accent-purple); }
+.jd-icon-cyan { background: rgba(0,212,255,0.1); color: var(--color-accent-cyan); }
+.jd-icon-pink { background: rgba(255,56,100,0.1); color: var(--color-accent-pink); }
+.jd-list {
+  list-style: none; display: flex; flex-direction: column; gap: 14px;
+}
+.jd-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 0.92rem; color: var(--color-text-dark-secondary); line-height: 1.7;
+  padding-left: 4px;
+}
+.jd-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  background: var(--color-accent-orange); margin-top: 8px;
+}
+.jd-list-purple li::before { background: var(--color-accent-purple); }
+.jd-list-cyan li::before { background: var(--color-accent-cyan); }
+
+/* ─── Work Info ─── */
+.jd-work-info {
+  background: var(--color-bg-light); border-radius: var(--radius-md); padding: 28px;
+}
+.jd-info-grid { display: flex; flex-direction: column; gap: 16px; }
+.jd-info-item { display: flex; flex-direction: column; gap: 4px; }
+.jd-info-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-text-dark-secondary); opacity: 0.7; }
+.jd-info-value { font-size: 0.92rem; font-weight: 600; color: var(--color-text-dark); }
+
+/* ─── Sidebar ─── */
+.jd-sidebar { position: sticky; top: 100px; }
+.jd-sidebar-card {
+  background: #fff; border-radius: var(--radius-lg); padding: 32px;
+  border: 1px solid rgba(10,37,64,0.06); box-shadow: 0 4px 20px rgba(10,37,64,0.08);
+}
+.jd-sidebar-card h3 {
+  font-size: 1rem; font-weight: 800; color: var(--color-text-dark); margin-bottom: 20px;
+}
+.jd-apply-info { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+.jd-apply-row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.88rem; color: var(--color-text-dark-secondary);
+}
+.jd-apply-row svg { color: var(--color-accent-orange); flex-shrink: 0; }
+.jd-apply-row a { color: var(--color-text-dark); font-weight: 500; }
+.jd-apply-row a:hover { color: var(--color-accent-orange); }
+.jd-apply-btn { width: 100%; justify-content: center; font-size: 1rem; padding: 16px; }
+.jd-back-link {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 20px;
+  font-size: 0.88rem; font-weight: 600; color: var(--color-text-dark-secondary);
+  transition: all var(--transition);
+}
+.jd-back-link:hover { color: var(--color-accent-orange); }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .jd-layout { grid-template-columns: 1fr; gap: 32px; }
+  .jd-sidebar { position: static; }
+  .jd-breadcrumb-wrap { padding: 100px 0 0; }
+}
+@media (max-width: 480px) {
+  .jd-title { font-size: 1.4rem; }
+  .jd-work-info { padding: 20px; }
+  .jd-sidebar-card { padding: 24px; }
+}
+</style>
