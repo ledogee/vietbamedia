@@ -1,448 +1,795 @@
 ---
-import vi from '../i18n/vi.json';
-import en from '../i18n/en.json';
-import '../styles/global.css';
-import InteractiveBackground from '../components/InteractiveBackground.astro';
+import vi from "../i18n/vi.json";
+import en from "../i18n/en.json";
+import "../styles/global.css";
+import InteractiveBackground from "../components/InteractiveBackground.astro";
 
-interface Props { lang?: string; darkHero?: boolean; heroLogo?: boolean; showBackground?: boolean; }
-const { lang = 'vi', darkHero = false, heroLogo = false, showBackground = false } = Astro.props;
-const t = lang === 'en' ? en : vi;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const prefix = lang === 'en' ? `${base}/en` : base;
+interface Props {
+  lang?: string;
+  darkHero?: boolean;
+  heroLogo?: boolean;
+  showBackground?: boolean;
+}
+const {
+  lang = "vi",
+  darkHero = false,
+  heroLogo = false,
+  showBackground = false,
+} = Astro.props;
+const t = lang === "en" ? en : vi;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const prefix = lang === "en" ? `${base}/en` : base;
 const currentPath = Astro.url.pathname;
 
 function isActive(path: string): boolean {
-  const clean = currentPath.replace(/\/$/, '') || '/';
-  const target = path.replace(/\/$/, '') || '/';
+  const clean = currentPath.replace(/\/$/, "") || "/";
+  const target = path.replace(/\/$/, "") || "/";
   return clean === target;
 }
 ---
+
 <!DOCTYPE html>
 <html lang={lang}>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vietba Group - Công ty Cổ phần Tập đoàn Việt Ba. Tư vấn truyền thông chuyên nghiệp hàng đầu Việt Nam." />
-  <meta property="og:title" content="Vietba Group" />
-  <meta property="og:description" content="Thúc đẩy tiềm năng doanh nghiệp — Đồng hành cùng doanh nghiệp trong mọi chiến dịch truyền thông." />
-  <meta property="og:type" content="website" />
-  <title>Vietba Group — Thúc Đẩy Tiềm Năng Doanh Nghiệp</title>
-  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-</head>
-<body>
-  {showBackground && <InteractiveBackground />}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Vietba Group - Công ty Cổ phần Tập đoàn Việt Ba. Tư vấn truyền thông chuyên nghiệp hàng đầu Việt Nam."
+    />
+    <meta property="og:title" content="Vietba Group" />
+    <meta
+      property="og:description"
+      content="Thúc đẩy tiềm năng doanh nghiệp — Đồng hành cùng doanh nghiệp trong mọi chiến dịch truyền thông."
+    />
+    <meta property="og:type" content="website" />
+    <title>Vietba Group — Thúc Đẩy Tiềm Năng Doanh Nghiệp</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body>
+    {showBackground && <InteractiveBackground />}
 
-  <!-- Navbar -->
-  <nav class:list={["navbar", { "navbar-on-dark": darkHero, "navbar-hero-logo": heroLogo }]} id="navbar">
-    <div class="container navbar-inner">
-      <a href={`${prefix}/`} class="navbar-logo">
-        <div class="navbar-logo-crop">
-          <img src={`${base}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="navbar-logo-img" />
-        </div>
-      </a>
-      <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="navbar-menu" id="navMenu">
-        <li><a href={`${prefix}/`} class:list={["nav-link", { active: isActive(`${prefix}/`) }]}>{t.nav.home}</a></li>
-        <li><a href={`${prefix}/about`} class:list={["nav-link", { active: isActive(`${prefix}/about`) }]}>{t.nav.about}</a></li>
-        <li><a href={`${prefix}/services`} class:list={["nav-link", { active: isActive(`${prefix}/services`) }]}>{t.nav.services}</a></li>
-        <li><a href={`${prefix}/projects`} class:list={["nav-link", { active: isActive(`${prefix}/projects`) }]}>{t.nav.projects}</a></li>
-        <li><a href={`${prefix}/history`} class:list={["nav-link", { active: isActive(`${prefix}/history`) }]}>{t.nav.history}</a></li>
-        <li><a href={`${prefix}/contact`} class:list={["nav-link", { active: isActive(`${prefix}/contact`) }]}>{t.nav.contact}</a></li>
-        <li><a href={lang === 'vi' ? `${base}/tuyen-dung` : `${prefix}/careers`} class:list={["nav-link", { active: isActive(lang === 'vi' ? `${base}/tuyen-dung` : `${prefix}/careers`) }]}>{t.nav.careers}</a></li>
-        <li>
-          <a href={lang === 'vi' ? `${base}/en${currentPath.replace(base, '')}` : currentPath.replace(`${base}/en`, base) || `${base}/`} class="nav-lang" title={lang === 'vi' ? 'English' : 'Tiếng Việt'}>
-            {lang === 'vi' ? 'EN' : 'VI'}
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <nav
+      class:list={[
+        "navbar",
+        { "navbar-on-dark": darkHero, "navbar-hero-logo": heroLogo },
+      ]}
+      id="navbar"
+    >
+      <div class="container navbar-inner">
+        <a href={`${prefix}/`} class="navbar-logo">
+          <div class="navbar-logo-crop">
+            <img
+              src={`${base}/images/logo/Vietba-logo-01.png`}
+              alt="Vietba Group"
+              class="navbar-logo-img"
+            />
+          </div>
+        </a>
+        <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="navbar-menu" id="navMenu">
+          <li>
+            <a
+              href={`${prefix}/`}
+              class:list={["nav-link", { active: isActive(`${prefix}/`) }]}
+              >{t.nav.home}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`${prefix}/about`}
+              class:list={["nav-link", { active: isActive(`${prefix}/about`) }]}
+              >{t.nav.about}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`${prefix}/services`}
+              class:list={[
+                "nav-link",
+                { active: isActive(`${prefix}/services`) },
+              ]}
+              >{t.nav.services}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`${prefix}/projects`}
+              class:list={[
+                "nav-link",
+                { active: isActive(`${prefix}/projects`) },
+              ]}
+              >{t.nav.projects}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`${prefix}/history`}
+              class:list={[
+                "nav-link",
+                { active: isActive(`${prefix}/history`) },
+              ]}
+              >{t.nav.history}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`${prefix}/contact`}
+              class:list={[
+                "nav-link",
+                { active: isActive(`${prefix}/contact`) },
+              ]}
+              >{t.nav.contact}
+            </a>
+          </li>
+          <li>
+            <a
+              href={lang === "vi" ? `${base}/tuyen-dung` : `${prefix}/careers`}
+              class:list={[
+                "nav-link",
+                {
+                  active: isActive(
+                    lang === "vi" ? `${base}/tuyen-dung` : `${prefix}/careers`
+                  ),
+                },
+              ]}
+              >{t.nav.careers}
+            </a>
+          </li>
+          <li>
+            <a
+              href={lang === "vi"
+                ? `${base}/en${currentPath.replace(base, "")}`
+                : currentPath.replace(`${base}/en`, base) || `${base}/`}
+              class="nav-lang"
+              title={lang === "vi" ? "English" : "Tiếng Việt"}
+            >
+              {lang === "vi" ? "EN" : "VI"}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <main class="page-enter" style="position:relative;z-index:1">
-    <slot />
-  </main>
+    <main class="page-enter" style="position:relative;z-index:1">
+      <slot />
+    </main>
 
-  <!-- Footer -->
-  <footer class="footer" style="position:relative;z-index:1">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href={`${prefix}/`} class="footer-logo-link">
-            <div class="footer-logo-crop">
-              <img src={`${prefix}/images/logo/Vietba-logo-01.png`} alt="Vietba Group" class="footer-logo-img" />
+    <!-- Footer -->
+    <footer class="footer" style="position:relative;z-index:1">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href={`${prefix}/`} class="footer-logo-link">
+              <div class="footer-logo-crop">
+                <img
+                  src={`${prefix}/images/logo/Vietba-logo-01.png`}
+                  alt="Vietba Group"
+                  class="footer-logo-img"
+                />
+              </div>
+              <span class="footer-logo-text"
+                >VIETBA<span class="logo-highlight">GROUP</span>
+              </span>
+            </a>
+            <p>{t.footer.description}</p>
+            <div class="footer-hotline">
+              <span class="footer-hotline-label">Hotline:</span>
+              <a href="tel:+84869312488">(+84) 86 9312 488</a>
             </div>
-            <span class="footer-logo-text">VIETBA<span class="logo-highlight">GROUP</span></span>
-          </a>
-          <p>{t.footer.description}</p>
-          <div class="footer-hotline">
-            <span class="footer-hotline-label">Hotline:</span>
-            <a href="tel:+84869312488">(+84) 86 9312 488</a>
+          </div>
+          <div class="footer-links">
+            <h4>{t.nav.services}</h4>
+            <ul>
+              {
+                t.services.items.map((s: { title: string }) => (
+                  <li>
+                    <a href={`${prefix}/services`}>{s.title}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>{t.nav.contact}</h4>
+            <ul>
+              {
+                t.contact.offices.map(
+                  (o: { city: string; phone: string; address: string }) => (
+                    <li>
+                      <strong>{o.city}:</strong> {o.phone}
+                      <span class="footer-office-address">{o.address}</span>
+                    </li>
+                  )
+                )
+              }
+            </ul>
+            <div class="footer-email">
+              <a href="mailto:contact@vietbagroup.com.vn"
+                >contact@vietbagroup.com.vn</a
+              >
+            </div>
           </div>
         </div>
-        <div class="footer-links">
-          <h4>{t.nav.services}</h4>
-          <ul>
-            {t.services.items.map((s: {title: string}) => <li><a href={`${prefix}/services`}>{s.title}</a></li>)}
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>{t.nav.contact}</h4>
-          <ul>
-            {t.contact.offices.map((o: {city: string; phone: string; address: string}) => (
-              <li>
-                <strong>{o.city}:</strong> {o.phone}
-                <span class="footer-office-address">{o.address}</span>
-              </li>
-            ))}
-          </ul>
-          <div class="footer-email">
-            <a href="mailto:contact@vietbagroup.com.vn">contact@vietbagroup.com.vn</a>
+        <div class="footer-bottom">
+          <p>{t.footer.copyright}</p>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/vietbamedia/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                ><path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCpmC4kqhyjdJdYdRWAFZmXQ"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                ><path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>{t.footer.copyright}</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/vietbamedia/" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/channel/UCpmC4kqhyjdJdYdRWAFZmXQ" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // Scroll-triggered fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    <script>
+      // Scroll-triggered fade-in
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
 
-    // Navbar scroll effect + hero logo transition
-    const navbar = document.getElementById('navbar')!;
-    const heroLogoEl = document.getElementById('heroLogo');
-    const navMenuEl = document.getElementById('navMenu')!;
-    const navLogoEl = navbar.querySelector('.navbar-logo') as HTMLElement;
-    const isHeroLogo = navbar.classList.contains('navbar-hero-logo');
-    const SCROLL_THRESHOLD = 50;
-    const HERO_LOGO_FADE_DISTANCE = 350; // px over which hero logo fades out (slower)
+      // Navbar scroll effect + hero logo transition
+      const navbar = document.getElementById("navbar")!;
+      const heroLogoEl = document.getElementById("heroLogo");
+      const navMenuEl = document.getElementById("navMenu")!;
+      const navLogoEl = navbar.querySelector(".navbar-logo") as HTMLElement;
+      const isHeroLogo = navbar.classList.contains("navbar-hero-logo");
+      const SCROLL_THRESHOLD = 50;
+      const HERO_LOGO_FADE_DISTANCE = 350; // px over which hero logo fades out (slower)
 
-    // Calculate how far the menu needs to slide to go from centered to right-aligned
-    let menuOffset = 0;
-    if (isHeroLogo && navLogoEl) {
-      // Measure the actual shift: in space-between, menu is at the right edge;
-      // when centered, it's in the middle. The difference is (containerWidth - menuWidth) / 2
-      const navInner = navbar.querySelector('.navbar-inner') as HTMLElement;
-      const containerWidth = navInner.clientWidth;
-      const menuWidth = navMenuEl.offsetWidth;
-      menuOffset = (containerWidth - menuWidth) / 2;
-    }
-
-    function updateNavbar() {
-      const scrollY = window.scrollY;
-      navbar.classList.toggle('scrolled', scrollY > SCROLL_THRESHOLD);
-
-      if (isHeroLogo && heroLogoEl) {
-        // Progress: 0 (top) → 1 (fully scrolled past hero logo zone)
-        const progress = Math.min(1, Math.max(0, scrollY / HERO_LOGO_FADE_DISTANCE));
-        // Hero logo: fade out + scale down
-        heroLogoEl.style.opacity = String(1 - progress);
-        heroLogoEl.style.transform = `scale(${1 - progress * 0.3}) translateY(${-progress * 20}px)`;
-        // Menu: slide from center (translateX=0) to right (translateX = menuOffset)
-        navMenuEl.style.transform = `translateX(${progress * menuOffset}px)`;
+      // Calculate how far the menu needs to slide to go from centered to right-aligned
+      let menuOffset = 0;
+      if (isHeroLogo && navLogoEl) {
+        // Measure the actual shift: in space-between, menu is at the right edge;
+        // when centered, it's in the middle. The difference is (containerWidth - menuWidth) / 2
+        const navInner = navbar.querySelector(".navbar-inner") as HTMLElement;
+        const containerWidth = navInner.clientWidth;
+        const menuWidth = navMenuEl.offsetWidth;
+        menuOffset = (containerWidth - menuWidth) / 2;
       }
-    }
 
-    window.addEventListener('scroll', updateNavbar, { passive: true });
-    // Trigger on load if already scrolled
-    updateNavbar();
+      function updateNavbar() {
+        const scrollY = window.scrollY;
+        navbar.classList.toggle("scrolled", scrollY > SCROLL_THRESHOLD);
 
-    // Mobile menu toggle
-    const navToggle = document.getElementById('navToggle')!;
-    const navMenu = document.getElementById('navMenu')!;
-    const body = document.body;
+        if (isHeroLogo && heroLogoEl) {
+          // Progress: 0 (top) → 1 (fully scrolled past hero logo zone)
+          const progress = Math.min(
+            1,
+            Math.max(0, scrollY / HERO_LOGO_FADE_DISTANCE)
+          );
+          // Hero logo: fade out + scale down
+          heroLogoEl.style.opacity = String(1 - progress);
+          heroLogoEl.style.transform = `scale(${
+            1 - progress * 0.3
+          }) translateY(${-progress * 20}px)`;
+          // Menu: slide from center (translateX=0) to right (translateX = menuOffset)
+          navMenuEl.style.transform = `translateX(${progress * menuOffset}px)`;
+        }
+      }
 
-    function openMenu() {
-      navMenu.classList.add('open');
-      navToggle.classList.add('open');
-      body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      navMenu.classList.remove('open');
-      navToggle.classList.remove('open');
-      body.style.overflow = '';
-    }
+      window.addEventListener("scroll", updateNavbar, { passive: true });
+      // Trigger on load if already scrolled
+      updateNavbar();
 
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.contains('open') ? closeMenu() : openMenu();
-    });
+      // Mobile menu toggle
+      const navToggle = document.getElementById("navToggle")!;
+      const navMenu = document.getElementById("navMenu")!;
+      const body = document.body;
 
-    // Close menu when a link is clicked
-    navMenu.querySelectorAll('.nav-link, .nav-lang').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
+      function openMenu() {
+        navMenu.classList.add("open");
+        navToggle.classList.add("open");
+        body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        navMenu.classList.remove("open");
+        navToggle.classList.remove("open");
+        body.style.overflow = "";
+      }
 
-    // Close menu on backdrop click (tap outside menu)
-    navMenu.addEventListener('click', (e) => {
-      if (e.target === navMenu) closeMenu();
-    });
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.contains("open") ? closeMenu() : openMenu();
+      });
 
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('open')) closeMenu();
-    });
-  </script>
-</body>
+      // Close menu when a link is clicked
+      navMenu.querySelectorAll(".nav-link, .nav-lang").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // Close menu on backdrop click (tap outside menu)
+      navMenu.addEventListener("click", (e) => {
+        if (e.target === navMenu) closeMenu();
+      });
+
+      // Close menu on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navMenu.classList.contains("open"))
+          closeMenu();
+      });
+    </script>
+  </body>
 </html>
 
 <style>
-/* Navbar */
-.navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 16px 0;
-  transition: all var(--transition);
-  user-select: none; -webkit-user-select: none;
-}
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(10, 37, 64, 0.08);
-  padding: 10px 0;
-  box-shadow: 0 1px 8px rgba(10, 37, 64, 0.06);
-}
-.navbar.scrolled .navbar-logo { color: var(--color-text-dark); }
-/* Hero logo mode: navbar logo hidden initially, center the menu */
-.navbar-hero-logo .navbar-inner { justify-content: center; }
-.navbar-hero-logo .navbar-logo {
-  position: absolute;
-  left: 48px;
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.navbar-hero-logo .navbar-logo-crop {
-  opacity: 0;
-  transform: translateY(-8px) scale(0.85);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.navbar-hero-logo .navbar-menu {
-  will-change: transform;
-}
-.navbar-hero-logo.scrolled .navbar-logo { opacity: 1; }
-.navbar-hero-logo.scrolled .navbar-logo-crop { opacity: 1; transform: translateY(0) scale(1); }
-.navbar.scrolled .nav-link { color: var(--color-text-dark-secondary); }
-.navbar.scrolled .nav-link:hover { color: var(--color-text-dark); background: rgba(255, 107, 53, 0.08); }
-.navbar.scrolled .nav-link.active { color: var(--color-accent-orange); }
-.navbar.scrolled .nav-lang { color: var(--color-text-dark-secondary); border-color: rgba(10, 37, 64, 0.15); }
-.navbar.scrolled .nav-lang:hover { color: var(--color-accent-orange); border-color: var(--color-accent-orange); }
-.navbar.scrolled .navbar-toggle span { background: var(--color-text-dark); }
-.navbar-inner { display: flex; align-items: center; justify-content: space-between; }
-.navbar-logo {
-  font-size: 1.4rem; font-weight: 900; color: var(--color-text-dark); letter-spacing: 1px;
-  display: flex; align-items: center;
-}
-.navbar-logo:hover { color: var(--color-text-dark); }
-.navbar-logo-crop {
-  width: 130px;
-  height: 56px;
-  overflow: hidden;
-}
-.navbar-logo-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.logo-highlight {
-  background: var(--color-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.navbar-menu {
-  display: flex; align-items: center; gap: 8px; list-style: none;
-}
-.nav-link {
-  color: var(--color-text-dark-secondary); font-size: 0.88rem; font-weight: 500;
-  padding: 8px 16px; border-radius: 8px; transition: all var(--transition);
-  position: relative;
-}
-.nav-link:hover {
-  color: var(--color-text-dark); background: rgba(255, 107, 53, 0.08);
-}
-.nav-link.active {
-  color: var(--color-accent-orange);
-}
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 2px;
-  background: var(--color-accent-orange);
-  border-radius: 1px;
-  box-shadow: 0 0 8px var(--color-glow-orange);
-}
-.nav-lang {
-  padding: 6px 14px; border: 1px solid rgba(10, 37, 64, 0.15);
-  border-radius: 6px; font-size: 0.8rem; font-weight: 700;
-  color: var(--color-text-dark-secondary); letter-spacing: 1px;
-}
-.nav-lang:hover { border-color: var(--color-accent-orange); color: var(--color-accent-orange); background: rgba(255, 107, 53, 0.08); }
-
-/* Dark navbar override — for pages with dark hero (inner pages) */
-.navbar-on-dark .navbar-logo { color: #fff; }
-.navbar-on-dark .navbar-logo:hover { color: #fff; }
-.navbar-on-dark .nav-link { color: var(--color-text-secondary); }
-.navbar-on-dark .nav-link:hover { color: #fff; }
-.navbar-on-dark .nav-lang { color: var(--color-text-secondary); border-color: rgba(255,255,255,0.15); }
-.navbar-on-dark .navbar-toggle span { background: #fff; }
-/* Scrolled always overrides dark navbar */
-.navbar-on-dark.scrolled .navbar-logo { color: var(--color-text-dark); }
-.navbar-on-dark.scrolled .nav-link { color: var(--color-text-dark-secondary); }
-.navbar-on-dark.scrolled .nav-link:hover { color: var(--color-text-dark); }
-.navbar-on-dark.scrolled .nav-lang { color: var(--color-text-dark-secondary); border-color: rgba(10,37,64,0.15); }
-.navbar-on-dark.scrolled .navbar-toggle span { background: var(--color-text-dark); }
-
-/* Mobile toggle */
-.navbar-toggle {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 4px;
-}
-.navbar-toggle span {
-  width: 24px; height: 2px; background: var(--color-text-dark); transition: all var(--transition);
-}
-.navbar-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.navbar-toggle.open span:nth-child(2) { opacity: 0; }
-.navbar-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-/* Footer */
-.footer {
-  background: var(--color-bg-dark); border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 60px 0 30px;
-}
-.footer-logo-link {
-  display: flex; align-items: center; gap: 12px; text-decoration: none;
-}
-.footer-logo-crop {
-  width: 48px; height: 48px; flex-shrink: 0;
-}
-.footer-logo-img {
-  width: 100%; height: 100%; object-fit: contain;
-}
-.footer-logo-text {
-  font-size: 1.4rem; font-weight: 900; color: #FFFFFF; letter-spacing: 1px;
-}
-.footer-logo-text .logo-highlight {
-  background: var(--color-gradient);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.footer-hotline {
-  margin-top: 16px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;
-}
-.footer-hotline-label {
-  color: rgba(173, 189, 204, 0.7); font-weight: 600;
-}
-.footer-hotline a {
-  color: var(--color-accent-orange); font-weight: 700; font-size: 1rem;
-  transition: color var(--transition);
-}
-.footer-hotline a:hover { opacity: 0.85; }
-.footer-email {
-  margin-top: 12px;
-}
-.footer-email a {
-  font-size: 0.85rem; color: rgba(173, 189, 204, 0.8);
-  transition: color var(--transition);
-}
-.footer-email a:hover { color: var(--color-accent-orange); }
-.footer-grid {
-  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
-}
-.footer-brand p { margin-top: 12px; font-size: 0.9rem; color: rgba(173, 189, 204, 0.75); line-height: 1.7; }
-.footer-links h4 { font-size: 0.95rem; margin-bottom: 16px; color: #FFFFFF; }
-.footer-links ul { list-style: none; }
-.footer-links li { font-size: 0.85rem; margin-bottom: 14px; color: rgba(173, 189, 204, 0.8); }
-.footer-links a { color: rgba(173, 189, 204, 0.8); }
-.footer-links a:hover { color: var(--color-accent-orange); }
-.footer-office-address {
-  display: block;
-  font-size: 0.78rem;
-  color: rgba(173, 189, 204, 0.55);
-  margin-top: 2px;
-  line-height: 1.5;
-}
-.footer-links li strong {
-  color: rgba(173, 189, 204, 0.95);
-  font-weight: 600;
-}
-.footer-bottom {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
-  font-size: 0.8rem; color: rgba(173, 189, 204, 0.65);
-}
-.footer-social { display: flex; gap: 16px; }
-.footer-social a { color: rgba(173, 189, 204, 0.7); transition: color var(--transition); }
-.footer-social a:hover { color: var(--color-accent-orange); }
-
-@media (max-width: 768px) {
-  .navbar { padding: 12px 0; }
-  .navbar.scrolled { padding: 8px 0; }
-  .navbar-logo { font-size: 1.2rem; }
-  .navbar-toggle { display: flex; z-index: 1002; }
-  .navbar-menu {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%; height: 100vh; height: 100dvh;
-    flex-direction: column; align-items: center; justify-content: center;
-    gap: 8px;
-    background: rgba(6, 27, 46, 0.97);
-    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-    padding: 24px;
-    opacity: 0; visibility: hidden;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
-    z-index: 1001;
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all var(--transition);
+    user-select: none;
+    -webkit-user-select: none;
   }
-  .navbar-menu.open {
-    opacity: 1; visibility: visible;
+  .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+    padding: 10px 0;
+    box-shadow: 0 1px 8px rgba(10, 37, 64, 0.06);
   }
-  .navbar-menu .nav-link {
-    font-size: 1.15rem;
-    padding: 14px 24px;
-    width: 100%;
-    text-align: center;
-    border-radius: 12px;
+  .navbar.scrolled .navbar-logo {
+    color: var(--color-text-dark);
   }
-  .navbar-menu .nav-link:hover,
-  .navbar-menu .nav-link.active {
+  /* Hero logo mode: navbar logo hidden initially, center the menu */
+  .navbar-hero-logo .navbar-inner {
+    justify-content: center;
+  }
+  .navbar-hero-logo .navbar-logo {
+    position: absolute;
+    left: 48px;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .navbar-hero-logo .navbar-logo-crop {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.85);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .navbar-hero-logo .navbar-menu {
+    will-change: transform;
+  }
+  .navbar-hero-logo.scrolled .navbar-logo {
+    opacity: 1;
+  }
+  .navbar-hero-logo.scrolled .navbar-logo-crop {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .navbar.scrolled .nav-link {
+    color: var(--color-text-dark-secondary);
+  }
+  .navbar.scrolled .nav-link:hover {
+    color: var(--color-text-dark);
     background: rgba(255, 107, 53, 0.08);
   }
-  .navbar-menu .nav-lang {
-    margin-top: 12px;
-    padding: 10px 28px;
-    font-size: 0.9rem;
+  .navbar.scrolled .nav-link.active {
+    color: var(--color-accent-orange);
   }
-  .footer { padding: 40px 0 24px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  .footer-brand p { font-size: 0.85rem; }
-  .footer-links h4 { font-size: 0.9rem; margin-bottom: 12px; }
-  .footer-links li { font-size: 0.82rem; }
-  .footer-bottom {
-    flex-direction: column; gap: 16px; text-align: center;
-    font-size: 0.75rem;
+  .navbar.scrolled .nav-lang {
+    color: var(--color-text-dark-secondary);
+    border-color: rgba(10, 37, 64, 0.15);
   }
-}
+  .navbar.scrolled .nav-lang:hover {
+    color: var(--color-accent-orange);
+    border-color: var(--color-accent-orange);
+  }
+  .navbar.scrolled .navbar-toggle span {
+    background: var(--color-text-dark);
+  }
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--color-text-dark);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-logo:hover {
+    color: var(--color-text-dark);
+  }
+  .navbar-logo-crop {
+    height: 40px;
+  }
+  .navbar-logo-img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+  .logo-highlight {
+    background: var(--color-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+  .nav-link {
+    color: var(--color-text-dark-secondary);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all var(--transition);
+    position: relative;
+  }
+  .nav-link:hover {
+    color: var(--color-text-dark);
+    background: rgba(255, 107, 53, 0.08);
+  }
+  .nav-link.active {
+    color: var(--color-accent-orange);
+  }
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: var(--color-accent-orange);
+    border-radius: 1px;
+    box-shadow: 0 0 8px var(--color-glow-orange);
+  }
+  .nav-lang {
+    padding: 6px 14px;
+    border: 1px solid rgba(10, 37, 64, 0.15);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-dark-secondary);
+    letter-spacing: 1px;
+  }
+  .nav-lang:hover {
+    border-color: var(--color-accent-orange);
+    color: var(--color-accent-orange);
+    background: rgba(255, 107, 53, 0.08);
+  }
 
-@media (max-width: 480px) {
-  .navbar-logo { font-size: 1.1rem; }
-  .navbar-menu .nav-link { font-size: 1.05rem; padding: 12px 20px; }
-  .footer { padding: 32px 0 20px; }
-  .footer-grid { gap: 24px; }
-}
+  /* Dark navbar override — for pages with dark hero (inner pages) */
+  .navbar-on-dark .navbar-logo {
+    color: #fff;
+  }
+  .navbar-on-dark .navbar-logo:hover {
+    color: #fff;
+  }
+  .navbar-on-dark .nav-link {
+    color: var(--color-text-secondary);
+  }
+  .navbar-on-dark .nav-link:hover {
+    color: #fff;
+  }
+  .navbar-on-dark .nav-lang {
+    color: var(--color-text-secondary);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  .navbar-on-dark .navbar-toggle span {
+    background: #fff;
+  }
+  /* Scrolled always overrides dark navbar */
+  .navbar-on-dark.scrolled .navbar-logo {
+    color: var(--color-text-dark);
+  }
+  .navbar-on-dark.scrolled .nav-link {
+    color: var(--color-text-dark-secondary);
+  }
+  .navbar-on-dark.scrolled .nav-link:hover {
+    color: var(--color-text-dark);
+  }
+  .navbar-on-dark.scrolled .nav-lang {
+    color: var(--color-text-dark-secondary);
+    border-color: rgba(10, 37, 64, 0.15);
+  }
+  .navbar-on-dark.scrolled .navbar-toggle span {
+    background: var(--color-text-dark);
+  }
+
+  /* Mobile toggle */
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .navbar-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--color-text-dark);
+    transition: all var(--transition);
+  }
+  .navbar-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .navbar-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--color-bg-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 60px 0 30px;
+  }
+  .footer-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .footer-logo-crop {
+    width: 100px;
+    height: 42px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .footer-logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .footer-logo-text {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1px;
+  }
+  .footer-logo-text .logo-highlight {
+    background: var(--color-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .footer-hotline {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-hotline-label {
+    color: rgba(173, 189, 204, 0.7);
+    font-weight: 600;
+  }
+  .footer-hotline a {
+    color: var(--color-accent-orange);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color var(--transition);
+  }
+  .footer-hotline a:hover {
+    opacity: 0.85;
+  }
+  .footer-email {
+    margin-top: 12px;
+  }
+  .footer-email a {
+    font-size: 0.85rem;
+    color: rgba(173, 189, 204, 0.8);
+    transition: color var(--transition);
+  }
+  .footer-email a:hover {
+    color: var(--color-accent-orange);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-brand p {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: rgba(173, 189, 204, 0.75);
+    line-height: 1.7;
+  }
+  .footer-links h4 {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .footer-links ul {
+    list-style: none;
+  }
+  .footer-links li {
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+    color: rgba(173, 189, 204, 0.8);
+  }
+  .footer-links a {
+    color: rgba(173, 189, 204, 0.8);
+  }
+  .footer-links a:hover {
+    color: var(--color-accent-orange);
+  }
+  .footer-office-address {
+    display: block;
+    font-size: 0.78rem;
+    color: rgba(173, 189, 204, 0.55);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  .footer-links li strong {
+    color: rgba(173, 189, 204, 0.95);
+    font-weight: 600;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8rem;
+    color: rgba(173, 189, 204, 0.65);
+  }
+  .footer-social {
+    display: flex;
+    gap: 16px;
+  }
+  .footer-social a {
+    color: rgba(173, 189, 204, 0.7);
+    transition: color var(--transition);
+  }
+  .footer-social a:hover {
+    color: var(--color-accent-orange);
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 12px 0;
+    }
+    .navbar.scrolled {
+      padding: 8px 0;
+    }
+    .navbar-logo {
+      font-size: 1.2rem;
+    }
+    .navbar-toggle {
+      display: flex;
+      z-index: 1002;
+    }
+    .navbar-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(6, 27, 46, 0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+      z-index: 1001;
+    }
+    .navbar-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .navbar-menu .nav-link {
+      font-size: 1.15rem;
+      padding: 14px 24px;
+      width: 100%;
+      text-align: center;
+      border-radius: 12px;
+    }
+    .navbar-menu .nav-link:hover,
+    .navbar-menu .nav-link.active {
+      background: rgba(255, 107, 53, 0.08);
+    }
+    .navbar-menu .nav-lang {
+      margin-top: 12px;
+      padding: 10px 28px;
+      font-size: 0.9rem;
+    }
+    .footer {
+      padding: 40px 0 24px;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+    }
+    .footer-links h4 {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .footer-links li {
+      font-size: 0.82rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar-logo {
+      font-size: 1.1rem;
+    }
+    .navbar-menu .nav-link {
+      font-size: 1.05rem;
+      padding: 12px 20px;
+    }
+    .footer {
+      padding: 32px 0 20px;
+    }
+    .footer-grid {
+      gap: 24px;
+    }
+  }
 </style>

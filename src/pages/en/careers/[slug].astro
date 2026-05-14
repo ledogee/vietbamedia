@@ -16,33 +16,27 @@ export function getStaticPaths() {
 const { job } = Astro.props;
 ---
 
-<Layout lang="en">
-  <section class="jd-breadcrumb-wrap">
-    <div class="container">
-      <nav class="jd-breadcrumb fade-in">
-        <a href={`${base}/en/`}>Home</a>
-        <span class="jd-bc-sep">/</span>
-        <a href={`${base}/en/careers`}>{c.sectionTag}</a>
-        <span class="jd-bc-sep">/</span>
-        <span class="jd-bc-current">{job.title}</span>
-      </nav>
-    </div>
-  </section>
-
+<Layout lang="en" darkHero={true} heroLogo={true}>
   <!-- JD Hero Banner -->
   {job.heroImg && (
     <section class="jd-hero">
       <img src={`${base}${job.heroImg}`} alt={job.title} class="jd-hero-bg" loading="eager" />
       <div class="jd-hero-overlay"></div>
-      <div class="container jd-hero-content">
-        <div class="jd-hero-meta">
-          <span class="jd-hero-type">{job.type}</span>
-          <span class="jd-hero-location">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            {job.location}
-          </span>
+      <div class="container jd-hero-inner">
+        <a href={`${base}/en/careers`} class="jd-hero-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          {c.sectionTag}
+        </a>
+        <div class="jd-hero-content">
+          <div class="jd-hero-meta">
+            <span class="jd-hero-type">{job.type}</span>
+            <span class="jd-hero-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {job.location}
+            </span>
+          </div>
+          <h1 class="jd-hero-title">{job.title}</h1>
         </div>
-        <h1 class="jd-hero-title">{job.title}</h1>
       </div>
     </section>
   )}
@@ -92,18 +86,29 @@ const { job } = Astro.props;
 </Layout>
 
 <style>
-.jd-breadcrumb-wrap { padding: 120px 0 0; background: #fff; }
-.jd-breadcrumb { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.82rem; color: var(--color-text-dark-secondary); }
-.jd-breadcrumb a { color: var(--color-text-dark-secondary); font-weight: 500; }
-.jd-breadcrumb a:hover { color: var(--color-accent-orange); }
-.jd-bc-sep { opacity: 0.4; }
-.jd-bc-current { color: var(--color-accent-orange); font-weight: 600; }
-
 /* ─── JD Hero Banner ─── */
-.jd-hero { position: relative; min-height: 340px; display: flex; align-items: flex-end; overflow: hidden; }
+.jd-hero {
+  position: relative; min-height: 400px; display: flex; align-items: flex-end;
+  overflow: hidden; margin-top: 0;
+}
 .jd-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .jd-hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(6,27,46,0.92) 0%, rgba(10,37,64,0.55) 40%, rgba(6,27,46,0.25) 100%); }
-.jd-hero-content { position: relative; z-index: 2; padding-bottom: 40px; }
+.jd-hero-inner {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 400px; padding-top: 100px; padding-bottom: 40px;
+}
+.jd-hero-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.8);
+  transition: all var(--transition);
+  text-transform: uppercase;
+}
+.jd-hero-back:hover { color: rgba(255,255,255,0.9); gap: 10px; }
+.jd-hero-back svg { transition: transform var(--transition); }
+.jd-hero-back:hover svg { transform: translateX(-3px); }
+.jd-hero-content { margin-top: auto; }
 .jd-hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
 .jd-hero-type { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-accent-orange); background: rgba(255,107,53,0.18); padding: 5px 14px; border-radius: 50px; backdrop-filter: blur(4px); }
 .jd-hero-location { display: inline-flex; align-items: center; gap: 4px; font-size: 0.82rem; color: rgba(255,255,255,0.85); font-weight: 500; }
@@ -147,15 +152,15 @@ const { job } = Astro.props;
 @media (max-width: 768px) {
   .jd-layout { grid-template-columns: 1fr; gap: 32px; }
   .jd-sidebar { position: static; }
-  .jd-breadcrumb-wrap { padding: 100px 0 0; }
-  .jd-hero { min-height: 280px; }
+  .jd-hero { min-height: 320px; }
+  .jd-hero-inner { min-height: 320px; padding-top: 90px; padding-bottom: 28px; }
   .jd-hero-title { font-size: 1.5rem; }
-  .jd-hero-content { padding-bottom: 28px; }
 }
 @media (max-width: 480px) {
   .jd-work-info { padding: 20px; }
   .jd-sidebar-card { padding: 24px; }
-  .jd-hero { min-height: 220px; }
+  .jd-hero { min-height: 260px; }
+  .jd-hero-inner { min-height: 260px; }
   .jd-hero-title { font-size: 1.3rem; }
 }
 </style>
