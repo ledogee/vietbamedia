@@ -127,12 +127,12 @@ function isActive(path: string): boolean {
           </li>
           <li>
             <a
-              href={lang === "vi" ? `${base}/tuyen-dung` : `${prefix}/careers`}
+              href={lang === "vi" ? `${base}/careers` : `${prefix}/careers`}
               class:list={[
                 "nav-link",
                 {
                   active: isActive(
-                    lang === "vi" ? `${base}/tuyen-dung` : `${prefix}/careers`
+                    lang === "vi" ? `${base}/careers` : `${prefix}/careers`
                   ),
                 },
               ]}
@@ -166,7 +166,7 @@ function isActive(path: string): boolean {
             <a href={`${prefix}/`} class="footer-logo-link">
               <div class="footer-logo-crop">
                 <img
-                  src={`${prefix}/images/logo/Vietba-logo-01.png`}
+                  src={`${base}/images/logo/Vietba-logo-01.png`}
                   alt="Vietba Group"
                   class="footer-logo-img"
                 />

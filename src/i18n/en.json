@@ -174,7 +174,7 @@
         "title": "Weather & Technology",
         "desc": "Specialized weather forecasting, hydro-meteorological services, and disaster warning for power, aviation, agriculture, petroleum, maritime, and shipping industries.",
         "img": "/images/services/service-weather-tech.jpg",
-        "detailPage": "/weather",
+        "detailPage": "/en/weather",
         "detailDesc": "Vietba Group's Weather & Technology Center provides specialized weather forecasting and hydro-meteorological data services for power, aviation, agriculture, petroleum, and maritime industries. Partnering with Japan's WNI and international agencies.",
         "highlights": ["Partnership with Japan's WNI", "Forecasting for 6+ industries", "Dedicated weather TV channel", "Advanced meteorological data"],
         "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
@@ -374,6 +374,96 @@
         "heroImg": "/images/recruitment/jd-nhan-vien-kinh-doanh.png"
       }
     ]
+  },
+  "weather": {
+    "sectionTag": "WEATHER & TECHNOLOGY",
+    "title": "Weather & Technology Center",
+    "subtitle": "Specialized weather forecasting solutions and applied meteorological data for businesses",
+    "intro": {
+      "title": "Overview",
+      "p1": "Vietnam is one of the countries most severely affected by climate change and extreme weather events. In recent years, the frequency and intensity of storms, heavy rainfall, flooding, droughts, prolonged heatwaves, and saltwater intrusion have been increasing, causing significant damage to lives, property, infrastructure, and broadly impacting socio-economic development.",
+      "p2": "Vietba owns the Weather & Technology Center along with a dedicated weather TV channel on multiple platforms, specializing in providing industry-specific weather forecasting solutions, applied hydro-meteorological data, weather bulletins, and in-depth disaster warnings for major enterprises and corporations in the fields of: power, aviation, television broadcasting, agriculture, petroleum, maritime, and shipping.",
+      "p3": "In addition to its professional expertise, Vietba collaborates with reputable domestic and international forecasting agencies to enhance data quality, accuracy, and information update speed."
+    },
+    "products": {
+      "title": "Key Products",
+      "items": [
+        {
+          "title": "Voyage Consulting",
+          "desc": "Voyage consulting and vessel support services, providing critical weather information to help captains make optimal decisions, ensuring safety, fuel savings, emission reduction, and improved operational efficiency.",
+          "img": "/images/weather/weather-10-european-wind.jpeg"
+        },
+        {
+          "title": "Port & Island Forecasting",
+          "desc": "Providing daily weather forecasts for seaports, islands, and transit points, serving maritime transport and logistics operations.",
+          "img": "/images/weather/weather-08-sea-forecast.jpeg"
+        },
+        {
+          "title": "Marine Weather Forecasting",
+          "desc": "Providing marine weather forecasting services including waves, wind, currents, tides, and dangerous phenomena for maritime transport, fishing, and offshore petroleum operations.",
+          "img": "/images/weather/weather-09-australia-forecast.jpeg"
+        },
+        {
+          "title": "Storm & Disaster Warnings",
+          "desc": "Forecasting and warning of storms, tropical depressions, large waves, storm surges, fog, and other dangerous hydro-meteorological phenomena at sea.",
+          "img": "/images/weather/weather-05-miami-office.jpeg"
+        }
+      ],
+      "extraServices": [
+        "Short-term, medium-term, monthly, and seasonal forecasting; climate trend assessment and change evaluation",
+        "Research, application, and technology transfer for hydro-meteorological forecasting and warning",
+        "High-resolution, high-quality forecast bulletins with in-depth consulting",
+        "Data built on advanced Japanese forecasting models combined with National Hydro-Meteorological Service, satellite imagery, and radar"
+      ]
+    },
+    "dataSources": {
+      "title": "Data Sources",
+      "desc": "Vietba's forecasting system is built on an integrated platform of advanced domestic and international hydro-meteorological models:",
+      "models": [
+        { "name": "GWM (Global Wave Model)", "source": "Japan" },
+        { "name": "CWM (Coastal Wave Model) & WENS", "source": "Japan MRI" },
+        { "name": "SWM (Shallow-water Wave Model)", "source": "International" },
+        { "name": "WNI, Metraweather, Windy, Icon", "source": "Japan & International" },
+        { "name": "WRF (Weather Research & Forecasting)", "source": "United States" },
+        { "name": "Meteostar, HurricaneZone, JMA", "source": "Multi-national" },
+        { "name": "National & Southern HydroMet Service", "source": "Vietnam" },
+        { "name": "US, Japan, Europe, Thailand, Germany, UK", "source": "Seasonal & real-time" }
+      ],
+      "images": [
+        "/images/weather/weather-06-weather-map.jpeg",
+        "/images/weather/weather-04-model-comparison.jpeg",
+        "/images/weather/weather-11-global-data.jpeg",
+        "/images/weather/weather-07-global-tech.jpeg"
+      ]
+    },
+    "partners": {
+      "title": "Data Partners",
+      "desc": "Vietba currently partners with numerous reputable domestic and international hydro-meteorological and technology organizations:",
+      "list": [
+        "National Center for Hydro-Meteorological Forecasting",
+        "Southern Regional HydroMet Center",
+        "Center for HydroMet Technology Application (HYMETEC)",
+        "Weathernews Japan (WNI)",
+        "New Zealand Meteorological Agency",
+        "EarthTV Network GmbH (Germany)"
+      ],
+      "wniHighlight": "Weathernews (WNI) is the world's largest private weather company headquartered in Japan, with a network of offices in over 21 countries and 7 global service centers. WNI possesses the world's leading weather data system along with a team of over 1,000 experts.",
+      "images": [
+        "/images/weather/weather-01-noaa-office.jpeg",
+        "/images/weather/weather-02-forecast-center.png",
+        "/images/weather/weather-03-hanoi-dashboard.jpeg",
+        "/images/weather/weather-12-vietnamese-app.jpeg"
+      ]
+    },
+    "experts": {
+      "title": "Expert Team",
+      "lead": {
+        "name": "Le Thi Xuan Lan",
+        "title": "Master of Hydro-Meteorology",
+        "bio": "Many years of experience at the Southern Hydro-Meteorological Station. Specialized research on the East Sea, petroleum extraction zones, and maritime routes. Expert in waves, wind, atmospheric circulation, synoptic patterns affecting the East Sea, and application of numerical models in marine weather forecasting."
+      },
+      "teamDesc": "Our team of experts and advisors are trained in-depth in Ocean Physics, Meteorology, Hydrology, and Marine Dynamics with PhD, Master's, and Engineering degrees to ensure the highest professional quality and accuracy."
+    }
   },
   "footer": {
     "copyright": "© 2026 Vietba Group. All Rights Reserved.",

@@ -56,7 +56,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
       <div class="rc-jobs-grid">
         {c.jobs.map((job, i) => (
-          <a href={`${base}/tuyen-dung/${job.slug}`} class="rc-job-card fade-in" style={`--delay:${i * 80}ms`}>
+          <a href={`${base}/careers/${job.slug}`} class="rc-job-card fade-in" style={`--delay:${i * 80}ms`}>
             <div class="rc-job-card-accent"></div>
             <div class="rc-job-card-body">
               <div class="rc-job-meta">
