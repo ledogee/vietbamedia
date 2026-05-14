@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="page-hero">
     <div class="container">
       <p class="section-tag fade-in">{t.pageHero.about.tag}</p>
-      <h1 class="section-title fade-in">{t.pageHero.about.title}</h1>
+      <h1 class="section-title fade-in" set:html={t.pageHero.about.title} />
       <p class="fade-in">{t.pageHero.about.subtitle}</p>
     </div>
   </section>

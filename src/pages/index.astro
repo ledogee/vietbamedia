@@ -23,7 +23,7 @@ const strengthIcons: Record<string, string> = {
 const mediaServices = [
   {
     key: "content",
-    title: "SX Content Đa Nền Tảng",
+    title: "Sản Xuất Nội Dung Đa Nền Tảng",
     desc: "Sản xuất nội dung chuyên nghiệp cho truyền hình, digital và mạng xã hội.",
     icon: serviceIcons.content,
   },
@@ -193,7 +193,7 @@ const partners = [
       <div class="intro-grid fade-in">
         <div class="intro-text">
           <p class="section-tag">{t.about.sectionTag}</p>
-          <h2 class="section-title">{t.about.title}</h2>
+          <h2 class="section-title" set:html={t.about.title} />
           <p class="intro-desc">{t.about.description}</p>
           <p class="intro-desc" style="margin-top:12px">
             {t.about.description2}

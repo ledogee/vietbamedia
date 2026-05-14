@@ -53,7 +53,7 @@
   "pageHero": {
     "about": {
       "tag": "VỀ CHÚNG TÔI",
-      "title": "Chung Nhiệt Huyết — Gặt Thành Công",
+      "title": "Chung Nhiệt Huyết<br>Gặt Thành Công",
       "subtitle": "Gần 30 năm đồng hành cùng doanh nghiệp Việt trong mọi chiến dịch truyền thông."
     },
     "services": {
@@ -84,7 +84,7 @@
   },
   "about": {
     "sectionTag": "VỀ CHÚNG TÔI",
-    "title": "Chung Nhiệt Huyết — Gặt Thành Công",
+    "title": "Chung Nhiệt Huyết<br>Gặt Thành Công",
     "description": "Thành lập từ năm 1999, Vietba Group là một trong những công ty tư vấn truyền thông chuyên nghiệp hàng đầu tại Việt Nam. Chúng tôi tự hào là đơn vị đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam, đồng thời tiên phong trong lĩnh vực sản xuất truyền hình, digital marketing và tư vấn chiến lược truyền thông tổng thể. Việt Ba còn sở hữu Trung tâm Thời tiết và Công nghệ, chuyên cung cấp giải pháp dự báo thời tiết chuyên ngành và dữ liệu khí tượng ứng dụng cho các doanh nghiệp, tập đoàn lớn trong các lĩnh vực: điện lực, hàng không, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
     "description2": "Vì sự phát triển của Quý khách hàng, chúng tôi tận tâm tư vấn các giải pháp truyền thông thiết thực, chi phí hợp lý, chú trọng tính hiệu quả trong quảng bá hình ảnh và hướng đến tối ưu hoá lợi ích của mỗi thương hiệu trong từng chiến dịch.",
     "stats": {
@@ -120,7 +120,7 @@
   },
   "services": {
     "sectionTag": "DỊCH VỤ",
-    "title": "Cung cấp đa dạng dịch vụ truyền thông",
+    "title": "Cung Cấp Đa Dạng Dịch Vụ Truyền Thông",
     "items": [
       {
         "title": "Sản Xuất Truyền Hình",
