@@ -273,7 +273,7 @@
       {
         "city": "Hồ Chí Minh",
         "label": "Chi Nhánh",
-        "address": "Tầng 3, Toà nhà A5, 236-238 Nguyễn Công Trứ, Phường Bến Thành, Thành phố HCM",
+        "address": "Tầng 3, Toà nhà AS, 236-238 Nguyễn Công Trứ, Phường Bến Thành, TP HCM",
         "phone": "(84-28) 3 910 1766",
         "email": "contact@vietbagroup.com.vn"
       },
@@ -383,7 +383,7 @@
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group được thành lập vào năm 1999 với 100% vốn đầu tư Việt Nam. Trải qua hơn 20 năm tạo dựng và phát triển, chúng tôi đã khẳng định được tên tuổi của mình trong làng truyền thông Việt Nam. Cho đến nay, Vietba Group đã nằm trong TOP những công ty quảng cáo và truyền thông lớn tại Việt Nam.",
     "introSub": "Vietba Group đã trở thành đối tác tin cậy và hiệu quả của các Tập đoàn, Doanh nghiệp trong và ngoài nước, các đài truyền hình uy tín và các đầu báo, tạp chí tên tuổi trong những lĩnh vực sau:",
-    "introServices": ["Tư vấn và thiết kế hệ thống nhận diện thương hiệu", "Tư vấn chiến lược truyền thông", "Dịch vụ truyền thông", "Dịch vụ quảng cáo ngoài trời", "Sản xuất TVC – MV – Phim tài liệu – Phim sitcom", "Trung tâm công nghệ và thời tiết"],
+    "introServices": ["Chiến lược Truyền thông", "Công nghệ & Chuyển đổi số", "Sản xuất Truyền hình", "Digital Marketing", "Booking Media", "Dịch vụ Quảng cáo ngoài trời", "Tổ chức sự kiện"],
     "introAchievements": "Đến nay, chúng tôi đã thực hiện hơn 400 sản phẩm quảng cáo truyền thông, 50 chương trình truyền hình đặc sắc và là nhà cung cấp dịch vụ đáng tin cậy của hơn 200 đối tác lớn và nhỏ. Chúng tôi tự hào là công ty đầu tiên đưa gameshow vào Việt Nam, đặt nền móng cho rất nhiều chương trình truyền hình và tên tuổi cho các nghệ sĩ hiện nay.",
     "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
     "listTitle": "Vị Trí Đang Tuyển",
@@ -403,12 +403,13 @@
         "title": "HEAD OF DIGITAL MARKETING",
         "location": "Hà Nội",
         "type": "Full-time",
-        "summary": "Xây dựng và dẫn dắt chiến lược Digital Marketing tổng thể, phát triển hệ sinh thái nội dung đa nền tảng, tối ưu hệ thống tài nguyên truyền thông.",
+        "summary": "Vietba Group tìm kiếm Head of Digital Marketing – người chịu trách nhiệm xây dựng và dẫn dắt chiến lược Digital Marketing tổng thể, phát triển hệ sinh thái nội dung đa nền tảng gồm Truyền hình, Digital, Out Of Home và các nền tảng mạng xã hội; đồng thời tối ưu hệ thống tài nguyên truyền thông nhằm tạo ra doanh thu bền vững cho doanh nghiệp.",
         "description": ["Xây dựng chiến lược phát triển Digital Marketing theo từng giai đoạn.", "Triển khai và vận hành mô hình doanh thu kết hợp giữa dịch vụ khách hàng và nền tảng số.", "Quản lý hệ thống dữ liệu, theo dõi hiệu quả hoạt động truyền thông trên các nền tảng Digital.", "Quản trị doanh thu, lợi nhuận và chịu trách nhiệm về các chỉ số kinh doanh của mảng Digital.", "Tham gia pitching, tư vấn chiến lược truyền thông cho các thương hiệu lớn.", "Xây dựng, quản lý và phát triển đội ngũ Digital Marketing."],
-        "requirements": ["Tối thiểu 8–10 năm kinh nghiệm trong lĩnh vực Marketing hoặc Media.", "Có kinh nghiệm ở vị trí Head of Digital Marketing, Marketing Director hoặc vị trí tương đương.", "Am hiểu sâu về Digital Marketing, Social Media, Performance Marketing và truyền thông truyền thống.", "Có kinh nghiệm xây dựng đội ngũ, triển khai kế hoạch truyền thông tích hợp.", "Tư duy chiến lược, chủ động, khả năng kết nối và làm việc với đối tác lớn."],
+        "requirements": ["Tối thiểu 8–10 năm kinh nghiệm trong lĩnh vực Marketing hoặc Media.", "Có kinh nghiệm ở vị trí Head of Digital Marketing, Marketing Director hoặc vị trí tương đương.", "Am hiểu sâu về Digital Marketing, Social Media, Performance Marketing và truyền thông truyền thống như Truyền hình, Out Of Home.", "Có kinh nghiệm xây dựng đội ngũ, triển khai kế hoạch truyền thông tích hợp và quản trị hiệu quả kinh doanh.", "Tư duy chiến lược, chủ động, khả năng kết nối và làm việc với đối tác lớn."],
         "benefits": ["Thu nhập từ 30.000.000 – 45.000.000 VNĐ + hoa hồng doanh số + thưởng hiệu quả kinh doanh.", "Được trực tiếp xây dựng chiến lược và phát triển đội ngũ Digital.", "Làm việc cùng Ban lãnh đạo và tham gia các dự án truyền thông quy mô lớn trên toàn quốc."],
         "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Hà Nội",
-        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu"
+        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
+        "heroImg": "/images/recruitment/jd-head-of-digital-marketing.png"
       },
       {
         "slug": "content-manager",
@@ -420,7 +421,8 @@
         "requirements": ["Tối thiểu 5 năm kinh nghiệm trong lĩnh vực Content Marketing.", "Có kinh nghiệm quản lý đội ngũ content từ 5 người trở lên.", "Khả năng viết và biên tập nội dung xuất sắc.", "Am hiểu về SEO, Social Media và các xu hướng content hiện tại.", "Tư duy sáng tạo, khả năng làm việc dưới áp lực cao."],
         "benefits": ["Mức lương cạnh tranh + thưởng hiệu suất.", "Môi trường làm việc năng động, sáng tạo.", "Cơ hội tham gia các dự án truyền thông lớn."],
         "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Hà Nội",
-        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu"
+        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
+        "heroImg": "/images/recruitment/jd-content-manager.png"
       },
       {
         "slug": "growth-performance-lead",
@@ -432,7 +434,8 @@
         "requirements": ["Tối thiểu 5 năm kinh nghiệm trong lĩnh vực Performance/Growth Marketing.", "Thành thạo Google Ads, Facebook Business Manager, Google Analytics.", "Có kinh nghiệm quản lý ngân sách quảng cáo từ 500 triệu/tháng trở lên.", "Tư duy phân tích dữ liệu mạnh, kỹ năng đọc insight.", "Khả năng làm việc với các thương hiệu lớn, pitch và tư vấn chiến lược."],
         "benefits": ["Mức lương cạnh tranh + KPI bonus hấp dẫn.", "Được tiếp cận các công cụ và nền tảng marketing tiên tiến.", "Cơ hội phát triển sự nghiệp trong tập đoàn truyền thông hàng đầu."],
         "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Hà Nội",
-        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu"
+        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
+        "heroImg": "/images/recruitment/jd-growth-performance-lead.png"
       },
       {
         "slug": "giam-doc-kinh-doanh-hcm",
@@ -443,8 +446,9 @@
         "description": ["Xây dựng chiến lược kinh doanh và phát triển thị trường khu vực phía Nam.", "Quản lý đội ngũ kinh doanh chi nhánh, đảm bảo đạt mục tiêu doanh số.", "Tìm kiếm, phát triển và duy trì quan hệ khách hàng chiến lược.", "Phối hợp với trụ sở chính để triển khai các dự án truyền thông.", "Đại diện công ty tham gia các sự kiện, hội nghị tại khu vực phía Nam."],
         "requirements": ["Tối thiểu 7 năm kinh nghiệm trong lĩnh vực kinh doanh/sales, ưu tiên ngành truyền thông.", "Có kinh nghiệm quản lý chi nhánh hoặc phòng kinh doanh.", "Mạng lưới quan hệ rộng với các doanh nghiệp, tập đoàn lớn tại TP.HCM.", "Kỹ năng đàm phán, thuyết trình và pitching xuất sắc.", "Năng động, chủ động, sẵn sàng đi công tác."],
         "benefits": ["Mức lương hấp dẫn + hoa hồng doanh số không giới hạn.", "Quyền tự chủ điều hành chi nhánh.", "Cơ hội thăng tiến trong hệ thống tập đoàn."],
-        "workLocation": "Tầng 3, Tòa nhà A5, 236-238 Nguyễn Công Trứ, Quận 1, TP.HCM",
-        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu"
+        "workLocation": "Tầng 3, Toà nhà AS, 236-238 Nguyễn Công Trứ, Phường Bến Thành, TP HCM",
+        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
+        "heroImg": "/images/recruitment/jd-giam-doc-kinh-doanh-hcm.png"
       },
       {
         "slug": "nhan-vien-kinh-doanh",
@@ -456,7 +460,8 @@
         "requirements": ["Tối thiểu 1–2 năm kinh nghiệm kinh doanh, ưu tiên ngành truyền thông/quảng cáo.", "Kỹ năng giao tiếp, đàm phán tốt.", "Năng động, chịu được áp lực công việc.", "Có laptop cá nhân và phương tiện đi lại.", "Ưu tiên ứng viên có sẵn mối quan hệ khách hàng."],
         "benefits": ["Lương cơ bản + hoa hồng doanh số hấp dẫn.", "Đào tạo chuyên sâu về truyền thông và kỹ năng bán hàng.", "Môi trường làm việc trẻ trung, năng động.", "Cơ hội thăng tiến rõ ràng."],
         "workLocation": "Hà Nội / TP.HCM / Nha Trang (tùy vị trí)",
-        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu"
+        "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
+        "heroImg": "/images/recruitment/jd-nhan-vien-kinh-doanh.png"
       }
     ]
   },

@@ -273,7 +273,7 @@
       {
         "city": "Ho Chi Minh City",
         "label": "Branch Office",
-        "address": "3rd Floor, Building A5, 236-238 Nguyen Cong Tru, Ben Thanh Ward, HCMC",
+        "address": "3rd Floor, Building AS, 236-238 Nguyen Cong Tru, Ben Thanh Ward, HCMC",
         "phone": "(84-28) 3 910 1766",
         "email": "contact@vietbagroup.com.vn"
       },
@@ -293,7 +293,7 @@
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group was established in 1999 with 100% Vietnamese capital. Over 20 years of building and development, we have established our name in Vietnam's media industry. To this day, Vietba Group is among the TOP advertising and media companies in Vietnam.",
     "introSub": "Vietba Group has become a trusted and effective partner for corporations and enterprises, prestigious TV stations, and renowned publications in the following fields:",
-    "introServices": ["Brand identity consulting & design", "Media strategy consulting", "Media services", "Outdoor advertising services", "TVC – MV – Documentary – Sitcom production", "Weather & technology center"],
+    "introServices": ["Media Strategy", "Technology & Digital Transformation", "TV Production", "Digital Marketing", "Booking Media", "Outdoor Advertising Services", "Event Organization"],
     "introAchievements": "We have produced over 400 media advertising products, 50 outstanding TV programs, and are a trusted service provider for over 200 large and small partners. We are proud to be the first company to bring gameshows to Vietnam.",
     "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
     "listTitle": "Open Positions",
@@ -313,12 +313,13 @@
         "title": "HEAD OF DIGITAL MARKETING",
         "location": "Hanoi",
         "type": "Full-time",
-        "summary": "Build and lead the overall Digital Marketing strategy, develop multi-platform content ecosystems, and optimize media resources.",
+        "summary": "Vietba Group is seeking a Head of Digital Marketing – responsible for building and leading the overall Digital Marketing strategy, developing multi-platform content ecosystems including Television, Digital, Out Of Home, and social media platforms; while optimizing media resources to generate sustainable revenue for the business.",
         "description": ["Develop Digital Marketing growth strategy by phases.", "Deploy and operate a hybrid revenue model combining client services and digital platforms.", "Manage data systems and track media performance across Digital platforms.", "Manage revenue, profit, and be responsible for Digital business KPIs.", "Participate in pitching and strategic media consulting for major brands.", "Build, manage, and develop the Digital Marketing team."],
-        "requirements": ["Minimum 8–10 years of experience in Marketing or Media.", "Experience as Head of Digital Marketing, Marketing Director, or equivalent.", "Deep understanding of Digital Marketing, Social Media, Performance Marketing.", "Experience in team building and integrated media planning.", "Strategic thinking, proactive, ability to connect with major partners."],
+        "requirements": ["Minimum 8–10 years of experience in Marketing or Media.", "Experience as Head of Digital Marketing, Marketing Director, or equivalent.", "Deep understanding of Digital Marketing, Social Media, Performance Marketing and traditional media such as Television, Out Of Home.", "Experience in team building, integrated media planning, and effective business management.", "Strategic thinking, proactive, ability to connect with major partners."],
         "benefits": ["Income from 30,000,000 – 45,000,000 VND + sales commission + performance bonus.", "Directly build strategy and develop the Digital team.", "Work with leadership and participate in large-scale nationwide media projects."],
         "workLocation": "3rd Floor, Hanoi Toserco Building, 273 Kim Ma, Hanoi",
-        "workHours": "08:30 – 17:30, Monday to Friday"
+        "workHours": "08:30 – 17:30, Monday to Friday",
+        "heroImg": "/images/recruitment/jd-head-of-digital-marketing.png"
       },
       {
         "slug": "content-manager",
@@ -330,7 +331,8 @@
         "requirements": ["Minimum 5 years of experience in Content Marketing.", "Experience managing a content team of 5+ members.", "Excellent writing and editing skills.", "Knowledge of SEO, Social Media, and current content trends.", "Creative thinking, ability to work under high pressure."],
         "benefits": ["Competitive salary + performance bonus.", "Dynamic and creative work environment.", "Opportunity to participate in major media projects."],
         "workLocation": "3rd Floor, Hanoi Toserco Building, 273 Kim Ma, Hanoi",
-        "workHours": "08:30 – 17:30, Monday to Friday"
+        "workHours": "08:30 – 17:30, Monday to Friday",
+        "heroImg": "/images/recruitment/jd-content-manager.png"
       },
       {
         "slug": "growth-performance-lead",
@@ -342,7 +344,8 @@
         "requirements": ["Minimum 5 years of experience in Performance/Growth Marketing.", "Proficient in Google Ads, Facebook Business Manager, Google Analytics.", "Experience managing advertising budgets of 500M+ VND/month.", "Strong data analysis skills and insight reading.", "Ability to work with major brands, pitch and consult strategy."],
         "benefits": ["Competitive salary + attractive KPI bonus.", "Access to advanced marketing tools and platforms.", "Career development opportunities in a leading media group."],
         "workLocation": "3rd Floor, Hanoi Toserco Building, 273 Kim Ma, Hanoi",
-        "workHours": "08:30 – 17:30, Monday to Friday"
+        "workHours": "08:30 – 17:30, Monday to Friday",
+        "heroImg": "/images/recruitment/jd-growth-performance-lead.png"
       },
       {
         "slug": "giam-doc-kinh-doanh-hcm",
@@ -353,8 +356,9 @@
         "description": ["Build business strategy and develop the Southern market.", "Manage branch sales team and ensure revenue targets.", "Seek, develop, and maintain strategic client relationships.", "Coordinate with headquarters to deploy media projects.", "Represent the company at events and conferences in the South."],
         "requirements": ["Minimum 7 years in business/sales, media industry preferred.", "Experience managing a branch or sales department.", "Extensive network with businesses and corporations in HCMC.", "Excellent negotiation, presentation, and pitching skills.", "Dynamic, proactive, willing to travel."],
         "benefits": ["Attractive salary + unlimited sales commission.", "Autonomy in branch operations.", "Advancement opportunities within the group."],
-        "workLocation": "3rd Floor, Building A5, 236-238 Nguyen Cong Tru, District 1, HCMC",
-        "workHours": "08:30 – 17:30, Monday to Friday"
+        "workLocation": "3rd Floor, Building AS, 236-238 Nguyen Cong Tru, Ben Thanh Ward, HCMC",
+        "workHours": "08:30 – 17:30, Monday to Friday",
+        "heroImg": "/images/recruitment/jd-giam-doc-kinh-doanh-hcm.png"
       },
       {
         "slug": "nhan-vien-kinh-doanh",
@@ -366,7 +370,8 @@
         "requirements": ["Minimum 1–2 years of sales experience, media/advertising preferred.", "Good communication and negotiation skills.", "Dynamic, able to work under pressure.", "Personal laptop and transportation.", "Priority for candidates with existing client relationships."],
         "benefits": ["Base salary + attractive sales commission.", "In-depth training on media and sales skills.", "Young and dynamic work environment.", "Clear advancement opportunities."],
         "workLocation": "Hanoi / HCMC / Nha Trang (depends on position)",
-        "workHours": "08:30 – 17:30, Monday to Friday"
+        "workHours": "08:30 – 17:30, Monday to Friday",
+        "heroImg": "/images/recruitment/jd-nhan-vien-kinh-doanh.png"
       }
     ]
   },

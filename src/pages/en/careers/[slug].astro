@@ -29,19 +29,29 @@ const { job } = Astro.props;
     </div>
   </section>
 
+  <!-- JD Hero Banner -->
+  {job.heroImg && (
+    <section class="jd-hero">
+      <img src={`${base}${job.heroImg}`} alt={job.title} class="jd-hero-bg" loading="eager" />
+      <div class="jd-hero-overlay"></div>
+      <div class="container jd-hero-content">
+        <div class="jd-hero-meta">
+          <span class="jd-hero-type">{job.type}</span>
+          <span class="jd-hero-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            {job.location}
+          </span>
+        </div>
+        <h1 class="jd-hero-title">{job.title}</h1>
+      </div>
+    </section>
+  )}
+
   <section class="section section-light jd-section">
     <div class="container">
       <div class="jd-layout fade-in">
         <div class="jd-main">
           <div class="jd-header">
-            <div class="jd-meta">
-              <span class="jd-type">{job.type}</span>
-              <span class="jd-location">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                {job.location}
-              </span>
-            </div>
-            <h1 class="jd-title">{job.title}</h1>
             <p class="jd-summary">{job.summary}</p>
           </div>
           <div class="jd-block">
@@ -88,6 +98,17 @@ const { job } = Astro.props;
 .jd-breadcrumb a:hover { color: var(--color-accent-orange); }
 .jd-bc-sep { opacity: 0.4; }
 .jd-bc-current { color: var(--color-accent-orange); font-weight: 600; }
+
+/* ─── JD Hero Banner ─── */
+.jd-hero { position: relative; min-height: 340px; display: flex; align-items: flex-end; overflow: hidden; }
+.jd-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.jd-hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(6,27,46,0.92) 0%, rgba(10,37,64,0.55) 40%, rgba(6,27,46,0.25) 100%); }
+.jd-hero-content { position: relative; z-index: 2; padding-bottom: 40px; }
+.jd-hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.jd-hero-type { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-accent-orange); background: rgba(255,107,53,0.18); padding: 5px 14px; border-radius: 50px; backdrop-filter: blur(4px); }
+.jd-hero-location { display: inline-flex; align-items: center; gap: 4px; font-size: 0.82rem; color: rgba(255,255,255,0.85); font-weight: 500; }
+.jd-hero-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; max-width: 700px; }
+
 .jd-section { padding-top: 40px; }
 .jd-layout { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start; }
 .jd-header { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(10,37,64,0.08); }
@@ -123,5 +144,18 @@ const { job } = Astro.props;
 .jd-apply-btn { width: 100%; justify-content: center; font-size: 1rem; padding: 16px; }
 .jd-back-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 0.88rem; font-weight: 600; color: var(--color-text-dark-secondary); transition: all var(--transition); }
 .jd-back-link:hover { color: var(--color-accent-orange); }
-@media (max-width: 768px) { .jd-layout { grid-template-columns: 1fr; gap: 32px; } .jd-sidebar { position: static; } .jd-breadcrumb-wrap { padding: 100px 0 0; } }
+@media (max-width: 768px) {
+  .jd-layout { grid-template-columns: 1fr; gap: 32px; }
+  .jd-sidebar { position: static; }
+  .jd-breadcrumb-wrap { padding: 100px 0 0; }
+  .jd-hero { min-height: 280px; }
+  .jd-hero-title { font-size: 1.5rem; }
+  .jd-hero-content { padding-bottom: 28px; }
+}
+@media (max-width: 480px) {
+  .jd-work-info { padding: 20px; }
+  .jd-sidebar-card { padding: 24px; }
+  .jd-hero { min-height: 220px; }
+  .jd-hero-title { font-size: 1.3rem; }
+}
 </style>
