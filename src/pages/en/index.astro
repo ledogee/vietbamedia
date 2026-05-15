@@ -534,9 +534,6 @@ const partners = [
   counters.forEach((c) => cObserver.observe(c));
 
   // Partner logo marquee interaction
-  document.querySelectorAll(".partner-logo-btn").forEach((btn) => {
-    btn.addEventListener("click", () => btn.classList.toggle("active"));
-  });
   const track = document.getElementById("marqueeTrack");
   if (track) {
     track.addEventListener(
@@ -1057,7 +1054,8 @@ const partners = [
   }
   .marquee-viewport {
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
+    padding: 12px 0;
     mask-image: linear-gradient(
       to right,
       transparent 0%,
@@ -1111,37 +1109,53 @@ const partners = [
     transition: opacity 0.4s ease;
   }
   .partner-img--mono {
-    opacity: 0.45;
-    filter: grayscale(100%);
+    opacity: 0.7;
+    filter: grayscale(100%) brightness(0);
   }
   .partner-img--color {
     opacity: 0;
   }
   .partner-logo-btn:hover .partner-img--mono {
-    opacity: 0.15;
+    opacity: 0;
   }
   .partner-logo-btn:hover .partner-img--color {
     opacity: 0.85;
   }
-  .partner-logo-btn.active .partner-img--mono {
-    opacity: 0;
-  }
-  .partner-logo-btn.active .partner-img--color {
-    opacity: 1;
-  }
-  .partner-logo-btn.active:hover .partner-img--color {
-    opacity: 1;
-  }
+
 
   /* Per-partner size adjustments for logos with excessive canvas padding */
-  .partner-logo-btn[data-partner="samsung"] .partner-img {
+  .partner-logo-btn[data-partner="samsung"] .partner-img--mono {
     transform: scale(1.5);
+  }
+  .partner-logo-btn[data-partner="samsung"] .partner-img--color {
+    transform: scale(1.5) translateY(3px);
   }
   .partner-logo-btn[data-partner="qatar-airways"] .partner-img {
     transform: scale(2);
   }
-  .partner-logo-btn[data-partner="vietinbank"] .partner-img {
-    transform: scale(1.45);
+  .partner-logo-btn[data-partner="vietinbank"] .partner-img--mono {
+    transform: scale(1.7);
+  }
+  .partner-logo-btn[data-partner="vietinbank"] .partner-img--color {
+    transform: scale(1.8);
+  }
+  .partner-logo-btn[data-partner="bamboo-airways"] .partner-img {
+    transform: scale(1.5);
+  }
+  .partner-logo-btn[data-partner="habeco"] .partner-img {
+    transform: scale(1.5);
+  }
+  .partner-logo-btn[data-partner="vietbank"] .partner-img {
+    transform: scale(1.5);
+  }
+  .partner-logo-btn[data-partner="vietcombank"] .partner-img {
+    transform: scale(1.3);
+  }
+  .partner-logo-btn[data-partner="vinacafe"] .partner-img {
+    transform: scale(1.3);
+  }
+  .partner-logo-btn[data-partner="vinaphone"] .partner-img {
+    transform: scale(1.3);
   }
   /* White mono logos need brightness(0) to become visible on light backgrounds */
   .partner-logo-btn[data-partner="samsung"] .partner-img--mono,
