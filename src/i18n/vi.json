@@ -1,129 +1,129 @@
 {
   "nav": {
-    "home": "Trang Chủ",
-    "about": "Giới Thiệu",
-    "services": "Dịch Vụ",
-    "projects": "Dự Án",
-    "history": "Lịch Sử",
-    "contact": "Liên Hệ",
-    "careers": "Tuyển Dụng"
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "projects": "Dự án",
+    "history": "Lịch sử",
+    "contact": "Liên hệ",
+    "careers": "Tuyển dụng"
   },
   "hero": {
-    "title": "THÚC ĐẨY TIỀM NĂNG",
-    "titleHighlight": "DOANH NGHIỆP",
+    "title": "Thúc đẩy tiềm năng",
+    "titleHighlight": "doanh nghiệp",
     "subtitle": "Đồng hành cùng doanh nghiệp trong mọi chiến dịch truyền thông — từ ý tưởng đến thành công.",
-    "cta": "Liên Hệ Tư Vấn",
+    "cta": "Liên hệ tư vấn",
     "scrollDown": "Khám phá thêm"
   },
   "home": {
-    "servicesTeaser": "Dịch Vụ Nổi Bật",
-    "projectsTeaser": "Dự Án Tiêu Biểu",
-    "timelineTeaser": "Hành Trình Phát Triển",
-    "viewAll": "Xem Tất Cả",
-    "exploreHistory": "Khám Phá Lịch Sử",
+    "servicesTeaser": "Dịch vụ nổi bật",
+    "projectsTeaser": "Dự án tiêu biểu",
+    "timelineTeaser": "Hành trình phát triển",
+    "viewAll": "Xem tất cả",
+    "exploreHistory": "Khám phá lịch sử",
     "contactCta": "Sẵn sàng hợp tác?",
     "contactCtaSub": "Hãy kết nối với chúng tôi để cùng xây dựng chiến dịch truyền thông hiệu quả cho doanh nghiệp của bạn.",
-    "contactCtaBtn": "Liên Hệ Ngay",
-    "partnersTeaser": "Đối Tác Tin Cậy"
+    "contactCtaBtn": "Liên hệ ngay",
+    "partnersTeaser": "Đối tác tin cậy"
   },
   "strengths": {
-    "sectionTag": "THẾ MẠNH CỦA CHÚNG TÔI",
-    "title": "Thế Mạnh Nổi Bật",
+    "sectionTag": "Thế mạnh của chúng tôi",
+    "title": "Thế mạnh nổi bật",
     "items": [
       {
-        "title": "Tư Vấn Truyền Thông Tổng Thể",
+        "title": "Tư vấn truyền thông tổng thể",
         "desc": "Gần 30 năm kinh nghiệm tư vấn chiến lược truyền thông, giúp hàng trăm khách hàng tối ưu hóa các nguồn lực truyền thông nhằm định vị, xây dựng, phát triển và phòng thủ thương hiệu. Chúng tôi đồng hành cùng khách hàng trong mọi hoàn cảnh.",
         "icon": "media"
       },
       {
-        "title": "Công Nghệ & Chuyển Đổi Số",
+        "title": "Công nghệ & chuyển đổi số",
         "desc": "Cung cấp giải pháp chuyển đổi toàn diện, giúp doanh nghiệp xây dựng nền tảng công nghệ hiện đại, nâng cao hiệu suất hoạt động. Đội ngũ chuyên gia công nghệ giàu kinh nghiệm với giải pháp \"may đo\" cho từng doanh nghiệp.",
         "icon": "tech"
       }
     ]
   },
   "heroSlides": [
-    { "img": "/images/projects/project-chiec-non-ky-dieu.png", "title": "Chiếc Nón Kỳ Diệu", "subtitle": "Gameshow đầu tiên mang bản quyền quốc tế về Việt Nam" },
-    { "img": "/images/projects/project-nguoi-di-xuyen-tuong.png", "title": "Người Đi Xuyên Tường", "subtitle": "Trò chơi truyền hình bản quyền từ Nhật Bản" },
+    { "img": "/images/projects/project-chiec-non-ky-dieu.png", "title": "Chiếc nón kỳ diệu", "subtitle": "Gameshow đầu tiên mang bản quyền quốc tế về Việt Nam" },
+    { "img": "/images/projects/project-nguoi-di-xuyen-tuong.png", "title": "Người đi xuyên tường", "subtitle": "Trò chơi truyền hình bản quyền từ Nhật Bản" },
     { "img": "/images/projects/project-vietnam-airline-festa.png", "title": "Vietnam Airline Festa", "subtitle": "Sự kiện quy mô lớn hàng đầu" },
     { "img": "/images/projects/project-sales-day-2019.png", "title": "Sales Day 2019", "subtitle": "Tổ chức sự kiện chuyên nghiệp" },
-    { "img": "/images/projects/project-hoi-nghi-khach-hang.png", "title": "Hội Nghị Khách Hàng", "subtitle": "Kết nối doanh nghiệp — Mở rộng cơ hội" },
+    { "img": "/images/projects/project-hoi-nghi-khach-hang.png", "title": "Hội nghị khách hàng", "subtitle": "Kết nối doanh nghiệp — Mở rộng cơ hội" },
     { "img": "/images/projects/project-usaid.png", "title": "USAID", "subtitle": "Truyền thông phát triển quốc tế" }
   ],
   "pageHero": {
     "about": {
-      "tag": "VỀ CHÚNG TÔI",
-      "title": "Chung Nhiệt Huyết<br>Gặt Thành Công",
+      "tag": "Về chúng tôi",
+      "title": "Chung nhiệt huyết<br>Gặt thành công",
       "subtitle": "Gần 30 năm đồng hành cùng doanh nghiệp Việt trong mọi chiến dịch truyền thông."
     },
     "services": {
-      "tag": "DỊCH VỤ",
-      "title": "Giải Pháp Truyền Thông Toàn Diện",
+      "tag": "Dịch vụ",
+      "title": "Giải pháp truyền thông toàn diện",
       "subtitle": "Cung cấp đa dạng dịch vụ truyền thông, phù hợp với từng lĩnh vực của doanh nghiệp."
     },
     "projects": {
-      "tag": "DỰ ÁN",
-      "title": "Dự Án Tiêu Biểu",
+      "tag": "Dự án",
+      "title": "Dự án tiêu biểu",
       "subtitle": "Khám phá danh mục các dự án nổi bật từ gameshow, truyền hình đến digital marketing."
     },
     "history": {
-      "tag": "LỊCH SỬ",
-      "title": "Hành Trình Phát Triển",
+      "tag": "Lịch sử",
+      "title": "Hành trình phát triển",
       "subtitle": "Hơn hai thập kỷ tiên phong trong ngành truyền thông Việt Nam."
     },
     "contact": {
-      "tag": "LIÊN HỆ",
-      "title": "Kết Nối Với Chúng Tôi",
+      "tag": "Liên hệ",
+      "title": "Kết nối với chúng tôi",
       "subtitle": "Vui lòng để lại thông tin liên hệ, chúng tôi sẽ liên lạc lại ngay với bạn!"
     },
     "careers": {
-      "tag": "TUYỂN DỤNG",
-      "title": "Cơ Hội Nghề Nghiệp",
+      "tag": "Tuyển dụng",
+      "title": "Cơ hội nghề nghiệp",
       "subtitle": "Gia nhập đội ngũ Vietba Group — nơi bạn phát triển sự nghiệp cùng đam mê truyền thông."
     }
   },
   "about": {
-    "sectionTag": "VỀ CHÚNG TÔI",
-    "title": "Chung Nhiệt Huyết<br>Gặt Thành Công",
+    "sectionTag": "Về chúng tôi",
+    "title": "Chung nhiệt huyết<br>Gặt thành công",
     "description": "Thành lập từ năm 1999, Vietba Group là một trong những công ty tư vấn truyền thông chuyên nghiệp hàng đầu tại Việt Nam. Chúng tôi tự hào là đơn vị đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam, đồng thời tiên phong trong lĩnh vực sản xuất truyền hình, digital marketing và tư vấn chiến lược truyền thông tổng thể. Việt Ba còn sở hữu Trung tâm Thời tiết và Công nghệ, chuyên cung cấp giải pháp dự báo thời tiết chuyên ngành và dữ liệu khí tượng ứng dụng cho các doanh nghiệp, tập đoàn lớn trong các lĩnh vực: điện lực, hàng không, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
     "description2": "Vì sự phát triển của Quý khách hàng, chúng tôi tận tâm tư vấn các giải pháp truyền thông thiết thực, chi phí hợp lý, chú trọng tính hiệu quả trong quảng bá hình ảnh và hướng đến tối ưu hoá lợi ích của mỗi thương hiệu trong từng chiến dịch.",
     "stats": {
       "years": "27",
-      "yearsLabel1": "NĂM KINH",
-      "yearsLabel2": "NGHIỆM",
+      "yearsLabel1": "Năm kinh",
+      "yearsLabel2": "nghiệm",
       "fields": "8",
-      "fieldsLabel1": "LĨNH VỰC",
-      "fieldsLabel2": "CHUYÊN MÔN",
+      "fieldsLabel1": "Lĩnh vực",
+      "fieldsLabel2": "chuyên môn",
       "partners": "+2K",
-      "partnersLabel1": "ĐỐI TÁC",
-      "partnersLabel2": "KHÁCH HÀNG",
+      "partnersLabel1": "Đối tác",
+      "partnersLabel2": "khách hàng",
       "projects": "+5K",
-      "projectsLabel1": "DỰ",
-      "projectsLabel2": "ÁN"
+      "projectsLabel1": "Dự",
+      "projectsLabel2": "án"
     },
-    "valuesTitle": "Giá Trị Cốt Lõi",
+    "valuesTitle": "Giá trị cốt lõi",
     "values": {
-      "passion": { "title": "PASSION", "desc": "Sự đam mê là yếu tố quan trọng dẫn đến thành công" },
-      "teamwork": { "title": "TEAMWORK", "desc": "Sự thành công bắt nguồn từ sự tận tụy của các cá nhân và sự nỗ lực từ tập thể" },
-      "creativity": { "title": "CREATIVITY", "desc": "Sự sáng tạo không gì ngoài một tinh thần dám bứt phá" },
-      "respect": { "title": "RESPECT", "desc": "Sự tôn trọng là khởi nguồn dẫn đến một tập thể tốt" }
+      "passion": { "title": "Passion", "desc": "Sự đam mê là yếu tố quan trọng dẫn đến thành công" },
+      "teamwork": { "title": "Teamwork", "desc": "Sự thành công bắt nguồn từ sự tận tụy của các cá nhân và sự nỗ lực từ tập thể" },
+      "creativity": { "title": "Creativity", "desc": "Sự sáng tạo không gì ngoài một tinh thần dám bứt phá" },
+      "respect": { "title": "Respect", "desc": "Sự tôn trọng là khởi nguồn dẫn đến một tập thể tốt" }
     },
-    "partnersTitle": "Đối Tác Truyền Hình",
+    "partnersTitle": "Đối tác truyền hình",
     "partners": [
-      { "name": "Đài Vĩnh Long", "img": "/images/broadcasters/thvl.png" },
-      { "name": "Đài Hà Nội", "img": "/images/broadcasters/hanoi-tv.png" },
       { "name": "Đài VTV", "img": "/images/broadcasters/vtv.png" },
-      { "name": "Đài TP.HCM", "img": "/images/broadcasters/htv.png" },
       { "name": "Đài VTVcab", "img": "/images/broadcasters/vtvcab.png" },
+      { "name": "Đài Hà Nội", "img": "/images/broadcasters/hanoi-tv.png" },
+      { "name": "Đài TP.HCM", "img": "/images/broadcasters/htv.png" },
+      { "name": "Đài Vĩnh Long", "img": "/images/broadcasters/thvl.png" },
       { "name": "SCTV", "img": "/images/broadcasters/sctv.png" }
     ]
   },
   "services": {
-    "sectionTag": "DỊCH VỤ",
-    "title": "Cung Cấp Đa Dạng Dịch Vụ Truyền Thông",
+    "sectionTag": "Dịch vụ",
+    "title": "Cung cấp đa dạng dịch vụ truyền thông",
     "items": [
       {
-        "title": "Tư Vấn Chiến Lược Truyền Thông Tổng Thể",
+        "title": "Tư vấn chiến lược truyền thông tổng thể",
         "desc": "Tư vấn chiến lược truyền thông tổng thể: định vị, xây dựng, phát triển và phòng thủ thương hiệu.",
         "img": "/images/services/service-communications.jpg",
         "detailDesc": "Với đội ngũ chuyên gia hàng đầu trong ngành, Vietba Group tư vấn chiến lược truyền thông tổng thể cho doanh nghiệp. Từ định vị thương hiệu, xây dựng kế hoạch truyền thông đến quản lý khủng hoảng, chúng tôi đồng hành cùng khách hàng trong mọi hoàn cảnh.",
@@ -131,7 +131,7 @@
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       },
       {
-        "title": "Công Nghệ & Chuyển Đổi Số",
+        "title": "Công nghệ & chuyển đổi số",
         "desc": "Giải pháp chuyển đổi số toàn diện, xây dựng nền tảng công nghệ hiện đại, AI hệ thống và thương mại điện tử.",
         "img": "/images/services/service-tech.jpg",
         "detailDesc": "Vietba Group cung cấp giải pháp chuyển đổi số toàn diện, từ xây dựng phần mềm doanh nghiệp, nền tảng thương mại điện tử đến ứng dụng AI. Đội ngũ kỹ sư giàu kinh nghiệm với phương pháp 'may đo' cho từng doanh nghiệp.",
@@ -139,7 +139,7 @@
         "relatedProjects": ["/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png", "/images/projects/project-invest-tv.png", "/images/projects/project-m-channel.png"]
       },
       {
-        "title": "Sản Xuất Content Đa Nền Tảng",
+        "title": "Sản xuất content đa nền tảng",
         "desc": "Sản xuất nội dung chuyên nghiệp đa nền tảng: TVC, MV, Viral Clip, phim ngắn và nội dung cho digital & mạng xã hội.",
         "img": "/images/services/service-production.jpg",
         "detailDesc": "Vietba Group cung cấp dịch vụ sản xuất content chuyên nghiệp đa nền tảng, từ TVC quảng cáo, MV ca nhạc, viral clip đến nội dung sáng tạo cho digital và mạng xã hội. Đội ngũ sản xuất giàu kinh nghiệm đảm bảo chất lượng hình ảnh và thông điệp truyền thông hiệu quả.",
@@ -147,7 +147,7 @@
         "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
       },
       {
-        "title": "TT Thời Tiết",
+        "title": "TT thời tiết",
         "desc": "Dịch vụ dự báo thời tiết chuyên ngành, khí tượng thủy văn và cảnh báo thiên tai cho điện lực, hàng không, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
         "img": "/images/services/service-weather-tech.jpg",
         "detailPage": "/weather",
@@ -156,7 +156,7 @@
         "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
       },
       {
-        "title": "Digital Marketing",
+        "title": "Digital marketing",
         "desc": "Chiến lược marketing số toàn diện, quản lý mạng xã hội, SEO, SEM và content marketing hiệu quả.",
         "img": "/images/services/service-digital-marketing.jpg",
         "detailDesc": "Đội ngũ chuyên gia digital marketing của Vietba Group cung cấp giải pháp marketing số toàn diện, từ chiến lược tổng thể đến triển khai chiến dịch. Chúng tôi đã hỗ trợ các thương hiệu lớn như Bamboo Airways, EVN HCMC trong việc xây dựng và phát triển kênh digital.",
@@ -164,7 +164,7 @@
         "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
       },
       {
-        "title": "Booking Media",
+        "title": "Booking media",
         "desc": "Dịch vụ booking truyền hình, phát thanh, báo chí, bài viết PR, poster/banner, OOH và KOLs.",
         "img": "/images/services/service-booking-media.jpg",
         "detailDesc": "Với mạng lưới đối tác truyền thông rộng khắp, Vietba Group cung cấp dịch vụ booking media toàn diện trên mọi nền tảng: truyền hình, phát thanh, báo chí, digital và influencer. Chúng tôi tối ưu chi phí và hiệu quả cho từng chiến dịch.",
@@ -172,7 +172,7 @@
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png"]
       },
       {
-        "title": "Quảng Cáo Ngoài Trời",
+        "title": "Quảng cáo ngoài trời",
         "desc": "Giải pháp quảng cáo OOH chiến lược tại các vị trí đắc địa trên toàn quốc.",
         "img": "/images/services/service-overview.png",
         "detailDesc": "Vietba Group sở hữu mạng lưới vị trí quảng cáo ngoài trời chiến lược trên toàn quốc, bao gồm billboard, LED, quảng cáo tại sân bay, wrap xe và transit media. Chúng tôi tư vấn vị trí tối ưu để đảm bảo hiệu quả truyền thông cao nhất.",
@@ -180,7 +180,7 @@
         "relatedProjects": ["/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png", "/images/projects/project-aba-2016.png", "/images/projects/project-hoi-nghi-khach-hang.png"]
       },
       {
-        "title": "Tổ Chức Sự Kiện",
+        "title": "Tổ chức sự kiện",
         "desc": "Tổ chức sự kiện chuyên nghiệp từ hội nghị, lễ ra mắt đến các chương trình teambuilding quy mô lớn.",
         "img": "/images/services/service-events.jpg",
         "detailDesc": "Vietba Group tổ chức các sự kiện chuyên nghiệp quy mô từ vài chục đến hàng nghìn người tham dự. Từ hội nghị khách hàng, lễ ra mắt sản phẩm đến roadshow và teambuilding, chúng tôi đảm bảo mỗi sự kiện là một trải nghiệm đáng nhớ.",
@@ -190,28 +190,28 @@
     ]
   },
   "projects": {
-    "sectionTag": "DỰ ÁN",
-    "title": "Dự Án Tiêu Biểu",
+    "sectionTag": "Dự án",
+    "title": "Dự án tiêu biểu",
     "filterAll": "Tất cả",
     "filters": {
       "gameshow": "Gameshow",
       "sitcom": "Sitcom",
-      "digital": "Digital Marketing",
-      "tv": "Kênh Truyền Hình",
-      "event": "Sự Kiện",
-      "weather": "Thời Tiết",
-      "comms": "Truyền Thông"
+      "digital": "Digital marketing",
+      "tv": "Kênh truyền hình",
+      "event": "Sự kiện",
+      "weather": "Thời tiết",
+      "comms": "Truyền thông"
     },
     "items": [
-      { "name": "Chiếc Nón Kì Diệu", "cat": "gameshow", "img": "/images/projects/project-chiec-non-ky-dieu.png" },
-      { "name": "Người Đi Xuyên Tường", "cat": "gameshow", "img": "/images/projects/project-nguoi-di-xuyen-tuong.png" },
-      { "name": "Biệt Đội Vui Nhộn", "cat": "gameshow", "img": "/images/projects/project-biet-doi-vui-nhon.png" },
-      { "name": "Bàn Thắng Vàng", "cat": "gameshow", "img": "/images/projects/project-ban-thang-vang.png" },
-      { "name": "Ánh Sáng Bóng Tối", "cat": "gameshow", "img": "/images/projects/project-anh-sang-bong-toi.png" },
-      { "name": "Góc Phố Muôn Màu", "cat": "sitcom", "img": "/images/projects/project-goc-pho-muon-mau.png" },
-      { "name": "Chúc Bé Ngủ Ngon", "cat": "sitcom", "img": "/images/projects/project-chuc-be-ngu-ngon.png" },
+      { "name": "Chiếc nón kì diệu", "cat": "gameshow", "img": "/images/projects/project-chiec-non-ky-dieu.png" },
+      { "name": "Người đi xuyên tường", "cat": "gameshow", "img": "/images/projects/project-nguoi-di-xuyen-tuong.png" },
+      { "name": "Biệt đội vui nhộn", "cat": "gameshow", "img": "/images/projects/project-biet-doi-vui-nhon.png" },
+      { "name": "Bàn thắng vàng", "cat": "gameshow", "img": "/images/projects/project-ban-thang-vang.png" },
+      { "name": "Ánh sáng bóng tối", "cat": "gameshow", "img": "/images/projects/project-anh-sang-bong-toi.png" },
+      { "name": "Góc phố muôn màu", "cat": "sitcom", "img": "/images/projects/project-goc-pho-muon-mau.png" },
+      { "name": "Chúc bé ngủ ngon", "cat": "sitcom", "img": "/images/projects/project-chuc-be-ngu-ngon.png" },
       { "name": "Sitcom Đạm Phú Mỹ", "cat": "sitcom", "img": "/images/projects/project-sitcom-dam-phu-my.png" },
-      { "name": "Sắc Màu Phái Đẹp", "cat": "sitcom", "img": "/images/projects/project-sac-mau-phai-dep.png" },
+      { "name": "Sắc màu phái đẹp", "cat": "sitcom", "img": "/images/projects/project-sac-mau-phai-dep.png" },
       { "name": "MChannel – VTVCab 15", "cat": "tv", "img": "/images/projects/project-m-channel.png" },
       { "name": "Invest TV", "cat": "tv", "img": "/images/projects/project-invest-tv.png" },
       { "name": "Kênh VBox Kids", "cat": "tv", "img": "/images/projects/project-vbox-kids.png" },
@@ -219,67 +219,67 @@
       { "name": "VTD Smarthome", "cat": "digital", "img": "/images/projects/project-vtd-smarthome.png" },
       { "name": "EVN HCMC", "cat": "digital", "img": "/images/projects/project-evn-hcmc.png" },
       { "name": "CEDELAR", "cat": "digital", "img": "/images/projects/project-cedelar.png" },
-      { "name": "Thời Tiết và Công Nghệ", "cat": "weather", "img": "/images/projects/project-thoi-tiet-cong-nghe.png" },
-      { "name": "Thời Tiết Học Đường", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hoc-duong.png" },
-      { "name": "Thời Tiết Quốc Tế", "cat": "weather", "img": "/images/projects/project-thoi-tiet-quoc-te.png" },
-      { "name": "Thời Tiết Hàng Không", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hang-khong.png" },
-      { "name": "Hội Nghị Khách Hàng", "cat": "event", "img": "/images/projects/project-hoi-nghi-khach-hang.png" },
+      { "name": "Thời tiết và công nghệ", "cat": "weather", "img": "/images/projects/project-thoi-tiet-cong-nghe.png" },
+      { "name": "Thời tiết học đường", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hoc-duong.png" },
+      { "name": "Thời tiết quốc tế", "cat": "weather", "img": "/images/projects/project-thoi-tiet-quoc-te.png" },
+      { "name": "Thời tiết hàng không", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hang-khong.png" },
+      { "name": "Hội nghị khách hàng", "cat": "event", "img": "/images/projects/project-hoi-nghi-khach-hang.png" },
       { "name": "Vietcombank Laos 2019", "cat": "event", "img": "/images/projects/project-vietcombank-laos.png" },
       { "name": "Sales Day 2019", "cat": "event", "img": "/images/projects/project-sales-day-2019.png" },
       { "name": "ABA 2016", "cat": "event", "img": "/images/projects/project-aba-2016.png" },
       { "name": "Vietnam Airline Festa", "cat": "event", "img": "/images/projects/project-vietnam-airline-festa.png" },
       { "name": "Vietcombank KHTT 2020", "cat": "event", "img": "/images/events/IMG_0175.jpg" },
-      { "name": "Kỷ Niệm 55 Năm VCB", "cat": "event", "img": "/images/events/IMG_5727.JPG" },
-      { "name": "Gala Vietcombank 55 Năm", "cat": "event", "img": "/images/events/IMG_5460.JPG" },
+      { "name": "Kỷ niệm 55 năm VCB", "cat": "event", "img": "/images/events/IMG_5727.JPG" },
+      { "name": "Gala Vietcombank 55 năm", "cat": "event", "img": "/images/events/IMG_5460.JPG" },
       { "name": "Gala KHTT Vietcombank", "cat": "event", "img": "/images/events/VVW01290.JPG" },
       { "name": "USAID", "cat": "comms", "img": "/images/projects/project-usaid.png" }
     ]
   },
   "timeline": {
-    "sectionTag": "LỊCH SỬ",
-    "title": "Hành Trình Phát Triển",
+    "sectionTag": "Lịch sử",
+    "title": "Hành trình phát triển",
     "navPrev": "Trước",
     "navNext": "Tiếp",
     "items": [
-      { "year": "1999", "title": "Thành Lập Công Ty", "desc": "Ngày 10/03/1999, Công ty Cổ phần Phát triển Truyền thông Việt Ba được thành lập — một trong những công ty tư vấn truyền thông chuyên nghiệp đầu tiên tại Việt Nam." },
-      { "year": "2001", "title": "Chiếc Nón Kỳ Diệu", "desc": "Vietba Media là công ty đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam. Chương trình phát sóng liên tục 15 năm với 811 tập trên VTV3." },
-      { "year": "2007", "title": "Chúc Bé Ngủ Ngon", "desc": "Chương trình thiếu nhi được yêu thích phát sóng 21h hàng ngày trên VTV3 trong suốt 6 năm, nhận được sự ủng hộ của đông đảo phụ huynh và các bé." },
-      { "year": "2009", "title": "Ra Đời InvestTV", "desc": "Lên sóng ngày 16/06/2009, kênh truyền hình đầu tiên và duy nhất về kinh tế đầu tư — hợp tác giữa Việt Ba Group và VTVCab." },
-      { "year": "2012", "title": "Trung Tâm Thời Tiết & Công Nghệ", "desc": "Ra mắt Trung tâm Công nghệ và Thời tiết, cung cấp dịch vụ dự báo thời tiết chuyên ngành cho điện lực, hàng không, nông nghiệp, dầu khí." },
-      { "year": "2014", "title": "Người Đi Xuyên Tường", "desc": "Gameshow vận động thể thao bản quyền từ Nhật Bản (Brain Wall), phát sóng từ 2014–2020. Phiên bản nhí ra mắt năm 2017." },
+      { "year": "1999", "title": "Thành lập công ty", "desc": "Ngày 10/03/1999, Công ty Cổ phần Phát triển Truyền thông Việt Ba được thành lập — một trong những công ty tư vấn truyền thông chuyên nghiệp đầu tiên tại Việt Nam." },
+      { "year": "2001", "title": "Chiếc nón kỳ diệu", "desc": "Vietba Media là công ty đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam. Chương trình phát sóng liên tục 15 năm với 811 tập trên VTV3." },
+      { "year": "2007", "title": "Chúc bé ngủ ngon", "desc": "Chương trình thiếu nhi được yêu thích phát sóng 21h hàng ngày trên VTV3 trong suốt 6 năm, nhận được sự ủng hộ của đông đảo phụ huynh và các bé." },
+      { "year": "2009", "title": "Ra đời InvestTV", "desc": "Lên sóng ngày 16/06/2009, kênh truyền hình đầu tiên và duy nhất về kinh tế đầu tư — hợp tác giữa Việt Ba Group và VTVCab." },
+      { "year": "2012", "title": "Trung tâm thời tiết \u0026 công nghệ", "desc": "Ra mắt Trung tâm Công nghệ và Thời tiết, cung cấp dịch vụ dự báo thời tiết chuyên ngành cho điện lực, hàng không, nông nghiệp, dầu khí." },
+      { "year": "2014", "title": "Người đi xuyên tường", "desc": "Gameshow vận động thể thao bản quyền từ Nhật Bản (Brain Wall), phát sóng từ 2014–2020. Phiên bản nhí ra mắt năm 2017." },
       { "year": "2015", "title": "Kênh MChannel", "desc": "Từ ngày 18/12/2015, kênh Invest TV chuyển đổi thành kênh truyền hình dành cho nam giới — M Channel trên VTVCab 15." },
-      { "year": "2022", "title": "Chuyển Đổi Thành Vietba Group", "desc": "Ngày 21/04/2022, chính thức chuyển đổi thành Công ty Cổ phần Tập đoàn Việt Ba với 01 trụ sở chính, 02 văn phòng đại diện và 02 công ty con." }
+      { "year": "2022", "title": "Chuyển đổi thành Vietba Group", "desc": "Ngày 21/04/2022, chính thức chuyển đổi thành Công ty Cổ phần Tập đoàn Việt Ba với 01 trụ sở chính, 02 văn phòng đại diện và 02 công ty con." }
     ]
   },
   "contact": {
-    "sectionTag": "LIÊN HỆ",
-    "title": "Kết Nối Với Chúng Tôi",
+    "sectionTag": "Liên hệ",
+    "title": "Kết nối với chúng tôi",
     "subtitle": "Vui lòng để lại thông tin liên hệ, chúng tôi sẽ liên lạc lại ngay với bạn!",
     "form": {
       "name": "Họ và tên",
       "email": "Email",
       "phone": "Số điện thoại",
       "message": "Nội dung tin nhắn",
-      "submit": "Gửi Tin Nhắn"
+      "submit": "Gửi tin nhắn"
     },
     "offices": [
       {
         "city": "Hà Nội",
-        "label": "Trụ Sở Chính",
+        "label": "Trụ sở chính",
         "address": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Ba Đình, Hà Nội",
         "phone": "(+84) 86 9312 488",
         "email": "contact@vietbagroup.com.vn"
       },
       {
         "city": "Hồ Chí Minh",
-        "label": "Chi Nhánh",
+        "label": "Chi nhánh",
         "address": "Tầng 3, Toà nhà AS, 236-238 Nguyễn Công Trứ, Phường Bến Thành, TP HCM",
         "phone": "(84-28) 3 910 1766",
         "email": "contact@vietbagroup.com.vn"
       },
       {
         "city": "Nha Trang",
-        "label": "Chi Nhánh",
+        "label": "Chi nhánh",
         "address": "42 Lê Thành Phương, Phường Tây Nha Trang, Tỉnh Khánh Hòa",
         "phone": "(84-258) 3 527 789",
         "email": "contact@vietbagroup.com.vn"
@@ -287,35 +287,35 @@
     ]
   },
   "weather": {
-    "sectionTag": "THỜI TIẾT & CÔNG NGHỆ",
-    "title": "Trung Tâm Thời Tiết & Công Nghệ",
+    "sectionTag": "Thời tiết & công nghệ",
+    "title": "Trung tâm thời tiết & công nghệ",
     "subtitle": "Giải pháp dự báo thời tiết chuyên ngành và dữ liệu khí tượng ứng dụng cho doanh nghiệp",
     "intro": {
-      "title": "Giới Thiệu Chung",
+      "title": "Giới thiệu chung",
       "p1": "Việt Nam là một trong những quốc gia chịu ảnh hưởng nặng nề bởi biến đổi khí hậu và thời tiết cực đoan. Những năm gần đây, tần suất và cường độ của bão, mưa lớn, lũ lụt, hạn hán, nắng nóng kéo dài hay xâm nhập mặn ngày càng gia tăng, gây thiệt hại lớn về con người, tài sản, cơ sở hạ tầng và tác động sâu rộng đến phát triển kinh tế - xã hội.",
       "p2": "Việt Ba là đơn vị sở hữu Trung tâm Thời tiết và Công nghệ cùng kênh truyền hình thời tiết riêng trên đa nền tảng, chuyên cung cấp giải pháp dự báo thời tiết chuyên ngành, dữ liệu khí tượng thủy văn ứng dụng, bản tin thời tiết và cảnh báo thiên tai chuyên sâu cho các doanh nghiệp, tập đoàn lớn trong các lĩnh vực: điện lực, hàng không, đài truyền hình, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
       "p3": "Bên cạnh năng lực chuyên môn, VIETBA còn hợp tác với các đơn vị và cơ quan dự báo uy tín trong nước và quốc tế nhằm nâng cao chất lượng dữ liệu, độ chính xác và tốc độ cập nhật thông tin."
     },
     "products": {
-      "title": "Các Sản Phẩm Chính",
+      "title": "Các sản phẩm chính",
       "items": [
         {
-          "title": "Tư Vấn Hải Trình",
+          "title": "Tư vấn hải trình",
           "desc": "Tư vấn hải trình và hỗ trợ tàu theo chuyến hành trình, cung cấp thông tin thời tiết quan trọng giúp thuyền trưởng đưa ra quyết định tối ưu, đảm bảo an toàn, tiết kiệm nhiên liệu, giảm khí thải và nâng cao hiệu quả vận hành.",
           "img": "/images/weather/weather-10-european-wind.jpeg"
         },
         {
-          "title": "Dự Báo Cảng Biển & Đảo",
+          "title": "Dự báo cảng biển & đảo",
           "desc": "Cung cấp dự báo thời tiết hàng ngày cho các cảng biển, đảo và điểm trung chuyển, phục vụ hoạt động vận tải biển và logistics.",
           "img": "/images/weather/weather-08-sea-forecast.jpeg"
         },
         {
-          "title": "Dự Báo Thời Tiết Biển",
+          "title": "Dự báo thời tiết biển",
           "desc": "Cung cấp dịch vụ dự báo thời tiết trên biển gồm sóng, gió, dòng chảy, thuỷ triều và các hiện tượng nguy hiểm phục vụ vận tải biển, khai thác thủy sản, dầu khí ngoài khơi.",
           "img": "/images/weather/weather-09-australia-forecast.jpeg"
         },
         {
-          "title": "Cảnh Báo Bão & Thiên Tai",
+          "title": "Cảnh báo bão & thiên tai",
           "desc": "Dự báo và cảnh báo bão, áp thấp nhiệt đới, sóng lớn, triều cường, sương mù và các hiện tượng khí tượng thủy văn nguy hiểm khác trên biển.",
           "img": "/images/weather/weather-05-miami-office.jpeg"
         }
@@ -328,7 +328,7 @@
       ]
     },
     "dataSources": {
-      "title": "Nguồn Thông Tin",
+      "title": "Nguồn thông tin",
       "desc": "Hệ thống dự báo của VIETBA được xây dựng trên nền tảng tích hợp nhiều mô hình khí tượng thủy văn tiên tiến trong nước và quốc tế:",
       "models": [
         { "name": "GWM (Global Wave Model)", "source": "Nhật Bản" },
@@ -348,7 +348,7 @@
       ]
     },
     "partners": {
-      "title": "Đối Tác Cung Cấp Dữ Liệu",
+      "title": "Đối tác cung cấp dữ liệu",
       "desc": "VIETBA hiện hợp tác với nhiều đơn vị khí tượng thủy văn và công nghệ uy tín trong nước và quốc tế:",
       "list": [
         {
@@ -403,7 +403,7 @@
       ]
     },
     "experts": {
-      "title": "Đội Ngũ Chuyên Gia",
+      "title": "Đội ngũ chuyên gia",
       "lead": {
         "name": "Lê Thị Xuân Lan",
         "title": "Thạc sĩ Khí tượng Thủy văn",
@@ -413,30 +413,30 @@
     }
   },
   "careers": {
-    "sectionTag": "TUYỂN DỤNG",
-    "title": "Tin Tuyển Dụng",
+    "sectionTag": "Tuyển dụng",
+    "title": "Tin tuyển dụng",
     "subtitle": "Gia nhập đội ngũ Vietba Group — nơi bạn phát triển sự nghiệp cùng đam mê truyền thông.",
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group được thành lập vào năm 1999 với 100% vốn đầu tư Việt Nam. Trải qua hơn 20 năm tạo dựng và phát triển, chúng tôi đã khẳng định được tên tuổi của mình trong làng truyền thông Việt Nam. Cho đến nay, Vietba Group đã nằm trong TOP những công ty quảng cáo và truyền thông lớn tại Việt Nam.",
     "introSub": "Vietba Group đã trở thành đối tác tin cậy và hiệu quả của các Tập đoàn, Doanh nghiệp trong và ngoài nước, các đài truyền hình uy tín và các đầu báo, tạp chí tên tuổi trong những lĩnh vực sau:",
-    "introServices": ["Tư vấn Chiến lược Truyền thông tổng thể", "Công nghệ & Chuyển đổi số", "Sản xuất Content đa nền tảng", "TT Thời tiết", "Digital Marketing", "Booking Media", "Quảng cáo ngoài trời", "Tổ chức sự kiện"],
+    "introServices": ["Tư vấn chiến lược truyền thông tổng thể", "Công nghệ & chuyển đổi số", "Sản xuất content đa nền tảng", "TT thời tiết", "Digital marketing", "Booking media", "Quảng cáo ngoài trời", "Tổ chức sự kiện"],
     "introAchievements": "Đến nay, chúng tôi đã thực hiện hơn 400 sản phẩm quảng cáo truyền thông, 50 chương trình truyền hình đặc sắc và là nhà cung cấp dịch vụ đáng tin cậy của hơn 200 đối tác lớn và nhỏ. Chúng tôi tự hào là công ty đầu tiên đưa gameshow vào Việt Nam, đặt nền móng cho rất nhiều chương trình truyền hình và tên tuổi cho các nghệ sĩ hiện nay.",
     "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
-    "listTitle": "Vị Trí Đang Tuyển",
+    "listTitle": "Vị trí đang tuyển",
     "viewDetail": "Xem chi tiết",
-    "applyNow": "ỨNG TUYỂN NGAY",
+    "applyNow": "Ứng tuyển ngay",
     "applyEmail": "tuyendung@vietbagroup.com.vn",
     "applyHotline": "086.9312.488",
     "backToList": "← Quay lại danh sách",
-    "jobDescTitle": "Mô Tả Công Việc",
-    "requirementsTitle": "Yêu Cầu",
-    "benefitsTitle": "Quyền Lợi",
-    "workInfoTitle": "Thông Tin Làm Việc",
-    "applyInfoTitle": "Thông Tin Ứng Tuyển",
+    "jobDescTitle": "Mô tả công việc",
+    "requirementsTitle": "Yêu cầu",
+    "benefitsTitle": "Quyền lợi",
+    "workInfoTitle": "Thông tin làm việc",
+    "applyInfoTitle": "Thông tin ứng tuyển",
     "jobs": [
       {
         "slug": "head-of-digital-marketing",
-        "title": "HEAD OF DIGITAL MARKETING",
+        "title": "Head of digital marketing",
         "location": "Hà Nội",
         "type": "Full-time",
         "summary": "Vietba Group tìm kiếm Head of Digital Marketing – người chịu trách nhiệm xây dựng và dẫn dắt chiến lược Digital Marketing tổng thể, phát triển hệ sinh thái nội dung đa nền tảng gồm Truyền hình, Digital, Out Of Home và các nền tảng mạng xã hội; đồng thời tối ưu hệ thống tài nguyên truyền thông nhằm tạo ra doanh thu bền vững cho doanh nghiệp.",
@@ -449,7 +449,7 @@
       },
       {
         "slug": "content-manager",
-        "title": "CONTENT MANAGER",
+        "title": "Content manager",
         "location": "Hà Nội",
         "type": "Full-time",
         "summary": "Quản lý và phát triển chiến lược nội dung đa nền tảng, đảm bảo chất lượng và tính nhất quán thương hiệu.",
@@ -462,7 +462,7 @@
       },
       {
         "slug": "growth-performance-lead",
-        "title": "GROWTH & PERFORMANCE LEAD",
+        "title": "Growth & performance lead",
         "location": "Hà Nội",
         "type": "Full-time",
         "summary": "Dẫn dắt chiến lược Growth Marketing, tối ưu hiệu suất quảng cáo và tăng trưởng bền vững.",
@@ -475,7 +475,7 @@
       },
       {
         "slug": "giam-doc-kinh-doanh-hcm",
-        "title": "Giám Đốc Kinh Doanh Chi Nhánh HCM",
+        "title": "Giám đốc kinh doanh chi nhánh HCM",
         "location": "Hồ Chí Minh",
         "type": "Full-time",
         "summary": "Phụ trách phát triển kinh doanh và quản lý hoạt động Chi nhánh Hồ Chí Minh.",
@@ -488,7 +488,7 @@
       },
       {
         "slug": "nhan-vien-kinh-doanh",
-        "title": "Nhân Viên Kinh Doanh",
+        "title": "Nhân viên kinh doanh",
         "location": "HN, HCM, Nha Trang",
         "type": "Full-time",
         "summary": "Tìm kiếm và phát triển khách hàng, tư vấn giải pháp truyền thông phù hợp.",

@@ -43,7 +43,7 @@ function isActive(path: string): boolean {
       content="Thúc đẩy tiềm năng doanh nghiệp — Đồng hành cùng doanh nghiệp trong mọi chiến dịch truyền thông."
     />
     <meta property="og:type" content="website" />
-    <title>Vietba Group — Thúc Đẩy Tiềm Năng Doanh Nghiệp</title>
+    <title>Vietba Group — Thúc đẩy tiềm năng doanh nghiệp</title>
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   </head>
   <body>
@@ -172,7 +172,7 @@ function isActive(path: string): boolean {
                 />
               </div>
               <span class="footer-logo-text"
-                >VIETBA<span class="logo-highlight">GROUP</span>
+                ><span class="logo-vietba">VietBa</span><span class="logo-group">Group</span>
               </span>
             </a>
             <p>{t.footer.description}</p>
@@ -596,11 +596,11 @@ function isActive(path: string): boolean {
     color: #ffffff;
     letter-spacing: 1px;
   }
-  .footer-logo-text .logo-highlight {
-    background: var(--color-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .footer-logo-text .logo-vietba {
+    color: var(--color-accent-orange);
+  }
+  .footer-logo-text .logo-group {
+    color: #ffffff;
   }
   .footer-hotline {
     margin-top: 16px;

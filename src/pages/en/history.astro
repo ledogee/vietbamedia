@@ -236,9 +236,9 @@ html, body { scroll-snap-type: y proximity; }
 .history-stats { display: flex; align-items: center; justify-content: center; gap: 40px; padding: 32px 48px; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius-lg); max-width: 680px; margin: 0 auto; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
 .history-stat { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .history-stat-num { font-size: 2.8rem; font-weight: 900; background: var(--color-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
-.history-stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #888; }
+.history-stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; color: #888; }
 .history-stat-divider { width: 1px; height: 48px; background: rgba(0,0,0,0.1); }
-.hero-scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; color: #666; font-size: 0.82rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; animation: scrollBounce 2s ease-in-out infinite; cursor: pointer; }
+.hero-scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; color: #666; font-size: 0.82rem; font-weight: 500; letter-spacing: 2px; animation: scrollBounce 2s ease-in-out infinite; cursor: pointer; }
 @keyframes scrollBounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
 .roadmap-section { padding: 100px 0 120px; overflow: hidden; background: #fff; }
@@ -274,7 +274,7 @@ html, body { scroll-snap-type: y proximity; }
 .rm-milestone:nth-child(even) .rm-card-accent { background: linear-gradient(90deg, #635BFF, #00D4FF); }
 .rm-milestone.visible .rm-card-accent { opacity: 1; }
 .rm-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.rm-card-step { font-size: 0.68rem; font-weight: 600; letter-spacing: 2px; color: #999; text-transform: uppercase; }
+.rm-card-step { font-size: 0.68rem; font-weight: 600; letter-spacing: 2px; color: #999; }
 .rm-card-year { font-size: 1.5rem; font-weight: 900; line-height: 1; }
 .rm-card-title { font-size: 1.15rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
 .rm-card-desc { font-size: 0.88rem; line-height: 1.7; color: #666; margin-bottom: 16px; }

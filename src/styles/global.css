@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   /* === Stripe-Inspired + Media Orange Palette === */
@@ -101,7 +101,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 2.5px;
-  text-transform: uppercase;
   background: var(--color-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -113,12 +112,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 2.5px;
-  text-transform: uppercase;
   background: var(--color-gradient-blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 12px;
+}
+
+/* Softer serif font for hero slogans */
+.hero-slogan-font {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.8rem);

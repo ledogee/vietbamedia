@@ -9,34 +9,34 @@
     "careers": "Careers"
   },
   "hero": {
-    "title": "EMPOWER YOUR",
-    "titleHighlight": "BUSINESS POTENTIAL",
+    "title": "Empower your",
+    "titleHighlight": "business potential",
     "subtitle": "Partnering with businesses in every media campaign — from concept to success.",
-    "cta": "Get Consultation",
+    "cta": "Get consultation",
     "scrollDown": "Explore more"
   },
   "home": {
-    "servicesTeaser": "Featured Services",
-    "projectsTeaser": "Featured Projects",
-    "timelineTeaser": "Our Journey",
-    "viewAll": "View All",
-    "exploreHistory": "Explore History",
+    "servicesTeaser": "Featured services",
+    "projectsTeaser": "Featured projects",
+    "timelineTeaser": "Our journey",
+    "viewAll": "View all",
+    "exploreHistory": "Explore history",
     "contactCta": "Ready to collaborate?",
     "contactCtaSub": "Connect with us to build an effective media strategy for your business.",
-    "contactCtaBtn": "Contact Us",
-    "partnersTeaser": "Trusted Partners"
+    "contactCtaBtn": "Contact us",
+    "partnersTeaser": "Trusted partners"
   },
   "strengths": {
-    "sectionTag": "OUR STRENGTHS",
-    "title": "Key Strengths",
+    "sectionTag": "Our strengths",
+    "title": "Key strengths",
     "items": [
       {
-        "title": "Comprehensive Media Consulting",
+        "title": "Comprehensive media consulting",
         "desc": "Nearly 30 years of experience in strategic media consulting, helping hundreds of clients optimize their media resources to position, build, develop, and defend their brands. We accompany our clients through every circumstance.",
         "icon": "media"
       },
       {
-        "title": "Technology & Digital Transformation",
+        "title": "Technology & digital transformation",
         "desc": "Providing comprehensive transformation solutions, helping businesses build modern technology platforms and enhance operational performance. An experienced technology team with bespoke solutions for each business.",
         "icon": "tech"
       }
@@ -52,78 +52,78 @@
   ],
   "pageHero": {
     "about": {
-      "tag": "ABOUT US",
-      "title": "Shared Passion — Harvesting Success",
+      "tag": "About us",
+      "title": "Shared passion — Harvesting success",
       "subtitle": "Nearly 30 years partnering with Vietnamese businesses in every media campaign."
     },
     "services": {
-      "tag": "SERVICES",
-      "title": "Comprehensive Media Solutions",
+      "tag": "Services",
+      "title": "Comprehensive media solutions",
       "subtitle": "Diverse media services tailored to every business sector."
     },
     "projects": {
-      "tag": "PROJECTS",
-      "title": "Featured Projects",
+      "tag": "Projects",
+      "title": "Featured projects",
       "subtitle": "Explore our portfolio from gameshows and TV production to digital marketing."
     },
     "history": {
-      "tag": "HISTORY",
-      "title": "Our Journey",
+      "tag": "History",
+      "title": "Our journey",
       "subtitle": "Over two decades pioneering Vietnam's media industry."
     },
     "contact": {
-      "tag": "CONTACT",
-      "title": "Connect With Us",
+      "tag": "Contact",
+      "title": "Connect with us",
       "subtitle": "Leave your contact information and we'll get back to you shortly!"
     },
     "careers": {
-      "tag": "CAREERS",
-      "title": "Career Opportunities",
+      "tag": "Careers",
+      "title": "Career opportunities",
       "subtitle": "Join Vietba Group — where you grow your career with a passion for media."
     }
   },
   "about": {
-    "sectionTag": "ABOUT US",
-    "title": "Shared Passion — Harvesting Success",
+    "sectionTag": "About us",
+    "title": "Shared passion — Harvesting success",
     "description": "Founded in 1999, Vietba Group is one of Vietnam's leading professional media consulting companies. We are proud to be the first company to bring internationally licensed gameshows to Vietnam, while pioneering in television production, digital marketing, and comprehensive media strategy consulting.",
     "description2": "For the growth of our valued clients, we are dedicated to providing practical media solutions at reasonable costs, focusing on effectiveness in brand promotion and optimizing the benefits of each brand in every campaign.",
     "stats": {
       "years": "27",
-      "yearsLabel1": "YEARS OF",
-      "yearsLabel2": "EXPERIENCE",
+      "yearsLabel1": "Years of",
+      "yearsLabel2": "experience",
       "fields": "8",
-      "fieldsLabel1": "FIELDS OF",
-      "fieldsLabel2": "EXPERTISE",
+      "fieldsLabel1": "Fields of",
+      "fieldsLabel2": "expertise",
       "partners": "+2K",
-      "partnersLabel1": "CLIENTS &",
-      "partnersLabel2": "PARTNERS",
+      "partnersLabel1": "Clients &",
+      "partnersLabel2": "partners",
       "projects": "+5K",
-      "projectsLabel1": "COMPLETED",
-      "projectsLabel2": "PROJECTS"
+      "projectsLabel1": "Completed",
+      "projectsLabel2": "projects"
     },
-    "valuesTitle": "Core Values",
+    "valuesTitle": "Core values",
     "values": {
-      "passion": { "title": "PASSION", "desc": "Passion is the key factor leading to success" },
-      "teamwork": { "title": "TEAMWORK", "desc": "Success stems from individual dedication and collective effort" },
-      "creativity": { "title": "CREATIVITY", "desc": "Creativity is nothing but the spirit of daring to break through" },
-      "respect": { "title": "RESPECT", "desc": "Respect is the origin that leads to a great collective" }
+      "passion": { "title": "Passion", "desc": "Passion is the key factor leading to success" },
+      "teamwork": { "title": "Teamwork", "desc": "Success stems from individual dedication and collective effort" },
+      "creativity": { "title": "Creativity", "desc": "Creativity is nothing but the spirit of daring to break through" },
+      "respect": { "title": "Respect", "desc": "Respect is the origin that leads to a great collective" }
     },
-    "partnersTitle": "Broadcasting Partners",
+    "partnersTitle": "Broadcasting partners",
     "partners": [
-      { "name": "Vinh Long TV", "img": "/images/broadcasters/thvl.png" },
-      { "name": "Hanoi TV", "img": "/images/broadcasters/hanoi-tv.png" },
       { "name": "VTV", "img": "/images/broadcasters/vtv.png" },
-      { "name": "HCMC TV", "img": "/images/broadcasters/htv.png" },
       { "name": "VTVcab", "img": "/images/broadcasters/vtvcab.png" },
+      { "name": "Hanoi TV", "img": "/images/broadcasters/hanoi-tv.png" },
+      { "name": "HCMC TV", "img": "/images/broadcasters/htv.png" },
+      { "name": "Vinh Long TV", "img": "/images/broadcasters/thvl.png" },
       { "name": "SCTV", "img": "/images/broadcasters/sctv.png" }
     ]
   },
   "services": {
-    "sectionTag": "SERVICES",
-    "title": "Diverse Media Services For Your Business",
+    "sectionTag": "Services",
+    "title": "Diverse media services for your business",
     "items": [
       {
-        "title": "Comprehensive Media Strategy Consulting",
+        "title": "Comprehensive media strategy consulting",
         "desc": "Comprehensive media strategy consulting: positioning, building, developing, and defending brands.",
         "img": "/images/services/service-communications.jpg",
         "detailDesc": "With a team of top industry experts, Vietba Group provides comprehensive media strategy consulting for businesses. From brand positioning and communication planning to crisis management, we accompany our clients through every circumstance.",
@@ -131,7 +131,7 @@
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       },
       {
-        "title": "Technology & Digital Transformation",
+        "title": "Technology & digital transformation",
         "desc": "Comprehensive digital transformation solutions, building modern technology platforms, AI systems, and e-commerce solutions.",
         "img": "/images/services/service-tech.jpg",
         "detailDesc": "Vietba Group provides comprehensive digital transformation solutions, from enterprise software and e-commerce platforms to AI applications. Our experienced engineering team delivers bespoke solutions tailored to each business.",
@@ -139,7 +139,7 @@
         "relatedProjects": ["/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png", "/images/projects/project-invest-tv.png", "/images/projects/project-m-channel.png"]
       },
       {
-        "title": "Multi-Platform Content Production",
+        "title": "Multi-platform content production",
         "desc": "Professional multi-platform content production: TVCs, music videos, viral clips, short films, and content for digital & social media.",
         "img": "/images/services/service-production.jpg",
         "detailDesc": "Vietba Group provides professional multi-platform content production services, from advertising TVCs, music videos, and viral clips to creative content for digital and social media. Our experienced production team ensures high visual quality and effective communication messaging.",
@@ -147,7 +147,7 @@
         "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
       },
       {
-        "title": "Weather & Technology Center",
+        "title": "Weather & technology center",
         "desc": "Specialized weather forecasting, hydro-meteorological services, and disaster warning for power, aviation, agriculture, petroleum, maritime, and shipping industries.",
         "img": "/images/services/service-weather-tech.jpg",
         "detailPage": "/en/weather",
@@ -156,7 +156,7 @@
         "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
       },
       {
-        "title": "Digital Marketing",
+        "title": "Digital marketing",
         "desc": "Comprehensive digital marketing strategies, social media management, SEO, SEM, and effective content marketing.",
         "img": "/images/services/service-digital-marketing.jpg",
         "detailDesc": "Vietba Group's digital marketing team provides comprehensive digital solutions, from overall strategy to campaign execution. We have supported major brands like Bamboo Airways and EVN HCMC in building and growing their digital channels.",
@@ -164,7 +164,7 @@
         "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
       },
       {
-        "title": "Media Booking",
+        "title": "Media booking",
         "desc": "Booking services for television, radio, press, PR articles, posters/banners, OOH, and KOLs.",
         "img": "/images/services/service-booking-media.jpg",
         "detailDesc": "With an extensive media partner network, Vietba Group provides comprehensive media booking services across all platforms: television, radio, press, digital, and influencer. We optimize cost and effectiveness for every campaign.",
@@ -172,7 +172,7 @@
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png"]
       },
       {
-        "title": "Outdoor Advertising",
+        "title": "Outdoor advertising",
         "desc": "Strategic OOH advertising solutions at prime locations nationwide.",
         "img": "/images/services/service-overview.png",
         "detailDesc": "Vietba Group owns a network of strategic outdoor advertising locations nationwide, including billboards, LED displays, airport advertising, vehicle wraps, and transit media. We provide optimal placement consulting to ensure maximum communication effectiveness.",
@@ -180,7 +180,7 @@
         "relatedProjects": ["/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png", "/images/projects/project-aba-2016.png", "/images/projects/project-hoi-nghi-khach-hang.png"]
       },
       {
-        "title": "Event Organization",
+        "title": "Event organization",
         "desc": "Professional event organization from conferences, launches to large-scale teambuilding programs.",
         "img": "/images/services/service-events.jpg",
         "detailDesc": "Vietba Group organizes professional events ranging from dozens to thousands of attendees. From client conferences and product launches to roadshows and teambuilding, we ensure every event is a memorable experience.",
@@ -190,14 +190,14 @@
     ]
   },
   "projects": {
-    "sectionTag": "PROJECTS",
-    "title": "Featured Projects",
+    "sectionTag": "Projects",
+    "title": "Featured projects",
     "filterAll": "All",
     "filters": {
       "gameshow": "Gameshow",
       "sitcom": "Sitcom",
-      "digital": "Digital Marketing",
-      "tv": "TV Channels",
+      "digital": "Digital marketing",
+      "tv": "TV channels",
       "event": "Events",
       "weather": "Weather",
       "comms": "Communications"
@@ -219,48 +219,48 @@
       { "name": "VTD Smarthome", "cat": "digital", "img": "/images/projects/project-vtd-smarthome.png" },
       { "name": "EVN HCMC", "cat": "digital", "img": "/images/projects/project-evn-hcmc.png" },
       { "name": "CEDELAR", "cat": "digital", "img": "/images/projects/project-cedelar.png" },
-      { "name": "Weather & Technology", "cat": "weather", "img": "/images/projects/project-thoi-tiet-cong-nghe.png" },
-      { "name": "School Weather", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hoc-duong.png" },
-      { "name": "International Weather", "cat": "weather", "img": "/images/projects/project-thoi-tiet-quoc-te.png" },
-      { "name": "Aviation Weather", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hang-khong.png" },
-      { "name": "Client Conference", "cat": "event", "img": "/images/projects/project-hoi-nghi-khach-hang.png" },
+      { "name": "Weather & technology", "cat": "weather", "img": "/images/projects/project-thoi-tiet-cong-nghe.png" },
+      { "name": "School weather", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hoc-duong.png" },
+      { "name": "International weather", "cat": "weather", "img": "/images/projects/project-thoi-tiet-quoc-te.png" },
+      { "name": "Aviation weather", "cat": "weather", "img": "/images/projects/project-thoi-tiet-hang-khong.png" },
+      { "name": "Client conference", "cat": "event", "img": "/images/projects/project-hoi-nghi-khach-hang.png" },
       { "name": "Vietcombank Laos 2019", "cat": "event", "img": "/images/projects/project-vietcombank-laos.png" },
       { "name": "Sales Day 2019", "cat": "event", "img": "/images/projects/project-sales-day-2019.png" },
       { "name": "ABA 2016", "cat": "event", "img": "/images/projects/project-aba-2016.png" },
       { "name": "Vietnam Airline Festa", "cat": "event", "img": "/images/projects/project-vietnam-airline-festa.png" },
       { "name": "Vietcombank KHTT 2020", "cat": "event", "img": "/images/events/IMG_0175.jpg" },
-      { "name": "VCB 55th Anniversary", "cat": "event", "img": "/images/events/IMG_5727.JPG" },
-      { "name": "VCB 55th Gala", "cat": "event", "img": "/images/events/IMG_5460.JPG" },
-      { "name": "VCB KHTT Gala", "cat": "event", "img": "/images/events/VVW01290.JPG" },
+      { "name": "VCB 55th anniversary", "cat": "event", "img": "/images/events/IMG_5727.JPG" },
+      { "name": "VCB 55th gala", "cat": "event", "img": "/images/events/IMG_5460.JPG" },
+      { "name": "VCB KHTT gala", "cat": "event", "img": "/images/events/VVW01290.JPG" },
       { "name": "USAID", "cat": "comms", "img": "/images/projects/project-usaid.png" }
     ]
   },
   "timeline": {
-    "sectionTag": "HISTORY",
-    "title": "Our Journey",
+    "sectionTag": "History",
+    "title": "Our journey",
     "navPrev": "Prev",
     "navNext": "Next",
     "items": [
-      { "year": "1999", "title": "Company Founded", "desc": "On March 10, 1999, Vietba Media Development JSC was established — one of Vietnam's first professional media consulting companies." },
+      { "year": "1999", "title": "Company founded", "desc": "On March 10, 1999, Vietba Media Development JSC was established — one of Vietnam's first professional media consulting companies." },
       { "year": "2001", "title": "Wheel of Fortune VN", "desc": "Vietba Media became the first company to bring licensed gameshows to Vietnam. The show aired continuously for 15 years with 811 episodes on VTV3." },
-      { "year": "2007", "title": "Good Night Baby", "desc": "A beloved children's program airing daily at 9PM on VTV3 for 6 years, winning the hearts of parents and children alike." },
-      { "year": "2009", "title": "InvestTV Launched", "desc": "Launched on June 16, 2009, the first and only TV channel dedicated to investment economics — a collaboration between Vietba Group and VTVCab." },
-      { "year": "2012", "title": "Weather & Technology Center", "desc": "Launched the Weather & Technology Center, providing specialized forecasting services for power, aviation, agriculture, and petroleum industries." },
+      { "year": "2007", "title": "Good night baby", "desc": "A beloved children's program airing daily at 9PM on VTV3 for 6 years, winning the hearts of parents and children alike." },
+      { "year": "2009", "title": "InvestTV launched", "desc": "Launched on June 16, 2009, the first and only TV channel dedicated to investment economics — a collaboration between Vietba Group and VTVCab." },
+      { "year": "2012", "title": "Weather & technology center", "desc": "Launched the Weather & Technology Center, providing specialized forecasting services for power, aviation, agriculture, and petroleum industries." },
       { "year": "2014", "title": "Brain Wall Vietnam", "desc": "Sports-themed gameshow licensed from Japan's Brain Wall (Nookabe), aired from 2014–2020. A children's version launched in 2017." },
-      { "year": "2015", "title": "MChannel Launch", "desc": "On December 18, 2015, Invest TV transformed into MChannel — a TV channel dedicated to men's content on VTVCab 15." },
+      { "year": "2015", "title": "MChannel launch", "desc": "On December 18, 2015, Invest TV transformed into MChannel — a TV channel dedicated to men's content on VTVCab 15." },
       { "year": "2022", "title": "Became Vietba Group", "desc": "On April 21, 2022, officially transformed into Vietba Group JSC with 1 headquarters, 2 representative offices, and 2 subsidiaries." }
     ]
   },
   "contact": {
-    "sectionTag": "CONTACT",
-    "title": "Connect With Us",
+    "sectionTag": "Contact",
+    "title": "Connect with us",
     "subtitle": "Please leave your contact information and we will get back to you shortly!",
     "form": {
-      "name": "Full Name",
+      "name": "Full name",
       "email": "Email",
-      "phone": "Phone Number",
-      "message": "Your Message",
-      "submit": "Send Message"
+      "phone": "Phone number",
+      "message": "Your message",
+      "submit": "Send message"
     },
     "offices": [
       {
@@ -272,14 +272,14 @@
       },
       {
         "city": "Ho Chi Minh City",
-        "label": "Branch Office",
+        "label": "Branch office",
         "address": "3rd Floor, Building AS, 236-238 Nguyen Cong Tru, Ben Thanh Ward, HCMC",
         "phone": "(84-28) 3 910 1766",
         "email": "contact@vietbagroup.com.vn"
       },
       {
         "city": "Nha Trang",
-        "label": "Branch Office",
+        "label": "Branch office",
         "address": "42 Le Thanh Phuong, Tay Nha Trang Ward, Khanh Hoa Province",
         "phone": "(84-258) 3 527 789",
         "email": "contact@vietbagroup.com.vn"
@@ -287,30 +287,30 @@
     ]
   },
   "careers": {
-    "sectionTag": "CAREERS",
-    "title": "Job Openings",
+    "sectionTag": "Careers",
+    "title": "Job openings",
     "subtitle": "Join Vietba Group — where you grow your career with a passion for media.",
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group was established in 1999 with 100% Vietnamese capital. Over 20 years of building and development, we have established our name in Vietnam's media industry. To this day, Vietba Group is among the TOP advertising and media companies in Vietnam.",
     "introSub": "Vietba Group has become a trusted and effective partner for corporations and enterprises, prestigious TV stations, and renowned publications in the following fields:",
-    "introServices": ["Comprehensive Media Strategy Consulting", "Technology & Digital Transformation", "Multi-Platform Content Production", "Weather & Technology Center", "Digital Marketing", "Media Booking", "Outdoor Advertising", "Event Organization"],
+    "introServices": ["Comprehensive media strategy consulting", "Technology & digital transformation", "Multi-platform content production", "Weather & technology center", "Digital marketing", "Media booking", "Outdoor advertising", "Event organization"],
     "introAchievements": "We have produced over 400 media advertising products, 50 outstanding TV programs, and are a trusted service provider for over 200 large and small partners. We are proud to be the first company to bring gameshows to Vietnam.",
     "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
-    "listTitle": "Open Positions",
+    "listTitle": "Open positions",
     "viewDetail": "View details",
-    "applyNow": "APPLY NOW",
+    "applyNow": "Apply now",
     "applyEmail": "tuyendung@vietbagroup.com.vn",
     "applyHotline": "086.9312.488",
     "backToList": "← Back to listings",
-    "jobDescTitle": "Job Description",
+    "jobDescTitle": "Job description",
     "requirementsTitle": "Requirements",
     "benefitsTitle": "Benefits",
-    "workInfoTitle": "Work Information",
-    "applyInfoTitle": "Application Information",
+    "workInfoTitle": "Work information",
+    "applyInfoTitle": "Application information",
     "jobs": [
       {
         "slug": "head-of-digital-marketing",
-        "title": "HEAD OF DIGITAL MARKETING",
+        "title": "Head of digital marketing",
         "location": "Hanoi",
         "type": "Full-time",
         "summary": "Vietba Group is seeking a Head of Digital Marketing – responsible for building and leading the overall Digital Marketing strategy, developing multi-platform content ecosystems including Television, Digital, Out Of Home, and social media platforms; while optimizing media resources to generate sustainable revenue for the business.",
@@ -323,7 +323,7 @@
       },
       {
         "slug": "content-manager",
-        "title": "CONTENT MANAGER",
+        "title": "Content manager",
         "location": "Hanoi",
         "type": "Full-time",
         "summary": "Manage and develop multi-platform content strategy, ensuring quality and brand consistency.",
@@ -336,7 +336,7 @@
       },
       {
         "slug": "growth-performance-lead",
-        "title": "GROWTH & PERFORMANCE LEAD",
+        "title": "Growth & performance lead",
         "location": "Hanoi",
         "type": "Full-time",
         "summary": "Lead Growth Marketing strategy, optimize ad performance and sustainable growth.",
@@ -349,7 +349,7 @@
       },
       {
         "slug": "giam-doc-kinh-doanh-hcm",
-        "title": "Sales Director – HCMC Branch",
+        "title": "Sales director – HCMC branch",
         "location": "Ho Chi Minh City",
         "type": "Full-time",
         "summary": "Oversee business development and operations at the Ho Chi Minh City branch.",
@@ -362,7 +362,7 @@
       },
       {
         "slug": "nhan-vien-kinh-doanh",
-        "title": "Sales Executive",
+        "title": "Sales executive",
         "location": "HN, HCMC, Nha Trang",
         "type": "Full-time",
         "summary": "Find and develop clients, consult on suitable media solutions.",
@@ -376,8 +376,8 @@
     ]
   },
   "weather": {
-    "sectionTag": "WEATHER & TECHNOLOGY",
-    "title": "Weather & Technology Center",
+    "sectionTag": "Weather & technology",
+    "title": "Weather & technology center",
     "subtitle": "Specialized weather forecasting solutions and applied meteorological data for businesses",
     "intro": {
       "title": "Overview",
@@ -386,25 +386,25 @@
       "p3": "In addition to its professional expertise, Vietba collaborates with reputable domestic and international forecasting agencies to enhance data quality, accuracy, and information update speed."
     },
     "products": {
-      "title": "Key Products",
+      "title": "Key products",
       "items": [
         {
-          "title": "Voyage Consulting",
+          "title": "Voyage consulting",
           "desc": "Voyage consulting and vessel support services, providing critical weather information to help captains make optimal decisions, ensuring safety, fuel savings, emission reduction, and improved operational efficiency.",
           "img": "/images/weather/weather-10-european-wind.jpeg"
         },
         {
-          "title": "Port & Island Forecasting",
+          "title": "Port & island forecasting",
           "desc": "Providing daily weather forecasts for seaports, islands, and transit points, serving maritime transport and logistics operations.",
           "img": "/images/weather/weather-08-sea-forecast.jpeg"
         },
         {
-          "title": "Marine Weather Forecasting",
+          "title": "Marine weather forecasting",
           "desc": "Providing marine weather forecasting services including waves, wind, currents, tides, and dangerous phenomena for maritime transport, fishing, and offshore petroleum operations.",
           "img": "/images/weather/weather-09-australia-forecast.jpeg"
         },
         {
-          "title": "Storm & Disaster Warnings",
+          "title": "Storm & disaster warnings",
           "desc": "Forecasting and warning of storms, tropical depressions, large waves, storm surges, fog, and other dangerous hydro-meteorological phenomena at sea.",
           "img": "/images/weather/weather-05-miami-office.jpeg"
         }
@@ -417,7 +417,7 @@
       ]
     },
     "dataSources": {
-      "title": "Data Sources",
+      "title": "Data sources",
       "desc": "Vietba's forecasting system is built on an integrated platform of advanced domestic and international hydro-meteorological models:",
       "models": [
         { "name": "GWM (Global Wave Model)", "source": "Japan" },
@@ -437,7 +437,7 @@
       ]
     },
     "partners": {
-      "title": "Data Partners",
+      "title": "Data partners",
       "desc": "Vietba currently partners with numerous reputable domestic and international hydro-meteorological and technology organizations:",
       "list": [
         {
@@ -492,7 +492,7 @@
       ]
     },
     "experts": {
-      "title": "Expert Team",
+      "title": "Expert team",
       "lead": {
         "name": "Le Thi Xuan Lan",
         "title": "Master of Hydro-Meteorology",
