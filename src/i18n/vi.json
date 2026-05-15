@@ -123,20 +123,12 @@
     "title": "Cung Cấp Đa Dạng Dịch Vụ Truyền Thông",
     "items": [
       {
-        "title": "Sản Xuất Truyền Hình",
-        "desc": "Sản xuất chương trình truyền hình chuyên nghiệp, gameshow bản quyền quốc tế, sitcom và các chương trình giải trí rating cao.",
-        "img": "/images/services/service-production.jpg",
-        "detailDesc": "Với gần 30 năm kinh nghiệm trong lĩnh vực sản xuất truyền hình, Vietba Group đã sản xuất hàng nghìn tập chương trình giải trí, gameshow bản quyền quốc tế và sitcom chất lượng cao. Chúng tôi tự hào là đơn vị đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam.",
-        "highlights": ["811 tập Chiếc Nón Kỳ Diệu trên VTV3", "Bản quyền gameshow từ Nhật Bản, Hàn Quốc", "Hợp tác với các đài truyền hình lớn", "Rating cao nhất khung giờ vàng"],
-        "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
-      },
-      {
-        "title": "Digital Marketing",
-        "desc": "Chiến lược marketing số toàn diện, quản lý mạng xã hội, SEO, SEM và content marketing hiệu quả.",
-        "img": "/images/services/service-digital-marketing.jpg",
-        "detailDesc": "Đội ngũ chuyên gia digital marketing của Vietba Group cung cấp giải pháp marketing số toàn diện, từ chiến lược tổng thể đến triển khai chiến dịch. Chúng tôi đã hỗ trợ các thương hiệu lớn như Bamboo Airways, EVN HCMC trong việc xây dựng và phát triển kênh digital.",
-        "highlights": ["Quản lý hơn 50+ fanpage doanh nghiệp", "ROI trung bình tăng 200%", "Đối tác Google & Facebook", "Content strategy chuyên biệt"],
-        "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
+        "title": "Tư Vấn Chiến Lược Truyền Thông Tổng Thể",
+        "desc": "Tư vấn chiến lược truyền thông tổng thể: định vị, xây dựng, phát triển và phòng thủ thương hiệu.",
+        "img": "/images/services/service-communications.jpg",
+        "detailDesc": "Với đội ngũ chuyên gia hàng đầu trong ngành, Vietba Group tư vấn chiến lược truyền thông tổng thể cho doanh nghiệp. Từ định vị thương hiệu, xây dựng kế hoạch truyền thông đến quản lý khủng hoảng, chúng tôi đồng hành cùng khách hàng trong mọi hoàn cảnh.",
+        "highlights": ["Tư vấn cho 2000+ khách hàng", "Quản lý khủng hoảng truyền thông", "Chiến lược đa kênh", "Gần 30 năm kinh nghiệm"],
+        "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       },
       {
         "title": "Công Nghệ & Chuyển Đổi Số",
@@ -145,6 +137,31 @@
         "detailDesc": "Vietba Group cung cấp giải pháp chuyển đổi số toàn diện, từ xây dựng phần mềm doanh nghiệp, nền tảng thương mại điện tử đến ứng dụng AI. Đội ngũ kỹ sư giàu kinh nghiệm với phương pháp 'may đo' cho từng doanh nghiệp.",
         "highlights": ["Giải pháp AI & tự động hóa", "Nền tảng thương mại điện tử", "Hạ tầng CNTT & bảo mật", "Phần mềm quản trị doanh nghiệp"],
         "relatedProjects": ["/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png", "/images/projects/project-invest-tv.png", "/images/projects/project-m-channel.png"]
+      },
+      {
+        "title": "Sản Xuất Content Đa Nền Tảng",
+        "desc": "Sản xuất nội dung chuyên nghiệp đa nền tảng: TVC, MV, Viral Clip, phim ngắn và nội dung cho digital & mạng xã hội.",
+        "img": "/images/services/service-production.jpg",
+        "detailDesc": "Vietba Group cung cấp dịch vụ sản xuất content chuyên nghiệp đa nền tảng, từ TVC quảng cáo, MV ca nhạc, viral clip đến nội dung sáng tạo cho digital và mạng xã hội. Đội ngũ sản xuất giàu kinh nghiệm đảm bảo chất lượng hình ảnh và thông điệp truyền thông hiệu quả.",
+        "highlights": ["TVC quảng cáo chuyên nghiệp", "MV & Viral Clip sáng tạo", "Nội dung digital & mạng xã hội", "Phim ngắn & brand film"],
+        "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
+      },
+      {
+        "title": "TT Thời Tiết",
+        "desc": "Dịch vụ dự báo thời tiết chuyên ngành, khí tượng thủy văn và cảnh báo thiên tai cho điện lực, hàng không, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
+        "img": "/images/services/service-weather-tech.jpg",
+        "detailPage": "/weather",
+        "detailDesc": "Trung tâm Thời tiết và Công nghệ của Vietba Group cung cấp dịch vụ dự báo thời tiết chuyên ngành, dữ liệu khí tượng thủy văn cho các ngành điện lực, hàng không, nông nghiệp, dầu khí, hàng hải. Hợp tác với WNI Nhật Bản và các cơ quan quốc tế.",
+        "highlights": ["Hợp tác WNI Nhật Bản", "Dự báo cho 6+ ngành công nghiệp", "Kênh truyền hình thời tiết riêng", "Dữ liệu khí tượng chuyên sâu"],
+        "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
+      },
+      {
+        "title": "Digital Marketing",
+        "desc": "Chiến lược marketing số toàn diện, quản lý mạng xã hội, SEO, SEM và content marketing hiệu quả.",
+        "img": "/images/services/service-digital-marketing.jpg",
+        "detailDesc": "Đội ngũ chuyên gia digital marketing của Vietba Group cung cấp giải pháp marketing số toàn diện, từ chiến lược tổng thể đến triển khai chiến dịch. Chúng tôi đã hỗ trợ các thương hiệu lớn như Bamboo Airways, EVN HCMC trong việc xây dựng và phát triển kênh digital.",
+        "highlights": ["Quản lý hơn 50+ fanpage doanh nghiệp", "ROI trung bình tăng 200%", "Đối tác Google & Facebook", "Content strategy chuyên biệt"],
+        "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
       },
       {
         "title": "Booking Media",
@@ -169,23 +186,6 @@
         "detailDesc": "Vietba Group tổ chức các sự kiện chuyên nghiệp quy mô từ vài chục đến hàng nghìn người tham dự. Từ hội nghị khách hàng, lễ ra mắt sản phẩm đến roadshow và teambuilding, chúng tôi đảm bảo mỗi sự kiện là một trải nghiệm đáng nhớ.",
         "highlights": ["Hội nghị & hội thảo quốc tế", "Lễ ra mắt sản phẩm", "Teambuilding quy mô lớn", "Roadshow & activation"],
         "relatedProjects": ["/images/events/VVW01290.JPG", "/images/events/IMG_5460.JPG", "/images/events/IMG_5727.JPG", "/images/events/IMG_0175.jpg"]
-      },
-      {
-        "title": "Thời Tiết & Công Nghệ",
-        "desc": "Dịch vụ dự báo thời tiết chuyên ngành, khí tượng thủy văn và cảnh báo thiên tai cho điện lực, hàng không, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
-        "img": "/images/services/service-weather-tech.jpg",
-        "detailPage": "/weather",
-        "detailDesc": "Trung tâm Thời tiết và Công nghệ của Vietba Group cung cấp dịch vụ dự báo thời tiết chuyên ngành, dữ liệu khí tượng thủy văn cho các ngành điện lực, hàng không, nông nghiệp, dầu khí, hàng hải. Hợp tác với WNI Nhật Bản và các cơ quan quốc tế.",
-        "highlights": ["Hợp tác WNI Nhật Bản", "Dự báo cho 6+ ngành công nghiệp", "Kênh truyền hình thời tiết riêng", "Dữ liệu khí tượng chuyên sâu"],
-        "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
-      },
-      {
-        "title": "Chiến Lược Truyền Thông",
-        "desc": "Tư vấn chiến lược truyền thông tổng thể: định vị, xây dựng, phát triển và phòng thủ thương hiệu.",
-        "img": "/images/services/service-communications.jpg",
-        "detailDesc": "Với đội ngũ chuyên gia hàng đầu trong ngành, Vietba Group tư vấn chiến lược truyền thông tổng thể cho doanh nghiệp. Từ định vị thương hiệu, xây dựng kế hoạch truyền thông đến quản lý khủng hoảng, chúng tôi đồng hành cùng khách hàng trong mọi hoàn cảnh.",
-        "highlights": ["Tư vấn cho 2000+ khách hàng", "Quản lý khủng hoảng truyền thông", "Chiến lược đa kênh", "Gần 30 năm kinh nghiệm"],
-        "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       }
     ]
   },
@@ -351,12 +351,48 @@
       "title": "Đối Tác Cung Cấp Dữ Liệu",
       "desc": "VIETBA hiện hợp tác với nhiều đơn vị khí tượng thủy văn và công nghệ uy tín trong nước và quốc tế:",
       "list": [
-        "Trung tâm Dự báo KTTV Quốc gia",
-        "Đài KTTV khu vực Nam Bộ",
-        "Trung tâm Ứng dụng Công nghệ KTTV (HYMETEC)",
-        "Weathernews Nhật Bản (WNI)",
-        "Cơ quan Khí tượng New Zealand",
-        "EarthTV Network GmbH (Đức)"
+        {
+          "name": "Trung tâm Dự báo KTTV Quốc gia",
+          "abbr": "NCHMF",
+          "location": "Hà Nội, Việt Nam",
+          "desc": "Cơ quan chuyên môn trực thuộc Tổng cục KTTV, Bộ TN&MT — chịu trách nhiệm dự báo, cảnh báo khí tượng thủy văn trên phạm vi toàn quốc.",
+          "specialty": "Dự báo bão, lũ, thời tiết nguy hiểm"
+        },
+        {
+          "name": "Đài KTTV khu vực Nam Bộ",
+          "abbr": "SRHC",
+          "location": "TP. Hồ Chí Minh, Việt Nam",
+          "desc": "Cơ quan dự báo, cảnh báo khí tượng thủy văn phục vụ 18 tỉnh thành phía Nam, ứng dụng trạm quan trắc tự động và mô hình số trị hiện đại.",
+          "specialty": "Dự báo khu vực Nam Bộ"
+        },
+        {
+          "name": "Trung tâm Ứng dụng Công nghệ KTTV",
+          "abbr": "HYMETEC",
+          "location": "Hà Nội, Việt Nam",
+          "desc": "Đơn vị chuyên cung cấp giải pháp thiết bị quan trắc khí tượng, thủy văn, hải văn và môi trường tại Việt Nam.",
+          "specialty": "Thiết bị & công nghệ quan trắc"
+        },
+        {
+          "name": "Weathernews Nhật Bản",
+          "abbr": "WNI",
+          "location": "Chiba, Nhật Bản",
+          "desc": "Công ty thời tiết tư nhân lớn nhất thế giới, sở hữu hệ thống dữ liệu hàng đầu với mạng lưới văn phòng tại hơn 21 quốc gia và đội ngũ hơn 1.000 chuyên gia.",
+          "specialty": "Dự báo hàng hải, hàng không, vận tải"
+        },
+        {
+          "name": "MetService New Zealand",
+          "abbr": "MetService",
+          "location": "Wellington, New Zealand",
+          "desc": "Cơ quan khí tượng quốc gia New Zealand, thành viên WMO, cung cấp dự báo 24/7 với hệ thống radar và trạm quan trắc tự động trên toàn quốc.",
+          "specialty": "Dự báo thời tiết & cảnh báo sớm"
+        },
+        {
+          "name": "EarthTV Network GmbH",
+          "abbr": "EarthTV",
+          "location": "Berlin, Đức",
+          "desc": "Công ty công nghệ và sản xuất số chuyên vận hành mạng lưới camera phát sóng trực tiếp toàn cầu, cung cấp nội dung thời tiết cho đài truyền hình quốc tế.",
+          "specialty": "Live camera & nội dung thời tiết"
+        }
       ],
       "wniHighlight": "Weathernews (WNI) là công ty thời tiết tư nhân lớn nhất thế giới có trụ sở tại Nhật Bản, với mạng lưới văn phòng tại hơn 21 quốc gia và 7 trung tâm cung cấp dịch vụ toàn cầu. WNI sở hữu hệ thống dữ liệu thời tiết hàng đầu thế giới cùng đội ngũ hơn 1.000 chuyên gia.",
       "images": [
@@ -383,7 +419,7 @@
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group được thành lập vào năm 1999 với 100% vốn đầu tư Việt Nam. Trải qua hơn 20 năm tạo dựng và phát triển, chúng tôi đã khẳng định được tên tuổi của mình trong làng truyền thông Việt Nam. Cho đến nay, Vietba Group đã nằm trong TOP những công ty quảng cáo và truyền thông lớn tại Việt Nam.",
     "introSub": "Vietba Group đã trở thành đối tác tin cậy và hiệu quả của các Tập đoàn, Doanh nghiệp trong và ngoài nước, các đài truyền hình uy tín và các đầu báo, tạp chí tên tuổi trong những lĩnh vực sau:",
-    "introServices": ["Chiến lược Truyền thông", "Công nghệ & Chuyển đổi số", "Sản xuất Truyền hình", "Digital Marketing", "Booking Media", "Dịch vụ Quảng cáo ngoài trời", "Tổ chức sự kiện"],
+    "introServices": ["Tư vấn Chiến lược Truyền thông tổng thể", "Công nghệ & Chuyển đổi số", "Sản xuất Content đa nền tảng", "TT Thời tiết", "Digital Marketing", "Booking Media", "Quảng cáo ngoài trời", "Tổ chức sự kiện"],
     "introAchievements": "Đến nay, chúng tôi đã thực hiện hơn 400 sản phẩm quảng cáo truyền thông, 50 chương trình truyền hình đặc sắc và là nhà cung cấp dịch vụ đáng tin cậy của hơn 200 đối tác lớn và nhỏ. Chúng tôi tự hào là công ty đầu tiên đưa gameshow vào Việt Nam, đặt nền móng cho rất nhiều chương trình truyền hình và tên tuổi cho các nghệ sĩ hiện nay.",
     "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
     "listTitle": "Vị Trí Đang Tuyển",

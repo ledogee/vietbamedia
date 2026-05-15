@@ -112,16 +112,29 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
       <div class="wx-partners-content fade-in">
         <div class="wx-partners-list">
-          {w.partners.list.map((p, i) => (
-            <div class="wx-partner-item">
-              <span class="wx-partner-dot" style={`--hue:${i * 40 + 200}`}></span>
-              <span>{p}</span>
+          {(w.partners.list as any[]).map((p, i) => (
+            <div class={`wx-partner-item ${i === 3 ? 'active' : ''}`} data-partner-index={i} style={`--hue:${i * 50 + 200}`}>
+              <span class="wx-partner-dot"></span>
+              <span>{p.name}</span>
             </div>
           ))}
         </div>
-        <div class="wx-wni-highlight">
-          <div class="wx-wni-badge">WNI</div>
-          <p>{w.partners.wniHighlight}</p>
+        <div class="wx-partner-detail">
+          {(w.partners.list as any[]).map((p, i) => (
+            <div class={`wx-partner-highlight ${i === 3 ? 'active' : ''}`} data-partner-detail={i}>
+              <div class="wx-partner-highlight-header">
+                <div class="wx-partner-highlight-badge">{p.abbr}</div>
+                <div>
+                  <h4>{p.name}</h4>
+                  <span class="wx-partner-highlight-location">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    {p.location}
+                  </span>
+                </div>
+              </div>
+              <p class="wx-partner-highlight-desc">{p.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div class="wx-partner-images fade-in">
@@ -263,30 +276,67 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 /* ─── Partners ─── */
 .wx-partners-content { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px; }
-.wx-partners-list { display: flex; flex-direction: column; gap: 14px; }
+.wx-partners-list { display: flex; flex-direction: column; gap: 10px; }
 .wx-partner-item {
   display: flex; align-items: center; gap: 12px; padding: 14px 20px;
   background: #fff; border-radius: var(--radius-sm); font-size: 0.92rem; font-weight: 500;
   color: var(--color-text-dark); border: 1px solid rgba(10,37,64,0.06);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; cursor: pointer; user-select: none;
 }
 .wx-partner-item:hover { transform: translateX(6px); border-color: rgba(255,107,53,0.2); box-shadow: 0 4px 16px rgba(255,107,53,0.08); }
+.wx-partner-item.active {
+  border-color: hsl(var(--hue), 70%, 55%); background: hsl(var(--hue), 70%, 97%);
+  box-shadow: 0 4px 16px hsla(var(--hue), 70%, 55%, 0.12);
+}
 .wx-partner-dot {
   width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
   background: hsl(var(--hue), 70%, 55%);
+  transition: transform 0.3s ease;
 }
-.wx-wni-highlight {
-  background: linear-gradient(135deg, #061B2E 0%, #0A2540 100%);
-  border-radius: var(--radius-lg); padding: 32px; color: #fff;
-  display: flex; flex-direction: column; gap: 16px; justify-content: center;
+.wx-partner-item.active .wx-partner-dot { transform: scale(1.5); }
+
+/* ─── Partner Detail ─── */
+.wx-partner-detail { position: relative; min-height: 240px; }
+.wx-partner-highlight {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #061B2E 0%, #0A2540 60%, #0E2D4A 100%);
+  border-radius: var(--radius-lg); padding: 36px 40px; color: #fff;
+  display: flex; flex-direction: column; justify-content: center; gap: 18px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow: hidden;
 }
-.wx-wni-badge {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 64px; height: 64px; border-radius: 16px;
+.wx-partner-highlight::before {
+  content: ''; position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,107,53,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.wx-partner-highlight.active { opacity: 1; visibility: visible; }
+.wx-partner-highlight-header { display: flex; align-items: center; gap: 18px; position: relative; }
+.wx-partner-highlight-badge {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0;
   background: var(--color-gradient); color: #fff;
-  font-size: 1.1rem; font-weight: 900; letter-spacing: 1px;
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+  padding: 0 12px;
+  box-shadow: 0 4px 20px rgba(255,107,53,0.3);
 }
-.wx-wni-highlight p { font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.8; }
+.wx-partner-highlight-header h4 {
+  font-size: 1.15rem; font-weight: 700; margin-bottom: 5px;
+  background: linear-gradient(135deg, #FFD6A0 0%, #FF9A4D 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.wx-partner-highlight-location {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.8rem; color: rgba(255,255,255,0.55); font-weight: 500;
+}
+.wx-partner-highlight-location svg { opacity: 0.5; }
+.wx-partner-highlight-desc {
+  font-size: 0.92rem; color: rgba(255,255,255,0.8); line-height: 1.85;
+  position: relative; letter-spacing: 0.01em;
+}
 
 /* ─── Partner Images ─── */
 .wx-partner-images { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -352,6 +402,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .wx-split-text { position: static; }
   .wx-img-grid-2x2 { grid-template-columns: 1fr 1fr; }
   .wx-partners-content { grid-template-columns: 1fr; }
+  .wx-partner-detail { min-height: 260px; }
   .wx-partner-images { grid-template-columns: 1fr 1fr; }
   .wx-expert-grid { grid-template-columns: 1fr; }
   .cta-card { padding: 50px 24px; }
@@ -363,3 +414,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .wx-partner-img-cell img { height: 180px; }
 }
 </style>
+
+<script>
+document.querySelectorAll('.wx-partner-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const idx = item.getAttribute('data-partner-index');
+    document.querySelectorAll('.wx-partner-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.wx-partner-highlight').forEach(el => el.classList.remove('active'));
+    item.classList.add('active');
+    const detail = document.querySelector(`[data-partner-detail="${idx}"]`);
+    if (detail) detail.classList.add('active');
+  });
+});
+</script>

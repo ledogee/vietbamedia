@@ -5,25 +5,25 @@ const t = en;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const serviceIcons = [
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15h4l3-9 4 18 3-9h4"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 7h10M7 12h10M7 17h5"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15h4l3-9 4 18 3-9h4"/></svg>`,
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`
 ];
 
 const serviceBullets: string[][] = [
-  ["Internationally licensed gameshows", "Sitcoms & TV dramas", "High-rating entertainment", "Multi-platform content"],
-  ["Social media management", "Advanced SEO & SEM", "Strategic content marketing", "Performance analytics"],
+  ["Brand positioning", "Brand building & growth", "Crisis management", "Comprehensive media strategy"],
   ["AI & smart systems", "E-commerce solutions", "Enterprise software", "IT infrastructure & security"],
+  ["Advertising TVCs", "MVs & viral clips", "Digital & social media content", "Short films & brand films"],
+  ["Power industry forecasts", "Aviation weather", "Agricultural forecasting", "Petroleum & maritime"],
+  ["Social media management", "Advanced SEO & SEM", "Strategic content marketing", "Performance analytics"],
   ["TV & radio booking", "PR articles & press", "KOLs & Influencer marketing", "Banners, posters & OOH"],
   ["Nationwide billboards & LED", "Airport advertising", "Vehicle wraps & transit media", "Prime strategic locations"],
   ["Conferences & seminars", "Product launches", "Large-scale teambuilding", "Roadshows & activations"],
-  ["Power industry forecasts", "Aviation weather", "Agricultural forecasting", "Petroleum & maritime"],
-  ["Brand positioning", "Brand building & growth", "Crisis management", "Comprehensive media strategy"],
 ];
 
 const accents = ["#FF6B35","#635BFF","#00D4FF","#FF3864","#FF6B35","#635BFF","#00D4FF","#FF3864"];
@@ -107,7 +107,12 @@ const items = t.services.items;
           <h2>{items[3].title}</h2>
           <p class="svc-desc">{items[3].desc}</p>
           <ul class="svc-bullets">{serviceBullets[3].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[3]}`}></span>{b}</li>)}</ul>
-          <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[3]}`}>Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          <div class="svc-card-actions">
+            {(items[3] as any).detailPage && (
+              <a href={`${base}${(items[3] as any).detailPage}`} class="svc-detail-link" style={`--cta-color:${accents[3]}`}>Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+            )}
+            <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[3]}`}>Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
         </div>
       </div>
     </div>
@@ -234,10 +239,20 @@ const items = t.services.items;
 .svc-bullets { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
 .svc-bullets li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--color-text-dark); }
 .svc-bullet-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.svc-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 700; color: var(--cta-color); transition: all var(--transition); }
-.svc-cta:hover { gap: 12px; }
+.svc-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--cta-color, var(--color-accent-orange));
+  padding: 10px 22px; border-radius: 50px;
+  border: 1.5px solid var(--cta-color, var(--color-accent-orange));
+  background: transparent; transition: all var(--transition);
+}
+.svc-cta:hover {
+  background: var(--cta-color, var(--color-accent-orange)); color: #fff;
+  transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
 .svc-cta svg { transition: transform var(--transition); }
-.svc-cta:hover svg { transform: translateX(4px); }
+.svc-cta:hover svg { transform: translateX(3px); }
 .svc-feature { position: relative; min-height: 520px; display: flex; align-items: center; overflow: hidden; }
 .svc-feature-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .svc-feature-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(6,27,46,0.88) 0%, rgba(10,37,64,0.7) 50%, rgba(6,27,46,0.5) 100%); }
@@ -256,7 +271,7 @@ const items = t.services.items;
 .svc-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(10,37,64,0.12); }
 .svc-section-alt .svc-card { background: #fff; }
 .svc-card-img-wrap { position: relative; height: 220px; overflow: hidden; }
-.svc-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.svc-card-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; transition: transform 0.5s ease; }
 .svc-card:hover .svc-card-img { transform: scale(1.05); }
 .svc-card-number { position: absolute; top: 16px; left: 16px; font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: #fff; background: rgba(0,0,0,0.35); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 20px; }
 .svc-card-body { padding: 28px 24px; }
@@ -272,6 +287,23 @@ const items = t.services.items;
 .svc-split-img img { width: 100%; height: 360px; object-fit: cover; display: block; transition: transform 0.6s ease; }
 .svc-split-img:hover img { transform: scale(1.04); }
 .svc-split-text h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--color-text-dark); margin-bottom: 16px; }
+/* ─── Card Actions ─── */
+.svc-card-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.svc-detail-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; font-weight: 600; color: #fff;
+  padding: 10px 22px; border-radius: 50px;
+  background: var(--cta-color, var(--color-accent-orange));
+  border: none; transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.svc-detail-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  filter: brightness(1.1);
+}
+.svc-detail-link svg { transition: transform var(--transition); }
+.svc-detail-link:hover svg { transform: translateX(3px); }
 .cta-card { text-align: center; padding: 80px 40px; background: var(--color-gradient); border-radius: var(--radius-lg); position: relative; overflow: hidden; }
 .cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.12) 0%, transparent 60%); pointer-events: none; }
 .cta-card h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 16px; position: relative; }

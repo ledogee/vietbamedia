@@ -221,7 +221,7 @@ const rest = items.slice(3);
 /* ── Featured Hero Row (Apple-style) ── */
 .prj-hero-card {
   position: relative; border-radius: var(--radius-lg); overflow: hidden;
-  height: 480px; cursor: pointer;
+  min-height: 480px; cursor: pointer;
   transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 .prj-hero-card img {
@@ -427,14 +427,14 @@ const rest = items.slice(3);
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .prj-featured { grid-template-columns: 1fr 1fr; }
-  .prj-hero-card { height: 380px; }
+  .prj-hero-card { min-height: 380px; }
   .prj-bento { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 220px; }
 }
 
 @media (max-width: 768px) {
   .prj-hero { padding-bottom: 24px; }
   .prj-featured { grid-template-columns: 1fr; gap: 12px; }
-  .prj-hero-card { height: 280px; }
+  .prj-hero-card { min-height: 280px; }
   .prj-hero-side { flex-direction: row; }
   .prj-side-card { height: 200px; }
   .prj-bento {
@@ -464,7 +464,7 @@ const rest = items.slice(3);
 }
 
 @media (max-width: 480px) {
-  .prj-hero-card { height: 240px; }
+  .prj-hero-card { min-height: 240px; }
   .prj-hero-side { flex-direction: column; }
   .prj-side-card { height: 180px; }
   .prj-bento {

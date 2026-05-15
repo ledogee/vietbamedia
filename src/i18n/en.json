@@ -123,20 +123,12 @@
     "title": "Diverse Media Services For Your Business",
     "items": [
       {
-        "title": "TV Production",
-        "desc": "Professional television production including internationally licensed gameshows, sitcoms, and high-rating entertainment programs.",
-        "img": "/images/services/service-production.jpg",
-        "detailDesc": "With nearly 30 years of experience in television production, Vietba Group has produced thousands of episodes of entertainment programs, internationally licensed gameshows, and high-quality sitcoms. We are proud to be the first company to bring licensed gameshows to Vietnam.",
-        "highlights": ["811 episodes of Wheel of Fortune on VTV3", "Licensed gameshows from Japan, Korea", "Partnerships with major TV networks", "Highest-rated prime-time shows"],
-        "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
-      },
-      {
-        "title": "Digital Marketing",
-        "desc": "Comprehensive digital marketing strategies, social media management, SEO, SEM, and effective content marketing.",
-        "img": "/images/services/service-digital-marketing.jpg",
-        "detailDesc": "Vietba Group's digital marketing team provides comprehensive digital solutions, from overall strategy to campaign execution. We have supported major brands like Bamboo Airways and EVN HCMC in building and growing their digital channels.",
-        "highlights": ["Managing 50+ corporate pages", "Average ROI increase of 200%", "Google & Facebook Partner", "Specialized content strategy"],
-        "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
+        "title": "Comprehensive Media Strategy Consulting",
+        "desc": "Comprehensive media strategy consulting: positioning, building, developing, and defending brands.",
+        "img": "/images/services/service-communications.jpg",
+        "detailDesc": "With a team of top industry experts, Vietba Group provides comprehensive media strategy consulting for businesses. From brand positioning and communication planning to crisis management, we accompany our clients through every circumstance.",
+        "highlights": ["Consulting for 2000+ clients", "Media crisis management", "Multi-channel strategy", "Nearly 30 years of experience"],
+        "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       },
       {
         "title": "Technology & Digital Transformation",
@@ -145,6 +137,31 @@
         "detailDesc": "Vietba Group provides comprehensive digital transformation solutions, from enterprise software and e-commerce platforms to AI applications. Our experienced engineering team delivers bespoke solutions tailored to each business.",
         "highlights": ["AI & automation solutions", "E-commerce platforms", "IT infrastructure & security", "Enterprise management software"],
         "relatedProjects": ["/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png", "/images/projects/project-invest-tv.png", "/images/projects/project-m-channel.png"]
+      },
+      {
+        "title": "Multi-Platform Content Production",
+        "desc": "Professional multi-platform content production: TVCs, music videos, viral clips, short films, and content for digital & social media.",
+        "img": "/images/services/service-production.jpg",
+        "detailDesc": "Vietba Group provides professional multi-platform content production services, from advertising TVCs, music videos, and viral clips to creative content for digital and social media. Our experienced production team ensures high visual quality and effective communication messaging.",
+        "highlights": ["Professional advertising TVCs", "Creative MVs & viral clips", "Digital & social media content", "Short films & brand films"],
+        "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
+      },
+      {
+        "title": "Weather & Technology Center",
+        "desc": "Specialized weather forecasting, hydro-meteorological services, and disaster warning for power, aviation, agriculture, petroleum, maritime, and shipping industries.",
+        "img": "/images/services/service-weather-tech.jpg",
+        "detailPage": "/en/weather",
+        "detailDesc": "Vietba Group's Weather & Technology Center provides specialized weather forecasting and hydro-meteorological data services for power, aviation, agriculture, petroleum, and maritime industries. Partnering with Japan's WNI and international agencies.",
+        "highlights": ["Partnership with Japan's WNI", "Forecasting for 6+ industries", "Dedicated weather TV channel", "Advanced meteorological data"],
+        "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
+      },
+      {
+        "title": "Digital Marketing",
+        "desc": "Comprehensive digital marketing strategies, social media management, SEO, SEM, and effective content marketing.",
+        "img": "/images/services/service-digital-marketing.jpg",
+        "detailDesc": "Vietba Group's digital marketing team provides comprehensive digital solutions, from overall strategy to campaign execution. We have supported major brands like Bamboo Airways and EVN HCMC in building and growing their digital channels.",
+        "highlights": ["Managing 50+ corporate pages", "Average ROI increase of 200%", "Google & Facebook Partner", "Specialized content strategy"],
+        "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
       },
       {
         "title": "Media Booking",
@@ -169,23 +186,6 @@
         "detailDesc": "Vietba Group organizes professional events ranging from dozens to thousands of attendees. From client conferences and product launches to roadshows and teambuilding, we ensure every event is a memorable experience.",
         "highlights": ["International conferences & seminars", "Product launches", "Large-scale teambuilding", "Roadshows & activations"],
         "relatedProjects": ["/images/events/VVW01290.JPG", "/images/events/IMG_5460.JPG", "/images/events/IMG_5727.JPG", "/images/events/IMG_0175.jpg"]
-      },
-      {
-        "title": "Weather & Technology",
-        "desc": "Specialized weather forecasting, hydro-meteorological services, and disaster warning for power, aviation, agriculture, petroleum, maritime, and shipping industries.",
-        "img": "/images/services/service-weather-tech.jpg",
-        "detailPage": "/en/weather",
-        "detailDesc": "Vietba Group's Weather & Technology Center provides specialized weather forecasting and hydro-meteorological data services for power, aviation, agriculture, petroleum, and maritime industries. Partnering with Japan's WNI and international agencies.",
-        "highlights": ["Partnership with Japan's WNI", "Forecasting for 6+ industries", "Dedicated weather TV channel", "Advanced meteorological data"],
-        "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
-      },
-      {
-        "title": "Media Strategy",
-        "desc": "Comprehensive media strategy consulting: positioning, building, developing, and defending brands.",
-        "img": "/images/services/service-communications.jpg",
-        "detailDesc": "With a team of top industry experts, Vietba Group provides comprehensive media strategy consulting for businesses. From brand positioning and communication planning to crisis management, we accompany our clients through every circumstance.",
-        "highlights": ["Consulting for 2000+ clients", "Media crisis management", "Multi-channel strategy", "Nearly 30 years of experience"],
-        "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       }
     ]
   },
@@ -293,7 +293,7 @@
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group was established in 1999 with 100% Vietnamese capital. Over 20 years of building and development, we have established our name in Vietnam's media industry. To this day, Vietba Group is among the TOP advertising and media companies in Vietnam.",
     "introSub": "Vietba Group has become a trusted and effective partner for corporations and enterprises, prestigious TV stations, and renowned publications in the following fields:",
-    "introServices": ["Media Strategy", "Technology & Digital Transformation", "TV Production", "Digital Marketing", "Booking Media", "Outdoor Advertising Services", "Event Organization"],
+    "introServices": ["Comprehensive Media Strategy Consulting", "Technology & Digital Transformation", "Multi-Platform Content Production", "Weather & Technology Center", "Digital Marketing", "Media Booking", "Outdoor Advertising", "Event Organization"],
     "introAchievements": "We have produced over 400 media advertising products, 50 outstanding TV programs, and are a trusted service provider for over 200 large and small partners. We are proud to be the first company to bring gameshows to Vietnam.",
     "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
     "listTitle": "Open Positions",
@@ -440,12 +440,48 @@
       "title": "Data Partners",
       "desc": "Vietba currently partners with numerous reputable domestic and international hydro-meteorological and technology organizations:",
       "list": [
-        "National Center for Hydro-Meteorological Forecasting",
-        "Southern Regional HydroMet Center",
-        "Center for HydroMet Technology Application (HYMETEC)",
-        "Weathernews Japan (WNI)",
-        "New Zealand Meteorological Agency",
-        "EarthTV Network GmbH (Germany)"
+        {
+          "name": "National Center for Hydro-Meteorological Forecasting",
+          "abbr": "NCHMF",
+          "location": "Hanoi, Vietnam",
+          "desc": "Government agency under the Vietnam Meteorological and Hydrological Administration, responsible for nationwide weather forecasting and disaster warnings.",
+          "specialty": "Storm, flood & severe weather forecasting"
+        },
+        {
+          "name": "Southern Regional HydroMet Center",
+          "abbr": "SRHC",
+          "location": "Ho Chi Minh City, Vietnam",
+          "desc": "Regional forecasting center serving 18 southern provinces, utilizing automated observation stations and modern numerical models.",
+          "specialty": "Southern Vietnam regional forecasting"
+        },
+        {
+          "name": "Center for HydroMet Technology Application",
+          "abbr": "HYMETEC",
+          "location": "Hanoi, Vietnam",
+          "desc": "Specialized provider of meteorological, hydrological, oceanographic and environmental observation equipment and technology solutions in Vietnam.",
+          "specialty": "Observation equipment & technology"
+        },
+        {
+          "name": "Weathernews Japan",
+          "abbr": "WNI",
+          "location": "Chiba, Japan",
+          "desc": "The world's largest private weather company, with a leading data system, offices in 21+ countries and a team of over 1,000 experts worldwide.",
+          "specialty": "Maritime, aviation & transport forecasting"
+        },
+        {
+          "name": "MetService New Zealand",
+          "abbr": "MetService",
+          "location": "Wellington, New Zealand",
+          "desc": "New Zealand's national meteorological authority and WMO member, providing 24/7 forecasting with nationwide radar and automated observation networks.",
+          "specialty": "Weather forecasting & early warnings"
+        },
+        {
+          "name": "EarthTV Network GmbH",
+          "abbr": "EarthTV",
+          "location": "Berlin, Germany",
+          "desc": "Digital production and technology company operating a global network of live broadcast cameras, providing weather content for international broadcasters.",
+          "specialty": "Live cameras & weather content"
+        }
       ],
       "wniHighlight": "Weathernews (WNI) is the world's largest private weather company headquartered in Japan, with a network of offices in over 21 countries and 7 global service centers. WNI possesses the world's leading weather data system along with a team of over 1,000 experts.",
       "images": [
