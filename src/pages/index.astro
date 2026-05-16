@@ -193,7 +193,7 @@ const partners = [
       <div class="intro-grid fade-in">
         <div class="intro-text">
           <p class="section-tag">{t.about.sectionTag}</p>
-          <h2 class="section-title" set:html={t.about.title} />
+          <h2 class="section-title" set:html={t.about.title}></h2>
           <p class="intro-desc">{t.about.description}</p>
           <p class="intro-desc" style="margin-top:12px">
             {t.about.description2}
@@ -845,6 +845,10 @@ const partners = [
       transform: translateX(-50%) translate(-15px, 20px) scale(1.15);
     }
   }
+  /* ─── About intro — compact to fit 100vh with partners ─── */
+  #about-intro {
+    padding: 64px 0;
+  }
   /* ─── Intro Section (Light BG) ─── */
   .intro-grid {
     display: grid;
@@ -1044,7 +1048,7 @@ const partners = [
 
   /* ─── Partner Marquee (inline in about section) ─── */
   .partners-inline {
-    padding: 48px 0 0;
+    padding: 20px 0 0;
     overflow: hidden;
     scroll-snap-align: none;
     user-select: none;
@@ -1122,7 +1126,6 @@ const partners = [
   .partner-logo-btn:hover .partner-img--color {
     opacity: 0.85;
   }
-
 
   /* Per-partner size adjustments for logos with excessive canvas padding */
   .partner-logo-btn[data-partner="samsung"] .partner-img--mono {
@@ -1341,7 +1344,7 @@ const partners = [
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 2px;
-   
+
     color: var(--color-text-muted);
   }
   .tl-card-year-badge {
