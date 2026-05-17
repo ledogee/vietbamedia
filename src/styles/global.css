@@ -19,23 +19,23 @@
   --color-text-dark-secondary: #425466; /* For light backgrounds */
 
   /* Accents — Media Orange as primary */
-  --color-accent-orange: #FF6B35;
+  --color-accent-orange: #E85A20;
   --color-accent-purple: #635BFF;  /* Stripe blurple */
   --color-accent-cyan: #00D4FF;
-  --color-accent-pink: #FF3864;
+  --color-accent-pink: #E02050;
 
   /* Gradients */
-  --color-gradient: linear-gradient(135deg, #FF6B35, #FF3864, #635BFF);
-  --color-gradient-hero: linear-gradient(135deg, #FF6B35 0%, #FF3864 40%, #635BFF 70%, #00D4FF 100%);
-  --color-gradient-subtle: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(99,91,255,0.1));
+  --color-gradient: linear-gradient(135deg, #E85A20, #E02050, #635BFF);
+  --color-gradient-hero: linear-gradient(135deg, #E85A20 0%, #E02050 40%, #635BFF 70%, #00D4FF 100%);
+  --color-gradient-subtle: linear-gradient(135deg, rgba(232,90,32,0.15), rgba(99,91,255,0.1));
   --color-gradient-blue: linear-gradient(135deg, #635BFF, #00D4FF);
-  --color-gradient-reverse: linear-gradient(135deg, #00D4FF, #635BFF, #FF6B35);
+  --color-gradient-reverse: linear-gradient(135deg, #00D4FF, #635BFF, #E85A20);
 
   /* Glows */
-  --color-glow-orange: rgba(255, 107, 53, 0.35);
+  --color-glow-orange: rgba(232, 90, 32, 0.35);
   --color-glow-purple: rgba(99, 91, 255, 0.3);
   --color-glow-blue: rgba(0, 212, 255, 0.25);
-  --color-glow-pink: rgba(255, 56, 100, 0.2);
+  --color-glow-pink: rgba(224, 32, 80, 0.2);
 
   /* System */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -171,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition);
 }
 .glass-card:hover {
-  border-color: rgba(255, 107, 53, 0.3);
+  border-color: rgba(232, 90, 32, 0.3);
   box-shadow: 0 0 30px var(--color-glow-orange), 0 8px 32px rgba(0,0,0,0.3);
   transform: translateY(-4px);
 }
@@ -187,8 +187,8 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 1px 3px rgba(10, 37, 64, 0.08);
 }
 .section-light .glass-card:hover {
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.12), 0 4px 16px rgba(0,0,0,0.06);
+  border-color: rgba(232, 90, 32, 0.3);
+  box-shadow: 0 8px 32px rgba(232, 90, 32, 0.12), 0 4px 16px rgba(0,0,0,0.06);
 }
 
 /* ─── Gradient text ─── */
@@ -235,7 +235,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-glow:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px var(--color-glow-orange), 0 4px 20px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 0 30px var(--color-glow-orange), 0 4px 20px rgba(232, 90, 32, 0.4);
   color: #FFFFFF;
 }
 .btn-glow:hover::before { opacity: 1; }
@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family);
 }
 .btn-outline:hover {
-  background: rgba(255, 107, 53, 0.08);
+  background: rgba(232, 90, 32, 0.08);
   border-color: var(--color-accent-orange);
   box-shadow: 0 0 20px var(--color-glow-orange);
   transform: translateY(-2px);
@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-dark .btn-outline:hover {
   color: var(--color-accent-orange);
   border-color: var(--color-accent-orange);
-  background: rgba(255, 107, 53, 0.12);
+  background: rgba(232, 90, 32, 0.12);
 }
 
 /* ─── View All link ─── */
@@ -318,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
   left: -20%;
   width: 60%;
   height: 200%;
-  background: radial-gradient(ellipse, rgba(255,107,53,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(232,90,32,0.12) 0%, transparent 70%);
   opacity: 0.6;
   pointer-events: none;
 }

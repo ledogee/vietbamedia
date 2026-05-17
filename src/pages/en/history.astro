@@ -76,12 +76,12 @@ const pinPositions = [
         <svg class="roadmap-svg" viewBox="0 0 1000 2600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <defs>
             <linearGradient id="roadGlow" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.4"/>
+              <stop offset="0%" stop-color="#E85A20" stop-opacity="0.4"/>
               <stop offset="50%" stop-color="#635BFF" stop-opacity="0.3"/>
               <stop offset="100%" stop-color="#00D4FF" stop-opacity="0.4"/>
             </linearGradient>
             <filter id="roadShadow">
-              <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#FF6B35" flood-opacity="0.15"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#E85A20" flood-opacity="0.15"/>
             </filter>
           </defs>
           <path d={roadPath} stroke="url(#roadGlow)" stroke-width="100" fill="none" stroke-linecap="round" opacity="0.3"/>
@@ -226,7 +226,7 @@ html, body { scroll-snap-type: y proximity; }
 }
 .history-hero-bg { position: absolute; inset: 0; pointer-events: none; }
 .hero-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.25; animation: orbFloat 10s ease-in-out infinite alternate; }
-.hero-orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,107,53,0.5), transparent 70%); top: -15%; right: -10%; }
+.hero-orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,90,32,0.5), transparent 70%); top: -15%; right: -10%; }
 .hero-orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(99,91,255,0.4), transparent 70%); bottom: -10%; left: -5%; animation-delay: -4s; }
 .hero-orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,212,255,0.35), transparent 70%); top: 40%; left: 45%; animation-delay: -7s; }
 @keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(25px,-20px) scale(1.12); } }
@@ -270,7 +270,7 @@ html, body { scroll-snap-type: y proximity; }
 @keyframes cardSlideRight { 0% { opacity: 0; transform: translateY(-50%) translateX(50px); } 100% { opacity: 1; transform: translateY(-50%) translateX(0); } }
 @keyframes cardSlideLeft { 0% { opacity: 0; transform: translateY(-50%) translateX(-50px); } 100% { opacity: 1; transform: translateY(-50%) translateX(0); } }
 .rm-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; opacity: 0; transition: opacity 0.5s ease; }
-.rm-milestone:nth-child(odd) .rm-card-accent { background: linear-gradient(90deg, #FF6B35, #FF3864); }
+.rm-milestone:nth-child(odd) .rm-card-accent { background: linear-gradient(90deg, #E85A20, #E02050); }
 .rm-milestone:nth-child(even) .rm-card-accent { background: linear-gradient(90deg, #635BFF, #00D4FF); }
 .rm-milestone.visible .rm-card-accent { opacity: 1; }
 .rm-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
@@ -279,17 +279,17 @@ html, body { scroll-snap-type: y proximity; }
 .rm-card-title { font-size: 1.15rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
 .rm-card-desc { font-size: 0.88rem; line-height: 1.7; color: #666; margin-bottom: 16px; }
 .rm-card-deco { display: flex; align-items: center; gap: 10px; }
-.rm-deco-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(255,107,53,0.3), transparent); }
-.rm-deco-line:last-child { background: linear-gradient(90deg, transparent, rgba(255,107,53,0.3)); }
+.rm-deco-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(232,90,32,0.3), transparent); }
+.rm-deco-line:last-child { background: linear-gradient(90deg, transparent, rgba(232,90,32,0.3)); }
 .rm-deco-diamond { width: 6px; height: 6px; background: var(--color-accent-orange); transform: rotate(45deg); opacity: 0.5; flex-shrink: 0; }
 .rm-milestone:nth-child(even) .rm-deco-line { background: linear-gradient(90deg, rgba(99,91,255,0.3), transparent); }
 .rm-milestone:nth-child(even) .rm-deco-line:last-child { background: linear-gradient(90deg, transparent, rgba(99,91,255,0.3)); }
 .rm-milestone:nth-child(even) .rm-deco-diamond { background: var(--color-accent-purple); }
-.rm-milestone.visible .rm-card:hover { border-color: rgba(255,107,53,0.25) !important; box-shadow: 0 0 30px rgba(255,107,53,0.1), 0 12px 40px rgba(0,0,0,0.08) !important; transform: translateY(calc(-50% - 4px)); }
+.rm-milestone.visible .rm-card:hover { border-color: rgba(232,90,32,0.25) !important; box-shadow: 0 0 30px rgba(232,90,32,0.1), 0 12px 40px rgba(0,0,0,0.08) !important; transform: translateY(calc(-50% - 4px)); }
 .rm-milestone:nth-child(even).visible .rm-card:hover { border-color: rgba(99,91,255,0.25) !important; box-shadow: 0 0 30px rgba(99,91,255,0.1), 0 12px 40px rgba(0,0,0,0.08) !important; }
 
 .history-cta { padding: 80px 0; }
-.history-cta .cta-card { text-align: center; padding: 60px 40px; background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(99,91,255,0.04)); border: 1px solid rgba(255,107,53,0.15); border-radius: var(--radius-lg); }
+.history-cta .cta-card { text-align: center; padding: 60px 40px; background: linear-gradient(135deg, rgba(232,90,32,0.06), rgba(99,91,255,0.04)); border: 1px solid rgba(232,90,32,0.15); border-radius: var(--radius-lg); }
 .history-cta .cta-card h2 { font-size: 1.8rem; margin-bottom: 16px; color: var(--color-text-dark); }
 .history-cta .cta-card p { max-width: 500px; margin: 0 auto 32px; color: var(--color-text-dark-secondary); }
 

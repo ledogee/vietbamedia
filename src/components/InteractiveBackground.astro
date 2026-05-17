@@ -53,12 +53,14 @@
       uResolution: {
         value: new THREE.Vector2(window.innerWidth, window.innerHeight),
       },
+      uMobile: { value: window.innerWidth <= 768 ? 1.0 : 0.0 },
     };
 
     // ── Shader Material ──
     const vertexShader = `
       uniform float uTime;
       uniform vec2 uMouse;
+      uniform float uMobile;
       varying vec2 vUv;
       varying float vSize;
       varying vec2 vPos;
@@ -118,8 +120,9 @@
         pos.z += rimInfluence * 0.3 * sin(uTime);
 
         // 4. SIZE & SCALE
-        float baseSize = 0.012 + (sin(uTime + pos.x) * 0.003);
-        float activeSize = 0.028;
+        float mobileFactor = mix(1.0, 0.5, uMobile);
+        float baseSize = (0.012 + (sin(uTime + pos.x) * 0.003)) * mobileFactor;
+        float activeSize = 0.028 * mobileFactor;
         float currentScale = baseSize + (rimInfluence * activeSize);
         float stretch = rimInfluence * 0.02;
 
@@ -154,10 +157,10 @@
 
         // Vietba brand colors
         vec3 navy   = vec3(0.04, 0.15, 0.25);   // #0A2540 — idle base
-        vec3 cOrange = vec3(1.0, 0.42, 0.21);    // #FF6B35 — primary
+        vec3 cOrange = vec3(0.91, 0.35, 0.13);   // #E85A20 — primary
         vec3 cPurple = vec3(0.39, 0.36, 1.0);    // #635BFF — blurple
         vec3 cCyan   = vec3(0.0, 0.83, 1.0);     // #00D4FF — accent
-        vec3 cPink   = vec3(1.0, 0.22, 0.39);    // #FF3864 — accent
+        vec3 cPink   = vec3(0.88, 0.13, 0.31);   // #E02050 — accent
 
         // Dynamic color shifting across the field
         float t = uTime * 1.2;
@@ -332,6 +335,7 @@
         camera.updateProjectionMatrix();
         renderer.setSize(w, h);
         uniforms.uResolution.value.set(w, h);
+        uniforms.uMobile.value = w <= 768 ? 1.0 : 0.0;
       }, 150);
     });
    } catch (e) {

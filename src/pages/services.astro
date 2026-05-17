@@ -26,7 +26,7 @@ const serviceBullets: string[][] = [
   ["Hội nghị & hội thảo", "Lễ ra mắt sản phẩm", "Teambuilding quy mô lớn", "Roadshow & activation"],
 ];
 
-const accents = ["#FF6B35","#635BFF","#00D4FF","#FF3864","#FF6B35","#635BFF","#00D4FF","#FF3864"];
+const accents = ["#E85A20","#635BFF","#00D4FF","#E02050","#E85A20","#635BFF","#00D4FF","#E02050"];
 function hexRgba(hex: string, a: number) {
   const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
   return `rgba(${r},${g},${b},${a})`;
@@ -209,11 +209,11 @@ const items = t.services.items;
 .svc-marquee {
   width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; position: relative; margin-top: 24px;
   background: var(--color-gradient-subtle);
-  border: 1px solid rgba(255, 107, 53, 0.04);
+  border: 1px solid rgba(232, 90, 32, 0.04);
   border-radius: 16px;
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   box-shadow:
-    0 4px 24px rgba(255, 107, 53, 0.05),
+    0 4px 24px rgba(232, 90, 32, 0.05),
     0 1px 0 rgba(255, 255, 255, 0.3) inset;
   padding: 16px 0;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
