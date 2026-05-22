@@ -396,12 +396,12 @@
         {
           "title": "Port & island forecasting",
           "desc": "Providing daily weather forecasts for seaports, islands, and transit points, serving maritime transport and logistics operations.",
-          "img": "/images/weather/weather-08-sea-forecast.jpeg"
+          "img": "/images/weather/port-island-forecast.jpg"
         },
         {
           "title": "Marine weather forecasting",
           "desc": "Providing marine weather forecasting services including waves, wind, currents, tides, and dangerous phenomena for maritime transport, fishing, and offshore petroleum operations.",
-          "img": "/images/weather/weather-09-australia-forecast.jpeg"
+          "img": "/images/weather/sea-weather-forecast.jpg"
         },
         {
           "title": "Storm & disaster warnings",
@@ -486,7 +486,7 @@
       "wniHighlight": "Weathernews (WNI) is the world's largest private weather company headquartered in Japan, with a network of offices in over 21 countries and 7 global service centers. WNI possesses the world's leading weather data system along with a team of over 1,000 experts.",
       "images": [
         "/images/weather/weather-01-noaa-office.jpeg",
-        "/images/weather/weather-02-forecast-center.png",
+        "/images/weather/expert-team.jpg",
         "/images/weather/weather-03-hanoi-dashboard.jpeg",
         "/images/weather/weather-12-vietnamese-app.jpeg"
       ]

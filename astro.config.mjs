@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ledogee.github.io',
-  base: '/vietbamedia',
+  site: 'https://vietbagroup.com',
+  base: '/',
 });

@@ -307,12 +307,12 @@
         {
           "title": "Dự báo cảng biển & đảo",
           "desc": "Cung cấp dự báo thời tiết hàng ngày cho các cảng biển, đảo và điểm trung chuyển, phục vụ hoạt động vận tải biển và logistics.",
-          "img": "/images/weather/weather-08-sea-forecast.jpeg"
+          "img": "/images/weather/port-island-forecast.jpg"
         },
         {
           "title": "Dự báo thời tiết biển",
           "desc": "Cung cấp dịch vụ dự báo thời tiết trên biển gồm sóng, gió, dòng chảy, thuỷ triều và các hiện tượng nguy hiểm phục vụ vận tải biển, khai thác thủy sản, dầu khí ngoài khơi.",
-          "img": "/images/weather/weather-09-australia-forecast.jpeg"
+          "img": "/images/weather/sea-weather-forecast.jpg"
         },
         {
           "title": "Cảnh báo bão & thiên tai",
@@ -397,7 +397,7 @@
       "wniHighlight": "Weathernews (WNI) là công ty thời tiết tư nhân lớn nhất thế giới có trụ sở tại Nhật Bản, với mạng lưới văn phòng tại hơn 21 quốc gia và 7 trung tâm cung cấp dịch vụ toàn cầu. WNI sở hữu hệ thống dữ liệu thời tiết hàng đầu thế giới cùng đội ngũ hơn 1.000 chuyên gia.",
       "images": [
         "/images/weather/weather-01-noaa-office.jpeg",
-        "/images/weather/weather-02-forecast-center.png",
+        "/images/weather/expert-team.jpg",
         "/images/weather/weather-03-hanoi-dashboard.jpeg",
         "/images/weather/weather-12-vietnamese-app.jpeg"
       ]
