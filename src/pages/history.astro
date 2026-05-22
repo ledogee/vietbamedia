@@ -175,7 +175,7 @@ const pinPositions = [
   }, { threshold: 0.5 });
   counters.forEach((c) => cObserver.observe(c));
 
-  // Scroll hint — fast scroll to roadmap
+  // Scroll hint - fast scroll to roadmap
   const scrollHint = document.querySelector('.hero-scroll-hint');
   scrollHint?.addEventListener('click', (e) => {
     e.preventDefault();
@@ -332,7 +332,7 @@ html, body { scroll-snap-type: y proximity; }
   width: 48px;
   height: 62px;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
-  /* Start above, invisible — like held above the map */
+  /* Start above, invisible - like held above the map */
   opacity: 0;
   transform: translateY(-40px) scale(0.6);
 }

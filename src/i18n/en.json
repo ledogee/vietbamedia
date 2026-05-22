@@ -11,7 +11,7 @@
   "hero": {
     "title": "Empower your",
     "titleHighlight": "business potential",
-    "subtitle": "Partnering with businesses in every media campaign — from concept to success.",
+    "subtitle": "Partnering with businesses in every media campaign - from concept to success.",
     "cta": "Get consultation",
     "scrollDown": "Explore more"
   },
@@ -47,13 +47,13 @@
     { "img": "/images/projects/project-nguoi-di-xuyen-tuong.png", "title": "Brain Wall VN", "subtitle": "Licensed gameshow from Japan" },
     { "img": "/images/projects/project-vietnam-airline-festa.png", "title": "Vietnam Airline Festa", "subtitle": "Premier large-scale events" },
     { "img": "/images/projects/project-sales-day-2019.png", "title": "Sales Day 2019", "subtitle": "Professional event organization" },
-    { "img": "/images/projects/project-hoi-nghi-khach-hang.png", "title": "Client Conference", "subtitle": "Connecting businesses — Expanding opportunities" },
+    { "img": "/images/projects/project-hoi-nghi-khach-hang.png", "title": "Client Conference", "subtitle": "Connecting businesses - Expanding opportunities" },
     { "img": "/images/projects/project-usaid.png", "title": "USAID", "subtitle": "International development communications" }
   ],
   "pageHero": {
     "about": {
       "tag": "About us",
-      "title": "Shared passion — Harvesting success",
+      "title": "Shared passion - Harvesting success",
       "subtitle": "Nearly 30 years partnering with Vietnamese businesses in every media campaign."
     },
     "services": {
@@ -79,12 +79,12 @@
     "careers": {
       "tag": "Careers",
       "title": "Career opportunities",
-      "subtitle": "Join Vietba Group — where you grow your career with a passion for media."
+      "subtitle": "Join Vietba Group - where you grow your career with a passion for media."
     }
   },
   "about": {
     "sectionTag": "About us",
-    "title": "Shared passion — Harvesting success",
+    "title": "Shared passion - Harvesting success",
     "description": "Founded in 1999, Vietba Group is one of Vietnam's leading professional media consulting companies. We are proud to be the first company to bring internationally licensed gameshows to Vietnam, while pioneering in television production, digital marketing, and comprehensive media strategy consulting.",
     "description2": "For the growth of our valued clients, we are dedicated to providing practical media solutions at reasonable costs, focusing on effectiveness in brand promotion and optimizing the benefits of each brand in every campaign.",
     "stats": {
@@ -241,13 +241,13 @@
     "navPrev": "Prev",
     "navNext": "Next",
     "items": [
-      { "year": "1999", "title": "Company founded", "desc": "On March 10, 1999, Vietba Media Development JSC was established — one of Vietnam's first professional media consulting companies." },
+      { "year": "1999", "title": "Company founded", "desc": "On March 10, 1999, Vietba Media Development JSC was established - one of Vietnam's first professional media consulting companies." },
       { "year": "2001", "title": "Wheel of Fortune VN", "desc": "Vietba Media became the first company to bring licensed gameshows to Vietnam. The show aired continuously for 15 years with 811 episodes on VTV3." },
       { "year": "2007", "title": "Good night baby", "desc": "A beloved children's program airing daily at 9PM on VTV3 for 6 years, winning the hearts of parents and children alike." },
-      { "year": "2009", "title": "InvestTV launched", "desc": "InvestTV was Vietnam's first socialized TV channel on investment economics — an effective and impressive collaboration between VBG, the Ministry of Planning and Investment, and VTVcab." },
+      { "year": "2009", "title": "InvestTV launched", "desc": "InvestTV was Vietnam's first socialized TV channel on investment economics - an effective and impressive collaboration between VBG, the Ministry of Planning and Investment, and VTVcab." },
       { "year": "2012", "title": "Weather & technology center", "desc": "Launched the Weather & Technology Center, providing specialized forecasting services for power, aviation, agriculture, and petroleum industries." },
       { "year": "2014", "title": "Brain Wall Vietnam", "desc": "Sports-themed gameshow licensed from Japan's Brain Wall (Nookabe), aired from 2014–2020. A children's version launched in 2017." },
-      { "year": "2015", "title": "MChannel launch", "desc": "On December 18, 2015, InvestTV transformed into MChannel — Vietnam's first TV channel exclusively dedicated to men's content." },
+      { "year": "2015", "title": "MChannel launch", "desc": "On December 18, 2015, InvestTV transformed into MChannel - Vietnam's first TV channel exclusively dedicated to men's content." },
       { "year": "2022", "title": "Became Vietba Group", "desc": "On April 21, 2022, officially transformed into Vietba Group JSC with 1 headquarters, 2 representative offices, and 2 subsidiaries." }
     ]
   },
@@ -289,7 +289,7 @@
   "careers": {
     "sectionTag": "Careers",
     "title": "Job openings",
-    "subtitle": "Join Vietba Group — where you grow your career with a passion for media.",
+    "subtitle": "Join Vietba Group - where you grow your career with a passion for media.",
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group was established in 1999 with 100% Vietnamese capital. Over 20 years of building and development, we have established our name in Vietnam's media industry. To this day, Vietba Group is among the TOP advertising and media companies in Vietnam.",
     "introSub": "Vietba Group has become a trusted and effective partner for corporations and enterprises, prestigious TV stations, and renowned publications in the following fields:",
@@ -503,6 +503,6 @@
   },
   "footer": {
     "copyright": "© 2026 Vietba Group. All Rights Reserved.",
-    "description": "Vietba Group JSC — Vietnam's leading professional media consulting company."
+    "description": "Vietba Group JSC - Vietnam's leading professional media consulting company."
   }
 }

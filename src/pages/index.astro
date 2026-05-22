@@ -6,11 +6,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 // Icons for services
 const serviceIcons: Record<string, string> = {
-  content: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
-  digital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>`,
-  booking: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>`,
-  event: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`,
-  ooh: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 7h10M7 12h10M7 17h5"/></svg>`,
+  content: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>`,
+  digital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>`,
+  booking: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>`,
+  event: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M21.29 14.7a2.43 2.43 0 0 0-2.65-.52c-.3.12-.57.3-.8.53l-.34.34-.35-.34a2.43 2.43 0 0 0-2.65-.53c-.3.12-.56.3-.79.53-.95.94-1 2.53.2 3.74L17.5 22l3.6-3.55c1.2-1.21 1.14-2.8.19-3.74Z"/></svg>`,
+  ooh: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 20H8"/><path d="M17 9h.01"/><rect x="12" y="4" width="10" height="16" rx="2"/><path d="M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4"/><circle cx="17" cy="15" r="1"/><path d="M18.5 20H21"/></svg>`,
 };
 
 // Strength icons
@@ -162,7 +162,7 @@ const partners = [
 ---
 
 <Layout lang="vi" heroLogo showBackground>
-  <!-- 1. Hero — White with Interactive Background -->
+  <!-- 1. Hero - White with Interactive Background -->
   <section class="hero-white" id="hero">
     <div class="container hero-content">
       <div class="hero-logo-centered" id="heroLogo">
@@ -321,7 +321,7 @@ const partners = [
     </div>
   </section>
 
-  <!-- 3. Thế Mạnh (Dark navy — full screen) -->
+  <!-- 3. Thế Mạnh (Dark navy - full screen) -->
   <section class="section section-dark section-fullscreen" id="strengths">
     <div class="container">
       <div class="section-header fade-in">
@@ -350,7 +350,7 @@ const partners = [
     </div>
   </section>
 
-  <!-- 4. Dịch Vụ Truyền Thông (Light — full screen) -->
+  <!-- 4. Dịch Vụ Truyền Thông (Light - full screen) -->
   <section
     class="section section-light section-fullscreen"
     id="services-teaser"
@@ -392,7 +392,7 @@ const partners = [
     </div>
   </section>
 
-  <!-- 5. Hành Trình Phát Triển — Carousel Spotlight (Dark navy) -->
+  <!-- 5. Hành Trình Phát Triển - Carousel Spotlight (Dark navy) -->
   <section
     class="section section-dark tl-section"
     id="timeline-teaser"
@@ -863,7 +863,7 @@ const partners = [
       transform: translateX(-50%) translate(-15px, 20px) scale(1.15);
     }
   }
-  /* ─── About intro — compact to fit 100vh with partners ─── */
+  /* ─── About intro - compact to fit 100vh with partners ─── */
   #about-intro {
     padding: 64px 0;
   }
@@ -1031,6 +1031,7 @@ const partners = [
     text-decoration: none;
     color: inherit;
     display: block;
+    height: 100%;
   }
   .service-card {
     padding: 40px 24px;
@@ -1040,6 +1041,7 @@ const partners = [
     transition: all var(--transition);
     box-shadow: 0 1px 3px rgba(10, 37, 64, 0.06);
     text-align: center;
+    height: 100%;
   }
   .service-card:hover {
     transform: translateY(-4px);
