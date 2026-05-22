@@ -29,3 +29,9 @@ scripts/
 # reference docs
 vietbagroup_website.md
 TODO-website-updates.md
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
