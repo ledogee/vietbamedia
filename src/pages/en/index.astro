@@ -316,17 +316,19 @@ const partners = [
       <div class="strengths-grid">
         {
           t.strengths.items.map((item, i) => (
-            <div class="strength-card fade-in">
-              <div class="strength-icon-wrapper">
-                <div
-                  class={`strength-icon ${i === 0 ? "orange" : "purple"}`}
-                  set:html={strengthIcons[item.icon]}
-                />
+            <a href={`${base}/en/services`} class="strength-card-link">
+              <div class="strength-card fade-in">
+                <div class="strength-icon-wrapper">
+                  <div
+                    class={`strength-icon ${i === 0 ? "orange" : "purple"}`}
+                    set:html={strengthIcons[item.icon]}
+                  />
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+                <div class={`strength-accent ${i === 0 ? "orange" : "purple"}`} />
               </div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-              <div class={`strength-accent ${i === 0 ? "orange" : "purple"}`} />
-            </div>
+            </a>
           ))
         }
       </div>
@@ -934,6 +936,14 @@ const partners = [
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+  .strength-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .strength-card-link:hover {
+    color: inherit;
+  }
   .strength-card {
     position: relative;
     padding: 56px 44px;
@@ -951,7 +961,7 @@ const partners = [
     box-shadow: 0 0 40px var(--color-glow-orange),
       0 12px 40px rgba(0, 0, 0, 0.3);
   }
-  .strength-card:nth-child(2):hover {
+  .strength-card-link:nth-child(2) .strength-card:hover {
     border-color: rgba(99, 91, 255, 0.3);
     box-shadow: 0 0 40px var(--color-glow-purple),
       0 12px 40px rgba(0, 0, 0, 0.3);
