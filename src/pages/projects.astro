@@ -422,6 +422,12 @@ const rest = items.slice(3);
 .cta-card .btn-glow {
   position: relative; background: #fff; color: var(--color-accent-orange);
 }
+.cta-card .btn-glow:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.25), 0 4px 16px rgba(0, 0, 0, 0.15);
+  color: var(--color-accent-orange);
+}
+.cta-card .btn-glow::before { display: none; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {

@@ -20,36 +20,50 @@ const strengthIcons: Record<string, string> = {
 };
 
 // Service items for media services section
+// Map each service key to its corresponding section anchor on /en/services
+const serviceAnchors: Record<string, string> = {
+  content: "#svc-1",
+  digital: "#svc-4",
+  booking: "#svc-5",
+  ooh: "#svc-5",
+  event: "#svc-7",
+};
+
 const mediaServices = [
   {
     key: "content",
     title: "Multi-platform content production",
     desc: "Professional content production: TVCs, MVs, viral clips, short films and digital content.",
     icon: serviceIcons.content,
+    href: `${base}/en/services${serviceAnchors.content}`,
   },
   {
     key: "digital",
     title: "Digital marketing",
     desc: "Comprehensive digital marketing strategies, SEO, SEM and content marketing.",
     icon: serviceIcons.digital,
+    href: `${base}/en/services${serviceAnchors.digital}`,
   },
   {
     key: "booking",
     title: "Media booking",
     desc: "TV, radio, press, PR, KOLs and media channel booking services.",
     icon: serviceIcons.booking,
+    href: `${base}/en/services${serviceAnchors.booking}`,
   },
   {
     key: "ooh",
     title: "Outdoor advertising (OOH)",
     desc: "Strategic OOH advertising at prime locations nationwide.",
     icon: serviceIcons.ooh,
+    href: `${base}/en/services${serviceAnchors.ooh}`,
   },
   {
     key: "event",
     title: "Event organization",
     desc: "Professional events from conferences and launches to large-scale teambuilding.",
     icon: serviceIcons.event,
+    href: `${base}/en/services${serviceAnchors.event}`,
   },
 ];
 
@@ -348,13 +362,15 @@ const partners = [
       <div class="services-grid">
         {
           mediaServices.map((s) => (
-            <div class="service-card fade-in">
-              <div class="service-icon-wrap">
-                <div class="service-icon" set:html={s.icon} />
+            <a href={s.href} class="service-card-link">
+              <div class="service-card fade-in">
+                <div class="service-icon-wrap">
+                  <div class="service-icon" set:html={s.icon} />
+                </div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
               </div>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
+            </a>
           ))
         }
       </div>
@@ -1007,6 +1023,11 @@ const partners = [
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 24px;
+  }
+  .service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
   .service-card {
     padding: 40px 24px;
