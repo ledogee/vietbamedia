@@ -65,7 +65,12 @@ const items = t.services.items;
       <ul class="svc-bullets-light">
         {serviceBullets[0].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[0]}`}></span>{b}</li>)}
       </ul>
-      <a href={`${base}/en/contact`} class="svc-cta-light">Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      <div class="svc-card-actions-light">
+        {(items[0] as any).detailPage && (
+          <a href={`${base}${(items[0] as any).detailPage}`} class="svc-detail-link-light">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+        )}
+        <a href={`${base}/en/contact`} class="svc-cta-light">Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
     </div>
   </section>
 
@@ -88,7 +93,12 @@ const items = t.services.items;
               <ul class="svc-bullets-compact">
                 {serviceBullets[i].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[i]}`}></span>{b}</li>)}
               </ul>
-              <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[i]}`}>Get Started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+              <div class="svc-card-actions">
+                {(items[i] as any).detailPage && (
+                  <a href={`${base}${(items[i] as any).detailPage}`} class="svc-detail-link" style={`--cta-color:${accents[i]}`}>Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+                )}
+                <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[i]}`}>Get Started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+              </div>
             </div>
           </div>
         ))}
@@ -129,7 +139,12 @@ const items = t.services.items;
           <h2>{items[4].title}</h2>
           <p class="svc-desc">{items[4].desc}</p>
           <ul class="svc-bullets">{serviceBullets[4].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[4]}`}></span>{b}</li>)}</ul>
-          <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[4]}`}>Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          <div class="svc-card-actions">
+            {(items[4] as any).detailPage && (
+              <a href={`${base}${(items[4] as any).detailPage}`} class="svc-detail-link" style={`--cta-color:${accents[4]}`}>Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+            )}
+            <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[4]}`}>Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
         </div>
       </div>
     </div>
@@ -154,7 +169,12 @@ const items = t.services.items;
               <ul class="svc-bullets-compact">
                 {serviceBullets[i].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[i]}`}></span>{b}</li>)}
               </ul>
-              <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[i]}`}>Get Started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+              <div class="svc-card-actions">
+                {(items[i] as any).detailPage && (
+                  <a href={`${base}${(items[i] as any).detailPage}`} class="svc-detail-link" style={`--cta-color:${accents[i]}`}>Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+                )}
+                <a href={`${base}/en/contact`} class="svc-cta" style={`--cta-color:${accents[i]}`}>Get Started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+              </div>
             </div>
           </div>
         ))}
@@ -174,7 +194,12 @@ const items = t.services.items;
       <ul class="svc-bullets-light">
         {serviceBullets[7].map(b => <li><span class="svc-bullet-dot" style={`background:${accents[7]}`}></span>{b}</li>)}
       </ul>
-      <a href={`${base}/en/contact`} class="svc-cta-light">Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      <div class="svc-card-actions-light">
+        {(items[7] as any).detailPage && (
+          <a href={`${base}${(items[7] as any).detailPage}`} class="svc-detail-link-light">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+        )}
+        <a href={`${base}/en/contact`} class="svc-cta-light">Get Started <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
     </div>
   </section>
 
@@ -304,6 +329,23 @@ const items = t.services.items;
 }
 .svc-detail-link svg { transition: transform var(--transition); }
 .svc-detail-link:hover svg { transform: translateX(3px); }
+
+/* ─── Light variant (feature banners) ─── */
+.svc-card-actions-light { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.svc-detail-link-light {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; font-weight: 600; color: var(--color-accent-orange);
+  padding: 10px 22px; border-radius: 50px;
+  background: #fff; border: none; transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.svc-detail-link-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,255,255,0.25);
+  color: var(--color-accent-orange);
+}
+.svc-detail-link-light svg { transition: transform var(--transition); }
+.svc-detail-link-light:hover svg { transform: translateX(3px); }
 .cta-card { text-align: center; padding: 80px 40px; background: var(--color-gradient); border-radius: var(--radius-lg); position: relative; overflow: hidden; }
 .cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.12) 0%, transparent 60%); pointer-events: none; }
 .cta-card h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 16px; position: relative; }
