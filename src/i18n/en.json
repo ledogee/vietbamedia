@@ -126,6 +126,7 @@
         "title": "Comprehensive media strategy consulting",
         "desc": "Comprehensive media strategy consulting: positioning, building, developing, and defending brands.",
         "img": "/images/services/service-communications.jpg",
+        "detailPage": "/en/services/communications",
         "detailDesc": "With a team of top industry experts, Vietba Group provides comprehensive media strategy consulting for businesses. From brand positioning and communication planning to crisis management, we accompany our clients through every circumstance.",
         "highlights": ["Consulting for 2000+ clients", "Media crisis management", "Multi-channel strategy", "Nearly 30 years of experience"],
         "achievements": ["2000+ clients", "30 years experience", "50+ major campaigns", "100% retention rate"],
@@ -135,6 +136,7 @@
         "title": "Technology & digital transformation",
         "desc": "Comprehensive digital transformation solutions, building modern technology platforms, AI systems, and e-commerce solutions.",
         "img": "/images/services/service-tech.jpg",
+        "detailPage": "/en/services/technology",
         "detailDesc": "Vietba Group provides comprehensive digital transformation solutions, from enterprise software and e-commerce platforms to AI applications. Our experienced engineering team delivers bespoke solutions tailored to each business.",
         "highlights": ["AI & automation solutions", "E-commerce platforms", "IT infrastructure & security", "Enterprise management software"],
         "achievements": ["50+ solutions", "20+ AI systems", "100+ enterprises", "24/7 support"],
@@ -144,6 +146,7 @@
         "title": "Multi-platform content production",
         "desc": "Professional multi-platform content production: gameshows, sitcoms, children's programs, TVCs, music videos, viral clips, short films, and digital content.",
         "img": "/images/services/service-production.jpg",
+        "detailPage": "/en/services/production",
         "detailDesc": "With over 25 years of TV and multi-platform content production experience, Vietba Group pioneered bringing internationally licensed gameshows to Vietnam. From 'Wheel of Fortune VN' with 811 episodes on VTV3, to 'Brain Wall' (Japan), 'Fun Squad' (G-Wars, Japan), 'Light or Dark' (Heaven or Hell, Germany), 'Golden Goal' (Norway) — each show became a cultural phenomenon. Beyond gameshows, we produce children's programs with strong educational value like 'Good Night Baby', social sitcoms like 'Colors of Beauty' and 'Colorful Corners', plus hundreds of TVCs, music videos, and creative digital content.",
         "highlights": ["11+ major TV productions", "811 episodes of Wheel of Fortune on VTV3", "Licensed formats from US, Japan, Germany, Norway", "Sitcoms, short films & digital content"],
         "achievements": ["11+ TV productions", "811 episodes aired", "5 intl. formats", "400+ TVCs & MVs"],
@@ -163,6 +166,7 @@
         "title": "Digital marketing",
         "desc": "Comprehensive digital marketing: social media management, SEO, SEM, content marketing, performance ads, and building digital ecosystems for enterprises.",
         "img": "/images/services/service-digital-marketing.jpg",
+        "detailPage": "/en/services/digital",
         "detailDesc": "Vietba Group's digital marketing team provides comprehensive solutions from strategy to execution across all platforms. We have supported major brands like Bamboo Airways, EVN HCMC, VTD Smarthome, and CEDELAR in building and growing their digital channels. Services include: corporate page management, multi-platform content creation (Facebook, TikTok, Instagram, YouTube), performance advertising (Google Ads, Facebook Ads, TikTok Ads), website SEO, email marketing, and campaign data analytics. As an official Google and Facebook partner, we deliver optimal ROI for every budget.",
         "highlights": ["Managing 50+ corporate pages", "Average ROI increase of 200%", "Official Google & Facebook Partner", "Multi-platform ads: Google, FB, TikTok"],
         "achievements": ["50+ fan pages", "ROI 200%+", "4 ad platforms", "2000+ campaigns"],
@@ -172,6 +176,7 @@
         "title": "Media booking",
         "desc": "Multi-channel media booking: television, radio, press, PR articles, online advertising, KOLs/Influencers, and an extensive nationwide partner network.",
         "img": "/images/services/service-booking-media.jpg",
+        "detailPage": "/en/services/booking",
         "detailDesc": "With an extensive media partner network built over 25+ years in the industry, Vietba Group provides comprehensive media booking services across all platforms. We are strategic partners of major TV networks (VTV, HTV, THVL, SCTV, VTVcab, Hanoi TV) and maintain a network of over 500 KOLs and influencers across multiple fields. Services include: TV advertising spot booking, PR articles in major publications, radio advertising, digital banners, program sponsorships, and influencer marketing campaigns. We optimize media budgets and measure effectiveness for every campaign.",
         "highlights": ["Partners: VTV, HTV, THVL, SCTV, VTVcab", "Network of 500+ KOLs & Influencers", "Nationwide PR & press", "Multi-channel: TV, radio, digital, print"],
         "achievements": ["6 TV networks", "500+ KOLs", "100+ publications", "25+ years of relationships"],
@@ -181,6 +186,7 @@
         "title": "Outdoor advertising",
         "desc": "Strategic OOH advertising: billboards, LED displays, airport advertising, highway signage, vehicle wraps, and transit media at prime locations nationwide.",
         "img": "/images/services/service-overview.png",
+        "detailPage": "/en/services/ooh",
         "detailDesc": "Vietba Group owns and manages a strategic network of outdoor advertising (OOH) locations nationwide, covering highways, city centers, airports, and bus stations. Our diverse product portfolio includes: large-format billboards at key intersections, LED screens at shopping centers and high-traffic areas, advertising at international airports (Noi Bai, Tan Son Nhat, Cam Ranh), highway signage along the North-South corridor, bus wraps, and transit media. Our experienced OOH consultants help clients select optimal locations and ad formats to maximize reach and frequency.",
         "highlights": ["Nationwide billboards & LED", "International airport advertising", "North-South highway signage", "Vehicle wraps & transit media"],
         "achievements": ["3 international airports", "Coverage in 63 provinces", "100+ OOH locations", "5 ad formats"],
@@ -190,6 +196,7 @@
         "title": "Event organization",
         "desc": "Full-service professional event organization: client conferences, product launches, roadshows, activations, gala dinners, teambuilding, and large-scale events.",
         "img": "/images/services/service-events.jpg",
+        "detailPage": "/en/services/events",
         "detailDesc": "Vietba Group organizes full-service professional events for 50 to 5,000+ attendees, serving diverse needs from annual client conferences and corporate anniversaries to product launches, nationwide roadshows, and brand activations. We have partnered with major corporations including Vietcombank (Annual Client Conference 2020, 55th Anniversary, Gala), Vietnam Airlines (Festa), USAID, and many other leading enterprises. Our end-to-end services include: concept & script development, stage & venue design, operations management, MCs & entertainers, sound & lighting, catering, live streaming, and post-event reporting.",
         "highlights": ["Events for 50 - 5,000+ attendees", "Partners: Vietcombank, Vietnam Airlines, USAID", "Full-service: concept, staging, operations", "Roadshows, activations & gala dinners"],
         "achievements": ["5000+ guests/event", "200+ events", "Vietcombank, VNA", "North-Central-South"],
@@ -507,6 +514,200 @@
         "bio": "Many years of experience at the Southern Hydro-Meteorological Station. Specialized research on the East Sea, petroleum extraction zones, and maritime routes. Expert in waves, wind, atmospheric circulation, synoptic patterns affecting the East Sea, and application of numerical models in marine weather forecasting."
       },
       "teamDesc": "Our team of experts and advisors are trained in-depth in Ocean Physics, Meteorology, Hydrology, and Marine Dynamics with PhD, Master's, and Engineering degrees to ensure the highest professional quality and accuracy."
+    }
+  },
+  "serviceDetail": {
+    "communications": {
+      "sectionTag": "Services",
+      "title": "Comprehensive media strategy consulting",
+      "subtitle": "Partnering with businesses in every media campaign — from brand positioning to crisis management.",
+      "intro": {
+        "title": "Service overview",
+        "paragraphs": [
+          "With a team of top industry experts and nearly 30 years of experience, Vietba Group provides comprehensive media strategy consulting for businesses. From brand positioning and communication planning to crisis management, we accompany our clients through every circumstance.",
+          "We have successfully consulted for over 2,000 clients, including international organizations such as USAID, major corporations like Vietcombank, Bamboo Airways, and many other prestigious enterprises across all sectors."
+        ],
+        "image": "/images/services/service-communications.jpg"
+      },
+      "achievements": [
+        { "value": "2000+", "label": "Clients" },
+        { "value": "30", "label": "Years experience" },
+        { "value": "50+", "label": "Major campaigns" },
+        { "value": "100%", "label": "Retention rate" }
+      ],
+      "highlights": ["Consulting for 2000+ clients", "Media crisis management", "Multi-channel strategy", "Nearly 30 years of experience"],
+      "gallery": [
+        { "img": "/images/projects/project-usaid.png", "caption": "USAID — International development communications" },
+        { "img": "/images/projects/project-bamboo-airways.png", "caption": "Bamboo Airways" },
+        { "img": "/images/projects/project-vietcombank-laos.png", "caption": "Vietcombank Laos 2019" },
+        { "img": "/images/projects/project-aba-2016.png", "caption": "ABA 2016" }
+      ]
+    },
+    "technology": {
+      "sectionTag": "Services",
+      "title": "Technology & digital transformation",
+      "subtitle": "Comprehensive digital transformation solutions, building modern technology platforms for enterprises.",
+      "intro": {
+        "title": "Service overview",
+        "paragraphs": [
+          "Vietba Group provides comprehensive digital transformation solutions, from enterprise software and e-commerce platforms to AI applications. Our experienced engineering team delivers bespoke solutions tailored to each business.",
+          "We have successfully deployed over 50 technology solutions, including VTD Smarthome systems, the CEDELAR platform, InvestTV channel, and many other large-scale digital transformation projects."
+        ],
+        "image": "/images/services/service-tech.jpg"
+      },
+      "achievements": [
+        { "value": "50+", "label": "Solutions" },
+        { "value": "20+", "label": "AI systems" },
+        { "value": "100+", "label": "Enterprises" },
+        { "value": "24/7", "label": "Support" }
+      ],
+      "highlights": ["AI & automation solutions", "E-commerce platforms", "IT infrastructure & security", "Enterprise management software"],
+      "gallery": [
+        { "img": "/images/projects/project-vtd-smarthome.png", "caption": "VTD Smarthome" },
+        { "img": "/images/projects/project-cedelar.png", "caption": "CEDELAR" },
+        { "img": "/images/projects/project-invest-tv.png", "caption": "Invest TV" },
+        { "img": "/images/projects/project-m-channel.png", "caption": "MChannel – VTVCab 15" }
+      ]
+    },
+    "production": {
+      "sectionTag": "Services",
+      "title": "Multi-platform content production",
+      "subtitle": "Over 25 years pioneering TV and multi-platform content — from internationally licensed gameshows to sitcoms, TVCs, and digital content.",
+      "intro": {
+        "title": "Service overview",
+        "paragraphs": [
+          "Vietba Group pioneered bringing internationally licensed gameshows to Vietnam. 'Wheel of Fortune' (licensed from the US) aired for 15 consecutive years with 811 episodes on VTV3, hosted by Lai Van Sam and Long Vu, becoming an iconic cultural phenomenon of Vietnamese television.",
+          "Building on this success, we produced a series of hit licensed shows: 'Brain Wall' (Japan) in 3 versions (original/kids/family), 'Fun Squad' (G-Wars, Japan) on VTV3, 'Light or Dark' (Heaven or Hell, Germany), 'Golden Goal' (Norway), and 'Tuesday Night Chat' (KBS, South Korea) on HanoiTV.",
+          "Beyond gameshows, Vietba also produced the beloved children's program 'Good Night Baby' on VTV3 with host Chi Kinh Hong — airing daily at 9PM, it became a cherished memory for generations of Vietnamese families. The sitcoms 'Colors of Beauty' and 'Colorful Corners' on VTV3 also left deep impressions with audiences."
+        ],
+        "image": "/images/services/service-production.jpg"
+      },
+      "achievements": [
+        { "value": "11+", "label": "TV productions" },
+        { "value": "811", "label": "Episodes aired" },
+        { "value": "5", "label": "Intl. formats" },
+        { "value": "400+", "label": "TVCs & MVs" }
+      ],
+      "highlights": [
+        "Wheel of Fortune — 811 episodes on VTV3, hosts Lai Van Sam, Long Vu",
+        "Brain Wall — Licensed from Japan, 3 versions",
+        "Fun Squad (G-Wars), Light or Dark (Heaven or Hell)",
+        "Golden Goal, Tuesday Night Chat (KBS Korea)",
+        "Good Night Baby — VTV3, host Chi Kinh Hong",
+        "Sitcoms: Colors of Beauty, Colorful Corners — VTV3",
+        "Licensed formats from US, Japan, Germany, Norway, S. Korea",
+        "400+ TVCs, music videos, and creative digital content"
+      ],
+      "gallery": [
+        { "img": "/images/projects/project-chiec-non-ky-dieu.png", "caption": "Wheel of Fortune VN" },
+        { "img": "/images/projects/project-nguoi-di-xuyen-tuong.png", "caption": "Brain Wall VN" },
+        { "img": "/images/projects/project-biet-doi-vui-nhon.png", "caption": "Fun Squad — G-Wars" },
+        { "img": "/images/projects/project-anh-sang-bong-toi.png", "caption": "Light or Dark — Heaven or Hell" }
+      ]
+    },
+    "digital": {
+      "sectionTag": "Services",
+      "title": "Digital marketing",
+      "subtitle": "Comprehensive digital marketing strategy — from social media management, SEO, SEM to multi-platform performance ads.",
+      "intro": {
+        "title": "Service overview",
+        "paragraphs": [
+          "Vietba Group's digital marketing team provides comprehensive solutions from strategy to execution across all platforms. We have supported major brands like Bamboo Airways, EVN HCMC, VTD Smarthome, and CEDELAR in building and growing their digital channels.",
+          "Services include: corporate page management, multi-platform content creation (Facebook, TikTok, Instagram, YouTube), performance advertising (Google Ads, Facebook Ads, TikTok Ads), website SEO, email marketing, and campaign data analytics. As an official Google and Facebook partner, we deliver optimal ROI for every budget."
+        ],
+        "image": "/images/services/service-digital-marketing.jpg"
+      },
+      "achievements": [
+        { "value": "50+", "label": "Fan pages" },
+        { "value": "200%+", "label": "Average ROI" },
+        { "value": "4", "label": "Ad platforms" },
+        { "value": "2000+", "label": "Campaigns" }
+      ],
+      "highlights": ["Managing 50+ corporate pages", "Average ROI increase of 200%", "Official Google & Facebook Partner", "Multi-platform ads: Google, FB, TikTok"],
+      "gallery": [
+        { "img": "/images/projects/project-bamboo-airways.png", "caption": "Bamboo Airways" },
+        { "img": "/images/projects/project-evn-hcmc.png", "caption": "EVN HCMC" },
+        { "img": "/images/projects/project-vtd-smarthome.png", "caption": "VTD Smarthome" },
+        { "img": "/images/projects/project-cedelar.png", "caption": "CEDELAR" }
+      ]
+    },
+    "booking": {
+      "sectionTag": "Services",
+      "title": "Media booking",
+      "subtitle": "Multi-channel media booking services with an extensive nationwide partner network.",
+      "intro": {
+        "title": "Service overview",
+        "paragraphs": [
+          "With an extensive media partner network built over 25+ years in the industry, Vietba Group provides comprehensive media booking services across all platforms. We are strategic partners of major TV networks: VTV, HTV, THVL, SCTV, VTVcab, and Hanoi TV.",
+          "Services include: TV advertising spot booking, PR articles in major publications, radio advertising, digital banners, program sponsorships, and influencer marketing campaigns. We maintain a network of over 500 KOLs and influencers across multiple fields, optimizing media budgets and measuring effectiveness for every campaign."
+        ],
+        "image": "/images/services/service-booking-media.jpg"
+      },
+      "achievements": [
+        { "value": "6", "label": "TV networks" },
+        { "value": "500+", "label": "KOLs" },
+        { "value": "100+", "label": "Publications" },
+        { "value": "25+", "label": "Years of relationships" }
+      ],
+      "highlights": ["Partners: VTV, HTV, THVL, SCTV, VTVcab", "Network of 500+ KOLs & Influencers", "Nationwide PR & press", "Multi-channel: TV, radio, digital, print"],
+      "gallery": [
+        { "img": "/images/projects/project-usaid.png", "caption": "USAID" },
+        { "img": "/images/projects/project-bamboo-airways.png", "caption": "Bamboo Airways" },
+        { "img": "/images/projects/project-vietnam-airline-festa.png", "caption": "Vietnam Airline Festa" },
+        { "img": "/images/projects/project-sales-day-2019.png", "caption": "Sales Day 2019" }
+      ]
+    },
+    "ooh": {
+      "sectionTag": "Services",
+      "title": "Outdoor advertising (OOH)",
+      "subtitle": "Strategic OOH advertising at prime locations nationwide — airports, highways, and city centers.",
+      "intro": {
+        "title": "Service overview",
+        "paragraphs": [
+          "Vietba Group owns and manages a strategic network of outdoor advertising (OOH) locations nationwide, covering highways, city centers, airports, and bus stations.",
+          "Our diverse product portfolio includes: large-format billboards at key intersections, LED screens at shopping centers, advertising at international airports (Noi Bai, Tan Son Nhat, Cam Ranh), highway signage along the North-South corridor, bus wraps, and transit media."
+        ],
+        "image": "/images/services/service-overview.png"
+      },
+      "achievements": [
+        { "value": "3", "label": "Intl. airports" },
+        { "value": "63", "label": "Provinces covered" },
+        { "value": "100+", "label": "OOH locations" },
+        { "value": "5", "label": "Ad formats" }
+      ],
+      "highlights": ["Nationwide billboards & LED", "International airport advertising", "North-South highway signage", "Vehicle wraps & transit media"],
+      "gallery": [
+        { "img": "/images/projects/project-vietnam-airline-festa.png", "caption": "Vietnam Airline Festa" },
+        { "img": "/images/projects/project-sales-day-2019.png", "caption": "Sales Day 2019" },
+        { "img": "/images/projects/project-aba-2016.png", "caption": "ABA 2016" },
+        { "img": "/images/projects/project-hoi-nghi-khach-hang.png", "caption": "Client Conference" }
+      ]
+    },
+    "events": {
+      "sectionTag": "Services",
+      "title": "Event organization",
+      "subtitle": "Professional event organization for 50 to 5,000+ attendees — conferences, product launches, roadshows, and teambuilding.",
+      "intro": {
+        "title": "Service overview",
+        "paragraphs": [
+          "Vietba Group organizes full-service professional events for 50 to 5,000+ attendees. From client conferences and product launches to roadshows and teambuilding, we ensure every event is a memorable experience.",
+          "We have partnered with major corporations including Vietcombank (Annual Client Conference, 55th Anniversary, Gala), Vietnam Airlines (Festa), USAID, and many other leading enterprises. Our end-to-end services include concept & script development, stage & venue design, operations management, MCs & entertainers, sound & lighting, live streaming, and post-event reporting."
+        ],
+        "image": "/images/services/service-events.jpg"
+      },
+      "achievements": [
+        { "value": "5000+", "label": "Guests/event" },
+        { "value": "200+", "label": "Events" },
+        { "value": "VCB, VNA", "label": "Major partners" },
+        { "value": "3", "label": "North-Central-South" }
+      ],
+      "highlights": ["International conferences & seminars", "Product launch events", "Large-scale teambuilding", "Roadshows & activations"],
+      "gallery": [
+        { "img": "/images/events/VVW01290.JPG", "caption": "VCB KHTT Gala" },
+        { "img": "/images/events/IMG_5460.JPG", "caption": "Vietcombank 55th Gala" },
+        { "img": "/images/events/IMG_5727.JPG", "caption": "VCB 55th Anniversary" },
+        { "img": "/images/events/IMG_0175.jpg", "caption": "Vietcombank KHTT 2020" }
+      ]
     }
   },
   "footer": {

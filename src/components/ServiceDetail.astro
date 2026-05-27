@@ -1,0 +1,234 @@
+---
+interface Props {
+  lang: 'vi' | 'en';
+  sectionTag: string;
+  title: string;
+  subtitle: string;
+  intro: { title: string; paragraphs: string[]; image: string };
+  achievements: { value: string; label: string }[];
+  highlights: string[];
+  gallery: { img: string; caption: string }[];
+  ctaTitle: string;
+  ctaSub: string;
+  ctaBtn: string;
+  ctaLink: string;
+}
+
+const {
+  lang,
+  sectionTag,
+  title,
+  subtitle,
+  intro,
+  achievements,
+  highlights,
+  gallery,
+  ctaTitle,
+  ctaSub,
+  ctaBtn,
+  ctaLink,
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!-- Hero -->
+<section class="page-hero sv-hero">
+  <div class="container">
+    <p class="section-tag fade-in">{sectionTag}</p>
+    <h1 class="section-title fade-in">{title}</h1>
+    <p class="fade-in sv-hero-sub">{subtitle}</p>
+  </div>
+</section>
+
+<!-- Section I: Introduction -->
+<section class="section section-light" id="sv-intro">
+  <div class="container">
+    <div class="sv-intro-grid fade-in">
+      <div class="sv-intro-text">
+        <h2 class="sv-section-title">{intro.title}</h2>
+        {intro.paragraphs.map((p, i) => (
+          <p style={i > 0 ? 'margin-top:16px' : ''}>{p}</p>
+        ))}
+      </div>
+      <div class="sv-intro-img">
+        <img src={`${base}${intro.image}`} alt={title} loading="eager" />
+        <div class="sv-intro-img-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section II: Achievements -->
+<section class="section sv-section-alt" id="sv-achievements">
+  <div class="container">
+    <div class="sv-achievements-grid fade-in">
+      {achievements.map((a, i) => (
+        <div class="sv-achievement-card" style={`--delay:${i * 100}ms`}>
+          <span class="sv-achievement-value">{a.value}</span>
+          <span class="sv-achievement-label">{a.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Section III: Highlights -->
+<section class="section section-light" id="sv-highlights">
+  <div class="container">
+    <div class="sv-highlights-card fade-in">
+      <h3 class="sv-highlights-title">{lang === 'vi' ? 'Năng lực nổi bật' : 'Key Capabilities'}</h3>
+      <ul class="sv-highlights-list">
+        {highlights.map(h => (
+          <li>
+            <span class="sv-check">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            {h}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Section IV: Gallery -->
+<section class="section sv-section-alt" id="sv-gallery">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-tag">{lang === 'vi' ? 'Dự án liên quan' : 'Related Projects'}</p>
+      <h2 class="section-title">{lang === 'vi' ? 'Dự án tiêu biểu' : 'Featured Projects'}</h2>
+    </div>
+    <div class="sv-gallery-grid fade-in">
+      {gallery.map((g, i) => (
+        <div class="sv-gallery-cell">
+          <img src={`${base}${g.img}`} alt={g.caption} loading="lazy" />
+          <div class="sv-gallery-caption">{g.caption}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-light contact-cta" id="sv-cta">
+  <div class="container">
+    <div class="cta-card fade-in">
+      <h2>{ctaTitle}</h2>
+      <p>{ctaSub}</p>
+      <a href={ctaLink} class="btn-glow">{ctaBtn}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ─── Hero ─── */
+.sv-hero { padding-bottom: 60px; }
+.sv-hero-sub { font-size: 1.1rem; max-width: 640px; margin: 0 auto 12px; color: var(--color-text-dark-secondary); }
+
+/* ─── Section alt ─── */
+.sv-section-alt { background: var(--color-bg-light); }
+.sv-section-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: var(--color-text-dark); margin-bottom: 16px; }
+
+/* ─── Intro Grid ─── */
+.sv-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.sv-intro-text p { font-size: 0.95rem; color: var(--color-text-dark-secondary); line-height: 1.85; }
+.sv-intro-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 20px 60px rgba(10,37,64,0.12); }
+.sv-intro-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+.sv-intro-img-accent {
+  position: absolute; top: -20px; right: -20px; width: 120px; height: 120px;
+  background: var(--color-gradient); border-radius: 50%; opacity: 0.15; filter: blur(30px);
+}
+
+/* ─── Achievements Grid ─── */
+.sv-achievements-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.sv-achievement-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: #fff; border-radius: var(--radius-lg); padding: 36px 24px;
+  border: 1px solid rgba(10,37,64,0.06); box-shadow: 0 2px 12px rgba(10,37,64,0.06);
+  transition: all 0.4s ease; animation-delay: var(--delay);
+  text-align: center;
+}
+.sv-achievement-card:hover {
+  transform: translateY(-6px); box-shadow: 0 16px 48px rgba(10,37,64,0.12);
+  border-color: rgba(232, 90, 32, 0.15);
+}
+.sv-achievement-value {
+  font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;
+  background: var(--color-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1.2; margin-bottom: 8px;
+}
+.sv-achievement-label {
+  font-size: 0.85rem; font-weight: 600; color: var(--color-text-dark-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* ─── Highlights ─── */
+.sv-highlights-card {
+  background: #fff; border-radius: var(--radius-lg); padding: 32px;
+  border: 1px solid rgba(10,37,64,0.06); box-shadow: 0 2px 12px rgba(10,37,64,0.06);
+}
+.sv-highlights-title { font-size: 1.1rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 20px; }
+.sv-highlights-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.sv-highlights-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.88rem; color: var(--color-text-dark-secondary); line-height: 1.6;
+}
+.sv-check { color: var(--color-accent-orange); flex-shrink: 0; margin-top: 2px; }
+
+/* ─── Gallery Grid ─── */
+.sv-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.sv-gallery-cell {
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: 0 4px 16px rgba(10,37,64,0.08); position: relative;
+  background: #fff;
+}
+.sv-gallery-cell img {
+  width: 100%; height: 220px; object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.sv-gallery-cell:hover img { transform: scale(1.05); }
+.sv-gallery-caption {
+  padding: 14px 18px; font-size: 0.85rem; font-weight: 600;
+  color: var(--color-text-dark); background: #fff;
+}
+
+/* ─── CTA ─── */
+.cta-card {
+  text-align: center; padding: 80px 40px;
+  background: var(--color-gradient); border-radius: var(--radius-lg);
+  position: relative; overflow: hidden;
+}
+.cta-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-card h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 16px; position: relative; }
+.cta-card p { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 550px; margin: 0 auto 32px; position: relative; }
+.cta-card .btn-glow { position: relative; background: #fff; color: var(--color-accent-orange); }
+.cta-card .btn-glow:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.25), 0 4px 16px rgba(0, 0, 0, 0.15);
+  color: var(--color-accent-orange);
+}
+.cta-card .btn-glow::before { display: none; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .sv-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sv-intro-img img { height: 260px; }
+  .sv-achievements-grid { grid-template-columns: 1fr 1fr; }
+  .sv-highlights-list { grid-template-columns: 1fr; }
+  .sv-gallery-grid { grid-template-columns: 1fr 1fr; }
+  .cta-card { padding: 50px 24px; }
+}
+@media (max-width: 480px) {
+  .sv-achievements-grid { grid-template-columns: 1fr; }
+  .sv-gallery-grid { grid-template-columns: 1fr; }
+  .sv-gallery-cell img { height: 180px; }
+}
+</style>
