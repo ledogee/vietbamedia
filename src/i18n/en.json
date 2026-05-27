@@ -128,6 +128,7 @@
         "img": "/images/services/service-communications.jpg",
         "detailDesc": "With a team of top industry experts, Vietba Group provides comprehensive media strategy consulting for businesses. From brand positioning and communication planning to crisis management, we accompany our clients through every circumstance.",
         "highlights": ["Consulting for 2000+ clients", "Media crisis management", "Multi-channel strategy", "Nearly 30 years of experience"],
+        "achievements": ["2000+ clients", "30 years experience", "50+ major campaigns", "100% retention rate"],
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       },
       {
@@ -136,14 +137,16 @@
         "img": "/images/services/service-tech.jpg",
         "detailDesc": "Vietba Group provides comprehensive digital transformation solutions, from enterprise software and e-commerce platforms to AI applications. Our experienced engineering team delivers bespoke solutions tailored to each business.",
         "highlights": ["AI & automation solutions", "E-commerce platforms", "IT infrastructure & security", "Enterprise management software"],
+        "achievements": ["50+ solutions", "20+ AI systems", "100+ enterprises", "24/7 support"],
         "relatedProjects": ["/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png", "/images/projects/project-invest-tv.png", "/images/projects/project-m-channel.png"]
       },
       {
         "title": "Multi-platform content production",
-        "desc": "Professional multi-platform content production: TVCs, music videos, viral clips, short films, and content for digital & social media.",
+        "desc": "Professional multi-platform content production: gameshows, sitcoms, children's programs, TVCs, music videos, viral clips, short films, and digital content.",
         "img": "/images/services/service-production.jpg",
-        "detailDesc": "Vietba Group provides professional multi-platform content production services, from advertising TVCs, music videos, and viral clips to creative content for digital and social media. Our experienced production team ensures high visual quality and effective communication messaging.",
-        "highlights": ["Professional advertising TVCs", "Creative MVs & viral clips", "Digital & social media content", "Short films & brand films"],
+        "detailDesc": "With over 25 years of TV and multi-platform content production experience, Vietba Group pioneered bringing internationally licensed gameshows to Vietnam. From 'Wheel of Fortune VN' with 811 episodes on VTV3, to 'Brain Wall' (Japan), 'Fun Squad' (G-Wars, Japan), 'Light or Dark' (Heaven or Hell, Germany), 'Golden Goal' (Norway) — each show became a cultural phenomenon. Beyond gameshows, we produce children's programs with strong educational value like 'Good Night Baby', social sitcoms like 'Colors of Beauty' and 'Colorful Corners', plus hundreds of TVCs, music videos, and creative digital content.",
+        "highlights": ["11+ major TV productions", "811 episodes of Wheel of Fortune on VTV3", "Licensed formats from US, Japan, Germany, Norway", "Sitcoms, short films & digital content"],
+        "achievements": ["11+ TV productions", "811 episodes aired", "5 intl. formats", "400+ TVCs & MVs"],
         "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
       },
       {
@@ -152,39 +155,44 @@
         "img": "/images/services/service-weather-tech.jpg",
         "detailPage": "/en/weather",
         "detailDesc": "Vietba Group's Weather & Technology Center provides specialized weather forecasting and hydro-meteorological data services for power, aviation, agriculture, petroleum, and maritime industries. Partnering with Japan's WNI and international agencies.",
-        "highlights": ["Partnership with Japan's WNI", "Forecasting for 6+ industries", "Dedicated weather TV channel", "Advanced meteorological data"],
+        "highlights": ["Partnership with Japan's WNI", "Forecasting for 6+ industries", "Advanced meteorological data", "Disaster & storm warnings"],
+        "achievements": ["6+ industries served", "High-resolution data", "International partnerships", "24/7 bulletins"],
         "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
       },
       {
         "title": "Digital marketing",
-        "desc": "Comprehensive digital marketing strategies, social media management, SEO, SEM, and effective content marketing.",
+        "desc": "Comprehensive digital marketing: social media management, SEO, SEM, content marketing, performance ads, and building digital ecosystems for enterprises.",
         "img": "/images/services/service-digital-marketing.jpg",
-        "detailDesc": "Vietba Group's digital marketing team provides comprehensive digital solutions, from overall strategy to campaign execution. We have supported major brands like Bamboo Airways and EVN HCMC in building and growing their digital channels.",
-        "highlights": ["Managing 50+ corporate pages", "Average ROI increase of 200%", "Google & Facebook Partner", "Specialized content strategy"],
+        "detailDesc": "Vietba Group's digital marketing team provides comprehensive solutions from strategy to execution across all platforms. We have supported major brands like Bamboo Airways, EVN HCMC, VTD Smarthome, and CEDELAR in building and growing their digital channels. Services include: corporate page management, multi-platform content creation (Facebook, TikTok, Instagram, YouTube), performance advertising (Google Ads, Facebook Ads, TikTok Ads), website SEO, email marketing, and campaign data analytics. As an official Google and Facebook partner, we deliver optimal ROI for every budget.",
+        "highlights": ["Managing 50+ corporate pages", "Average ROI increase of 200%", "Official Google & Facebook Partner", "Multi-platform ads: Google, FB, TikTok"],
+        "achievements": ["50+ fan pages", "ROI 200%+", "4 ad platforms", "2000+ campaigns"],
         "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
       },
       {
         "title": "Media booking",
-        "desc": "Booking services for television, radio, press, PR articles, posters/banners, OOH, and KOLs.",
+        "desc": "Multi-channel media booking: television, radio, press, PR articles, online advertising, KOLs/Influencers, and an extensive nationwide partner network.",
         "img": "/images/services/service-booking-media.jpg",
-        "detailDesc": "With an extensive media partner network, Vietba Group provides comprehensive media booking services across all platforms: television, radio, press, digital, and influencer. We optimize cost and effectiveness for every campaign.",
-        "highlights": ["Partners: VTV, HTV, THVL", "Network of 500+ KOLs", "Nationwide PR & press", "OOH & outdoor advertising"],
+        "detailDesc": "With an extensive media partner network built over 25+ years in the industry, Vietba Group provides comprehensive media booking services across all platforms. We are strategic partners of major TV networks (VTV, HTV, THVL, SCTV, VTVcab, Hanoi TV) and maintain a network of over 500 KOLs and influencers across multiple fields. Services include: TV advertising spot booking, PR articles in major publications, radio advertising, digital banners, program sponsorships, and influencer marketing campaigns. We optimize media budgets and measure effectiveness for every campaign.",
+        "highlights": ["Partners: VTV, HTV, THVL, SCTV, VTVcab", "Network of 500+ KOLs & Influencers", "Nationwide PR & press", "Multi-channel: TV, radio, digital, print"],
+        "achievements": ["6 TV networks", "500+ KOLs", "100+ publications", "25+ years of relationships"],
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png"]
       },
       {
         "title": "Outdoor advertising",
-        "desc": "Strategic OOH advertising solutions at prime locations nationwide.",
+        "desc": "Strategic OOH advertising: billboards, LED displays, airport advertising, highway signage, vehicle wraps, and transit media at prime locations nationwide.",
         "img": "/images/services/service-overview.png",
-        "detailDesc": "Vietba Group owns a network of strategic outdoor advertising locations nationwide, including billboards, LED displays, airport advertising, vehicle wraps, and transit media. We provide optimal placement consulting to ensure maximum communication effectiveness.",
-        "highlights": ["Nationwide billboards & LED", "Airport advertising", "Vehicle wraps & transit media", "Prime strategic locations"],
+        "detailDesc": "Vietba Group owns and manages a strategic network of outdoor advertising (OOH) locations nationwide, covering highways, city centers, airports, and bus stations. Our diverse product portfolio includes: large-format billboards at key intersections, LED screens at shopping centers and high-traffic areas, advertising at international airports (Noi Bai, Tan Son Nhat, Cam Ranh), highway signage along the North-South corridor, bus wraps, and transit media. Our experienced OOH consultants help clients select optimal locations and ad formats to maximize reach and frequency.",
+        "highlights": ["Nationwide billboards & LED", "International airport advertising", "North-South highway signage", "Vehicle wraps & transit media"],
+        "achievements": ["3 international airports", "Coverage in 63 provinces", "100+ OOH locations", "5 ad formats"],
         "relatedProjects": ["/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png", "/images/projects/project-aba-2016.png", "/images/projects/project-hoi-nghi-khach-hang.png"]
       },
       {
         "title": "Event organization",
-        "desc": "Professional event organization from conferences, launches to large-scale teambuilding programs.",
+        "desc": "Full-service professional event organization: client conferences, product launches, roadshows, activations, gala dinners, teambuilding, and large-scale events.",
         "img": "/images/services/service-events.jpg",
-        "detailDesc": "Vietba Group organizes professional events ranging from dozens to thousands of attendees. From client conferences and product launches to roadshows and teambuilding, we ensure every event is a memorable experience.",
-        "highlights": ["International conferences & seminars", "Product launches", "Large-scale teambuilding", "Roadshows & activations"],
+        "detailDesc": "Vietba Group organizes full-service professional events for 50 to 5,000+ attendees, serving diverse needs from annual client conferences and corporate anniversaries to product launches, nationwide roadshows, and brand activations. We have partnered with major corporations including Vietcombank (Annual Client Conference 2020, 55th Anniversary, Gala), Vietnam Airlines (Festa), USAID, and many other leading enterprises. Our end-to-end services include: concept & script development, stage & venue design, operations management, MCs & entertainers, sound & lighting, catering, live streaming, and post-event reporting.",
+        "highlights": ["Events for 50 - 5,000+ attendees", "Partners: Vietcombank, Vietnam Airlines, USAID", "Full-service: concept, staging, operations", "Roadshows, activations & gala dinners"],
+        "achievements": ["5000+ guests/event", "200+ events", "Vietcombank, VNA", "North-Central-South"],
         "relatedProjects": ["/images/events/VVW01290.JPG", "/images/events/IMG_5460.JPG", "/images/events/IMG_5727.JPG", "/images/events/IMG_0175.jpg"]
       }
     ]
@@ -243,7 +251,7 @@
     "items": [
       { "year": "1999", "title": "Company founded", "desc": "On March 10, 1999, Vietba Media Development JSC was established - one of Vietnam's first professional media consulting companies." },
       { "year": "2001", "title": "Wheel of Fortune VN", "desc": "Vietba Media became the first company to bring licensed gameshows to Vietnam. The show aired continuously for 15 years with 811 episodes on VTV3." },
-      { "year": "2007", "title": "Good night baby", "desc": "A beloved children's program airing daily at 9PM on VTV3 for 6 years, winning the hearts of parents and children alike." },
+      { "year": "2007", "title": "Good night baby", "desc": "A children's program of profound educational value, airing daily at 9PM on VTV3. Blending entertainment with meaningful learning, 'Good Night Baby' became a cherished memory for generations of Vietnamese families, nurturing the hearts and imaginations of millions of children." },
       { "year": "2009", "title": "InvestTV launched", "desc": "InvestTV was Vietnam's first socialized TV channel on investment economics - an effective and impressive collaboration between VBG, the Ministry of Planning and Investment, and VTVcab." },
       { "year": "2012", "title": "Weather & technology center", "desc": "Launched the Weather & Technology Center, providing specialized forecasting services for power, aviation, agriculture, and petroleum industries." },
       { "year": "2014", "title": "Brain Wall Vietnam", "desc": "Sports-themed gameshow licensed from Japan's Brain Wall (Nookabe), aired from 2014–2020. A children's version launched in 2017." },
@@ -382,7 +390,7 @@
     "intro": {
       "title": "Overview",
       "p1": "Vietnam is one of the countries most severely affected by climate change and extreme weather events. In recent years, the frequency and intensity of storms, heavy rainfall, flooding, droughts, prolonged heatwaves, and saltwater intrusion have been increasing, causing significant damage to lives, property, infrastructure, and broadly impacting socio-economic development.",
-      "p2": "Vietba owns the Weather & Technology Center along with a dedicated weather TV channel on multiple platforms, specializing in providing industry-specific weather forecasting solutions, applied hydro-meteorological data, weather bulletins, and in-depth disaster warnings for major enterprises and corporations in the fields of: power, aviation, television broadcasting, agriculture, petroleum, maritime, and shipping.",
+      "p2": "Vietba owns the Weather & Technology Center, specializing in providing industry-specific weather forecasting solutions, applied hydro-meteorological data, weather bulletins, and in-depth disaster warnings for major enterprises and corporations in the fields of: power, aviation, television broadcasting, agriculture, petroleum, maritime, and shipping.",
       "p3": "In addition to its professional expertise, Vietba collaborates with reputable domestic and international forecasting agencies to enhance data quality, accuracy, and information update speed."
     },
     "products": {

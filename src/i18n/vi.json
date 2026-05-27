@@ -128,6 +128,7 @@
         "img": "/images/services/service-communications.jpg",
         "detailDesc": "Với đội ngũ chuyên gia hàng đầu trong ngành, Vietba Group tư vấn chiến lược truyền thông tổng thể cho doanh nghiệp. Từ định vị thương hiệu, xây dựng kế hoạch truyền thông đến quản lý khủng hoảng, chúng tôi đồng hành cùng khách hàng trong mọi hoàn cảnh.",
         "highlights": ["Tư vấn cho 2000+ khách hàng", "Quản lý khủng hoảng truyền thông", "Chiến lược đa kênh", "Gần 30 năm kinh nghiệm"],
+        "achievements": ["2000+ khách hàng", "30 năm kinh nghiệm", "50+ chiến dịch lớn", "100% tỷ lệ duy trì"],
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietcombank-laos.png", "/images/projects/project-aba-2016.png"]
       },
       {
@@ -136,14 +137,16 @@
         "img": "/images/services/service-tech.jpg",
         "detailDesc": "Vietba Group cung cấp giải pháp chuyển đổi số toàn diện, từ xây dựng phần mềm doanh nghiệp, nền tảng thương mại điện tử đến ứng dụng AI. Đội ngũ kỹ sư giàu kinh nghiệm với phương pháp 'may đo' cho từng doanh nghiệp.",
         "highlights": ["Giải pháp AI & tự động hóa", "Nền tảng thương mại điện tử", "Hạ tầng CNTT & bảo mật", "Phần mềm quản trị doanh nghiệp"],
+        "achievements": ["50+ giải pháp", "20+ hệ thống AI", "100+ doanh nghiệp", "Hỗ trợ 24/7"],
         "relatedProjects": ["/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png", "/images/projects/project-invest-tv.png", "/images/projects/project-m-channel.png"]
       },
       {
         "title": "Sản xuất content đa nền tảng",
-        "desc": "Sản xuất nội dung chuyên nghiệp đa nền tảng: TVC, MV, Viral Clip, phim ngắn và nội dung cho digital & mạng xã hội.",
+        "desc": "Sản xuất nội dung chuyên nghiệp đa nền tảng: gameshow, sitcom, chương trình thiếu nhi, TVC, MV, Viral Clip, phim ngắn và nội dung cho digital & mạng xã hội.",
         "img": "/images/services/service-production.jpg",
-        "detailDesc": "Vietba Group cung cấp dịch vụ sản xuất content chuyên nghiệp đa nền tảng, từ TVC quảng cáo, MV ca nhạc, viral clip đến nội dung sáng tạo cho digital và mạng xã hội. Đội ngũ sản xuất giàu kinh nghiệm đảm bảo chất lượng hình ảnh và thông điệp truyền thông hiệu quả.",
-        "highlights": ["TVC quảng cáo chuyên nghiệp", "MV & Viral Clip sáng tạo", "Nội dung digital & mạng xã hội", "Phim ngắn & brand film"],
+        "detailDesc": "Với hơn 25 năm kinh nghiệm sản xuất nội dung truyền hình và đa nền tảng, Vietba Group là đơn vị tiên phong đưa gameshow bản quyền quốc tế về Việt Nam. Từ 'Chiếc nón kỳ diệu' (Wheel of Fortune) với 811 tập phát sóng trên VTV3, đến 'Người đi xuyên tường' (Brain Wall), 'Biệt đội vui nhộn' (G-Wars), 'Ánh sáng hay bóng tối' (Heaven or Hell), 'Bàn Thắng vàng'... mỗi chương trình đều trở thành hiện tượng văn hóa đại chúng. Bên cạnh gameshow, chúng tôi còn sản xuất các chương trình thiếu nhi giàu giá trị giáo dục như 'Chúc bé ngủ ngon', sitcom xã hội như 'Sắc màu phái đẹp' và 'Góc phố muôn màu', cùng hàng trăm TVC, MV và nội dung digital sáng tạo.",
+        "highlights": ["11+ chương trình truyền hình lớn", "811 tập Chiếc nón kỳ diệu trên VTV3", "Gameshow bản quyền Mỹ, Nhật, Đức, Na Uy", "Sitcom, phim ngắn & nội dung digital"],
+        "achievements": ["11+ CT truyền hình", "811 tập phát sóng", "5 format quốc tế", "400+ TVC & MV"],
         "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
       },
       {
@@ -152,31 +155,35 @@
         "img": "/images/services/service-weather-tech.jpg",
         "detailPage": "/weather",
         "detailDesc": "Trung tâm Thời tiết và Công nghệ của Vietba Group cung cấp dịch vụ dự báo thời tiết chuyên ngành, dữ liệu khí tượng thủy văn cho các ngành điện lực, hàng không, nông nghiệp, dầu khí, hàng hải. Hợp tác với WNI Nhật Bản và các cơ quan quốc tế.",
-        "highlights": ["Hợp tác WNI Nhật Bản", "Dự báo cho 6+ ngành công nghiệp", "Kênh truyền hình thời tiết riêng", "Dữ liệu khí tượng chuyên sâu"],
+        "highlights": ["Hợp tác WNI Nhật Bản", "Dự báo cho 6+ ngành công nghiệp", "Dữ liệu khí tượng chuyên sâu", "Cảnh báo thiên tai & bão"],
+        "achievements": ["6+ ngành công nghiệp", "Dữ liệu độ phân giải cao", "Hợp tác quốc tế", "Bản tin 24/7"],
         "relatedProjects": ["/images/projects/project-thoi-tiet-cong-nghe.png", "/images/projects/project-thoi-tiet-hoc-duong.png", "/images/projects/project-thoi-tiet-quoc-te.png", "/images/projects/project-thoi-tiet-hang-khong.png"]
       },
       {
         "title": "Digital marketing",
-        "desc": "Chiến lược marketing số toàn diện, quản lý mạng xã hội, SEO, SEM và content marketing hiệu quả.",
+        "desc": "Chiến lược marketing số toàn diện: quản lý mạng xã hội, SEO, SEM, content marketing, performance ads và xây dựng hệ sinh thái digital cho doanh nghiệp.",
         "img": "/images/services/service-digital-marketing.jpg",
-        "detailDesc": "Đội ngũ chuyên gia digital marketing của Vietba Group cung cấp giải pháp marketing số toàn diện, từ chiến lược tổng thể đến triển khai chiến dịch. Chúng tôi đã hỗ trợ các thương hiệu lớn như Bamboo Airways, EVN HCMC trong việc xây dựng và phát triển kênh digital.",
-        "highlights": ["Quản lý hơn 50+ fanpage doanh nghiệp", "ROI trung bình tăng 200%", "Đối tác Google & Facebook", "Content strategy chuyên biệt"],
+        "detailDesc": "Đội ngũ chuyên gia digital marketing của Vietba Group cung cấp giải pháp marketing số toàn diện, từ chiến lược tổng thể đến triển khai chiến dịch trên mọi nền tảng. Chúng tôi đã hỗ trợ các thương hiệu lớn như Bamboo Airways, EVN HCMC, VTD Smarthome, CEDELAR trong việc xây dựng và phát triển kênh digital. Dịch vụ bao gồm: quản lý fanpage doanh nghiệp, sáng tạo nội dung đa nền tảng (Facebook, TikTok, Instagram, YouTube), chạy quảng cáo hiệu suất (Google Ads, Facebook Ads, TikTok Ads), SEO website, email marketing và phân tích dữ liệu chiến dịch. Với tư cách là đối tác chính thức của Google và Facebook, chúng tôi cam kết mang đến ROI tối ưu cho từng đồng ngân sách.",
+        "highlights": ["Quản lý 50+ fanpage doanh nghiệp", "ROI trung bình tăng 200%", "Đối tác Google & Facebook chính thức", "Ads đa nền tảng: Google, FB, TikTok"],
+        "achievements": ["50+ fanpage", "ROI 200%+", "4 nền tảng ads", "2000+ chiến dịch"],
         "relatedProjects": ["/images/projects/project-bamboo-airways.png", "/images/projects/project-evn-hcmc.png", "/images/projects/project-vtd-smarthome.png", "/images/projects/project-cedelar.png"]
       },
       {
         "title": "Booking media",
-        "desc": "Dịch vụ booking truyền hình, phát thanh, báo chí, bài viết PR, poster/banner, OOH và KOLs.",
+        "desc": "Dịch vụ booking truyền thông đa kênh: truyền hình, phát thanh, báo chí, bài viết PR, quảng cáo trực tuyến, KOLs/Influencer và mạng lưới đối tác rộng khắp cả nước.",
         "img": "/images/services/service-booking-media.jpg",
-        "detailDesc": "Với mạng lưới đối tác truyền thông rộng khắp, Vietba Group cung cấp dịch vụ booking media toàn diện trên mọi nền tảng: truyền hình, phát thanh, báo chí, digital và influencer. Chúng tôi tối ưu chi phí và hiệu quả cho từng chiến dịch.",
-        "highlights": ["Đối tác VTV, HTV, THVL", "Mạng lưới 500+ KOLs", "PR & báo chí toàn quốc", "OOH & quảng cáo ngoài trời"],
+        "detailDesc": "Với mạng lưới đối tác truyền thông rộng khắp và hơn 25 năm xây dựng quan hệ trong ngành, Vietba Group cung cấp dịch vụ booking media toàn diện trên mọi nền tảng. Chúng tôi là đối tác chiến lược của các đài truyền hình lớn (VTV, HTV, THVL, SCTV, VTVcab, Hanoi TV), đồng thời sở hữu mạng lưới hơn 500 KOLs và influencer đa lĩnh vực. Dịch vụ bao gồm: booking spot quảng cáo truyền hình, bài PR trên các báo lớn, quảng cáo phát thanh, banner digital, sponsorship chương trình và chiến dịch influencer marketing. Chúng tôi tối ưu ngân sách truyền thông và đo lường hiệu quả cho từng chiến dịch.",
+        "highlights": ["Đối tác VTV, HTV, THVL, SCTV, VTVcab", "Mạng lưới 500+ KOLs & Influencer", "PR & báo chí toàn quốc", "Booking đa kênh: TV, radio, digital, print"],
+        "achievements": ["6 đài truyền hình", "500+ KOLs", "100+ đầu báo", "25+ năm quan hệ"],
         "relatedProjects": ["/images/projects/project-usaid.png", "/images/projects/project-bamboo-airways.png", "/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png"]
       },
       {
         "title": "Quảng cáo ngoài trời",
-        "desc": "Giải pháp quảng cáo OOH chiến lược tại các vị trí đắc địa trên toàn quốc.",
+        "desc": "Giải pháp quảng cáo OOH chiến lược: billboard, LED, quảng cáo sân bay, bảng biển tuyến cao tốc, wrap xe, transit media tại các vị trí đắc địa trên toàn quốc.",
         "img": "/images/services/service-overview.png",
-        "detailDesc": "Vietba Group sở hữu mạng lưới vị trí quảng cáo ngoài trời chiến lược trên toàn quốc, bao gồm billboard, LED, quảng cáo tại sân bay, wrap xe và transit media. Chúng tôi tư vấn vị trí tối ưu để đảm bảo hiệu quả truyền thông cao nhất.",
-        "highlights": ["Billboard & LED toàn quốc", "Quảng cáo tại sân bay", "Wrap xe & transit media", "Vị trí đắc địa chiến lược"],
+        "detailDesc": "Vietba Group sở hữu và quản lý mạng lưới vị trí quảng cáo ngoài trời (OOH) chiến lược trên toàn quốc, phủ sóng từ các tuyến cao tốc, trung tâm thành phố đến sân bay và bến xe. Danh mục sản phẩm đa dạng bao gồm: billboard cỡ lớn tại nút giao trọng điểm, màn hình LED tại các trung tâm thương mại và khu vực sầm uất, quảng cáo tại sân bay quốc tế (Nội Bài, Tân Sơn Nhất, Cam Ranh), bảng biển trên tuyến cao tốc Bắc - Nam, wrap xe buýt và transit media. Đội ngũ tư vấn OOH giàu kinh nghiệm giúp khách hàng lựa chọn vị trí và format quảng cáo tối ưu nhất để tối đa hóa độ phủ và tần suất tiếp cận.",
+        "highlights": ["Billboard & LED toàn quốc", "Quảng cáo sân bay quốc tế", "Bảng biển cao tốc Bắc - Nam", "Wrap xe & transit media"],
+        "achievements": ["3 sân bay quốc tế", "Phủ sóng 63 tỉnh", "100+ vị trí OOH", "5 format quảng cáo"],
         "relatedProjects": ["/images/projects/project-vietnam-airline-festa.png", "/images/projects/project-sales-day-2019.png", "/images/projects/project-aba-2016.png", "/images/projects/project-hoi-nghi-khach-hang.png"]
       },
       {
@@ -243,7 +250,7 @@
     "items": [
       { "year": "1999", "title": "Thành lập công ty", "desc": "Ngày 10/03/1999, Công ty Cổ phần Phát triển Truyền thông Việt Ba được thành lập - một trong những công ty tư vấn truyền thông chuyên nghiệp đầu tiên tại Việt Nam." },
       { "year": "2001", "title": "Chiếc nón kỳ diệu", "desc": "Vietba Media là công ty đầu tiên đưa gameshow bản quyền nước ngoài về Việt Nam. Chương trình phát sóng liên tục 15 năm với 811 tập trên VTV3." },
-      { "year": "2007", "title": "Chúc bé ngủ ngon", "desc": "Chương trình thiếu nhi được yêu thích phát sóng 21h hàng ngày trên VTV3 trong suốt 6 năm, nhận được sự ủng hộ của đông đảo phụ huynh và các bé." },
+      { "year": "2007", "title": "Chúc bé ngủ ngon", "desc": "Chương trình thiếu nhi mang giá trị giáo dục sâu sắc, phát sóng 21h hàng ngày trên VTV3. Với nội dung vừa giải trí vừa giáo dục, 'Chúc bé ngủ ngon' đã trở thành ký ức đẹp đẽ của nhiều thế hệ gia đình Việt Nam, nuôi dưỡng tâm hồn và trí tưởng tượng cho hàng triệu trẻ em." },
       { "year": "2009", "title": "Ra đời InvestTV", "desc": "Kênh InvestTV là kênh xã hội hoá đầu tiên về kinh tế - đầu tư tại VN. Sự hợp tác hiệu quả và ấn tượng giữa VBG - Bộ Kế hoạch Đầu tư - VTVcab." },
       { "year": "2012", "title": "Trung tâm thời tiết \u0026 công nghệ", "desc": "Ra mắt Trung tâm Công nghệ và Thời tiết, cung cấp dịch vụ dự báo thời tiết chuyên ngành cho điện lực, hàng không, nông nghiệp, dầu khí." },
       { "year": "2014", "title": "Người đi xuyên tường", "desc": "Gameshow vận động thể thao bản quyền từ Nhật Bản (Brain Wall), phát sóng từ 2014–2020. Phiên bản nhí ra mắt năm 2017." },
@@ -293,7 +300,7 @@
     "intro": {
       "title": "Giới thiệu chung",
       "p1": "Việt Nam là một trong những quốc gia chịu ảnh hưởng nặng nề bởi biến đổi khí hậu và thời tiết cực đoan. Những năm gần đây, tần suất và cường độ của bão, mưa lớn, lũ lụt, hạn hán, nắng nóng kéo dài hay xâm nhập mặn ngày càng gia tăng, gây thiệt hại lớn về con người, tài sản, cơ sở hạ tầng và tác động sâu rộng đến phát triển kinh tế - xã hội.",
-      "p2": "Việt Ba là đơn vị sở hữu Trung tâm Thời tiết và Công nghệ cùng kênh truyền hình thời tiết riêng trên đa nền tảng, chuyên cung cấp giải pháp dự báo thời tiết chuyên ngành, dữ liệu khí tượng thủy văn ứng dụng, bản tin thời tiết và cảnh báo thiên tai chuyên sâu cho các doanh nghiệp, tập đoàn lớn trong các lĩnh vực: điện lực, hàng không, đài truyền hình, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
+      "p2": "Việt Ba là đơn vị sở hữu Trung tâm Thời tiết và Công nghệ, chuyên cung cấp giải pháp dự báo thời tiết chuyên ngành, dữ liệu khí tượng thủy văn ứng dụng, bản tin thời tiết và cảnh báo thiên tai chuyên sâu cho các doanh nghiệp, tập đoàn lớn trong các lĩnh vực: điện lực, hàng không, đài truyền hình, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
       "p3": "Bên cạnh năng lực chuyên môn, VIETBA còn hợp tác với các đơn vị và cơ quan dự báo uy tín trong nước và quốc tế nhằm nâng cao chất lượng dữ liệu, độ chính xác và tốc độ cập nhật thông tin."
     },
     "products": {
