@@ -576,9 +576,9 @@
       "intro": {
         "title": "Service overview",
         "paragraphs": [
-          "Vietba Group pioneered bringing internationally licensed gameshows to Vietnam. 'Wheel of Fortune' (licensed from the US) aired for 15 consecutive years with 811 episodes on VTV3, hosted by Lai Van Sam and Long Vu, becoming an iconic cultural phenomenon of Vietnamese television.",
-          "Building on this success, we produced a series of hit licensed shows: 'Brain Wall' (Japan) in 3 versions (original/kids/family), 'Fun Squad' (G-Wars, Japan) on VTV3, 'Light or Dark' (Heaven or Hell, Germany), 'Golden Goal' (Norway), and 'Tuesday Night Chat' (KBS, South Korea) on HanoiTV.",
-          "Beyond gameshows, Vietba also produced the beloved children's program 'Good Night Baby' on VTV3 with host Chi Kinh Hong — airing daily at 9PM, it became a cherished memory for generations of Vietnamese families. The sitcoms 'Colors of Beauty' and 'Colorful Corners' on VTV3 also left deep impressions with audiences."
+          "Vietba Group pioneered bringing internationally licensed gameshows to Vietnamese television, starting with 'Chiếc nón kỳ diệu' (Wheel of Fortune) — 811 episodes aired continuously for 15 years on VTV3, becoming an iconic cultural phenomenon for generations of viewers.",
+          "Building on this success, we produced a series of hit licensed shows from the US, Japan, Germany, Norway, and South Korea: 'Brain Wall' (3 versions), 'Fun Squad', 'Light or Dark', 'Golden Goal', along with the beloved children's program 'Good Night Baby' and sitcoms 'Colors of Beauty' and 'Colorful Corners'.",
+          "With over 11 major TV productions, 5 internationally licensed formats successfully localized, and more than 400 TVCs, music videos, and creative digital content, Vietba Group has cemented its position as a leader in multi-platform content production in Vietnam."
         ],
         "image": "/images/services/service-production.jpg"
       },
@@ -598,6 +598,84 @@
         "Licensed formats from US, Japan, Germany, Norway, S. Korea",
         "400+ TVCs, music videos, and creative digital content"
       ],
+      "programs": [
+        {
+          "name": "Chiếc nón kỳ diệu — Wheel of Fortune",
+          "years": "2000–2016",
+          "channel": "VTV3",
+          "format": "Wheel of Fortune, USA",
+          "desc": "Vietba Group was the pioneer in Vietnam in bringing internationally licensed gameshows to television, starting with Chiếc nón kỳ diệu — the Vietnamese adaptation of the famous American gameshow Wheel of Fortune.\nThe show officially premiered on VTV3 in 2001 and quickly became one of the longest-running gameshows beloved by Vietnamese audiences. Over 15 years of broadcasting with 811 episodes, the show was hosted by many renowned MCs including Lại Văn Sâm, Long Vũ, Tuấn Tú, Danh Tùng, and Đức Bảo.\nWith mysterious word puzzles, the lucky wheel, and an exciting yet intimate atmosphere, 'Chiếc nón kỳ diệu' became a familiar entertainment program for generations of viewers. Beyond the interesting contestants, the show also featured many famous artists, contributing to the enduring appeal of the gameshow throughout its many years on air."
+        },
+        {
+          "name": "Chúc bé ngủ ngon — Good Night Baby",
+          "years": "2007–2015",
+          "channel": "VTV3",
+          "desc": "Chúc bé ngủ ngon (Good Night Baby) was a children's entertainment program broadcast on VTV3 from 2007, airing at 9PM from Monday to Saturday every week. With its engaging, fun, and educational content, the show received tremendous love from young audiences and parents across the country.\nThe program was a harmonious blend of education and entertainment, helping children learn through play with gentle stories, exciting games, and meaningful lessons appropriate for their age group.\nA special highlight of the show was the character Chị Kính Hồng (Sister Pink Glasses) — a beloved companion to many children through the warm and adorable hosting style of the young MCs. Additionally, cute animated characters like Thỏ Láu (Clever Rabbit), Heo Mập (Chubby Pig), and Mèo Mimi (Mimi Cat) became iconic images in the childhood memories of many generations.\nBeyond its engaging content, the show was also remembered for its theme song 'Chúc bé ngủ ngon' — a song that created a powerful wave of popularity and was loved by children for a very long time."
+        },
+        {
+          "name": "Người đi xuyên tường Season 2 — Brain Wall",
+          "years": "2014–2016",
+          "channel": "VTV3",
+          "format": "Brain Wall, Japan",
+          "desc": "Người đi xuyên tường (Brain Wall) was an outstanding physical entertainment gameshow that quickly attracted attention and love from a wide range of audiences across all ages right from its first episodes, thanks to its fresh, humorous, and entertaining content.\nIn a landscape where physical game shows on television were becoming scarce after the success of 'Trò chơi liên tỉnh' (Inter-Provincial Games), 'Người đi xuyên tường' created a special appeal on weekend television with its dynamic format full of laughter.\nThe show's charm lay in the 'challenge walls' with unique poses, requiring contestants to be quick, flexible, and creative to navigate obstacles and avoid falling into the water. Requiring no special talent or skills, the gameshow delivered a fun, relatable atmosphere and relaxing entertainment moments for viewers.\nDespite an increasingly competitive gameshow market with many new choices, the program maintained steady appeal through flexible innovation across each broadcast season. 'Người đi xuyên tường' is recognized as one of the most impressive and outstanding gameshows on Vietnamese television at the time of its airing."
+        },
+        {
+          "name": "Người đi xuyên tường nhí — Brain Wall Kids",
+          "years": "2017",
+          "channel": "HTV7",
+          "format": "Brain Wall, Japan",
+          "desc": "Following the success of the original version, Vietba Group continued to produce the children's edition of Brain Wall, broadcasting on HTV7. As soon as it aired, the show quickly generated strong appeal and became one of the most notable children's gameshows at that time.\nWith a fun, relatable physical format combined with the innocence of the young teams, the program delivered refreshing moments, natural laughter, and gave children energetic hours of relaxation. Not only loved by young viewers, the show also received positive reception from parents thanks to its wholesome, cheerful content suitable for children."
+        },
+        {
+          "name": "Người đi xuyên tường gia đình — Brain Wall Family",
+          "years": "2018–2020",
+          "channel": "VTV3",
+          "format": "Brain Wall, Japan",
+          "desc": "Not stopping at the children's version, Vietba Group continued to develop the family edition of Brain Wall with many new improvements in game rules and presentation. The program brought a lively, hilarious atmosphere with funny situations, creating waves of relaxing laughter for audiences. The combination of physical activity, family bonding, and relatable entertainment content helped the show become a familiar choice for many families on weekend evenings, attracting viewers of all ages to gather around the TV screen."
+        },
+        {
+          "name": "Biệt đội vui nhộn — Fun Squad",
+          "years": "2017",
+          "channel": "VTV3",
+          "format": "G-Wars, Japan",
+          "desc": "Biệt đội vui nhộn (Fun Squad) was a physical gameshow based on the original Japanese format G-Wars, broadcast during prime time on VTV3. The show delivered exciting, hilarious competitions alongside numerous 'laugh-until-you-cry' moments, creating a fun entertainment atmosphere for television audiences.\nWith the charming and humorous hosting by Nguyên Khang and Ốc Thanh Vân, the show attracted viewers not only through its unique physical challenges but also through the lively interaction between MCs and contestants. The two MCs frequently participated directly in demonstrating challenges and having fun with the teams, contributing to an intimate and energetic atmosphere.\nContestants needed not only good physical fitness but also quick reflexes, dexterity, and team spirit to overcome unique challenges such as racing against a row of dominoes, cycling across monkey bridges, or navigating surprising obstacles. The water splashes, paint splatters, and 'unbelievable' situations created many humorous and memorable moments.\nBeyond that, the show also drew attention with the participation of many famous artists. More than just an entertainment gameshow, 'Biệt đội vui nhộn' promoted teamwork, bonding between family, friends, and colleagues through fun and highly interactive challenges."
+        },
+        {
+          "name": "Ánh sáng hay bóng tối — Light or Dark",
+          "years": "2017",
+          "channel": "VTV3",
+          "format": "Heaven or Hell, Germany",
+          "desc": "Ánh sáng hay bóng tối (Light or Dark) was a gameshow based on the original German format Heaven or Hell, uniquely combining quiz elements, puzzle-solving, and humorous physical challenges, broadcast on VTV3.\nContestants not only had to demonstrate knowledge, quick thinking, and reasoning ability but also had to overcome numerous surprising physical challenges. If they answered correctly, contestants would stay in 'Heaven'; conversely, wrong answers would send them down to 'Hell' to face fun but 'unbelievable' punishments.\nThe special highlight of the show was the character 'Queen of Darkness' played by Lê Khánh. With her charming, humorous, and unpredictable performance, this character continuously pushed contestants into awkward and hilarious situations, creating a unique appeal for the show. The unpredictable punishments and dynamic entertainment atmosphere helped 'Ánh sáng hay bóng tối' become an impressive gameshow with a distinctive character on television."
+        },
+        {
+          "name": "Bàn Thắng vàng — Golden Goal",
+          "years": "2016",
+          "channel": "VTV3",
+          "format": "Golden Goal, Norway",
+          "desc": "Bàn Thắng Vàng (Golden Goal) was a sports entertainment gameshow exclusively localized by Vietba Group from a world-renowned international format. The show had created a sensation in Norway with 17 consecutive seasons on the TV2 channel before being brought to Vietnam.\n'Golden Goal' delivered a unique combination of football and humorous entertainment elements, creating a lively, fun atmosphere while maintaining a strong sporting spirit. The show was built as a competition between two teams with enthusiastic support from the audience, delivering exciting and energetic matches.\nThe special feature that gave the gameshow its distinctive character was the contestants competing inside giant inflatable balls. The collisions, difficult movements, and 'laugh-until-you-cry' fall situations created numerous humorous moments, helping the show quickly attract audience attention and become one of the most notable entertainment gameshows at the time of its broadcast."
+        },
+        {
+          "name": "Sắc màu phái đẹp — Colors of Beauty",
+          "years": "",
+          "channel": "VTV3",
+          "desc": "Sắc màu phái đẹp (Colors of Beauty) was a sitcom exploring the relatable aspects of modern life from the perspective of Vietnamese women. With light, witty yet deeply humanistic content, the series suited the busy pace of modern life and became a go-to entertainment choice for female audiences aged 16 and above.\nThrough humorous yet profound situations, 'Colors of Beauty' authentically portrayed the image of modern women — striving to assert themselves in their careers while nurturing their families and shouldering many responsibilities in life. The pressures of marriage, children, career, and generational differences were depicted in a relatable, delicate, and emotional manner.\nThe series not only entertained but also conveyed many meaningful messages about sharing, empathy, and balance in modern family life. Episodes continuously addressed social issues of concern such as women after divorce, childcare and parenting, the lives of women migrating from rural to urban areas to build careers — creating a colorful tapestry of the roles and position of women in today's society."
+        },
+        {
+          "name": "Góc phố muôn màu — Colorful Corners",
+          "years": "",
+          "channel": "VTV3",
+          "desc": "Góc phố muôn màu (Colorful Corners) was a short film series broadcast at 9:30 PM from Monday to Friday every week on VTV3, bringing audiences light and relatable entertainment moments after a workday.\nEach episode was an independent story with humorous situations revolving around everyday life — family matters, friendships, social relationships, and familiar issues in modern daily life. Through the witty, natural performances of the cast, the program not only delivered relaxing laughter but also conveyed meaningful lessons and humanistic messages about life.\nWith its relatable content, easy empathy, and gentle humor, 'Colorful Corners' became a familiar entertainment program beloved by many viewers on television."
+        },
+        {
+          "name": "Chuyện phiếm tối thứ 3 — Tuesday Night Chat",
+          "years": "2008",
+          "channel": "HanoiTV",
+          "format": "KBS, South Korea",
+          "desc": "This program was created with the purpose of bringing Vietnamese audiences relaxing, meaningful moments and becoming a new playground and forum for young foreigners living, studying, and working in Vietnam. 'Tuesday Night Chat' was a talkshow licensed from the KBS (South Korea) program 'Chatting with Beauties', broadcast at 8:05 PM every Tuesday on Hanoi 1 channel. Each episode focused on a topic of interest in Vietnamese society, but viewed through the eyes of foreigners living in Vietnam.\nThe show's appeal lay in the witty yet profound perspectives of foreigners from different cultures commenting on Vietnamese society. They could also share the good and not-so-good aspects of their home countries for discussion. Since airing, the program received tremendous interest and deep affection from audiences nationwide. Many viewers wrote in sharing that the foreign friends on the show helped them draw many valuable life lessons. The endearing way of speaking and the small but sincere observations from the foreigners gave viewers relaxation after a stressful workday. Broadcasting at 8:05 PM every Tuesday on Hanoi 1 channel, running approximately 45 minutes, with content revolving around topics such as 'Vietnamese Lunar New Year', 'Vietnamese Traffic', 'Public Culture', 'Beauty'... featuring 1 humorous MC, 10 witty young foreigners, 3-5 fun Vietnamese artists, and 20 university students, the program aimed to bring audiences refreshing, humorous moments and gentle, thoughtful reflections. Moreover, the talkshow 'Tuesday Night Chat' served as a bridge between nations, promoting Vietnamese culture and helping foreigners living and working in Vietnam gain deeper understanding of the Vietnamese language, culture, society, and people."
+        }
+      ],
+      "programsSectionTitle": "Featured TV Programs",
+      "programsSectionTag": "Programs",
       "gallery": [
         { "img": "/images/projects/project-chiec-non-ky-dieu.png", "caption": "Wheel of Fortune VN" },
         { "img": "/images/projects/project-nguoi-di-xuyen-tuong.png", "caption": "Brain Wall VN" },

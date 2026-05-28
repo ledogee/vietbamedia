@@ -7,6 +7,9 @@ interface Props {
   intro: { title: string; paragraphs: string[]; image: string };
   achievements: { value: string; label: string }[];
   highlights: string[];
+  programs?: { name: string; years: string; channel: string; format?: string; desc: string }[];
+  programsSectionTitle?: string;
+  programsSectionTag?: string;
   gallery: { img: string; caption: string }[];
   ctaTitle: string;
   ctaSub: string;
@@ -22,6 +25,9 @@ const {
   intro,
   achievements,
   highlights,
+  programs,
+  programsSectionTitle,
+  programsSectionTag,
   gallery,
   ctaTitle,
   ctaSub,
@@ -91,6 +97,84 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
   </div>
 </section>
+
+{/* Section III-b: Programs (optional) */}
+{programs && programs.length > 0 && (
+  <section class="section sv-programs-section" id="sv-programs">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-tag">{programsSectionTag || (lang === 'vi' ? 'Chương trình' : 'Programs')}</p>
+        <h2 class="section-title">{programsSectionTitle || (lang === 'vi' ? 'Chương trình tiêu biểu' : 'Featured Programs')}</h2>
+      </div>
+
+      <div class="sv-stack-container">
+        {programs.map((p, i) => (
+          <article
+            class="sv-stack-card"
+            style={`--idx:${i}; z-index:${i + 1}`}
+          >
+            <div class="sv-stack-accent"></div>
+            <div class="sv-stack-inner">
+              <div class="sv-stack-num">{String(i + 1).padStart(2, '0')}</div>
+              <div class="sv-stack-body">
+                <div class="sv-stack-badges">
+                  {p.years && <span class="sv-badge sv-badge-year">{p.years}</span>}
+                  <span class="sv-badge sv-badge-channel">{p.channel}</span>
+                  {p.format && <span class="sv-badge sv-badge-format">{p.format}</span>}
+                </div>
+                <h3 class="sv-stack-name">{p.name}</h3>
+                <div class="sv-stack-desc">
+                  {p.desc.split('\n').map(para => (
+                    <p>{para}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+        <div class="sv-stack-spacer"></div>
+      </div>
+    </div>
+
+    <script>
+      {`
+        (function() {
+          const cards = document.querySelectorAll('.sv-stack-card');
+          const section = document.getElementById('sv-programs');
+          if (!cards.length || !section) return;
+
+          /* Respect reduced motion */
+          const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          /* Scale-down passed cards */
+          const cardObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (prefersReduced) return;
+              if (!e.isIntersecting && e.boundingClientRect.top < 0) {
+                e.target.classList.add('sv-stack-passed');
+              } else {
+                e.target.classList.remove('sv-stack-passed');
+              }
+            });
+          }, { threshold: [0, 0.3, 1], rootMargin: '-80px 0px 0px 0px' });
+          cards.forEach(c => cardObs.observe(c));
+
+          /* Enable scroll-snap only while section is in view */
+          const sectionObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                document.documentElement.style.scrollSnapType = 'y proximity';
+              } else {
+                document.documentElement.style.scrollSnapType = '';
+              }
+            });
+          }, { threshold: 0.1 });
+          sectionObs.observe(section);
+        })();
+      `}
+    </script>
+  </section>
+)}
 
 <!-- Section IV: Gallery -->
 <section class="section sv-section-alt" id="sv-gallery">
@@ -179,6 +263,86 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 }
 .sv-check { color: var(--color-accent-orange); flex-shrink: 0; margin-top: 2px; }
 
+/* ─── Programs Section (Sticky Stack) ─── */
+.sv-programs-section {
+  background: var(--color-bg-light); padding: 100px 0 40px;
+  scroll-behavior: smooth;
+}
+
+.sv-stack-container { position: relative; margin-top: 40px; }
+
+.sv-stack-card {
+  position: sticky;
+  top: calc(80px + var(--idx, 0) * 8px);
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(10,37,64,0.04), 0 8px 32px rgba(10,37,64,0.07);
+  border: 1px solid rgba(10,37,64,0.06);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.4s ease,
+              box-shadow 0.4s ease;
+  transform-origin: center top;
+  scroll-snap-align: start;
+  scroll-margin-top: 80px;
+}
+.sv-stack-card:nth-last-child(-n+4) { scroll-snap-align: none; }
+.sv-stack-card:hover {
+  box-shadow: 0 1px 3px rgba(10,37,64,0.04), 0 16px 48px rgba(10,37,64,0.1);
+}
+.sv-stack-passed {
+  transform: scale(0.96);
+  opacity: 0.6;
+}
+
+/* Orange gradient accent bar */
+.sv-stack-accent {
+  height: 4px;
+  background: var(--color-gradient);
+  border-radius: 20px 20px 0 0;
+}
+
+/* Inner layout */
+.sv-stack-inner {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 24px; padding: 36px 44px 40px;
+  align-items: start;
+}
+
+/* Number */
+.sv-stack-num {
+  font-size: 2.8rem; font-weight: 900; line-height: 1;
+  background: var(--color-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Body */
+.sv-stack-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.sv-stack-name {
+  font-size: 1.35rem; font-weight: 800; color: var(--color-text-dark);
+  margin: 0 0 16px; line-height: 1.3;
+}
+.sv-stack-desc p {
+  font-size: 0.88rem; color: var(--color-text-dark-secondary);
+  line-height: 1.85; margin-bottom: 10px;
+}
+.sv-stack-desc p:last-child { margin-bottom: 0; }
+
+/* Bottom spacer for last card to scroll off */
+.sv-stack-spacer { height: 60vh; }
+
+/* Badges */
+.sv-badge {
+  font-size: 0.65rem; font-weight: 700; padding: 4px 12px;
+  border-radius: 20px; letter-spacing: 0.03em; white-space: nowrap;
+  text-transform: uppercase;
+}
+.sv-badge-year { background: rgba(232,90,32,0.1); color: #d05a1a; }
+.sv-badge-channel { background: rgba(99,91,255,0.08); color: #635BFF; }
+.sv-badge-format { background: rgba(10,37,64,0.05); color: var(--color-text-dark-secondary); }
+
 /* ─── Gallery Grid ─── */
 .sv-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .sv-gallery-cell {
@@ -223,6 +387,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .sv-intro-img img { height: 260px; }
   .sv-achievements-grid { grid-template-columns: 1fr 1fr; }
   .sv-highlights-list { grid-template-columns: 1fr; }
+  .sv-stack-card { top: calc(60px + var(--idx, 0) * 6px); border-radius: 14px; }
+  .sv-stack-inner { grid-template-columns: 48px 1fr; gap: 14px; padding: 24px 20px 28px; }
+  .sv-stack-num { font-size: 1.8rem; }
+  .sv-stack-name { font-size: 1.05rem; }
   .sv-gallery-grid { grid-template-columns: 1fr 1fr; }
   .cta-card { padding: 50px 24px; }
 }
