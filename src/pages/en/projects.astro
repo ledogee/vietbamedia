@@ -10,6 +10,8 @@ const catColors: Record<string, string> = {
 const items = t.projects.items;
 const featured = items.slice(0, 3);
 const rest = items.slice(3);
+const getProjectImageStyle = (img: string) =>
+  img.includes("project-cedelar.png") ? "object-position: calc(50% - 20px) 50%;" : undefined;
 ---
 
 <Layout lang="en">
@@ -40,7 +42,7 @@ const rest = items.slice(3);
       <!-- Hero Featured Row (Apple-style) -->
       <div class="prj-featured fade-in">
         <div class="prj-hero-card" data-cat={featured[0].cat} style={`--cat-color:${catColors[featured[0].cat]}`}>
-          <img src={`${base}${featured[0].img}`} alt={featured[0].name} loading="eager" />
+          <img src={`${base}${featured[0].img}`} alt={featured[0].name} loading="eager" style={getProjectImageStyle(featured[0].img)} />
           <div class="prj-hero-overlay"></div>
           <div class="prj-hero-content">
             <span class="prj-cat-pill" style={`--pill-color:${catColors[featured[0].cat]}`}>
@@ -55,7 +57,7 @@ const rest = items.slice(3);
         <div class="prj-hero-side">
           {featured.slice(1, 3).map((p) => (
             <div class="prj-side-card" data-cat={p.cat} style={`--cat-color:${catColors[p.cat]}`}>
-              <img src={`${base}${p.img}`} alt={p.name} loading="eager" />
+              <img src={`${base}${p.img}`} alt={p.name} loading="eager" style={getProjectImageStyle(p.img)} />
               <div class="prj-side-overlay"></div>
               <div class="prj-side-content">
                 <span class="prj-cat-pill" style={`--pill-color:${catColors[p.cat]}`}>
@@ -77,7 +79,7 @@ const rest = items.slice(3);
             style={`--cat-color:${catColors[p.cat]};--i:${i}`}
           >
             <div class="prj-bento-img">
-              {p.img && <img src={`${base}${p.img}`} alt={p.name} loading="lazy" />}
+              {p.img && <img src={`${base}${p.img}`} alt={p.name} loading="lazy" style={getProjectImageStyle(p.img)} />}
               <div class="prj-bento-gradient"></div>
             </div>
             <div class="prj-bento-info">

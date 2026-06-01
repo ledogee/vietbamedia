@@ -185,7 +185,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
     <div class="sv-gallery-grid fade-in">
       {gallery.map((g, i) => (
-        <div class="sv-gallery-cell">
+        <div class="sv-gallery-cell" data-project={g.img.includes('project-usaid') ? 'usaid' : undefined}>
           <img src={`${base}${g.img}`} alt={g.caption} loading="lazy" />
           <div class="sv-gallery-caption">{g.caption}</div>
         </div>
@@ -351,10 +351,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   background: #fff;
 }
 .sv-gallery-cell img {
-  width: 100%; height: 220px; object-fit: cover; display: block;
+  width: 100%; height: 260px; object-fit: cover; display: block;
   transition: transform 0.5s ease;
 }
+.sv-gallery-cell[data-project="usaid"] img {
+  object-fit: cover;
+  object-position: center 18%;
+  background: #fff;
+  transform: scale(0.92);
+  transform-origin: center top;
+}
 .sv-gallery-cell:hover img { transform: scale(1.05); }
+.sv-gallery-cell[data-project="usaid"]:hover img { transform: scale(0.97); }
 .sv-gallery-caption {
   padding: 14px 18px; font-size: 0.85rem; font-weight: 600;
   color: var(--color-text-dark); background: #fff;
