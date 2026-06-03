@@ -153,7 +153,7 @@
         "relatedProjects": ["/images/projects/project-chiec-non-ky-dieu.png", "/images/projects/project-nguoi-di-xuyen-tuong.png", "/images/projects/project-biet-doi-vui-nhon.png", "/images/projects/project-goc-pho-muon-mau.png"]
       },
       {
-        "title": "TT thời tiết",
+        "title": "Trung tâm Thời tiết",
         "desc": "Dịch vụ dự báo thời tiết chuyên ngành, khí tượng thủy văn và cảnh báo thiên tai cho điện lực, hàng không, nông nghiệp, dầu khí, hàng hải và vận tải biển.",
         "img": "/images/services/service-weather-tech.jpg",
         "detailPage": "/weather",
@@ -280,7 +280,7 @@
       {
         "city": "Hà Nội",
         "label": "Trụ sở chính",
-        "address": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Ba Đình, Hà Nội",
+        "address": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, phường Giảng Võ, Hà Nội",
         "phone": "(+84) 86 9312 488",
         "email": "contact@vietbagroup.com.vn"
       },
@@ -433,7 +433,7 @@
     "heroImg": "/images/recruitment/recruit-meeting-strategy.png",
     "intro": "Vietba Group được thành lập vào năm 1999 với 100% vốn đầu tư Việt Nam. Trải qua hơn 20 năm tạo dựng và phát triển, chúng tôi đã khẳng định được tên tuổi của mình trong làng truyền thông Việt Nam. Cho đến nay, Vietba Group đã nằm trong TOP những công ty quảng cáo và truyền thông lớn tại Việt Nam.",
     "introSub": "Vietba Group đã trở thành đối tác tin cậy và hiệu quả của các Tập đoàn, Doanh nghiệp trong và ngoài nước, các đài truyền hình uy tín và các đầu báo, tạp chí tên tuổi trong những lĩnh vực sau:",
-    "introServices": ["Tư vấn chiến lược truyền thông tổng thể", "Công nghệ & chuyển đổi số", "Sản xuất content đa nền tảng", "TT thời tiết", "Digital marketing", "Booking media", "Quảng cáo ngoài trời", "Tổ chức sự kiện"],
+    "introServices": ["Tư vấn chiến lược truyền thông tổng thể", "Công nghệ & chuyển đổi số", "Sản xuất content đa nền tảng", "Trung tâm Thời tiết", "Digital marketing", "Booking media", "Quảng cáo ngoài trời", "Tổ chức sự kiện"],
     "introAchievements": "Đến nay, chúng tôi đã thực hiện hơn 400 sản phẩm quảng cáo truyền thông, 50 chương trình truyền hình đặc sắc và là nhà cung cấp dịch vụ đáng tin cậy của hơn 200 đối tác lớn và nhỏ. Chúng tôi tự hào là công ty đầu tiên đưa gameshow vào Việt Nam, đặt nền móng cho rất nhiều chương trình truyền hình và tên tuổi cho các nghệ sĩ hiện nay.",
     "introImages": ["/images/recruitment/recruit-team-growth.png", "/images/recruitment/recruit-digital-marketing.png", "/images/recruitment/recruit-social-media.png"],
     "listTitle": "Vị trí đang tuyển",
@@ -457,7 +457,7 @@
         "description": ["Xây dựng chiến lược phát triển Digital Marketing theo từng giai đoạn.", "Triển khai và vận hành mô hình doanh thu kết hợp giữa dịch vụ khách hàng và nền tảng số.", "Quản lý hệ thống dữ liệu, theo dõi hiệu quả hoạt động truyền thông trên các nền tảng Digital.", "Quản trị doanh thu, lợi nhuận và chịu trách nhiệm về các chỉ số kinh doanh của mảng Digital.", "Tham gia pitching, tư vấn chiến lược truyền thông cho các thương hiệu lớn.", "Xây dựng, quản lý và phát triển đội ngũ Digital Marketing."],
         "requirements": ["Tối thiểu 8–10 năm kinh nghiệm trong lĩnh vực Marketing hoặc Media.", "Có kinh nghiệm ở vị trí Head of Digital Marketing, Marketing Director hoặc vị trí tương đương.", "Am hiểu sâu về Digital Marketing, Social Media, Performance Marketing và truyền thông truyền thống như Truyền hình, Out Of Home.", "Có kinh nghiệm xây dựng đội ngũ, triển khai kế hoạch truyền thông tích hợp và quản trị hiệu quả kinh doanh.", "Tư duy chiến lược, chủ động, khả năng kết nối và làm việc với đối tác lớn."],
         "benefits": ["Thu nhập từ 30.000.000 – 45.000.000 VNĐ + hoa hồng doanh số + thưởng hiệu quả kinh doanh.", "Được trực tiếp xây dựng chiến lược và phát triển đội ngũ Digital.", "Làm việc cùng Ban lãnh đạo và tham gia các dự án truyền thông quy mô lớn trên toàn quốc."],
-        "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Hà Nội",
+        "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, phường Giảng Võ, Hà Nội",
         "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
         "heroImg": "/images/recruitment/jd-head-of-digital-marketing.png"
       },
@@ -470,7 +470,7 @@
         "description": ["Xây dựng chiến lược nội dung tổng thể cho các kênh truyền thông.", "Quản lý đội ngũ content và đảm bảo timeline sản xuất nội dung.", "Phát triển content calendar và editorial plan hàng tháng/quý.", "Phối hợp với team Design, Video để sản xuất nội dung chất lượng cao.", "Phân tích hiệu quả nội dung và tối ưu chiến lược."],
         "requirements": ["Tối thiểu 5 năm kinh nghiệm trong lĩnh vực Content Marketing.", "Có kinh nghiệm quản lý đội ngũ content từ 5 người trở lên.", "Khả năng viết và biên tập nội dung xuất sắc.", "Am hiểu về SEO, Social Media và các xu hướng content hiện tại.", "Tư duy sáng tạo, khả năng làm việc dưới áp lực cao."],
         "benefits": ["Mức lương cạnh tranh + thưởng hiệu suất.", "Môi trường làm việc năng động, sáng tạo.", "Cơ hội tham gia các dự án truyền thông lớn."],
-        "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Hà Nội",
+        "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, phường Giảng Võ, Hà Nội",
         "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
         "heroImg": "/images/recruitment/jd-content-manager.png"
       },
@@ -483,7 +483,7 @@
         "description": ["Xây dựng và triển khai chiến lược Growth Marketing đa kênh.", "Quản lý và tối ưu các chiến dịch Performance Marketing (Google Ads, Facebook Ads, TikTok Ads).", "Phân tích dữ liệu, đo lường KPIs và báo cáo hiệu quả chiến dịch.", "Tối ưu conversion rate và customer acquisition cost.", "Phối hợp với team Content và Creative để tối ưu creative assets."],
         "requirements": ["Tối thiểu 5 năm kinh nghiệm trong lĩnh vực Performance/Growth Marketing.", "Thành thạo Google Ads, Facebook Business Manager, Google Analytics.", "Có kinh nghiệm quản lý ngân sách quảng cáo từ 500 triệu/tháng trở lên.", "Tư duy phân tích dữ liệu mạnh, kỹ năng đọc insight.", "Khả năng làm việc với các thương hiệu lớn, pitch và tư vấn chiến lược."],
         "benefits": ["Mức lương cạnh tranh + KPI bonus hấp dẫn.", "Được tiếp cận các công cụ và nền tảng marketing tiên tiến.", "Cơ hội phát triển sự nghiệp trong tập đoàn truyền thông hàng đầu."],
-        "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, Hà Nội",
+        "workLocation": "Tầng 3, Tòa nhà Hà Nội Toserco, 273 Kim Mã, phường Giảng Võ, Hà Nội",
         "workHours": "08h30 – 17h30, Thứ Hai đến Thứ Sáu",
         "heroImg": "/images/recruitment/jd-growth-performance-lead.png"
       },
