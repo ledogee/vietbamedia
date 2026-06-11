@@ -159,6 +159,9 @@ const partners = [
     color: "/images/partners/color/vinaphone.png",
   },
 ];
+
+const optimizedImage = (src: string, format: "avif" | "webp") =>
+  src.replace("/images/partners/", "/images/optimized/partners/").replace(".png", `.${format}`);
 ---
 
 <Layout lang="en" heroLogo showBackground>
@@ -166,11 +169,17 @@ const partners = [
   <section class="hero-white" id="hero">
     <div class="container hero-content">
       <div class="hero-logo-centered" id="heroLogo">
-        <img
-          src={`${base}/images/logo/Vietba-logo-01.png`}
-          alt="Vietba Group"
-          class="hero-logo-img"
-        />
+        <picture>
+          <source srcset={`${base}/images/optimized/logo/Vietba-logo-01.avif`} type="image/avif" />
+          <source srcset={`${base}/images/optimized/logo/Vietba-logo-01.webp`} type="image/webp" />
+          <img
+            src={`${base}/images/logo/Vietba-logo-01.png`}
+            alt="Vietba Group"
+            class="hero-logo-img"
+            width="212"
+            height="120"
+          />
+        </picture>
       </div>
       <p class="hero-tag fade-in">{t.about.sectionTag}</p>
       <h1 class="hero-title hero-slogan-font fade-in">
@@ -277,18 +286,30 @@ const partners = [
                 aria-label={p.name}
                 data-partner={p.name.toLowerCase().replace(/\s+/g, "-")}
               >
-                <img
-                  src={`${base}${p.mono}`}
-                  alt={p.name}
-                  class="partner-img partner-img--mono"
-                  loading="lazy"
-                />
-                <img
-                  src={`${base}${p.color}`}
-                  alt=""
-                  class="partner-img partner-img--color"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset={`${base}${optimizedImage(p.mono, "avif")}`} type="image/avif" />
+                  <source srcset={`${base}${optimizedImage(p.mono, "webp")}`} type="image/webp" />
+                  <img
+                    src={`${base}${p.mono}`}
+                    alt={p.name}
+                    class="partner-img partner-img--mono"
+                    loading="lazy"
+                    width="200"
+                    height="90"
+                  />
+                </picture>
+                <picture>
+                  <source srcset={`${base}${optimizedImage(p.color, "avif")}`} type="image/avif" />
+                  <source srcset={`${base}${optimizedImage(p.color, "webp")}`} type="image/webp" />
+                  <img
+                    src={`${base}${p.color}`}
+                    alt=""
+                    class="partner-img partner-img--color"
+                    loading="lazy"
+                    width="200"
+                    height="90"
+                  />
+                </picture>
               </button>
             ))
           }
@@ -300,18 +321,30 @@ const partners = [
                 aria-label={p.name}
                 data-partner={p.name.toLowerCase().replace(/\s+/g, "-")}
               >
-                <img
-                  src={`${base}${p.mono}`}
-                  alt={p.name}
-                  class="partner-img partner-img--mono"
-                  loading="lazy"
-                />
-                <img
-                  src={`${base}${p.color}`}
-                  alt=""
-                  class="partner-img partner-img--color"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset={`${base}${optimizedImage(p.mono, "avif")}`} type="image/avif" />
+                  <source srcset={`${base}${optimizedImage(p.mono, "webp")}`} type="image/webp" />
+                  <img
+                    src={`${base}${p.mono}`}
+                    alt={p.name}
+                    class="partner-img partner-img--mono"
+                    loading="lazy"
+                    width="200"
+                    height="90"
+                  />
+                </picture>
+                <picture>
+                  <source srcset={`${base}${optimizedImage(p.color, "avif")}`} type="image/avif" />
+                  <source srcset={`${base}${optimizedImage(p.color, "webp")}`} type="image/webp" />
+                  <img
+                    src={`${base}${p.color}`}
+                    alt=""
+                    class="partner-img partner-img--color"
+                    loading="lazy"
+                    width="200"
+                    height="90"
+                  />
+                </picture>
               </button>
             ))
           }
@@ -798,6 +831,9 @@ const partners = [
     margin-bottom: 32px;
     will-change: opacity, transform;
   }
+  .hero-logo-centered picture {
+    display: inline-block;
+  }
   .hero-logo-img {
     height: 120px;
     width: auto;
@@ -1134,6 +1170,9 @@ const partners = [
   }
   .partner-logo-btn:hover {
     transform: scale(1.12);
+  }
+  .partner-logo-btn picture {
+    display: contents;
   }
   .partner-img {
     position: absolute;

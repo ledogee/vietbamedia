@@ -66,11 +66,17 @@ function isActive(path: string): boolean {
       <div class="container navbar-inner">
         <a href={`${prefix}/`} class="navbar-logo">
           <div class="navbar-logo-crop">
-            <img
-              src={`${base}/images/logo/Vietba-logo-01.png`}
-              alt="Vietba Group"
-              class="navbar-logo-img"
-            />
+            <picture>
+              <source srcset={`${base}/images/optimized/logo/Vietba-logo-01.avif`} type="image/avif" />
+              <source srcset={`${base}/images/optimized/logo/Vietba-logo-01.webp`} type="image/webp" />
+              <img
+                src={`${base}/images/logo/Vietba-logo-01.png`}
+                alt="Vietba Group"
+                class="navbar-logo-img"
+                width="71"
+                height="40"
+              />
+            </picture>
           </div>
         </a>
         <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
@@ -171,11 +177,17 @@ function isActive(path: string): boolean {
           <div class="footer-brand">
             <a href={`${prefix}/`} class="footer-logo-link">
               <div class="footer-logo-crop">
-                <img
-                  src={`${base}/images/logo/Vietba-logo-01.png`}
-                  alt="Vietba Group"
-                  class="footer-logo-img"
-                />
+                <picture>
+                  <source srcset={`${base}/images/optimized/logo/Vietba-logo-01.avif`} type="image/avif" />
+                  <source srcset={`${base}/images/optimized/logo/Vietba-logo-01.webp`} type="image/webp" />
+                  <img
+                    src={`${base}/images/logo/Vietba-logo-01.png`}
+                    alt="Vietba Group"
+                    class="footer-logo-img"
+                    width="100"
+                    height="57"
+                  />
+                </picture>
               </div>
               <span class="footer-logo-text"
                 ><span class="logo-vietba">VietBa</span><span class="logo-group">Group</span>
@@ -449,6 +461,10 @@ function isActive(path: string): boolean {
   .navbar-logo-crop {
     height: 40px;
   }
+  .navbar-logo-crop picture {
+    display: block;
+    height: 100%;
+  }
   .navbar-logo-img {
     height: 100%;
     width: auto;
@@ -590,6 +606,10 @@ function isActive(path: string): boolean {
     height: 42px;
     flex-shrink: 0;
     overflow: hidden;
+  }
+  .footer-logo-crop picture {
+    display: block;
+    width: 100%;
   }
   .footer-logo-img {
     width: 100%;
