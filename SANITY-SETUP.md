@@ -4,7 +4,7 @@ This document explains how to enable the Sanity CMS integration for content mana
 
 ## Current Status
 
-**🟡 Ready but not activated.** All code and schemas are in place. You just need to create a Sanity project and add the project ID.
+**🟢 Activated.** The project is connected to Sanity project `b0j24uhi`, dataset `production`, with seeded content and image assets.
 
 ## What's Already Done
 
@@ -22,7 +22,9 @@ This document explains how to enable the Sanity CMS integration for content mana
 | Schema: Objects (i18n, steps) | `schemas/objects.ts` | ✅ |
 | Schema index | `schemas/index.ts` | ✅ |
 | GROQ query utilities | `src/lib/sanity.ts` | ✅ |
-| Environment variables | `.env` | 🟡 Placeholder — needs project ID |
+| Environment variables | `.env` | ✅ Configured |
+| Sanity CLI config | `sanity.cli.ts` | ✅ |
+| Migration script | `scripts/migrate-to-sanity.mjs` | ✅ |
 
 ## Step 1: Create Sanity Project
 
@@ -102,12 +104,13 @@ If you want the Studio at `/admin`:
 
 ## Step 7: Migrate Content
 
-Once Sanity is connected, run the migration script to import existing `vi.json`/`en.json` data:
+Run the migration script to upsert content from `vi.json`/`en.json` and upload referenced local images:
 
 ```bash
-# (To be created — run after project ID is set)
-npx tsx scripts/migrate-to-sanity.ts
+npm run sanity:seed
 ```
+
+The script uses deterministic public document IDs, so reruns update documents instead of duplicating them.
 
 ## Architecture Decision
 
@@ -125,6 +128,7 @@ vietbamedia/
 ├── .env                          # Sanity credentials (gitignored)
 ├── astro.config.mjs              # Conditional Sanity integration
 ├── sanity.config.ts              # Studio config + schema registration
+├── sanity.cli.ts                 # Sanity CLI project/dataset config
 ├── schemas/
 │   ├── index.ts                  # Re-exports all schemas
 │   ├── objects.ts                # localeString, localeText, processStep, caseStudy
@@ -137,4 +141,6 @@ vietbamedia/
 └── src/
     └── lib/
         └── sanity.ts             # GROQ queries + urlFor helper
+└── scripts/
+    └── migrate-to-sanity.mjs     # JSON-to-Sanity seed script
 ```

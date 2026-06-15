@@ -4,6 +4,7 @@
     "about": "About",
     "services": "Services",
     "projects": "Projects",
+    "articles": "Articles",
     "history": "History",
     "contact": "Contact",
     "careers": "Careers"
@@ -65,6 +66,11 @@
       "tag": "Projects",
       "title": "Featured projects",
       "subtitle": "Explore our portfolio from gameshows and TV production to digital marketing."
+    },
+    "articles": {
+      "tag": "Articles",
+      "title": "News & insights",
+      "subtitle": "Read the latest updates and perspectives from Vietba Group."
     },
     "history": {
       "tag": "History",

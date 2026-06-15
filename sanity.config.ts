@@ -12,6 +12,7 @@ import {
   job,
   partner,
   siteSettings,
+  article,
 } from './schemas';
 
 // Environment variables are injected by Astro/Vite at build time.
@@ -44,6 +45,7 @@ export default defineConfig({
       job,
       partner,
       siteSettings,
+      article,
     ],
   },
 });

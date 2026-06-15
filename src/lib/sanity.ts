@@ -10,6 +10,22 @@ import { sanityClient } from 'sanity:client';
 import { createImageUrlBuilder } from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
+export interface SanityArticle {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  excerpt?: string;
+  mainImage?: {
+    asset: SanityImageSource;
+    alt?: string;
+    caption?: string;
+  };
+  body?: any[];
+  publishedAt?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
 // ----- Image URL Helper -----
 const builder = createImageUrlBuilder(sanityClient);
 
@@ -104,6 +120,52 @@ export async function getSiteSettings() {
       stats, offices, socialLinks,
       footerCopyright, footerDescription
     }`
+  );
+}
+
+/** Fetch all published articles, newest first */
+export async function getArticles(lang: 'vi' | 'en' = 'vi'): Promise<SanityArticle[]> {
+  return sanityClient.fetch(
+    `*[_type == "article" && isPublished == true && defined(slug.current)] | order(publishedAt desc) {
+      _id,
+      "title": title.${lang},
+      slug,
+      "excerpt": excerpt.${lang},
+      mainImage {
+        asset,
+        "alt": alt.${lang},
+        "caption": caption.${lang}
+      },
+      body,
+      publishedAt,
+      "seoTitle": seoTitle.${lang},
+      "seoDescription": seoDescription.${lang}
+    }`
+  );
+}
+
+/** Fetch one published article by slug */
+export async function getArticleBySlug(
+  slug: string,
+  lang: 'vi' | 'en' = 'vi'
+): Promise<SanityArticle | null> {
+  return sanityClient.fetch(
+    `*[_type == "article" && isPublished == true && slug.current == $slug][0] {
+      _id,
+      "title": title.${lang},
+      slug,
+      "excerpt": excerpt.${lang},
+      mainImage {
+        asset,
+        "alt": alt.${lang},
+        "caption": caption.${lang}
+      },
+      body,
+      publishedAt,
+      "seoTitle": seoTitle.${lang},
+      "seoDescription": seoDescription.${lang}
+    }`,
+    { slug }
   );
 }
 

@@ -26,6 +26,12 @@ function isActive(path: string): boolean {
   const target = path.replace(/\/$/, "") || "/";
   return clean === target;
 }
+
+function isSectionActive(path: string): boolean {
+  const clean = currentPath.replace(/\/$/, "") || "/";
+  const target = path.replace(/\/$/, "") || "/";
+  return clean === target || clean.startsWith(`${target}/`);
+}
 ---
 
 <!DOCTYPE html>
@@ -115,6 +121,16 @@ function isActive(path: string): boolean {
                 { active: isActive(`${prefix}/projects`) },
               ]}
               >{t.nav.projects}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`${prefix}/articles`}
+              class:list={[
+                "nav-link",
+                { active: isSectionActive(`${prefix}/articles`) },
+              ]}
+              >{t.nav.articles}
             </a>
           </li>
           <li>

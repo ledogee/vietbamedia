@@ -1,0 +1,131 @@
+---
+import { urlFor } from '../lib/sanity';
+
+interface Props {
+  body?: any[];
+  lang?: 'vi' | 'en';
+}
+
+const { body = [], lang = 'vi' } = Astro.props;
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderSpan(child: any) {
+  let text = escapeHtml(child.text || '');
+  for (const mark of child.marks || []) {
+    if (mark === 'strong') text = `<strong>${text}</strong>`;
+    if (mark === 'em') text = `<em>${text}</em>`;
+    if (mark === 'code') text = `<code>${text}</code>`;
+  }
+  return text;
+}
+
+function renderBlock(block: any) {
+  const text = (block.children || []).map(renderSpan).join('');
+  if (!text.trim()) return '';
+
+  if (block.listItem) {
+    return `<li>${text}</li>`;
+  }
+
+  const style = block.style || 'normal';
+  if (style === 'h2') return `<h2>${text}</h2>`;
+  if (style === 'h3') return `<h3>${text}</h3>`;
+  if (style === 'h4') return `<h4>${text}</h4>`;
+  if (style === 'blockquote') return `<blockquote>${text}</blockquote>`;
+  return `<p>${text}</p>`;
+}
+
+function imageAlt(block: any) {
+  return block.alt?.[lang] || block.alt?.vi || block.alt?.en || '';
+}
+
+function imageCaption(block: any) {
+  return block.caption?.[lang] || block.caption?.vi || block.caption?.en || '';
+}
+---
+
+<div class="article-body">
+  {
+    body.map((block) => {
+      if (block._type === 'image' && block.asset) {
+        const imageUrl = urlFor(block).width(1200).format('webp').url();
+        const caption = imageCaption(block);
+        return (
+          <figure>
+            <img src={imageUrl} alt={imageAlt(block)} loading="lazy" decoding="async" />
+            {caption && <figcaption>{caption}</figcaption>}
+          </figure>
+        );
+      }
+
+      if (block._type === 'block') {
+        return <Fragment set:html={renderBlock(block)} />;
+      }
+
+      return null;
+    })
+  }
+</div>
+
+<style>
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--color-text-dark-secondary);
+    font-size: 1.05rem;
+    line-height: 1.82;
+  }
+  .article-body :global(p) {
+    margin: 0 0 1.35rem;
+  }
+  .article-body :global(h2),
+  .article-body :global(h3),
+  .article-body :global(h4) {
+    color: var(--color-text-dark);
+    line-height: 1.25;
+    margin: 2.2rem 0 1rem;
+  }
+  .article-body :global(h2) {
+    font-size: clamp(1.8rem, 3vw, 2.35rem);
+  }
+  .article-body :global(h3) {
+    font-size: clamp(1.45rem, 2.5vw, 1.8rem);
+  }
+  .article-body :global(blockquote) {
+    margin: 2rem 0;
+    padding: 22px 26px;
+    border-left: 4px solid var(--color-accent-orange);
+    background: rgba(232, 90, 32, 0.06);
+    color: var(--color-text-dark);
+    font-weight: 600;
+  }
+  .article-body :global(ul),
+  .article-body :global(ol) {
+    margin: 0 0 1.4rem 1.3rem;
+  }
+  .article-body :global(li) {
+    margin-bottom: 0.55rem;
+  }
+  .article-body figure {
+    margin: 2.4rem 0;
+  }
+  .article-body img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .article-body figcaption {
+    margin-top: 10px;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+</style>

@@ -24,7 +24,9 @@ pnpm-debug.log*
 .idea/
 
 # scraping/download scripts (dev-only)
-scripts/
+scripts/*
+!scripts/
+!scripts/migrate-to-sanity.mjs
 
 # reference docs
 vietbagroup_website.md
