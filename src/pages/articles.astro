@@ -26,15 +26,15 @@ const articles = await getArticles('vi');
             {articles.map((article) => (
               <ArticleCard
                 article={article}
-                href={`${base}/articles/${article.slug.current}`}
-                readMoreLabel="Đọc bài viết"
+                href={`${base}/articles/${article.routeSlug}`}
+                readMoreLabel="Đọc tin"
               />
             ))}
           </div>
         ) : (
           <div class="articles-empty fade-in">
-            <h2>Sắp có bài viết mới</h2>
-            <p>Các bài viết mới từ Vietba Group sẽ được cập nhật tại đây.</p>
+            <h2>Sắp có tin mới</h2>
+            <p>Tin tức mới từ Vietba Group sẽ được cập nhật tại đây.</p>
           </div>
         )
       }

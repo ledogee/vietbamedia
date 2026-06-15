@@ -13,7 +13,8 @@ import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 export interface SanityArticle {
   _id: string;
   title: string;
-  slug: { current: string };
+  slug?: { current: string };
+  routeSlug: string;
   excerpt?: string;
   mainImage?: {
     asset: SanityImageSource;
@@ -126,46 +127,48 @@ export async function getSiteSettings() {
 /** Fetch all published articles, newest first */
 export async function getArticles(lang: 'vi' | 'en' = 'vi'): Promise<SanityArticle[]> {
   return sanityClient.fetch(
-    `*[_type == "article" && isPublished == true && defined(slug.current)] | order(publishedAt desc) {
+    `*[_type == "article" && isPublished != false] | order(coalesce(publishedAt, _createdAt) desc) {
       _id,
-      "title": title.${lang},
+      "title": coalesce(title.${lang}, title.vi, title.en),
       slug,
-      "excerpt": excerpt.${lang},
+      "routeSlug": coalesce(slug.current, _id),
+      "excerpt": coalesce(excerpt.${lang}, excerpt.vi, excerpt.en),
       mainImage {
         asset,
-        "alt": alt.${lang},
-        "caption": caption.${lang}
+        "alt": coalesce(alt.${lang}, alt.vi, alt.en),
+        "caption": coalesce(caption.${lang}, caption.vi, caption.en)
       },
       body,
       publishedAt,
-      "seoTitle": seoTitle.${lang},
-      "seoDescription": seoDescription.${lang}
+      "seoTitle": coalesce(seoTitle.${lang}, seoTitle.vi, seoTitle.en),
+      "seoDescription": coalesce(seoDescription.${lang}, seoDescription.vi, seoDescription.en)
     }`
   );
 }
 
 /** Fetch one published article by slug */
 export async function getArticleBySlug(
-  slug: string,
+  routeSlug: string,
   lang: 'vi' | 'en' = 'vi'
 ): Promise<SanityArticle | null> {
   return sanityClient.fetch(
-    `*[_type == "article" && isPublished == true && slug.current == $slug][0] {
+    `*[_type == "article" && isPublished != false && (slug.current == $routeSlug || _id == $routeSlug)][0] {
       _id,
-      "title": title.${lang},
+      "title": coalesce(title.${lang}, title.vi, title.en),
       slug,
-      "excerpt": excerpt.${lang},
+      "routeSlug": coalesce(slug.current, _id),
+      "excerpt": coalesce(excerpt.${lang}, excerpt.vi, excerpt.en),
       mainImage {
         asset,
-        "alt": alt.${lang},
-        "caption": caption.${lang}
+        "alt": coalesce(alt.${lang}, alt.vi, alt.en),
+        "caption": coalesce(caption.${lang}, caption.vi, caption.en)
       },
       body,
       publishedAt,
-      "seoTitle": seoTitle.${lang},
-      "seoDescription": seoDescription.${lang}
+      "seoTitle": coalesce(seoTitle.${lang}, seoTitle.vi, seoTitle.en),
+      "seoDescription": coalesce(seoDescription.${lang}, seoDescription.vi, seoDescription.en)
     }`,
-    { slug }
+    { routeSlug }
   );
 }
 

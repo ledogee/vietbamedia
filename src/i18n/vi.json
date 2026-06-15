@@ -4,7 +4,7 @@
     "about": "Giới thiệu",
     "services": "Dịch vụ",
     "projects": "Dự án",
-    "articles": "Bài viết",
+    "articles": "Tin tức",
     "history": "Lịch sử",
     "contact": "Liên hệ",
     "careers": "Tuyển dụng"
@@ -68,7 +68,7 @@
       "subtitle": "Khám phá danh mục các dự án nổi bật từ gameshow, truyền hình đến digital marketing."
     },
     "articles": {
-      "tag": "Bài viết",
+      "tag": "Tin tức",
       "title": "Tin tức & góc nhìn",
       "subtitle": "Cập nhật các bài viết mới nhất từ Vietba Group."
     },

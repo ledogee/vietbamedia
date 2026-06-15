@@ -26,8 +26,8 @@ const articles = await getArticles('en');
             {articles.map((article) => (
               <ArticleCard
                 article={article}
-                href={`${base}/en/articles/${article.slug.current}`}
-                readMoreLabel="Read article"
+                href={`${base}/en/articles/${article.routeSlug}`}
+                readMoreLabel="Read news"
               />
             ))}
           </div>

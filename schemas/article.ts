@@ -1,31 +1,24 @@
 export const article = {
   name: 'article',
-  title: 'Bài viết',
+  title: 'Tin tức',
   type: 'document',
+  initialValue: () => ({
+    isPublished: true,
+    publishedAt: new Date().toISOString(),
+  }),
   fields: [
-    { name: 'title', type: 'localeString', title: 'Title' },
     {
-      name: 'slug',
-      type: 'slug',
-      title: 'Slug',
-      options: { source: 'title.vi', maxLength: 96 },
+      name: 'title',
+      type: 'localeString',
+      title: 'Tiêu đề',
       validation: (Rule: any) => Rule.required(),
     },
-    { name: 'excerpt', type: 'localeText', title: 'Excerpt' },
-    {
-      name: 'mainImage',
-      type: 'image',
-      title: 'Main Image',
-      options: { hotspot: true },
-      fields: [
-        { name: 'alt', type: 'localeString', title: 'Alt Text' },
-        { name: 'caption', type: 'localeString', title: 'Caption' },
-      ],
-    },
+    { name: 'excerpt', type: 'localeText', title: 'Tóm tắt' },
     {
       name: 'body',
       type: 'array',
-      title: 'Body',
+      title: 'Nội dung',
+      validation: (Rule: any) => Rule.required(),
       of: [
         { type: 'block' },
         {
@@ -39,19 +32,39 @@ export const article = {
       ],
     },
     {
+      name: 'mainImage',
+      type: 'image',
+      title: 'Ảnh đại diện',
+      options: { hotspot: true },
+      fields: [
+        { name: 'alt', type: 'localeString', title: 'Alt Text' },
+        { name: 'caption', type: 'localeString', title: 'Caption' },
+      ],
+    },
+    {
+      name: 'slug',
+      type: 'slug',
+      title: 'Custom URL Slug',
+      description: 'Optional. If this is empty, the website uses the document ID automatically.',
+      options: { source: 'title.vi', maxLength: 96 },
+      hidden: true,
+    },
+    {
       name: 'isPublished',
       type: 'boolean',
       title: 'Published',
       initialValue: true,
+      hidden: true,
     },
     {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published Date',
       initialValue: () => new Date().toISOString(),
+      hidden: true,
     },
-    { name: 'seoTitle', type: 'localeString', title: 'SEO Title' },
-    { name: 'seoDescription', type: 'localeText', title: 'SEO Description' },
+    { name: 'seoTitle', type: 'localeString', title: 'SEO Title', hidden: true },
+    { name: 'seoDescription', type: 'localeText', title: 'SEO Description', hidden: true },
   ],
   orderings: [
     {

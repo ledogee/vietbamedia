@@ -6,7 +6,7 @@ import { formatDate, getArticles, urlFor } from '../../../lib/sanity';
 export async function getStaticPaths() {
   const articles = await getArticles('en');
   return articles.map((article) => ({
-    params: { slug: article.slug.current },
+    params: { slug: article.routeSlug },
     props: { article },
   }));
 }
@@ -22,7 +22,7 @@ const imageUrl = article.mainImage?.asset
   <article>
     <header class="article-detail-hero">
       <div class="container">
-        <a href={`${base}/en/articles`} class="article-back">Articles</a>
+        <a href={`${base}/en/articles`} class="article-back">News</a>
         {article.publishedAt && <time datetime={article.publishedAt}>{formatDate(article.publishedAt)}</time>}
         <h1>{article.title}</h1>
         {article.excerpt && <p>{article.excerpt}</p>}
