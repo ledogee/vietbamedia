@@ -4,7 +4,7 @@ This document explains how to enable the Sanity CMS integration for content mana
 
 ## Current Status
 
-**🟢 Activated.** The project is connected to Sanity project `b0j24uhi`, dataset `production`, with seeded content and image assets.
+**🟢 Activated.** The project is connected to Sanity project `yikjfnw2`, dataset `production`, with hosted Studio at `https://vietbagroup-cms.sanity.studio`.
 
 ## What's Already Done
 
@@ -68,39 +68,19 @@ npm run dev
 
 The site should build normally. Sanity is now connected but pages still read from `vi.json`/`en.json` — migration happens separately.
 
-## Step 6 (Optional): Embed Sanity Studio
+## Step 6: Hosted Sanity Studio
 
-If you want the Studio at `/admin`:
+Editors should use the hosted Sanity web CMS:
 
-1. Install React:
-   ```bash
-   npm install @astrojs/react react react-dom
-   ```
+```text
+https://vietbagroup-cms.sanity.studio
+```
 
-2. Update `astro.config.mjs` — add `studioBasePath` and React:
-   ```js
-   import react from '@astrojs/react';
+Deploy or update the hosted Studio from this repo:
 
-   // In integrations array:
-   sanity({
-     projectId: env.PUBLIC_SANITY_PROJECT_ID,
-     dataset: env.PUBLIC_SANITY_DATASET || 'production',
-     useCdn: false,
-     studioBasePath: '/admin',  // <-- add this
-   }),
-   react(),  // <-- add this
-   ```
-
-3. Change output to hybrid (for the `/admin` SSR route):
-   ```js
-   export default defineConfig({
-     output: 'hybrid',
-     adapter: cloudflare(),
-     // ...
-   });
-   ```
-
-4. Visit `http://localhost:4321/admin` to access the Studio
+```bash
+npx sanity deploy --url vietbagroup-cms --schema-required
+```
 
 ## Step 7: Migrate Content
 

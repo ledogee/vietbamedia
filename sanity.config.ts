@@ -20,7 +20,7 @@ import {
 const projectId =
   typeof import.meta !== 'undefined' && import.meta.env?.PUBLIC_SANITY_PROJECT_ID
     ? import.meta.env.PUBLIC_SANITY_PROJECT_ID
-    : process.env.PUBLIC_SANITY_PROJECT_ID || 'your_project_id';
+    : process.env.PUBLIC_SANITY_PROJECT_ID || 'yikjfnw2';
 
 const dataset =
   typeof import.meta !== 'undefined' && import.meta.env?.PUBLIC_SANITY_DATASET
