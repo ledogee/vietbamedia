@@ -6,6 +6,8 @@ import cloudflare from '@astrojs/cloudflare';
 
 // Load env vars (import.meta.env is not available in astro.config.mjs)
 const env = loadEnv(import.meta.env?.MODE ?? 'production', process.cwd(), 'PUBLIC_');
+const sanityProjectId = env.PUBLIC_SANITY_PROJECT_ID || 'yikjfnw2';
+const sanityDataset = env.PUBLIC_SANITY_DATASET || 'production';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,14 +18,10 @@ export default defineConfig({
     remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io' }],
   },
   integrations: [
-    ...(env.PUBLIC_SANITY_PROJECT_ID
-      ? [
-          sanity({
-            projectId: env.PUBLIC_SANITY_PROJECT_ID,
-            dataset: env.PUBLIC_SANITY_DATASET || 'production',
-            useCdn: false, // false for static builds — fetches latest content at build time
-          }),
-        ]
-      : []),
+    sanity({
+      projectId: sanityProjectId,
+      dataset: sanityDataset,
+      useCdn: false, // false for static builds — fetches latest content at build time
+    }),
   ],
 });
