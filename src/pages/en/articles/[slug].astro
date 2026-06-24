@@ -18,7 +18,13 @@ const imageUrl = article.mainImage?.asset
   : null;
 ---
 
-<Layout lang="en">
+<Layout
+  lang="en"
+  title={article.seoTitle || `${article.title} | VietBa Group`}
+  description={article.seoDescription || article.excerpt || article.title}
+  image={imageUrl || undefined}
+  type="article"
+>
   <article>
     <header class="article-detail-hero">
       <div class="container">

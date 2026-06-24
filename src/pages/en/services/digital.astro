@@ -2,11 +2,13 @@
 import Layout from '../../../layouts/Layout.astro';
 import ServiceDetail from '../../../components/ServiceDetail.astro';
 import en from '../../../i18n/en.json';
+import { getServiceSeo } from '../../../data/serviceSeo';
 const s = en.serviceDetail.digital;
+const seo = getServiceSeo('en', 'digital');
 const t = en;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Layout lang="en">
+<Layout lang="en" title={seo.title} description={seo.description} image={s.intro.image}>
   <ServiceDetail
     lang="en"
     sectionTag={s.sectionTag}

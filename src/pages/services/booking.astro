@@ -2,11 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import ServiceDetail from '../../components/ServiceDetail.astro';
 import vi from '../../i18n/vi.json';
+import { getServiceSeo } from '../../data/serviceSeo';
 const s = vi.serviceDetail.booking;
+const seo = getServiceSeo('vi', 'booking');
 const t = vi;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Layout lang="vi">
+<Layout lang="vi" title={seo.title} description={seo.description} image={s.intro.image}>
   <ServiceDetail
     lang="vi"
     sectionTag={s.sectionTag}

@@ -32,9 +32,16 @@ function hexRgba(hex: string, a: number) {
   return `rgba(${r},${g},${b},${a})`;
 }
 const items = t.services.items;
+const webpPath = (path: string) =>
+  path.replace('/images/', '/images/optimized/').replace(/\.(png|jpe?g)$/i, '.webp');
 ---
 
-<Layout lang="en">
+<Layout
+  lang="en"
+  title="Media, Communications & Technology Services | VietBa Group"
+  description="Explore VietBa Group services in media strategy, technology, content production, digital marketing, media booking, OOH advertising and event management."
+  image={items[0].img}
+>
   <section class="page-hero svc-hero">
     <div class="container">
       <p class="section-tag fade-in">{t.pageHero.services.tag}</p>
@@ -55,7 +62,7 @@ const items = t.services.items;
 
   <!-- 0: Feature Banner -->
   <section class="svc-feature" id="svc-0" style={`--accent:${accents[0]}`}>
-    <img src={`${base}${items[0].img}`} alt={items[0].title} class="svc-feature-bg" loading="eager" />
+    <img src={`${base}${webpPath(items[0].img)}`} alt={items[0].title} class="svc-feature-bg" loading="eager" decoding="async" />
     <div class="svc-feature-overlay"></div>
     <div class="container svc-feature-content fade-in">
       <div class="svc-number-light">01</div>
@@ -81,7 +88,7 @@ const items = t.services.items;
         {[1, 2].map(i => (
           <div class="svc-card fade-in" style={`--accent:${accents[i]}`}>
             <div class="svc-card-img-wrap">
-              <img src={`${base}${items[i].img}`} alt={items[i].title} loading="lazy" class="svc-card-img" />
+              <img src={`${base}${webpPath(items[i].img)}`} alt={items[i].title} loading="lazy" decoding="async" class="svc-card-img" />
               <div class="svc-card-number">{String(i+1).padStart(2,'0')}</div>
             </div>
             <div class="svc-card-body">
@@ -110,7 +117,7 @@ const items = t.services.items;
   <section class="svc-split svc-section-alt" id="svc-3">
     <div class="container">
       <div class="svc-split-row fade-in">
-        <div class="svc-split-img"><img src={`${base}${items[3].img}`} alt={items[3].title} loading="lazy" /></div>
+        <div class="svc-split-img"><img src={`${base}${webpPath(items[3].img)}`} alt={items[3].title} loading="lazy" decoding="async" /></div>
         <div class="svc-split-text">
           <div class="svc-number" style={`color:${accents[3]}`}>04</div>
           <div class="svc-icon-badge" style={`background:${hexRgba(accents[3],0.1)};color:${accents[3]}`}><div class="svc-icon-inner" set:html={serviceIcons[3]} /></div>
@@ -132,7 +139,7 @@ const items = t.services.items;
   <section class="svc-split svc-section-light" id="svc-4">
     <div class="container">
       <div class="svc-split-row svc-split-reverse fade-in">
-        <div class="svc-split-img"><img src={`${base}${items[4].img}`} alt={items[4].title} loading="lazy" /></div>
+        <div class="svc-split-img"><img src={`${base}${webpPath(items[4].img)}`} alt={items[4].title} loading="lazy" decoding="async" /></div>
         <div class="svc-split-text">
           <div class="svc-number" style={`color:${accents[4]}`}>05</div>
           <div class="svc-icon-badge" style={`background:${hexRgba(accents[4],0.1)};color:${accents[4]}`}><div class="svc-icon-inner" set:html={serviceIcons[4]} /></div>
@@ -157,7 +164,7 @@ const items = t.services.items;
         {[5, 6].map(i => (
           <div class="svc-card fade-in" style={`--accent:${accents[i]}`}>
             <div class="svc-card-img-wrap">
-              <img src={`${base}${items[i].img}`} alt={items[i].title} loading="lazy" class="svc-card-img" />
+              <img src={`${base}${webpPath(items[i].img)}`} alt={items[i].title} loading="lazy" decoding="async" class="svc-card-img" />
               <div class="svc-card-number">{String(i+1).padStart(2,'0')}</div>
             </div>
             <div class="svc-card-body">
@@ -184,7 +191,7 @@ const items = t.services.items;
 
   <!-- 7: Feature Banner closing -->
   <section class="svc-feature" id="svc-7" style={`--accent:${accents[7]}`}>
-    <img src={`${base}${items[7].img}`} alt={items[7].title} class="svc-feature-bg" loading="lazy" />
+    <img src={`${base}${webpPath(items[7].img)}`} alt={items[7].title} class="svc-feature-bg" loading="lazy" decoding="async" />
     <div class="svc-feature-overlay"></div>
     <div class="container svc-feature-content fade-in">
       <div class="svc-number-light">08</div>

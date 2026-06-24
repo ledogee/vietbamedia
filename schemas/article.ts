@@ -25,7 +25,16 @@ export const article = {
           type: 'image',
           options: { hotspot: true },
           fields: [
-            { name: 'alt', type: 'localeString', title: 'Alt Text' },
+            {
+              name: 'alt',
+              type: 'localeString',
+              title: 'Alt Text',
+              description: 'Mô tả nội dung ảnh cho công cụ tìm kiếm và trình đọc màn hình.',
+              validation: (Rule: any) =>
+                Rule.custom((value: { vi?: string; en?: string } | undefined) =>
+                  value?.vi?.trim() || value?.en?.trim() ? true : 'Alt Text là bắt buộc'
+                ),
+            },
             { name: 'caption', type: 'localeString', title: 'Caption' },
           ],
         },
@@ -37,7 +46,16 @@ export const article = {
       title: 'Ảnh đại diện',
       options: { hotspot: true },
       fields: [
-        { name: 'alt', type: 'localeString', title: 'Alt Text' },
+        {
+          name: 'alt',
+          type: 'localeString',
+          title: 'Alt Text',
+          description: 'Mô tả nội dung ảnh cho công cụ tìm kiếm và trình đọc màn hình.',
+          validation: (Rule: any) =>
+            Rule.custom((value: { vi?: string; en?: string } | undefined) =>
+              value?.vi?.trim() || value?.en?.trim() ? true : 'Alt Text là bắt buộc'
+            ),
+        },
         { name: 'caption', type: 'localeString', title: 'Caption' },
       ],
     },

@@ -36,6 +36,8 @@ const {
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const webpPath = (path: string) =>
+  path.replace('/images/', '/images/optimized/').replace(/\.(png|jpe?g)$/i, '.webp');
 ---
 
 <!-- Hero -->
@@ -58,7 +60,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         ))}
       </div>
       <div class="sv-intro-img">
-        <img src={`${base}${intro.image}`} alt={title} loading="eager" />
+        <picture>
+          <source srcset={`${base}${webpPath(intro.image)}`} type="image/webp" />
+          <img src={`${base}${intro.image}`} alt={`${title} - VietBa Group`} loading="eager" decoding="async" />
+        </picture>
         <div class="sv-intro-img-accent"></div>
       </div>
     </div>
@@ -83,7 +88,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <section class="section section-light" id="sv-highlights">
   <div class="container">
     <div class="sv-highlights-card fade-in">
-      <h3 class="sv-highlights-title">{lang === 'vi' ? 'Năng lực nổi bật' : 'Key Capabilities'}</h3>
+      <h2 class="sv-highlights-title">{lang === 'vi' ? 'Năng lực nổi bật' : 'Key Capabilities'}</h2>
       <ul class="sv-highlights-list">
         {highlights.map(h => (
           <li>
@@ -186,7 +191,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="sv-gallery-grid fade-in">
       {gallery.map((g, i) => (
         <div class="sv-gallery-cell" data-project={g.img.includes('project-usaid') ? 'usaid' : undefined}>
-          <img src={`${base}${g.img}`} alt={g.caption} loading="lazy" />
+          <picture>
+            <source srcset={`${base}${webpPath(g.img)}`} type="image/webp" />
+            <img src={`${base}${g.img}`} alt={`${g.caption} - ${title}`} loading="lazy" decoding="async" />
+          </picture>
           <div class="sv-gallery-caption">{g.caption}</div>
         </div>
       ))}
