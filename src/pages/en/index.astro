@@ -509,7 +509,7 @@ const optimizedImage = (src: string, format: "avif" | "webp") =>
 
     <div class="container">
       <div class="teaser-action fade-in">
-        <a href={`${base}/en/history`} class="btn-outline">
+        <a href={`${base}/en/history`} class="btn-outline timeline-history-cta">
           {t.home.exploreHistory}
           <svg
             width="16"
@@ -1219,6 +1219,18 @@ const optimizedImage = (src: string, format: "avif" | "webp") =>
   .teaser-action {
     text-align: center;
     margin-top: 40px;
+  }
+  .tl-section.section-dark .teaser-action .timeline-history-cta {
+    background: #ffffff;
+    color: var(--color-text-dark);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  }
+  .tl-section.section-dark .teaser-action .timeline-history-cta:hover {
+    background: #c2410c;
+    color: #ffffff;
+    border-color: #c2410c;
+    box-shadow: 0 0 28px var(--color-glow-orange), 0 14px 34px rgba(0, 0, 0, 0.28);
   }
   .section-light .view-all-link {
     color: var(--color-accent-orange);
