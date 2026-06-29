@@ -20,6 +20,7 @@
     "@sanity/vision": "^5.27.0",
     "astro": "^6.2.1",
     "sanity": "^5.27.0",
+    "styled-components": "^6.4.3",
     "three": "^0.184.0"
   }
 }
