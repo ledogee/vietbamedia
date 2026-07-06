@@ -18,6 +18,7 @@ export const article = {
       name: 'body',
       type: 'array',
       title: 'Nội dung',
+      description: 'Chỉ có một ô nội dung dùng chung cho bài viết, không tách riêng Tiếng Việt và English.',
       validation: (Rule: any) => Rule.required(),
       of: [
         { type: 'block' },
