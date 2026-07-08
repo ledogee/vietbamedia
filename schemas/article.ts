@@ -1,3 +1,24 @@
+const articleBodyContent = [
+  { type: 'block' },
+  {
+    type: 'image',
+    options: { hotspot: true },
+    fields: [
+      {
+        name: 'alt',
+        type: 'localeString',
+        title: 'Alt Text',
+        description: 'Mô tả nội dung ảnh cho công cụ tìm kiếm và trình đọc màn hình.',
+        validation: (Rule: any) =>
+          Rule.custom((value: { vi?: string; en?: string } | undefined) =>
+            value?.vi?.trim() || value?.en?.trim() ? true : 'Alt Text là bắt buộc'
+          ),
+      },
+      { name: 'caption', type: 'localeString', title: 'Caption' },
+    ],
+  },
+];
+
 export const article = {
   name: 'article',
   title: 'Tin tức',
@@ -15,31 +36,35 @@ export const article = {
     },
     { name: 'excerpt', type: 'localeText', title: 'Tóm tắt' },
     {
-      name: 'body',
-      type: 'array',
+      name: 'localizedBody',
+      type: 'object',
       title: 'Nội dung',
-      description: 'Chỉ có một ô nội dung dùng chung cho bài viết, không tách riêng Tiếng Việt và English.',
-      validation: (Rule: any) => Rule.required(),
-      of: [
-        { type: 'block' },
+      description: 'Nhập nội dung riêng cho Tiếng Việt và English.',
+      validation: (Rule: any) =>
+        Rule.custom((value: { vi?: unknown[]; en?: unknown[] } | undefined) =>
+          value?.vi?.length || value?.en?.length ? true : 'Nội dung là bắt buộc'
+        ),
+      fields: [
         {
-          type: 'image',
-          options: { hotspot: true },
-          fields: [
-            {
-              name: 'alt',
-              type: 'localeString',
-              title: 'Alt Text',
-              description: 'Mô tả nội dung ảnh cho công cụ tìm kiếm và trình đọc màn hình.',
-              validation: (Rule: any) =>
-                Rule.custom((value: { vi?: string; en?: string } | undefined) =>
-                  value?.vi?.trim() || value?.en?.trim() ? true : 'Alt Text là bắt buộc'
-                ),
-            },
-            { name: 'caption', type: 'localeString', title: 'Caption' },
-          ],
+          name: 'vi',
+          type: 'array',
+          title: 'Tiếng Việt',
+          of: articleBodyContent,
+        },
+        {
+          name: 'en',
+          type: 'array',
+          title: 'English',
+          of: articleBodyContent,
         },
       ],
+    },
+    {
+      name: 'body',
+      type: 'array',
+      title: 'Nội dung cũ',
+      hidden: true,
+      of: articleBodyContent,
     },
     {
       name: 'mainImage',

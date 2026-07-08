@@ -138,7 +138,7 @@ export async function getArticles(lang: 'vi' | 'en' = 'vi'): Promise<SanityArtic
         "alt": coalesce(alt.${lang}, alt.vi, alt.en),
         "caption": coalesce(caption.${lang}, caption.vi, caption.en)
       },
-      body,
+      "body": coalesce(localizedBody.${lang}, localizedBody.vi, localizedBody.en, body),
       publishedAt,
       "seoTitle": coalesce(seoTitle.${lang}, seoTitle.vi, seoTitle.en),
       "seoDescription": coalesce(seoDescription.${lang}, seoDescription.vi, seoDescription.en)
@@ -163,7 +163,7 @@ export async function getArticleBySlug(
         "alt": coalesce(alt.${lang}, alt.vi, alt.en),
         "caption": coalesce(caption.${lang}, caption.vi, caption.en)
       },
-      body,
+      "body": coalesce(localizedBody.${lang}, localizedBody.vi, localizedBody.en, body),
       publishedAt,
       "seoTitle": coalesce(seoTitle.${lang}, seoTitle.vi, seoTitle.en),
       "seoDescription": coalesce(seoDescription.${lang}, seoDescription.vi, seoDescription.en)

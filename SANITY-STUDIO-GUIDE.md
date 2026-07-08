@@ -58,7 +58,7 @@ Website Astro lấy dữ liệu Sanity tại thời điểm build với `useCdn:
 Trường bắt buộc:
 
 - `Tiêu đề`: trường đa ngôn ngữ, gồm `Tiếng Việt` và `English`.
-- `Nội dung`: chỉ có một ô nội dung dạng portable text dùng chung cho bài viết, không tách riêng `Tiếng Việt` và `English`. Nếu chèn hình trong nội dung, hình cần có alt text.
+- `Nội dung`: có hai ô portable text riêng là `Tiếng Việt` và `English`. Trang `/articles` đọc nội dung tiếng Việt, còn `/en/articles` đọc nội dung tiếng Anh. Nếu chèn hình trong nội dung, hình cần có alt text.
 
 Trường nên điền:
 
