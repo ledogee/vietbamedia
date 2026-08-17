@@ -745,10 +745,11 @@ const optimizedImage = (src: string, format: "avif" | "webp") =>
 <style>
   /* ─── Homepage scroll snap (scoped via :global) ─── */
   :global(html:has(.hero-white)) {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
   .section,
-  .hero-white {
+  .hero-white,
+  :global(.footer) {
     scroll-snap-align: start;
   }
 
